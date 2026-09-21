@@ -28,12 +28,12 @@ export default function AudioPlayer({ autoPlayTrigger, lang, dict }) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-3 sm:right-6 md:right-[calc(50%-220px)] z-40">
       <audio ref={audioRef} src="/assets/wedding-song.mp3" loop />
       <button
         onClick={toggleAudio}
         title={isPlaying ? dict.musicPause : dict.musicPlay}
-        className="group relative flex items-center gap-3 px-4 py-3 rounded-full glass-royal border border-[#D4AF37]/50 royal-card-shadow hover:scale-105 transition-all duration-300 active:scale-95 text-[#6A1B29]"
+        className="group relative flex items-center gap-2 sm:gap-2.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full glass-royal border border-[#D4AF37]/60 royal-card-shadow hover:scale-105 transition-all duration-300 active:scale-95 text-[#6A1B29] shadow-lg"
       >
         <div className="relative flex items-center justify-center">
           {isPlaying ? (

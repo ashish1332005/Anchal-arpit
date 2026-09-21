@@ -17,17 +17,17 @@ export default function RsvpModal({ isOpen, onClose, lang, dict }) {
 
     // Construct WhatsApp formatted string
     const whatsappText = encodeURIComponent(
-      `*ROYAL WEDDING RSVP - Shreyansh & Aditi*\n\n` +
+      `*ROYAL WEDDING RSVP - Anchal & Arpit*\n\n` +
       `👤 *Guest Name:* ${formData.name}\n` +
       `✅ *Attendance:* ${formData.status}\n` +
       `👥 *Number of Guests:* ${formData.guestsCount}\n` +
       `🍲 *Diet Preference:* ${formData.diet}\n` +
       (formData.message ? `💬 *Warm Note:* ${formData.message}\n` : '') +
-      `\nSending warm love and blessings!`
+      `\nSending our warmest congratulations and blessings!`
     );
 
-    // Host WhatsApp number (Replace or default to host number)
-    const hostNumber = '919829000000'; // Default host format
+    // Host WhatsApp number from RSVP list (9929462333)
+    const hostNumber = '919929462333';
     window.open(`https://wa.me/${hostNumber}?text=${whatsappText}`, '_blank');
     onClose();
   };
@@ -44,11 +44,18 @@ export default function RsvpModal({ isOpen, onClose, lang, dict }) {
         </button>
 
         {/* Modal Header */}
-        <div className="text-center mb-6">
-          <h3 className="font-allura text-4xl text-[#6A1B29]">
+        <div className="text-center mb-5">
+          <div className="flex justify-center mb-1.5">
+            <img
+              src="/assets/couple_logo.png"
+              alt="A-अ Logo"
+              className="w-10 h-10 object-contain drop-shadow-sm"
+            />
+          </div>
+          <h3 className="font-allura text-3xl sm:text-4xl text-[#6A1B29] font-bold">
             {dict.rsvpTitle}
           </h3>
-          <p className="font-cormorant text-base text-[#3A332C]/80 mt-1">
+          <p className="font-cormorant text-sm text-[#3A332C]/80 mt-0.5">
             {dict.rsvpSubtitle}
           </p>
         </div>
