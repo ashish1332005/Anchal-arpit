@@ -900,20 +900,20 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* SLIDE 11: WITH LOVE & BLESSINGS (Unified Seamless Section) */}
+        {/* SLIDE 11: WITH LOVE & BLESSINGS — PART 1 */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-center items-center p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
           style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')" }}
         >
-          {/* Centered single continuous scrollable flow styled cleanly like reference screenshots */}
-          <div className="relative z-10 my-auto py-6 space-y-3.5 sm:space-y-4 overflow-y-auto max-h-[88vh] no-scrollbar max-w-md mx-auto w-full px-3">
+          {/* Content matching Screenshot 1 */}
+          <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-4 sm:space-y-5 py-4">
             {/* Header */}
-            <div className="pt-2 pb-0.5">
+            <div className="space-y-1">
               <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
                 With Love &amp; Blessings
               </h2>
-              <div className="w-32 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-2" />
+              <div className="w-28 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-2" />
             </div>
 
             {/* WARM REGARDS */}
@@ -963,10 +963,18 @@ export default function App() {
                 </p>
               ))}
             </div>
+          </div>
+        </section>
 
-            {/* Divider */}
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto py-0.5" />
-
+        {/* ======================================================== */}
+        {/* SLIDE 12: WITH LOVE & BLESSINGS — PART 2 (Continuation) */}
+        {/* ======================================================== */}
+        <section
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
+          style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')" }}
+        >
+          {/* Content matching Screenshot 2 */}
+          <div className="relative z-10 my-auto max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-3 sm:space-y-3.5 py-4">
             {/* Inviting Quote */}
             <div className="max-w-xs sm:max-w-sm mx-auto space-y-1">
               <p className="font-cormorant italic text-sm sm:text-base text-[#2C1518] font-semibold leading-relaxed">
@@ -975,11 +983,10 @@ export default function App() {
               <p className="font-playfair text-base sm:text-lg text-[#5A121E] font-bold">— Kabra &amp; Chechani Parivaar</p>
             </div>
 
-            {/* Divider */}
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto py-0.5" />
+            <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent mx-auto" />
 
             {/* RSVP SECTION CARD */}
-            <div className="bg-[#FAF7F2]/90 backdrop-blur-sm rounded-xl p-3 border border-[#D4AF37]/60 shadow-xs max-w-sm mx-auto space-y-1">
+            <div className="bg-[#FAF7F2]/90 backdrop-blur-xs rounded-xl p-2.5 border border-[#D4AF37]/60 shadow-xs max-w-sm mx-auto space-y-1">
               <p className="font-cinzel text-[10px] sm:text-xs tracking-[0.2em] uppercase text-[#5A121E] font-bold">
                 RSVP
               </p>
@@ -990,7 +997,7 @@ export default function App() {
                 {WEDDING_DETAILS.family.rsvp.address}, {WEDDING_DETAILS.family.rsvp.city}
               </p>
               {/* Phone numbers with click to call */}
-              <div className="pt-1 flex flex-wrap items-center justify-center gap-1.5">
+              <div className="pt-0.5 flex flex-wrap items-center justify-center gap-1.5">
                 {WEDDING_DETAILS.family.rsvp.phones.map((phone, idx) => (
                   <a
                     key={idx}
@@ -1009,10 +1016,10 @@ export default function App() {
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 WITH BEST COMPLIMENTS
               </p>
-              <p className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] max-w-sm mx-auto leading-tight">
+              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
                 {WEDDING_DETAILS.family.withBestCompliments.members}
               </p>
-              <p className="font-cormorant font-bold text-sm sm:text-base text-[#5A121E]">
+              <p className="font-cormorant font-bold text-xs sm:text-sm text-[#5A121E]">
                 {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
               </p>
             </div>
@@ -1022,7 +1029,7 @@ export default function App() {
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 FIRMS
               </p>
-              <p className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] max-w-sm mx-auto">
+              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto">
                 {WEDDING_DETAILS.family.firms.join(' • ')}
               </p>
             </div>
@@ -1032,7 +1039,7 @@ export default function App() {
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 NANIHAAL PAKSH
               </p>
-              <p className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518]">
+              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518]">
                 {WEDDING_DETAILS.family.nanihaalPaksh.name}
               </p>
             </div>
@@ -1042,7 +1049,7 @@ export default function App() {
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 SAMDHI PARIVAAR
               </p>
-              <p className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] max-w-sm mx-auto leading-tight">
+              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
                 {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
               </p>
             </div>
