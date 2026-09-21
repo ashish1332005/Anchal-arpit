@@ -328,19 +328,15 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/invitation-main-bg.jpg')" }}
         >
-          {/* Confined strictly to upper open sky so resort building, pool & procession below are completely UNCOVERED! */}
-          <div className="relative z-10 pt-8 sm:pt-10 space-y-1 sm:space-y-1.5 overflow-y-auto max-h-[82vh] no-scrollbar max-w-sm mx-auto">
-            {/* Religious Invocations */}
-            <div className="flex flex-wrap items-center justify-center gap-1.5 text-[#5A121E]">
-              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
-                || श्री गणेशाय नमः ||
-              </span>
-              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
-                || श्री रामचंद्राय नमः ||
-              </span>
-              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
-                || श्री सेठ माता री ||
-              </span>
+          {/* Confined strictly to upper open sky so resort fountain & arches below are completely UNCOVERED! */}
+          <div className="relative z-10 pt-6 sm:pt-8 space-y-1 max-w-sm mx-auto px-3">
+            {/* Religious Invocation */}
+            <div className="flex items-center justify-center gap-1.5 text-[#5A121E]">
+              <span className="w-4 h-[1px] bg-[#8B6508]/40" />
+              <p className="font-cinzel text-xs tracking-widest text-[#5A121E] font-bold">
+                ॥ श्री गणेशाय नमः ॥
+              </p>
+              <span className="w-4 h-[1px] bg-[#8B6508]/40" />
             </div>
 
             {/* A-अ Couple Monogram */}
@@ -348,59 +344,76 @@ export default function App() {
               <img
                 src="/assets/couple_logo.png"
                 alt="A-अ Logo"
-                className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm"
+                className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm"
               />
             </div>
 
-            <p className="font-cormorant italic text-xs sm:text-sm text-[#2C1518] font-bold leading-tight">
-              With the divine blessings of Smt. Ratan Devi &amp; late Shree Ram Rai Ji Kabra,
+            <p className="font-cormorant italic text-xs sm:text-[13px] text-[#2C1518] font-semibold leading-tight pt-0.5">
+              With the divine blessings of Smt. Ratan Devi &amp; Late Shree Ram Rai Ji Kabra
             </p>
 
-            <p className="font-cormorant text-[11px] sm:text-xs font-bold text-[#2C1518] max-w-xs mx-auto leading-tight">
-              we, Kabra Family, request the pleasure of your gracious presence at the wedding ceremony of our beloved son
+            <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] max-w-xs mx-auto leading-tight">
+              Kabra Family, requests the pleasure of your gracious presence at the wedding ceremony of their beloved son
             </p>
 
             {/* GROOM SECTION (FIRST) */}
-            <div className="pt-0.5">
-              <span className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.25em] text-[#8B6508] font-bold uppercase">
-                GROOM
-              </span>
+            <div className="pt-1 space-y-0.5">
+              <div className="flex items-center justify-center gap-1 text-[#8B6508] text-[9px] sm:text-[10px] tracking-[0.25em] font-bold uppercase">
+                <span className="w-5 h-[1px] bg-[#8B6508]/40" />
+                <span>GROOM</span>
+                <span className="w-5 h-[1px] bg-[#8B6508]/40" />
+              </div>
               <h2 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold tracking-wider drop-shadow-xs">
                 ARPIT KABRA
               </h2>
-              <p className="font-cormorant text-[11px] sm:text-xs font-bold text-[#2C1518] leading-tight mt-0.5">
+              <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 S/o — Sanjay Kabra &amp; Rinku Kabra
               </p>
-              <p className="font-cormorant text-[11px] sm:text-xs font-bold text-[#2C1518] leading-tight">
+              <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 G/S/o — Smt. Ratan Devi Kabra &amp; Late Shree Ram Rai Ji Kabra
               </p>
             </div>
 
-            <p className="font-allura text-xl text-[#8B6508] font-bold my-0 leading-none">with</p>
+            {/* with and Lotus divider */}
+            <div className="py-0.5 space-y-0.5">
+              <div className="flex items-center justify-center gap-2">
+                <span className="w-8 h-[1px] bg-[#8B6508]/40" />
+                <span className="font-allura text-2xl text-[#8B6508] font-bold leading-none">with</span>
+                <span className="w-8 h-[1px] bg-[#8B6508]/40" />
+              </div>
+              <LotusDivider color="#D4AF37" className="scale-75 origin-center my-0" />
+            </div>
 
             {/* BRIDE SECTION (SECOND) */}
-            <div>
-              <span className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.25em] text-[#8B6508] font-bold uppercase">
-                BRIDE
-              </span>
-              <h2 className="font-playfair text-xl sm:text-2xl text-[#C2185B] font-bold tracking-wider drop-shadow-xs">
+            <div className="space-y-0.5">
+              <div className="flex items-center justify-center gap-1 text-[#8B6508] text-[9px] sm:text-[10px] tracking-[0.25em] font-bold uppercase">
+                <span className="w-5 h-[1px] bg-[#8B6508]/40" />
+                <span>BRIDE</span>
+                <span className="w-5 h-[1px] bg-[#8B6508]/40" />
+              </div>
+              <h2 className="font-playfair text-xl sm:text-2xl text-[#8E1438] font-bold tracking-wider drop-shadow-xs">
                 ANCHAL CHECHANI
               </h2>
-              <p className="font-cormorant text-[11px] sm:text-xs font-bold text-[#2C1518] leading-tight mt-0.5">
+              <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 D/o — Dinesh Chechani &amp; Leela Devi Chechani
               </p>
-              <p className="font-cormorant text-[11px] sm:text-xs font-bold text-[#2C1518] leading-tight">
+              <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 G/D/o — Smt. Janki Devi Chechani &amp; Shree Shivlal Ji Chechani
               </p>
             </div>
 
-            {/* Date & Venue in a clean floating translucent badge */}
-            <div className="pt-1">
-              <div className="inline-block bg-[#FAF7F2]/95 backdrop-blur-xs px-3.5 py-1 rounded-full border border-[#D4AF37]/60 shadow-xs">
-                <p className="font-cinzel text-[10px] sm:text-[11px] tracking-widest text-[#5A121E] font-bold uppercase">
-                  11 &amp; 12 DECEMBER 2026 • GLORIA INN, BHILWARA
-                </p>
-              </div>
+            {/* Date & Venue in Ornate Card */}
+            <div className="pt-1.5">
+              <OrnateCard isDark={false} maxWidth="max-w-xs sm:max-w-sm">
+                <div className="flex items-center justify-center gap-2 text-center py-0.5 text-[#5A121E] font-cinzel font-bold text-[10px] sm:text-xs tracking-wider">
+                  <Calendar className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                  <span>11 &amp; 12 DECEMBER 2026</span>
+                  <span className="text-[#D4AF37] mx-0.5">|</span>
+                  <Navigation className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                  <span>GLORIA INN, BHILWARA</span>
+                </div>
+              </OrnateCard>
+              <LotusDivider color="#D4AF37" className="scale-75 origin-center mt-1" />
             </div>
           </div>
 
