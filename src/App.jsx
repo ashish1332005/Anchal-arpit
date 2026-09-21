@@ -330,13 +330,17 @@ export default function App() {
         >
           {/* Confined strictly to upper open sky so resort fountain & arches below are completely UNCOVERED! */}
           <div className="relative z-10 pt-6 sm:pt-8 space-y-1 max-w-sm mx-auto px-3">
-            {/* Religious Invocation */}
-            <div className="flex items-center justify-center gap-1.5 text-[#5A121E]">
-              <span className="w-4 h-[1px] bg-[#8B6508]/40" />
-              <p className="font-cinzel text-xs tracking-widest text-[#5A121E] font-bold">
-                ॥ श्री गणेशाय नमः ॥
-              </p>
-              <span className="w-4 h-[1px] bg-[#8B6508]/40" />
+            {/* Religious Invocations */}
+            <div className="flex flex-wrap items-center justify-center gap-1.5 text-[#5A121E]">
+              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
+                || श्री गणेशाय नमः ||
+              </span>
+              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
+                || श्री रामचंद्राय नमः ||
+              </span>
+              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
+                || श्री सेठ माता री ||
+              </span>
             </div>
 
             {/* A-अ Couple Monogram */}
