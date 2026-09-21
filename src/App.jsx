@@ -335,7 +335,7 @@ export default function App() {
             </div>
 
             <p className="font-cormorant italic text-xs sm:text-[13px] text-[#2C1518] font-semibold leading-tight pt-0.5">
-              With the divine blessings of Smt. Ratan Devi &amp; Late Shree Ram Rai Ji Kabra
+              With the divine blessings of Smt. Ratan Devi &amp; Shree Ram Rai Ji Kabra
             </p>
 
             <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] max-w-xs mx-auto leading-tight">
@@ -356,7 +356,7 @@ export default function App() {
                 S/o — Sanjay Kabra &amp; Rinku Kabra
               </p>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                G/S/o — Smt. Ratan Devi Kabra &amp; Late Shree Ram Rai Ji Kabra
+                G/S/o — Smt. Ratan Devi Kabra &amp; Shree Ram Rai Ji Kabra
               </p>
             </div>
 
@@ -384,7 +384,7 @@ export default function App() {
                 D/o — Dinesh Chechani &amp; Leela Devi Chechani
               </p>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                G/D/o — Smt. Janki Devi Chechani &amp; Shree Shivlal Ji Chechani
+                G/D/o — Smt. Janki Devi Chechani &amp; Late Shree Shivlal Ji Chechani
               </p>
             </div>
 

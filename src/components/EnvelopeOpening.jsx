@@ -213,7 +213,7 @@ export default function EnvelopeOpening({ onComplete, guestName, lang }) {
               {/* Invitation Host & Wedding Details */}
               <div className="space-y-1.5 my-auto">
                 <p className="font-cormorant italic text-xs text-[#2C1518] font-bold">
-                  With the divine blessings of Grandfather Kabra
+                  With the divine blessings of Smt. Ratan Devi &amp; Shree Ram Rai Ji Kabra
                 </p>
 
                 <h3 className="font-cormorant font-bold text-lg sm:text-xl text-[#6A1B29]">

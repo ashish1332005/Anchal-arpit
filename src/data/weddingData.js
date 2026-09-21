@@ -3,7 +3,7 @@ export const WEDDING_DETAILS = {
     bride: "Anchal",
     brideFull: "Anchal Chechani",
     brideParents: "Dinesh Chechani & Leela Devi Chechani",
-    brideGrandParents: "Smt. Janki Devi Chechani & Shree Shivlal Ji Chechani",
+    brideGrandParents: "Smt. Janki Devi Chechani & Late Shree Shivlal Ji Chechani",
 
     groom: "Arpit",
     groomFull: "Arpit Kabra",
@@ -155,7 +155,7 @@ export const WEDDING_DETAILS = {
       "Mansi – Yogesh Ji Mandowara"
     ],
     mithiManuhar: [
-      "Jyoti, Anagha"
+      "Jaydit, Anagh"
     ],
     specialRequest2: [
       "Ankit – Kavita Tapariya",
@@ -178,6 +178,7 @@ export const WEDDING_DETAILS = {
       "Ankit Spinners",
       "Bhilwara Taxfab",
       "Akashdeep Motors",
+      "Madadeep Automobiles",
       "Satyam Jewellers"
     ],
     nanihaalPaksh: {
