@@ -24,7 +24,7 @@ export const WEDDING_DETAILS = {
   invocations: [
     { hi: "|| श्री गणेशाय नमः ||", en: "Shree Ganeshay Namah" },
     { hi: "|| श्री रामचंद्राय नमः ||", en: "Shree Ramchandra Namah" },
-    { hi: "|| श्री सेठ माता री ||", en: "Shree Seth Mata Ri" },
+    { hi: "|| समस्त पितृ देव||", en: "Shree Seth Mata Ri" },
   ],
 
   december11Events: [
