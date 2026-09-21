@@ -282,15 +282,6 @@ export default function App() {
               <Calendar className="w-3.5 h-3.5" />
             </a>
 
-            {/* Language Switcher */}
-            <button
-              onClick={() => setLang(lang === 'en' ? 'hi' : 'en')}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-[#5A121E]/90 backdrop-blur-md border border-[#D4AF37] text-[#F7D070] font-cinzel text-xs font-semibold hover:bg-[#800020] transition-colors shadow-xl"
-            >
-              <Globe className="w-3.5 h-3.5 text-[#F7D070]" />
-              <span>{lang === 'en' ? 'हिन्दी' : 'EN'}</span>
-            </button>
-
             {/* Share Link */}
             <button
               onClick={handleShare}
@@ -298,15 +289,6 @@ export default function App() {
               title="Share Card"
             >
               <Share2 className="w-3.5 h-3.5" />
-            </button>
-
-            {/* RSVP Modal Trigger */}
-            <button
-              onClick={() => setIsRsvpOpen(true)}
-              className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#FBF5B7] to-[#AA771C] text-[#5A121E] font-cinzel text-xs uppercase tracking-wider font-bold shadow-xl hover:scale-105 transition-transform"
-            >
-              <MessageSquare className="w-3.5 h-3.5" />
-              <span>RSVP</span>
             </button>
           </div>
         </div>
