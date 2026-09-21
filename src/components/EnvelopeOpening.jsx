@@ -165,7 +165,7 @@ export default function EnvelopeOpening({ onComplete, guestName, lang }) {
             <div 
               className="absolute inset-0 bg-cover bg-center opacity-90"
               style={{ 
-                backgroundImage: "url('/assets/royal_inner_card_bg.jpg')",
+                backgroundImage: "url('/assets/couple-garden-bg.jpg')",
                 backgroundColor: '#FAF5EA'
               }}
             />
@@ -185,7 +185,7 @@ export default function EnvelopeOpening({ onComplete, guestName, lang }) {
               'z-50 -translate-y-[110%] scale-[1.12] opacity-0 shadow-[0_30px_60px_rgba(60,20,10,0.4)]'
             }`}
             style={{
-              backgroundImage: "url('/assets/royal_inner_card_bg.jpg')",
+              backgroundImage: "url('/assets/couple-garden-bg.jpg')",
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
