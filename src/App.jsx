@@ -511,18 +511,14 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/carnival-bg.png')" }}
         >
           {/* Confined to upper sky so floral arch, fountain & pavilions below are completely visible! */}
-          <div className="relative z-10 pt-13 sm:pt-15 space-y-1.5 max-w-sm mx-auto px-4">
-            <div className="flex justify-center">
-              <img src="/assets/couple_logo.png" alt="A-अ" className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm" />
-            </div>
-
-            <LotusDivider color="#D4AF37" />
-
+          <div className="relative z-10 pt-8 sm:pt-10 space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
               <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
                 Carnival
               </h2>
             </TitleFlourish>
+
+            <LotusDivider color="#D4AF37" />
 
             <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
               "A vibrant celebration of laughter, love, music and endless memories"
@@ -555,13 +551,7 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/sangeet-bg.png')" }}
         >
           {/* Confined strictly to upper dark starry sky so dancing couple is 100% UNTOUCHED! */}
-          <div className="relative z-10 pt-13 sm:pt-15 space-y-1.5 max-w-sm mx-auto px-4">
-            <div className="flex justify-center">
-              <img src="/assets/couple_logo_gold.png" alt="A-अ" className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-md" />
-            </div>
-
-            <LotusDivider color="#D4AF37" />
-
+          <div className="relative z-10 pt-8 sm:pt-10 space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#F7D070">
               <h2 className="font-playfair text-2xl sm:text-3xl text-gold-gradient font-bold drop-shadow-md tracking-wide leading-tight">
                 Sangeet &amp; Ring Ceremony
@@ -585,6 +575,8 @@ export default function App() {
               "Let's dance, let's sing, let our hearts take flight,
               As we celebrate this love under the stars tonight."
             </p>
+
+            <LotusDivider color="#D4AF37" />
           </div>
 
           <RoyalSwipeUp onClick={() => scrollToSlide(5)} />
