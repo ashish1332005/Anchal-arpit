@@ -317,27 +317,27 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-6 sm:p-8 overflow-hidden bg-cover bg-center text-center text-white select-none"
           style={{ backgroundImage: "url('/assets/vinayak-bg.png')" }}
         >
-          {/* Confined to upper 25% area so glowing Ganesha idol at bottom is 100% visible! */}
-          <div className="relative z-10 pt-14 sm:pt-16 space-y-2 max-w-sm mx-auto">
+          {/* Confined to upper area so glowing Ganesha idol at bottom is 100% visible! */}
+          <div className="relative z-10 pt-16 sm:pt-20 space-y-3 sm:space-y-4 max-w-md mx-auto px-4">
             <div className="flex items-center justify-center">
-              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="w-9 h-9 object-contain drop-shadow-md" />
+              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="w-11 h-11 sm:w-12 sm:h-12 object-contain drop-shadow-md" />
             </div>
-            <p className="font-cinzel text-xs sm:text-sm tracking-widest text-[#F7D070] font-bold uppercase drop-shadow-md">
+            <p className="font-cinzel text-sm sm:text-base tracking-[0.2em] text-[#F7D070] font-bold uppercase drop-shadow-md">
               || श्री गणेशाय नमः ||
             </p>
 
-            <h2 className="font-playfair text-4xl sm:text-5xl text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] font-bold tracking-wide">
+            <h2 className="font-playfair text-5xl sm:text-6xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] font-bold tracking-wide">
               Vinayak Sthapna
             </h2>
 
-            <div className="space-y-1 font-cormorant text-white pt-1">
-              <p className="font-bold text-base sm:text-lg text-[#FFF5C0] drop-shadow-sm">
+            <div className="space-y-1.5 font-cormorant text-white pt-1">
+              <p className="font-bold text-xl sm:text-2xl text-[#FFF5C0] drop-shadow-sm">
                 Friday, 11th December 2026 • 07:00 AM Onwards
               </p>
-              <p className="text-sm sm:text-base text-[#F7D070] font-bold">
+              <p className="text-lg sm:text-xl text-[#F7D070] font-bold drop-shadow-sm">
                 (Breakfast : 09:00 AM Onwards)
               </p>
-              <p className="font-cinzel text-xs sm:text-sm tracking-wider text-white/95 font-bold uppercase">
+              <p className="font-cinzel text-sm sm:text-base tracking-[0.2em] text-white/95 font-bold uppercase pt-0.5">
                 Gloria Inn, Bhilwara
               </p>
             </div>
@@ -362,12 +362,12 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/carnival-bg.png')" }}
         >
           {/* Confined to upper sky so couple & carnival stalls are completely visible! */}
-          <div className="relative z-10 pt-14 sm:pt-16 space-y-2 max-w-sm mx-auto">
+          <div className="relative z-10 pt-16 sm:pt-20 space-y-3 sm:space-y-4 max-w-md mx-auto px-4">
             <div className="flex justify-center">
               <img
                 src="/assets/couple_logo.png"
                 alt="A-अ Monogram"
-                className="w-9 h-9 object-contain drop-shadow-sm"
+                className="w-11 h-11 sm:w-12 sm:h-12 object-contain drop-shadow-sm"
               />
             </div>
 
@@ -375,18 +375,18 @@ export default function App() {
               The Wedding Carnival
             </h2>
 
-            <p className="font-cormorant italic text-sm sm:text-base font-bold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <p className="font-cormorant italic text-lg sm:text-xl font-bold text-[#2C1518] max-w-md mx-auto leading-relaxed">
               "A vibrant celebration of laughter, love, music and endless memories"
             </p>
 
-            <div className="space-y-1 font-cormorant text-[#2C1518] pt-1">
-              <p className="font-bold text-base sm:text-lg text-[#5A121E]">
+            <div className="space-y-1.5 font-cormorant text-[#2C1518] pt-1">
+              <p className="font-bold text-xl sm:text-2xl text-[#5A121E]">
                 Friday, 11th December 2026 • 11:00 AM Onwards
               </p>
-              <p className="text-sm sm:text-base text-[#8B6508] font-bold">
+              <p className="text-lg sm:text-xl text-[#8B6508] font-bold">
                 (Lunch — Carnival : 01:00 PM Onwards)
               </p>
-              <p className="font-cinzel text-xs sm:text-sm tracking-wider text-[#5A121E] font-bold uppercase">
+              <p className="font-cinzel text-sm sm:text-base tracking-[0.2em] text-[#5A121E] font-bold uppercase pt-0.5">
                 Gloria Inn, Bhilwara
               </p>
             </div>
@@ -410,17 +410,17 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-6 sm:p-8 overflow-hidden bg-cover bg-center text-center text-white select-none"
           style={{ backgroundImage: "url('/assets/sangeet-bg.png')" }}
         >
-          {/* Tightly confined to upper chandeliers (top 26%) so dancing couple & glittering lehenga are 100% UNCOVERED! */}
-          <div className="relative z-10 pt-14 sm:pt-16 space-y-2 max-w-sm mx-auto">
+          {/* Upper chandeliers area so dancing couple & glittering lehenga are 100% UNCOVERED! */}
+          <div className="relative z-10 pt-16 sm:pt-20 space-y-3 sm:space-y-4 max-w-md mx-auto px-4">
             <div className="flex justify-center">
               <img
                 src="/assets/couple_logo_gold.png"
                 alt="A-अ Monogram"
-                className="w-9 h-9 object-contain drop-shadow-md"
+                className="w-11 h-11 sm:w-12 sm:h-12 object-contain drop-shadow-md"
               />
             </div>
 
-            <p className="font-cinzel text-xs sm:text-sm tracking-[0.25em] text-[#F7D070] font-bold uppercase drop-shadow-sm">
+            <p className="font-cinzel text-sm sm:text-base tracking-[0.25em] text-[#F7D070] font-bold uppercase drop-shadow-sm">
               THE SANGEET NIGHT
             </p>
 
@@ -428,17 +428,17 @@ export default function App() {
               Sangeet & Ring Ceremony
             </h2>
 
-            <div className="space-y-1 font-cormorant text-white pt-1">
-              <p className="font-bold text-base sm:text-lg text-[#FFF5C0] drop-shadow-sm">
+            <div className="space-y-1.5 font-cormorant text-white pt-1">
+              <p className="font-bold text-xl sm:text-2xl text-[#FFF5C0] drop-shadow-sm">
                 Friday, 11th December 2026 • 07:00 PM Onwards
               </p>
-              <p className="font-cinzel text-xs sm:text-sm tracking-wider text-white/95 font-bold uppercase">
+              <p className="font-cinzel text-sm sm:text-base tracking-[0.2em] text-white/95 font-bold uppercase pt-0.5">
                 Gloria Inn, Bhilwara
               </p>
             </div>
 
-            {/* Couplet — Compact elegant floating italic quote */}
-            <p className="font-cormorant italic text-sm sm:text-base text-[#FFF9D2] max-w-xs mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] pt-1 leading-snug">
+            {/* Couplet — Elegant floating italic quote */}
+            <p className="font-cormorant italic text-base sm:text-lg text-[#FFF9D2] max-w-md mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] pt-1 leading-relaxed">
               "Let's dance, let's sing, let our hearts take flight,
               As we celebrate this love under the stars tonight."
             </p>
@@ -463,23 +463,23 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/kalash-bg.png')" }}
         >
           {/* Confined to upper temple arch so golden Kalash & ladies are completely visible! */}
-          <div className="relative z-10 pt-14 sm:pt-16 space-y-2 max-w-sm mx-auto">
+          <div className="relative z-10 pt-16 sm:pt-20 space-y-3.5 sm:space-y-4 max-w-md mx-auto px-4">
             <div className="flex items-center justify-center">
-              <img src="/assets/shubharambh.png" alt="|| शुभारंभ ||" className="h-9 w-auto object-contain drop-shadow-sm" />
+              <img src="/assets/shubharambh.png" alt="|| शुभारंभ ||" className="h-10 sm:h-12 w-auto object-contain drop-shadow-sm" />
             </div>
 
-            <h2 className="font-playfair text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-md tracking-wide">
+            <h2 className="font-playfair text-5xl sm:text-6xl text-[#5A121E] font-bold drop-shadow-md tracking-wide">
               Mangal Kalash
             </h2>
 
-            <div className="space-y-1 font-cormorant text-[#2C1518] pt-1">
-              <p className="font-bold text-base sm:text-lg text-[#5A121E]">
+            <div className="space-y-1.5 font-cormorant text-[#2C1518] pt-1">
+              <p className="font-bold text-xl sm:text-2xl text-[#5A121E]">
                 Saturday, 12th December 2026 • 09:00 AM Onwards
               </p>
-              <p className="text-sm sm:text-base text-[#8B6508] font-bold">
+              <p className="text-lg sm:text-xl text-[#8B6508] font-bold">
                 (Breakfast : 09:00 AM Onwards)
               </p>
-              <p className="font-cinzel text-xs sm:text-sm tracking-wider text-[#5A121E] font-bold uppercase">
+              <p className="font-cinzel text-sm sm:text-base tracking-[0.2em] text-[#5A121E] font-bold uppercase pt-0.5">
                 Gloria Inn, Bhilwara
               </p>
             </div>
@@ -504,24 +504,24 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/bhaatbharai-bg.png')" }}
         >
           {/* Confined to upper palace arch so royal gift baskets & sweets are completely visible! */}
-          <div className="relative z-10 pt-14 sm:pt-16 space-y-2 max-w-sm mx-auto">
+          <div className="relative z-10 pt-16 sm:pt-20 space-y-3.5 sm:space-y-4 max-w-md mx-auto px-4">
             <div className="flex justify-center">
-              <img src="/assets/couple_logo.png" alt="A-अ" className="w-9 h-9 object-contain drop-shadow-sm" />
+              <img src="/assets/couple_logo.png" alt="A-अ" className="w-11 h-11 sm:w-12 sm:h-12 object-contain drop-shadow-sm" />
             </div>
 
-            <h2 className="font-playfair text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-md tracking-wide">
+            <h2 className="font-playfair text-5xl sm:text-6xl text-[#5A121E] font-bold drop-shadow-md tracking-wide">
               Mayra
             </h2>
 
-            <p className="font-cormorant italic text-sm sm:text-base font-bold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <p className="font-cormorant italic text-lg sm:text-xl font-bold text-[#2C1518] max-w-md mx-auto leading-relaxed">
               "Where traditions are cherished and blessings are shared"
             </p>
 
-            <div className="space-y-1 font-cormorant text-[#2C1518] pt-1">
-              <p className="font-bold text-base sm:text-lg text-[#5A121E]">
+            <div className="space-y-1.5 font-cormorant text-[#2C1518] pt-1">
+              <p className="font-bold text-xl sm:text-2xl text-[#5A121E]">
                 Saturday, 12th December 2026 • 11:00 AM Onwards
               </p>
-              <p className="font-cinzel text-xs sm:text-sm tracking-wider text-[#8B6508] font-bold uppercase">
+              <p className="font-cinzel text-sm sm:text-base tracking-[0.2em] text-[#8B6508] font-bold uppercase pt-0.5">
                 Gloria Inn, Bhilwara
               </p>
             </div>
@@ -546,33 +546,33 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/welcomefeast-bg.png')" }}
         >
           {/* Confined to upper garden arch so royal banquet tables & guests are completely visible! */}
-          <div className="relative z-10 pt-14 sm:pt-16 space-y-2 max-w-sm mx-auto">
+          <div className="relative z-10 pt-16 sm:pt-20 space-y-3.5 sm:space-y-4 max-w-md mx-auto px-4">
             <div className="flex justify-center">
-              <img src="/assets/couple_logo.png" alt="A-अ" className="w-9 h-9 object-contain drop-shadow-sm" />
+              <img src="/assets/couple_logo.png" alt="A-अ" className="w-11 h-11 sm:w-12 sm:h-12 object-contain drop-shadow-sm" />
             </div>
 
-            <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-md tracking-wide">
+            <h2 className="font-playfair text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-md tracking-wide">
               Milni, Badhai & Nikasi
             </h2>
 
-            <p className="font-cormorant italic text-sm sm:text-base font-bold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <p className="font-cormorant italic text-lg sm:text-xl font-bold text-[#2C1518] max-w-md mx-auto leading-relaxed">
               "Welcoming our dear ones with open hearts and warm smiles"
             </p>
 
-            <div className="space-y-1.5 font-cormorant text-[#2C1518] pt-1">
-              <p className="font-bold text-base sm:text-lg text-[#5A121E]">
+            <div className="space-y-2.5 font-cormorant text-[#2C1518] pt-1">
+              <p className="font-bold text-xl sm:text-2xl text-[#5A121E]">
                 Saturday, 12th December 2026 • Gloria Inn, Bhilwara
               </p>
 
-              {/* Compact horizontal chip */}
-              <div className="inline-flex flex-wrap items-center justify-center gap-2 bg-[#FAF7F2]/95 backdrop-blur-sm px-3.5 py-1.5 rounded-lg border border-[#D4AF37]/50 shadow-xs text-xs sm:text-sm font-bold">
-                <span className="text-[#5A121E]">Milni 4:00 PM</span>
+              {/* Enhanced horizontal chip */}
+              <div className="inline-flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 bg-[#FAF7F2]/95 backdrop-blur-sm px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-[#D4AF37]/60 shadow-md text-sm sm:text-base font-bold font-cormorant">
+                <span className="text-[#5A121E] font-bold">Milni 4:00 PM</span>
                 <span className="text-[#D4AF37]">•</span>
-                <span className="text-[#5A121E]">Badhai 4:00 PM</span>
+                <span className="text-[#5A121E] font-bold">Badhai 4:00 PM</span>
                 <span className="text-[#D4AF37]">•</span>
-                <span className="text-[#5A121E]">Laddu Jalai 4:30 PM</span>
+                <span className="text-[#5A121E] font-bold">Laddu Jalai 4:30 PM</span>
                 <span className="text-[#D4AF37]">•</span>
-                <span className="text-[#8B6508]">Nikasi 6:00 PM</span>
+                <span className="text-[#8B6508] font-bold">Nikasi 6:00 PM</span>
               </div>
             </div>
           </div>
@@ -603,32 +603,32 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/60" />
 
           {/* Confined to upper area */}
-          <div className="relative z-10 pt-14 sm:pt-16 space-y-2 max-w-sm mx-auto">
+          <div className="relative z-10 pt-16 sm:pt-20 space-y-3 sm:space-y-4 max-w-md mx-auto px-4">
             <div className="flex justify-center">
-              <img src="/assets/couple_logo_gold.png" alt="A-अ" className="w-9 h-9 object-contain drop-shadow-md" />
+              <img src="/assets/couple_logo_gold.png" alt="A-अ" className="w-11 h-11 sm:w-12 sm:h-12 object-contain drop-shadow-md" />
             </div>
 
-            <h2 className="font-playfair text-3xl sm:text-4xl text-gold-gradient font-bold drop-shadow-md tracking-wide">
+            <h2 className="font-playfair text-4xl sm:text-5xl text-gold-gradient font-bold drop-shadow-md tracking-wide">
               Reception & Sacred Pheras
             </h2>
 
-            <div className="space-y-1.5 font-cormorant text-white pt-1">
-              <p className="font-bold text-base sm:text-lg text-[#FFF5C0]">
+            <div className="space-y-2 font-cormorant text-white pt-1">
+              <p className="font-bold text-xl sm:text-2xl text-[#FFF5C0]">
                 Saturday, 12th December 2026 • Gloria Inn, Bhilwara
               </p>
 
-              {/* Compact horizontal chip */}
-              <div className="inline-flex flex-wrap items-center justify-center gap-2 bg-black/65 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-[#D4AF37]/50 shadow-xs text-xs sm:text-sm font-bold">
-                <span className="text-[#F7D070]">Reception & Dinner 7:00 PM</span>
+              {/* Enhanced horizontal chip */}
+              <div className="inline-flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 bg-black/65 backdrop-blur-md px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-[#D4AF37]/60 shadow-md text-sm sm:text-base font-bold font-cormorant">
+                <span className="text-[#F7D070] font-bold">Reception & Dinner 7:00 PM</span>
                 <span className="text-[#D4AF37]">•</span>
-                <span className="text-white">Toran 8:30 PM</span>
+                <span className="text-white font-bold">Toran 8:30 PM</span>
                 <span className="text-[#D4AF37]">•</span>
-                <span className="text-[#FFF5C0]">Pheras 10:30 PM</span>
+                <span className="text-[#FFF5C0] font-bold">Pheras 10:30 PM</span>
               </div>
             </div>
 
             {/* Couplet */}
-            <p className="font-cormorant italic text-sm sm:text-base text-[#FFF5C0] max-w-xs mx-auto drop-shadow-md pt-1 leading-snug">
+            <p className="font-cormorant italic text-base sm:text-lg text-[#FFF5C0] max-w-md mx-auto drop-shadow-md pt-1 leading-relaxed">
               "With loved ones near and promises true, we begin the journey of a lifetime, as one, not two."
             </p>
           </div>
