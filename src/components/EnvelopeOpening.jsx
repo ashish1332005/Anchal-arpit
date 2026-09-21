@@ -217,25 +217,26 @@ export default function EnvelopeOpening({ onComplete, guestName, lang }) {
                 </p>
 
                 <h3 className="font-cormorant font-bold text-lg sm:text-xl text-[#6A1B29]">
-                  Kabra & Chechani Family
+                  Kabra Family
                 </h3>
 
                 <p className="font-cormorant text-[11px] font-bold text-[#2C1518] max-w-xs mx-auto leading-tight">
-                  request the pleasure of your gracious presence at the wedding ceremony of
+                  request the pleasure of your gracious presence at the wedding ceremony of their beloved son
                 </p>
 
-                {/* Bride & Groom Names with Center A-अ Monogram */}
+                {/* Groom & Bride Names with Center A-अ Monogram */}
                 <div className="pt-1 flex flex-col items-center">
                   <h2 className="font-allura text-3xl sm:text-4xl text-[#6A1B29] font-bold drop-shadow-sm">
-                    Anchal
+                    Arpit
                   </h2>
                   <img 
                     src="/assets/couple_logo.png" 
                     alt="A-अ Logo" 
                     className="w-9 h-9 object-contain drop-shadow-sm my-0.5" 
+                    title="A-अ"
                   />
                   <h2 className="font-allura text-3xl sm:text-4xl text-[#6A1B29] font-bold drop-shadow-sm">
-                    Arpit
+                    Anchal
                   </h2>
                 </div>
               </div>
