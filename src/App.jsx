@@ -326,7 +326,7 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/couple-garden-bg.jpg')" }}
+          style={{ backgroundImage: "url('/assets/invitation-main-bg.jpg')" }}
         >
           {/* Confined strictly to upper open sky so resort building, pool & procession below are completely UNCOVERED! */}
           <div className="relative z-10 pt-8 sm:pt-10 space-y-1 sm:space-y-1.5 overflow-y-auto max-h-[82vh] no-scrollbar max-w-sm mx-auto">
