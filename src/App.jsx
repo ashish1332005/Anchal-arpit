@@ -321,7 +321,7 @@ export default function App() {
                 || श्री रामचंद्राय नमः ||
               </span>
               <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
-                || श्री सेठ माता री ||
+               || समस्त पितृ देव ||
               </span>
             </div>
 
@@ -353,7 +353,7 @@ export default function App() {
                 ARPIT KABRA
               </h2>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                S/o — Sanjay Kabra &amp; Rinku Kabra
+                S/o — Rinku Kabra &amp Sanjay Kabra; 
               </p>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 G/S/o — Smt. Ratan Devi Kabra &amp; Shree Ram Rai Ji Kabra
@@ -381,10 +381,10 @@ export default function App() {
                 ANCHAL CHECHANI
               </h2>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                D/o — Dinesh Chechani &amp; Leela Devi Chechani
+                D/o — Leela Devi Chechani &amp Dinesh Chechani; 
               </p>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                G/D/o — Smt. Janki Devi Chechani &amp; Late Shree Shivlal Ji Chechani
+                G/D/o — Late Smt. Janki Devi Chechani &amp; Late Shree Shivlal Ji Chechani
               </p>
             </div>
 
