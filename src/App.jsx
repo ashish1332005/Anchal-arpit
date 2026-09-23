@@ -683,16 +683,11 @@ export default function App() {
 
             <LotusDivider color="#D4AF37" />
 
-            <div className="space-y-0.5">
+            <TitleFlourish color="#5A121E">
               <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
-                Milni, Badhai &amp;
+                Wedding Ceremony
               </h2>
-              <TitleFlourish color="#5A121E">
-                <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
-                  Nikasi
-                </h2>
-              </TitleFlourish>
-            </div>
+            </TitleFlourish>
 
             <p className="font-cormorant italic text-sm sm:text-base font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
               "Welcoming our dear ones with open hearts and warm smiles"
@@ -939,24 +934,24 @@ export default function App() {
               ))}
             </div>
 
-            {/* MITHI MANUHAR */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
-                MITHI MANUHAR
-              </p>
-              {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
-                  {item}
-                </p>
-              ))}
-            </div>
-
             {/* SPECIAL REQUEST 2 */}
             <div className="space-y-0.5">
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SPECIAL REQUEST
               </p>
               {WEDDING_DETAILS.family.specialRequest2.map((item, idx) => (
+                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
+                  {item}
+                </p>
+              ))}
+            </div>
+
+            {/* MITHI MANUHAR */}
+            <div className="space-y-0.5">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+                MITHI MANUHAR
+              </p>
+              {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
                 <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
                   {item}
                 </p>
