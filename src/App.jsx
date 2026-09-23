@@ -386,7 +386,7 @@ export default function App() {
                 <span className="font-allura text-2xl text-[#8B6508] font-bold leading-none">with</span>
                 <span className="w-8 h-[1px] bg-[#8B6508]/40" />
               </div>
-              <LotusDivider color="#D4AF37" className="scale-75 origin-center my-0" />
+             
             </div>
 
             {/* BRIDE SECTION (SECOND) */}
@@ -442,7 +442,7 @@ export default function App() {
             </p>
 
             <div className="flex items-center justify-center gap-2 sm:gap-3">
-              <img src="/assets/image.png" alt={WEDDING_DETAILS.couple.groom} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
+              <img src="/assets/ChatGPT Image Sep 23, 2026, 08_32_01 PM.png" alt={WEDDING_DETAILS.couple.groom} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
               <span className="font-allura text-3xl text-[#F7D070]">&amp;</span>
               <img src="/assets/ChatGPT Image Sep 23, 2026, 08_25_40 PM.png" alt={WEDDING_DETAILS.couple.bride} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
             </div>
@@ -457,9 +457,7 @@ export default function App() {
               </button>
             </div>
 
-            <p className="font-cormorant text-base sm:text-lg text-[#F7D070] font-semibold pt-1">
-              {WEDDING_DETAILS.dates.venueName}
-            </p>
+          
           </div>
 
           <div className="relative z-10 pb-2 space-y-1">
