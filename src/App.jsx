@@ -683,15 +683,12 @@ export default function App() {
             </div>
 
             <LotusDivider color="#D4AF37" />
-
+  <TitleFlourish color="#5A121E">
             <div className="space-y-0.5">
               <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
-                Milni, Badhai &amp;
+                Wedding Ceremony;
               </h2>
-              <TitleFlourish color="#5A121E">
-                <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
-                  Nikasi
-                </h2>
+            
               </TitleFlourish>
             </div>
 
@@ -902,175 +899,265 @@ export default function App() {
         {/* ======================================================== */}
         {/* SLIDE 11: WITH LOVE & BLESSINGS — PART 1 */}
         {/* ======================================================== */}
-        <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-center items-center p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
-          style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')" }}
-        >
-          {/* Content matching Screenshot 1 */}
-          <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-4 sm:space-y-5 py-4">
-            {/* Header */}
-            <div className="space-y-1">
-              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
-                With Love &amp; Blessings
-              </h2>
-              <div className="w-28 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-2" />
-            </div>
+<section
+  className="relative w-full min-h-[200dvh] text-center text-[#2C1518] select-none overflow-hidden"
+>
+  {/* ========================================================= */}
+  {/* FIXED / CONTINUOUS BACKGROUND — SAME FOR BOTH PARTS      */}
+  {/* ========================================================= */}
+  <div
+    className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: "url('/assets/rsvp-1-bg.png')",
+    }}
+  />
 
-            {/* WARM REGARDS */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
-                WARM REGARDS
-              </p>
-              {WEDDING_DETAILS.family.warmRegards.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
-                  {item}
-                </p>
-              ))}
-            </div>
+  {/* Optional soft overlay for readability */}
+  <div className="fixed inset-0 -z-10 bg-[#FAF7F2]/10 pointer-events-none" />
 
-            {/* SPECIAL REQUEST 1 */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
-                SPECIAL REQUEST
-              </p>
-              {WEDDING_DETAILS.family.specialRequest1.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
-                  {item}
-                </p>
-              ))}
-            </div>
+  {/* ========================================================= */}
+  {/* PART 1                                                     */}
+  {/* ========================================================= */}
+  <div className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center p-4 sm:p-6">
+    <div className="max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-4 sm:space-y-5 py-4">
 
-            {/* MITHI MANUHAR */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
-                MITHI MANUHAR
-              </p>
-              {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
-                  {item}
-                </p>
-              ))}
-            </div>
+      {/* HEADER */}
+      <div className="space-y-1">
+        <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
+          With Love &amp; Blessings
+        </h2>
 
-            {/* SPECIAL REQUEST 2 */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
-                SPECIAL REQUEST
-              </p>
-              {WEDDING_DETAILS.family.specialRequest2.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
-                  {item}
-                </p>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ======================================================== */}
-        {/* SLIDE 12: WITH LOVE & BLESSINGS — PART 2 (Continuation) */}
-        {/* ======================================================== */}
-        <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
-          style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')" }}
-        >
-          {/* Content matching Screenshot 2 */}
-          <div className="relative z-10 my-auto max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-3 sm:space-y-3.5 py-4">
-            {/* Inviting Quote */}
-            <div className="max-w-xs sm:max-w-sm mx-auto space-y-1">
-              <p className="font-cormorant italic text-sm sm:text-base text-[#2C1518] font-semibold leading-relaxed">
-                "{WEDDING_DETAILS.translations[lang].familyInviteQuote}"
-              </p>
-              <p className="font-playfair text-base sm:text-lg text-[#5A121E] font-bold">— Kabra &amp; Chechani Parivaar</p>
-            </div>
-
-            <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent mx-auto" />
-
-            {/* RSVP SECTION CARD */}
-            <div className="bg-[#FAF7F2]/90 backdrop-blur-xs rounded-xl p-2.5 border border-[#D4AF37]/60 shadow-xs max-w-sm mx-auto space-y-1">
-              <p className="font-cinzel text-[10px] sm:text-xs tracking-[0.2em] uppercase text-[#5A121E] font-bold">
-                RSVP
-              </p>
-              <p className="font-cormorant font-bold text-sm sm:text-base text-[#2C1518]">
-                {WEDDING_DETAILS.family.rsvp.names.join(' • ')}
-              </p>
-              <p className="font-cormorant text-xs sm:text-sm text-[#2C1518]">
-                {WEDDING_DETAILS.family.rsvp.address}, {WEDDING_DETAILS.family.rsvp.city}
-              </p>
-              {/* Phone numbers with click to call */}
-              <div className="pt-0.5 flex flex-wrap items-center justify-center gap-1.5">
-                {WEDDING_DETAILS.family.rsvp.phones.map((phone, idx) => (
-                  <a
-                    key={idx}
-                    href={`tel:+91${phone}`}
-                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#5A121E] text-[#F7D070] font-cinzel text-[10px] sm:text-xs font-bold hover:scale-105 transition-transform"
-                  >
-                    <Phone className="w-2.5 h-2.5" />
-                    <span>{phone}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* WITH BEST COMPLIMENTS */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
-                WITH BEST COMPLIMENTS
-              </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
-                {WEDDING_DETAILS.family.withBestCompliments.members}
-              </p>
-              <p className="font-cormorant font-bold text-xs sm:text-sm text-[#5A121E]">
-                {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
-              </p>
-            </div>
-
-            {/* FIRMS */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
-                FIRMS
-              </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto">
-                {WEDDING_DETAILS.family.firms.join(' • ')}
-              </p>
-            </div>
-
-            {/* NANIHAAL PAKSH */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
-                NANIHAAL PAKSH
-              </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518]">
-                {WEDDING_DETAILS.family.nanihaalPaksh.name}
-              </p>
-            </div>
-
-            {/* SAMDHI PARIVAAR */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
-                SAMDHI PARIVAAR
-              </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
-                {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
-              </p>
-            </div>
-
-            {/* Card Footer with A-अ Monogram */}
-            <div className="pt-2 border-t border-[#6A1B29]/20 flex flex-col items-center">
-              <div className="flex items-center gap-2">
-                <img
-                  src="/assets/couple_logo.png"
-                  alt="A-अ"
-                  className="w-5 h-5 object-contain"
-                />
-                <h3 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold">Arpit &amp; Anchal</h3>
-              </div>
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-widest uppercase text-[#2C1518] font-bold mt-0.5">
-                Gloria Inn, Bhilwara • 11 &amp; 12 December 2026
-              </p>
-            </div>
-          </div>
-        </section>
+        <div className="w-28 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-2" />
       </div>
+
+
+      {/* ===================================================== */}
+      {/* WARM REGARDS                                           */}
+      {/* ===================================================== */}
+      <div className="space-y-0.5">
+        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+          WARM REGARDS
+        </p>
+
+        {WEDDING_DETAILS.family.warmRegards.map((item, idx) => (
+          <p
+            key={idx}
+            className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight"
+          >
+            {item}
+          </p>
+        ))}
+      </div>
+
+
+      {/* ===================================================== */}
+      {/* SPECIAL REQUEST 1                                      */}
+      {/* ===================================================== */}
+      <div className="space-y-0.5">
+        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+          SPECIAL REQUEST
+        </p>
+
+        {WEDDING_DETAILS.family.specialRequest1.map((item, idx) => (
+          <p
+            key={idx}
+            className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight"
+          >
+            {item}
+          </p>
+        ))}
+      </div>
+
+
+      {/* ===================================================== */}
+      {/* MITHI MANUHAR — MOVED ABOVE SPECIAL REQUEST 2          */}
+      {/* ===================================================== */}
+      <div className="space-y-0.5">
+        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+          MITHI MANUHAR
+        </p>
+
+        {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
+          <p
+            key={idx}
+            className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight"
+          >
+            {item}
+          </p>
+        ))}
+      </div>
+
+
+      {/* ===================================================== */}
+      {/* SPECIAL REQUEST 2                                      */}
+      {/* ===================================================== */}
+      <div className="space-y-0.5">
+        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+          SPECIAL REQUEST
+        </p>
+
+        {WEDDING_DETAILS.family.specialRequest2.map((item, idx) => (
+          <p
+            key={idx}
+            className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight"
+          >
+            {item}
+          </p>
+        ))}
+      </div>
+
+    </div>
+  </div>
+
+
+  {/* ========================================================= */}
+  {/* PART 2 — SAME CONTINUOUS BACKGROUND                        */}
+  {/* ========================================================= */}
+  <div className="relative z-10 min-h-[100dvh] flex flex-col justify-center items-center p-4 sm:p-6">
+
+    <div className="max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-3 sm:space-y-3.5 py-4">
+
+      {/* ===================================================== */}
+      {/* INVITING QUOTE                                         */}
+      {/* ===================================================== */}
+      <div className="max-w-xs sm:max-w-sm mx-auto space-y-1">
+        <p className="font-cormorant italic text-sm sm:text-base text-[#2C1518] font-semibold leading-relaxed">
+          "{WEDDING_DETAILS.translations[lang].familyInviteQuote}"
+        </p>
+
+        <p className="font-playfair text-base sm:text-lg text-[#5A121E] font-bold">
+          — Kabra &amp; Chechani Parivaar
+        </p>
+      </div>
+
+
+      {/* DIVIDER */}
+      <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent mx-auto" />
+
+
+      {/* ===================================================== */}
+      {/* RSVP CARD                                              */}
+      {/* ===================================================== */}
+      <div className="bg-[#FAF7F2]/90 backdrop-blur-xs rounded-xl p-2.5 border border-[#D4AF37]/60 shadow-xs max-w-sm mx-auto space-y-1">
+
+        <p className="font-cinzel text-[10px] sm:text-xs tracking-[0.2em] uppercase text-[#5A121E] font-bold">
+          RSVP
+        </p>
+
+        <p className="font-cormorant font-bold text-sm sm:text-base text-[#2C1518]">
+          {WEDDING_DETAILS.family.rsvp.names.join(" • ")}
+        </p>
+
+        <p className="font-cormorant text-xs sm:text-sm text-[#2C1518]">
+          {WEDDING_DETAILS.family.rsvp.address},{" "}
+          {WEDDING_DETAILS.family.rsvp.city}
+        </p>
+
+
+        {/* PHONE NUMBERS */}
+        <div className="pt-0.5 flex flex-wrap items-center justify-center gap-1.5">
+          {WEDDING_DETAILS.family.rsvp.phones.map((phone, idx) => (
+            <a
+              key={idx}
+              href={`tel:+91${phone}`}
+              className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#5A121E] text-[#F7D070] font-cinzel text-[10px] sm:text-xs font-bold hover:scale-105 transition-transform"
+            >
+              <Phone className="w-2.5 h-2.5" />
+              <span>{phone}</span>
+            </a>
+          ))}
+        </div>
+
+      </div>
+
+
+      {/* ===================================================== */}
+      {/* WITH BEST COMPLIMENTS                                  */}
+      {/* ===================================================== */}
+      <div className="space-y-0.5">
+        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+          WITH BEST COMPLIMENTS
+        </p>
+
+        <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
+          {WEDDING_DETAILS.family.withBestCompliments.members}
+        </p>
+
+        <p className="font-cormorant font-bold text-xs sm:text-sm text-[#5A121E]">
+          {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
+        </p>
+      </div>
+
+
+      {/* ===================================================== */}
+      {/* FIRMS                                                   */}
+      {/* ===================================================== */}
+      <div className="space-y-0.5">
+        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+          FIRMS
+        </p>
+
+        <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
+          {WEDDING_DETAILS.family.firms.join(" • ")}
+        </p>
+      </div>
+
+
+      {/* ===================================================== */}
+      {/* NANIHAAL PAKSH                                          */}
+      {/* ===================================================== */}
+      <div className="space-y-0.5">
+        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+          NANIHAAL PAKSH
+        </p>
+
+        <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] leading-tight">
+          {WEDDING_DETAILS.family.nanihaalPaksh.name}
+        </p>
+      </div>
+
+
+      {/* ===================================================== */}
+      {/* SAMDHI PARIVAAR                                         */}
+      {/* ===================================================== */}
+      <div className="space-y-0.5">
+        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+          SAMDHI PARIVAAR
+        </p>
+
+        <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
+          {WEDDING_DETAILS.family.samdhiParivaar.members.join(", ")}
+        </p>
+      </div>
+
+
+      {/* ===================================================== */}
+      {/* FOOTER                                                  */}
+      {/* ===================================================== */}
+      <div className="pt-2 border-t border-[#6A1B29]/20 flex flex-col items-center">
+
+        <div className="flex items-center gap-2">
+          <img
+            src="/assets/couple_logo.png"
+            alt="A-अ"
+            className="w-5 h-5 object-contain"
+          />
+
+          <h3 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold">
+            Arpit &amp; Anchal
+          </h3>
+        </div>
+
+        <p className="font-cinzel text-[9px] sm:text-[10px] tracking-widest uppercase text-[#2C1518] font-bold mt-0.5">
+          Gloria Inn, Bhilwara • 11 &amp; 12 December 2026
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
 
       {/* RSVP MODAL DIALOG */}
       <RsvpModal
