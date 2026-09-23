@@ -2,13 +2,13 @@ export const WEDDING_DETAILS = {
   couple: {
     bride: "Anchal",
     brideFull: "Anchal Chechani",
-    brideParents: "Dinesh Chechani & Leela Devi Chechani",
-    brideGrandParents: "Smt. Janki Devi Chechani & Late Shree Shivlal Ji Chechani",
+    brideParents: "Leela Devi Chechani & Dinesh Chechani",
+    brideGrandParents: "Late Smt. Janki Devi Chechani & Late Shree Shivlal Ji Chechani",
 
     groom: "Arpit",
     groomFull: "Arpit Kabra",
-    groomParents: "Sanjay Kabra & Rinku Kabra",
-    groomGrandParents: "Shree Ram Rai Ji Kabra & Smt. Ratan Devi Kabra",
+    groomParents: "Rinku Kabra & Sanjay Kabra",
+    groomGrandParents: "Smt. Ratan Devi Kabra & Shree Ram Rai Ji Kabra",
     blessingsGrandfather: "Grandfather Kabra",
   },
 
@@ -24,7 +24,7 @@ export const WEDDING_DETAILS = {
   invocations: [
     { hi: "|| श्री गणेशाय नमः ||", en: "Shree Ganeshay Namah" },
     { hi: "|| श्री रामचंद्राय नमः ||", en: "Shree Ramchandra Namah" },
-    { hi: "|| समस्त पितृ देव||", en: "Shree Seth Mata Ri" },
+    { hi: "|| समस्त पितृ देव ||", en: "Shree Seth Mata Ri" },
   ],
 
   december11Events: [
@@ -154,14 +154,17 @@ export const WEDDING_DETAILS = {
       "Pushpa – Satish Ji Tapariya",
       "Mansi – Yogesh Ji Mandowara"
     ],
-    mithiManuhar: [
-      "Jaydit, Anagh"
-    ],
+  
     specialRequest2: [
       "Ankit – Kavita Tapariya",
       "Mayank – Surbhi Kabra",
       "Akanksha – Ronak Somani",
-      "Priyanshi – Ananta Kabra"
+      "Priyansh",
+      "Priyanshi",
+      "Ananya Kabra"
+    ],
+      mithiManuhar: [
+      "Jaydit, Anagh"
     ],
     rsvp: {
       names: ["Ram Rai Ji", "Vinod", "Sanjay", "Dilip"],
@@ -180,15 +183,16 @@ export const WEDDING_DETAILS = {
       "Akashdeep Motors",
       "Madadeep Automobiles",
       "Satyam Jewellers"
+      "Madadeep Automobiles"
     ],
     nanihaalPaksh: {
       title: "Nanihaal Paksh",
-      name: "Shree Shyam Sundar Ji Mandawara (Neemach)"
+      name: "Shree Shyam Sundar Ji Mandawara , Deepak Ji Mandawara (Neemach)"
     },
     samdhiParivaar: {
       title: "Samdhi Parivaar",
       members: [
-        "Basantlal Ji",
+        "Basantilal Ji",
         "Prahaladrai Ji",
         "Arjunlal Ji",
         "Shantilal Ji",
