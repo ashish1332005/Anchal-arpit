@@ -367,39 +367,72 @@ export default function App() {
 
 </div>
 
-            {/* GROOM SECTION (FIRST) */}
-            <div className="pt-1 space-y-0.5">
-             
-              <img src="/assets/image.png" alt={WEDDING_DETAILS.couple.groomFull} className="h-10 sm:h-12 max-w-[12rem] object-contain mx-auto" />
-              <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                S/o — {WEDDING_DETAILS.couple.groomParents}
-              </p>
-              <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                G/S/o — {WEDDING_DETAILS.couple.groomGrandParents}
-              </p>
-            </div>
+{/* GROOM SECTION (FIRST) */}
+<div className="pt-2 space-y-1.5">
+  <div className="flex justify-center items-center">
+    <img
+      src="/assets/image.png"
+      alt={WEDDING_DETAILS.couple.groomFull}
+      className="
+        h-16 sm:h-20 md:h-24
+        w-auto max-w-[90%]
+        object-contain
+        mx-auto
+      "
+    />
+  </div>
 
-            {/* with and Lotus divider */}
-            <div className="py-0.5 space-y-0.5">
-              <div className="flex items-center justify-center gap-2">
-                <span className="w-8 h-[1px] bg-[#8B6508]/40" />
-                <span className="font-allura text-2xl text-[#8B6508] font-bold leading-none">with</span>
-                <span className="w-8 h-[1px] bg-[#8B6508]/40" />
-              </div>
-             
-            </div>
+  <div className="space-y-0.5 text-center">
+    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+      S/o — {WEDDING_DETAILS.couple.groomParents}
+    </p>
 
-            {/* BRIDE SECTION (SECOND) */}
-            <div className="space-y-0.5">
-             
-              <img src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png" alt={WEDDING_DETAILS.couple.brideFull} className="h-10 sm:h-12 max-w-[12rem] object-contain mx-auto" />
-              <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                D/o — {WEDDING_DETAILS.couple.brideParents}
-              </p>
-              <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                G/D/o — {WEDDING_DETAILS.couple.brideGrandParents}
-              </p>
-            </div>
+    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+      G/S/o — {WEDDING_DETAILS.couple.groomGrandParents}
+    </p>
+  </div>
+</div>
+
+
+{/* WITH + LOTUS DIVIDER */}
+<div className="py-2 sm:py-2.5">
+  <div className="flex items-center justify-center gap-3">
+    <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
+
+    <span className="font-allura text-[27px] sm:text-[31px] text-[#8B6508] font-bold leading-none">
+      with
+    </span>
+
+    <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
+  </div>
+</div>
+
+
+{/* BRIDE SECTION (SECOND) */}
+<div className="space-y-1.5">
+  <div className="flex justify-center items-center">
+    <img
+      src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png"
+      alt={WEDDING_DETAILS.couple.brideFull}
+      className="
+        h-16 sm:h-20 md:h-24
+        w-auto max-w-[90%]
+        object-contain
+        mx-auto
+      "
+    />
+  </div>
+
+  <div className="space-y-0.5 text-center">
+    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+      D/o — {WEDDING_DETAILS.couple.brideParents}
+    </p>
+
+    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+      G/D/o — {WEDDING_DETAILS.couple.brideGrandParents}
+    </p>
+  </div>
+</div>
 
             {/* Date & Venue in Ornate Card */}
             <div className="pt-1.5">
