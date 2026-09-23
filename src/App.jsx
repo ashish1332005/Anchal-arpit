@@ -444,7 +444,7 @@ export default function App() {
             <div className="flex items-center justify-center gap-2 sm:gap-3">
               <img src="/assets/image.png" alt={WEDDING_DETAILS.couple.groom} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
               <span className="font-allura text-3xl text-[#F7D070]">&amp;</span>
-              <img src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png" alt={WEDDING_DETAILS.couple.bride} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
+              <img src="/assets/ChatGPT Image Sep 23, 2026, 08_25_40 PM.png" alt={WEDDING_DETAILS.couple.bride} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
             </div>
 
             {/* Tap to Reveal Date Button */}
