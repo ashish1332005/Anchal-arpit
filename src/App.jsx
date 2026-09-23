@@ -486,10 +486,10 @@ export default function App() {
               <OrnateCard isDark={true} maxWidth="max-w-xs">
                 <div className="space-y-1 font-cormorant text-white text-center py-1">
                   <p className="font-bold text-base sm:text-lg text-[#FFF5C0] drop-shadow-sm">
-                    Friday, 11th December 2026 • 07:00 AM Onwards
+                    Friday, 11th December 2026 • 07:00 AM
                   </p>
                   <p className="text-sm sm:text-base text-[#F7D070] font-bold drop-shadow-sm">
-                    (Breakfast : 09:00 AM Onwards)
+                    (Breakfast : 09:00 AM)
                   </p>
                 </div>
               </OrnateCard>
@@ -526,10 +526,10 @@ export default function App() {
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-1 font-cormorant text-[#2C1518] text-center py-1">
                   <p className="font-bold text-sm sm:text-base text-[#5A121E]">
-                    Friday, 11th December 2026 • 11:00 AM Onwards
+                    Friday, 11th December 2026 • 11:00 AM
                   </p>
                   <p className="text-xs sm:text-sm text-[#8B6508] font-bold">
-                    (Lunch — Carnival : 01:00 PM Onwards)
+                    (Lunch — Carnival : 01:00 PM)
                   </p>
                 </div>
               </OrnateCard>
@@ -562,7 +562,7 @@ export default function App() {
               <OrnateCard isDark={true} maxWidth="max-w-xs">
                 <div className="font-cormorant text-center py-1">
                   <p className="font-bold text-sm sm:text-base text-[#FFF5C0] drop-shadow-sm">
-                    Friday, 11th December 2026 • 07:00 PM Onwards
+                    Friday, 11th December 2026 • 07:00 PM
                   </p>
                 </div>
               </OrnateCard>
@@ -608,14 +608,14 @@ export default function App() {
 
             <div className="space-y-1 font-cormorant text-[#2C1518]">
               <p className="font-bold text-lg sm:text-xl text-[#5A121E]">
-                Saturday, 12th December 2026 • 09:00 AM Onwards
+                Saturday, 12th December 2026 • 09:00 AM
               </p>
             </div>
 
             <LotusDivider color="#D4AF37" />
 
             <p className="font-cormorant font-bold text-sm sm:text-base text-[#8B6508]">
-              (Breakfast : 09:00 AM Onwards)
+              (Breakfast : 09:00 AM)
             </p>
           </div>
 
@@ -656,7 +656,7 @@ export default function App() {
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <Clock className="w-4.5 h-4.5 text-[#8B6508] shrink-0" />
-                    <span className="font-bold text-base sm:text-lg">11:00 AM Onwards</span>
+                    <span className="font-bold text-base sm:text-lg">11:00 AM</span>
                   </div>
                 </div>
               </OrnateCard>

@@ -32,7 +32,7 @@ export const WEDDING_DETAILS = {
       id: "vinayak_sthapna",
       title: "Vinayak Sthapna",
       titleHi: "विनायक स्थापना",
-      time: "7:00 AM onwards",
+      time: "7:00 AM",
       timeHi: "प्रातः 7:00 बजे से",
       icon: "ganesh"
     },
@@ -40,7 +40,7 @@ export const WEDDING_DETAILS = {
       id: "breakfast_11",
       title: "Breakfast",
       titleHi: "अल्पाहार (ब्रेकफास्ट)",
-      time: "9:00 AM onwards",
+      time: "9:00 AM",
       timeHi: "प्रातः 9:00 बजे से",
       icon: "coffee"
     },
@@ -48,7 +48,7 @@ export const WEDDING_DETAILS = {
       id: "carnival",
       title: "Carnival",
       titleHi: "द वेडिंग कार्निवल",
-      time: "11:00 AM onwards",
+      time: "11:00 AM",
       timeHi: "प्रातः 11:00 बजे से",
       icon: "party"
     },
@@ -56,7 +56,7 @@ export const WEDDING_DETAILS = {
       id: "lunch_carnival",
       title: "Lunch — Carnival",
       titleHi: "दोपहर भोज (कार्निवल)",
-      time: "1:00 PM onwards",
+      time: "1:00 PM",
       timeHi: "दोपहर 1:00 बजे से",
       icon: "utensils"
     },
@@ -64,7 +64,7 @@ export const WEDDING_DETAILS = {
       id: "sangeet_ring",
       title: "Sangeet & Ring Ceremony",
       titleHi: "संगीत संध्या एवं रिंग सेरेमनी",
-      time: "7:00 PM onwards",
+      time: "7:00 PM",
       timeHi: "सायं 7:00 बजे से",
       icon: "music"
     }
@@ -76,14 +76,14 @@ export const WEDDING_DETAILS = {
       id: "mangal_kalash",
       title: "Mangal Kalash",
       titleHi: "मंगल कलश",
-      time: "9:00 AM onwards",
+      time: "9:00 AM",
       timeHi: "प्रातः 9:00 बजे से"
     },
     {
       id: "breakfast_12",
       title: "Breakfast",
       titleHi: "अल्पाहार (ब्रेकफास्ट)",
-      time: "9:00 AM onwards",
+      time: "9:00 AM",
       timeHi: "प्रातः 9:00 बजे से"
     },
     {
@@ -118,14 +118,14 @@ export const WEDDING_DETAILS = {
       id: "nikasi",
       title: "Nikasi",
       titleHi: "निकासी",
-      time: "6:00 PM onwards",
+      time: "6:00 PM",
       timeHi: "सायं 6:00 बजे से"
     },
     {
       id: "reception_dinner",
       title: "Reception & Dinner",
       titleHi: "रिसेप्शन एवं स्नेहभोज",
-      time: "7:00 PM onwards",
+      time: "7:00 PM",
       timeHi: "सायं 7:00 बजे से"
     },
     {
