@@ -348,7 +348,8 @@ export default function App() {
                 <span>GROOM</span>
                 <span className="w-5 h-[1px] bg-[#8B6508]/40" />
               </div>
-              <h2 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs leading-none">`n                {WEDDING_DETAILS.couple.groomFull}
+              <h2 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs leading-none">
+                {WEDDING_DETAILS.couple.groomFull}
               </h2>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 S/o — {WEDDING_DETAILS.couple.groomParents}
@@ -375,7 +376,8 @@ export default function App() {
                 <span>BRIDE</span>
                 <span className="w-5 h-[1px] bg-[#8B6508]/40" />
               </div>
-              <h2 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs leading-none">`n                {WEDDING_DETAILS.couple.brideFull}
+              <h2 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs leading-none">
+                {WEDDING_DETAILS.couple.brideFull}
               </h2>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 D/o — {WEDDING_DETAILS.couple.brideParents}
