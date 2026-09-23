@@ -154,7 +154,6 @@ export const WEDDING_DETAILS = {
       "Pushpa – Satish Ji Tapariya",
       "Mansi – Yogesh Ji Mandowara"
     ],
-  
     specialRequest2: [
       "Ankit – Kavita Tapariya",
       "Mayank – Surbhi Kabra",

@@ -215,8 +215,8 @@ export default function App() {
     if (navigator.share) {
       navigator
         .share({
-          title: 'Anchal & Arpit Royal Wedding Invitation',
-          text: 'You are cordially invited to celebrate the auspicious wedding festivities of Anchal & Arpit!',
+          title: `${WEDDING_DETAILS.couple.bride} & ${WEDDING_DETAILS.couple.groom} Royal Wedding Invitation`,
+          text: `You are cordially invited to celebrate the auspicious wedding festivities of ${WEDDING_DETAILS.couple.bride} & ${WEDDING_DETAILS.couple.groom}!`,
           url: window.location.href,
         })
         .catch(() => {});
@@ -268,9 +268,9 @@ export default function App() {
             {/* Direct Google Calendar Button */}
             <a
               href={generateGoogleCalendarUrl(
-                'Anchal & Arpit Royal Wedding - Gloria Inn, Bhilwara',
-                'Wedding celebrations of Anchal Chechani and Arpit Kabra on 11 & 12 December 2026 at Gloria Inn, Bhilwara',
-                'Gloria Inn, Bhilwara',
+                `${WEDDING_DETAILS.couple.bride} & ${WEDDING_DETAILS.couple.groom} Royal Wedding - ${WEDDING_DETAILS.dates.venueName}`,
+                `${WEDDING_DETAILS.couple.brideFull} and ${WEDDING_DETAILS.couple.groomFull} wedding celebrations on ${WEDDING_DETAILS.dates.display} at ${WEDDING_DETAILS.dates.venueName}`,
+                WEDDING_DETAILS.dates.venueName,
                 '20261211T013000Z',
                 '20261212T203000Z'
               )}
@@ -314,15 +314,14 @@ export default function App() {
           <div className="relative z-10 pt-6 sm:pt-8 space-y-1 max-w-sm mx-auto px-3">
             {/* Religious Invocations */}
             <div className="flex flex-wrap items-center justify-center gap-1.5 text-[#5A121E]">
-              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
-                || श्री गणेशाय नमः ||
-              </span>
-              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
-                || श्री रामचंद्राय नमः ||
-              </span>
-              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs">
-                || श्री सेठ माता री ||
-              </span>
+              {WEDDING_DETAILS.invocations.map((invocation, index) => (
+                <span
+                  key={index}
+                  className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs"
+                >
+                  {invocation.hi}
+                </span>
+              ))}
             </div>
 
             {/* A-अ Couple Monogram */}
@@ -335,7 +334,7 @@ export default function App() {
             </div>
 
             <p className="font-cormorant italic text-xs sm:text-[13px] text-[#2C1518] font-semibold leading-tight pt-0.5">
-              With the divine blessings of Smt. Ratan Devi &amp; Shree Ram Rai Ji Kabra
+              With the divine blessings of {WEDDING_DETAILS.couple.groomGrandParents}
             </p>
 
             <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] max-w-xs mx-auto leading-tight">
@@ -350,13 +349,13 @@ export default function App() {
                 <span className="w-5 h-[1px] bg-[#8B6508]/40" />
               </div>
               <h2 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold tracking-wider drop-shadow-xs">
-                ARPIT KABRA
+                {WEDDING_DETAILS.couple.groomFull.toUpperCase()}
               </h2>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                S/o — Sanjay Kabra &amp; Rinku Kabra
+                S/o — {WEDDING_DETAILS.couple.groomParents}
               </p>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                G/S/o — Smt. Ratan Devi Kabra &amp; Shree Ram Rai Ji Kabra
+                G/S/o — {WEDDING_DETAILS.couple.groomGrandParents}
               </p>
             </div>
 
@@ -378,13 +377,13 @@ export default function App() {
                 <span className="w-5 h-[1px] bg-[#8B6508]/40" />
               </div>
               <h2 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold tracking-wider drop-shadow-xs">
-                ANCHAL CHECHANI
+                {WEDDING_DETAILS.couple.brideFull.toUpperCase()}
               </h2>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                D/o — Dinesh Chechani &amp; Leela Devi Chechani
+                D/o — {WEDDING_DETAILS.couple.brideParents}
               </p>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
-                G/D/o — Smt. Janki Devi Chechani &amp; Late Shree Shivlal Ji Chechani
+                G/D/o — {WEDDING_DETAILS.couple.brideGrandParents}
               </p>
             </div>
 
@@ -393,10 +392,10 @@ export default function App() {
               <OrnateCard isDark={false} maxWidth="max-w-xs sm:max-w-sm">
                 <div className="flex items-center justify-center gap-2 text-center py-0.5 text-[#5A121E] font-cinzel font-bold text-[10px] sm:text-xs tracking-wider">
                   <Calendar className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                  <span>11 &amp; 12 DECEMBER 2026</span>
+                  <span>{WEDDING_DETAILS.dates.display.toUpperCase()}</span>
                   <span className="text-[#D4AF37] mx-0.5">|</span>
                   <Navigation className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                  <span>GLORIA INN, BHILWARA</span>
+                  <span>{WEDDING_DETAILS.dates.venueName.toUpperCase()}</span>
                 </div>
               </OrnateCard>
               <LotusDivider color="#D4AF37" className="scale-75 origin-center mt-1" />
@@ -429,7 +428,7 @@ export default function App() {
             </p>
 
             <h1 className="font-playfair text-4xl sm:text-5xl text-gold-gradient font-bold drop-shadow-lg tracking-wide">
-              Arpit &amp; Anchal
+              {WEDDING_DETAILS.couple.groom} &amp; {WEDDING_DETAILS.couple.bride}
             </h1>
 
             {/* Tap to Reveal Date Button */}
@@ -438,12 +437,12 @@ export default function App() {
                 onClick={() => setDateRevealed(!dateRevealed)}
                 className="px-6 py-2.5 rounded-xl border border-[#D4AF37] bg-[#1A0E13]/90 backdrop-blur-md text-[#F7D070] font-cinzel text-xs sm:text-sm tracking-widest font-bold uppercase shadow-2xl hover:scale-105 transition-transform"
               >
-                {dateRevealed ? '11 & 12 DECEMBER 2026' : '✦ TAP TO REVEAL DATE ✦'}
+                {dateRevealed ? WEDDING_DETAILS.dates.display.toUpperCase() : '✦ TAP TO REVEAL DATE ✦'}
               </button>
             </div>
 
             <p className="font-cormorant text-base sm:text-lg text-[#F7D070] font-semibold pt-1">
-              Gloria Inn, Bhilwara
+              {WEDDING_DETAILS.dates.venueName}
             </p>
           </div>
 
@@ -860,7 +859,7 @@ export default function App() {
           >
             <img
               src="/assets/gloria_map.png"
-              alt="Gloria Inn, Bhilwara Map Location"
+              alt={`${WEDDING_DETAILS.dates.venueName} map location`}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             {/* Subtle Map Interaction Hint */}
@@ -877,7 +876,7 @@ export default function App() {
             style={{ top: '69.5%' }}
           >
             <h3 className="font-playfair font-bold text-2xl sm:text-3xl text-[#3D2518] tracking-wide drop-shadow-xs">
-              Gloria Inn, Bhilwara
+              {WEDDING_DETAILS.dates.venueName}
             </h3>
 
             <div className="pt-2">
@@ -904,7 +903,7 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-center items-center p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
-          style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')" }}
+          style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')", backgroundAttachment: 'fixed' }}
         >
           {/* Content matching Screenshot 1 */}
           <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-4 sm:space-y-5 py-4">
@@ -971,7 +970,7 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
-          style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')" }}
+          style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')", backgroundAttachment: 'fixed' }}
         >
           {/* Content matching Screenshot 2 */}
           <div className="relative z-10 my-auto max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-3 sm:space-y-3.5 py-4">
@@ -1062,10 +1061,10 @@ export default function App() {
                   alt="A-अ"
                   className="w-5 h-5 object-contain"
                 />
-                <h3 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold">Arpit &amp; Anchal</h3>
+                <h3 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold">{WEDDING_DETAILS.couple.groom} &amp; {WEDDING_DETAILS.couple.bride}</h3>
               </div>
               <p className="font-cinzel text-[9px] sm:text-[10px] tracking-widest uppercase text-[#2C1518] font-bold mt-0.5">
-                Gloria Inn, Bhilwara • 11 &amp; 12 December 2026
+                {WEDDING_DETAILS.dates.venueName} • {WEDDING_DETAILS.dates.display}
               </p>
             </div>
           </div>
