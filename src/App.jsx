@@ -348,9 +348,7 @@ export default function App() {
                 <span>GROOM</span>
                 <span className="w-5 h-[1px] bg-[#8B6508]/40" />
               </div>
-              <h2 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs leading-none">
-                {WEDDING_DETAILS.couple.groomFull}
-              </h2>
+              <img src="/assets/image.png" alt={WEDDING_DETAILS.couple.groomFull} className="h-10 sm:h-12 max-w-[12rem] object-contain mx-auto" />
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 S/o — {WEDDING_DETAILS.couple.groomParents}
               </p>
@@ -376,9 +374,7 @@ export default function App() {
                 <span>BRIDE</span>
                 <span className="w-5 h-[1px] bg-[#8B6508]/40" />
               </div>
-              <h2 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs leading-none">
-                {WEDDING_DETAILS.couple.brideFull}
-              </h2>
+              <img src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png" alt={WEDDING_DETAILS.couple.brideFull} className="h-10 sm:h-12 max-w-[12rem] object-contain mx-auto" />
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 D/o — {WEDDING_DETAILS.couple.brideParents}
               </p>
@@ -427,9 +423,11 @@ export default function App() {
               GROOM WITH BRIDE
             </p>
 
-            <h1 className="font-allura text-5xl sm:text-6xl text-gold-gradient font-bold drop-shadow-lg leading-none">
-              {WEDDING_DETAILS.couple.groom} &amp; {WEDDING_DETAILS.couple.bride}
-            </h1>
+            <div className="flex items-center justify-center gap-2 sm:gap-3">
+              <img src="/assets/image.png" alt={WEDDING_DETAILS.couple.groom} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
+              <span className="font-allura text-3xl text-[#F7D070]">&amp;</span>
+              <img src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png" alt={WEDDING_DETAILS.couple.bride} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
+            </div>
 
             {/* Tap to Reveal Date Button */}
             <div className="pt-2">
@@ -1056,7 +1054,11 @@ export default function App() {
                   alt="A-अ"
                   className="w-5 h-5 object-contain"
                 />
-                <h3 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom} &amp; {WEDDING_DETAILS.couple.bride}</h3>
+                <div className="flex items-center gap-1.5">
+                  <img src="/assets/image.png" alt={WEDDING_DETAILS.couple.groom} className="h-7 sm:h-8 max-w-[5.5rem] object-contain" />
+                  <span className="font-allura text-xl text-[#5A121E]">&amp;</span>
+                  <img src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png" alt={WEDDING_DETAILS.couple.bride} className="h-7 sm:h-8 max-w-[5.5rem] object-contain" />
+                </div>
               </div>
               <p className="font-cinzel text-[9px] sm:text-[10px] tracking-widest uppercase text-[#2C1518] font-bold mt-0.5">
                 {WEDDING_DETAILS.dates.venueName} • {WEDDING_DETAILS.dates.display}
