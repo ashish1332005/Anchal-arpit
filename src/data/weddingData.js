@@ -182,7 +182,7 @@ export const WEDDING_DETAILS = {
       "Bhilwara Taxfab",
       "Akashdeep Motors",
       "Madadeep Automobiles",
-      "Satyam Jewellers"
+      "Satyam Jewellers",
       "Madadeep Automobiles"
     ],
     nanihaalPaksh: {
