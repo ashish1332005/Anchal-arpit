@@ -308,7 +308,7 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/invitation-main-bg.jpg')" }}
+          style={{ backgroundImage: "url('/assets/bg.png')" }}
         >
           {/* Confined strictly to upper open sky so resort fountain & arches below are completely UNCOVERED! */}
           <div className="relative z-10 pt-6 sm:pt-8 space-y-1 max-w-sm mx-auto px-3">
@@ -343,11 +343,7 @@ export default function App() {
 
             {/* GROOM SECTION (FIRST) */}
             <div className="pt-1 space-y-0.5">
-              <div className="flex items-center justify-center gap-1 text-[#8B6508] text-[9px] sm:text-[10px] tracking-[0.25em] font-bold uppercase">
-                <span className="w-5 h-[1px] bg-[#8B6508]/40" />
-                <span>GROOM</span>
-                <span className="w-5 h-[1px] bg-[#8B6508]/40" />
-              </div>
+             
               <img src="/assets/image.png" alt={WEDDING_DETAILS.couple.groomFull} className="h-10 sm:h-12 max-w-[12rem] object-contain mx-auto" />
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 S/o — {WEDDING_DETAILS.couple.groomParents}
@@ -369,11 +365,7 @@ export default function App() {
 
             {/* BRIDE SECTION (SECOND) */}
             <div className="space-y-0.5">
-              <div className="flex items-center justify-center gap-1 text-[#8B6508] text-[9px] sm:text-[10px] tracking-[0.25em] font-bold uppercase">
-                <span className="w-5 h-[1px] bg-[#8B6508]/40" />
-                <span>BRIDE</span>
-                <span className="w-5 h-[1px] bg-[#8B6508]/40" />
-              </div>
+             
               <img src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png" alt={WEDDING_DETAILS.couple.brideFull} className="h-10 sm:h-12 max-w-[12rem] object-contain mx-auto" />
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 D/o — {WEDDING_DETAILS.couple.brideParents}
