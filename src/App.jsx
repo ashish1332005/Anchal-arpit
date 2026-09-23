@@ -333,13 +333,39 @@ export default function App() {
               />
             </div>
 
-            <p className="font-cormorant italic text-xs sm:text-[13px] text-[#2C1518] font-semibold leading-tight pt-0.5">
-              With the divine blessings of {WEDDING_DETAILS.couple.groomGrandParents}
-            </p>
+       <div className="relative z-20 w-[76%] max-w-[340px] mx-auto text-center">
+  
+  {/* Soft readability layer — very subtle, no hard box */}
+  <div className="absolute inset-0 -z-10 bg-[#fff8e8]/10 blur-md rounded-full" />
 
-            <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] max-w-xs mx-auto leading-tight">
-              Kabra Family, requests the pleasure of your gracious presence at the wedding ceremony of their beloved son
-            </p>
+  <p className="
+    font-cormorant italic
+    text-[12px] sm:text-[13px]
+    text-[#2C1518]
+    font-semibold
+    leading-[1.25]
+    pt-1
+    px-1
+    drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]
+  ">
+    With the divine blessings of {WEDDING_DETAILS.couple.groomGrandParents}
+  </p>
+
+  <p className="
+    font-cormorant
+    text-[11px] sm:text-[12px]
+    text-[#2C1518]
+    font-semibold
+    leading-[1.3]
+    mt-2
+    px-2
+    drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]
+  ">
+    Kabra Family, requests the pleasure of your gracious presence at the
+    wedding ceremony of their beloved son
+  </p>
+
+</div>
 
             {/* GROOM SECTION (FIRST) */}
             <div className="pt-1 space-y-0.5">
