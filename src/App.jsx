@@ -348,8 +348,7 @@ export default function App() {
                 <span>GROOM</span>
                 <span className="w-5 h-[1px] bg-[#8B6508]/40" />
               </div>
-              <h2 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold tracking-wider drop-shadow-xs">
-                {WEDDING_DETAILS.couple.groomFull.toUpperCase()}
+              <h2 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs leading-none">`n                {WEDDING_DETAILS.couple.groomFull}
               </h2>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 S/o — {WEDDING_DETAILS.couple.groomParents}
@@ -376,8 +375,7 @@ export default function App() {
                 <span>BRIDE</span>
                 <span className="w-5 h-[1px] bg-[#8B6508]/40" />
               </div>
-              <h2 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold tracking-wider drop-shadow-xs">
-                {WEDDING_DETAILS.couple.brideFull.toUpperCase()}
+              <h2 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs leading-none">`n                {WEDDING_DETAILS.couple.brideFull}
               </h2>
               <p className="font-cormorant text-[11px] sm:text-xs font-semibold text-[#2C1518] leading-tight">
                 D/o — {WEDDING_DETAILS.couple.brideParents}
@@ -427,7 +425,7 @@ export default function App() {
               GROOM WITH BRIDE
             </p>
 
-            <h1 className="font-playfair text-4xl sm:text-5xl text-gold-gradient font-bold drop-shadow-lg tracking-wide">
+            <h1 className="font-allura text-5xl sm:text-6xl text-gold-gradient font-bold drop-shadow-lg leading-none">
               {WEDDING_DETAILS.couple.groom} &amp; {WEDDING_DETAILS.couple.bride}
             </h1>
 
@@ -1056,7 +1054,7 @@ export default function App() {
                   alt="A-अ"
                   className="w-5 h-5 object-contain"
                 />
-                <h3 className="font-playfair text-xl sm:text-2xl text-[#5A121E] font-bold">{WEDDING_DETAILS.couple.groom} &amp; {WEDDING_DETAILS.couple.bride}</h3>
+                <h3 className="font-allura text-3xl sm:text-4xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom} &amp; {WEDDING_DETAILS.couple.bride}</h3>
               </div>
               <p className="font-cinzel text-[9px] sm:text-[10px] tracking-widest uppercase text-[#2C1518] font-bold mt-0.5">
                 {WEDDING_DETAILS.dates.venueName} • {WEDDING_DETAILS.dates.display}
