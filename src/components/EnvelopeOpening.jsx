@@ -378,7 +378,7 @@ export default function EnvelopeOpening({ onComplete, guestName, lang }) {
               <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-full bg-gradient-to-r from-[#D4AF37]/50 via-[#FCF6BA]/80 to-[#AA771C]/50 blur-md animate-pulse-subtle" />
               {/* 3D Wax Seal Badge */}
               <img 
-                src="/assets/gold-wax-seal.png" 
+                src="/assets/Pink and White Elegant Floral Wedding Thank You Circle Sticker.png" 
                 alt="Royal Wax Seal" 
                 className="absolute w-14 h-14 sm:w-16 sm:h-16 object-contain drop-shadow-[0_8px_18px_rgba(40,15,10,0.45)]" 
               />

@@ -433,7 +433,6 @@ export default function App() {
     </p>
   </div>
 </div>
-
             {/* Date & Venue in Ornate Card */}
             <div className="pt-1.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs sm:max-w-sm">
