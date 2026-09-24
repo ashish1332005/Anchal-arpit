@@ -389,9 +389,7 @@ export default function EnvelopeOpening({ onComplete, guestName, lang }) {
                 className="absolute w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]"
               />
               {/* Twinkling Center Sparkle */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <Sparkles className="w-3.5 h-3.5 text-[#FFF9D2] animate-spin drop-shadow-md opacity-85" style={{ animationDuration: '8s' }} />
-              </div>
+              
             </div>
           )}
 
