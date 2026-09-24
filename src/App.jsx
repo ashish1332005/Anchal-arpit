@@ -338,22 +338,11 @@ export default function App() {
   {/* Soft readability layer — very subtle, no hard box */}
   <div className="absolute inset-0 -z-10 bg-[#fff8e8]/10 blur-md rounded-full" />
 
-  <p className="
-    font-cormorant italic
-    text-[12px] sm:text-[13px]
-    text-[#2C1518]
-    font-semibold
-    leading-[1.25]
-    pt-1
-    px-1
-    drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]
-  ">
-    With the divine blessings of {WEDDING_DETAILS.couple.groomGrandParents}
-  </p>
+
 
   <p className="
     font-cormorant
-    text-[11px] sm:text-[12px]
+    text-[12px] sm:text-[13px]
     text-[#2C1518]
     font-semibold
     leading-[1.3]
@@ -384,11 +373,10 @@ export default function App() {
 
   <div className="space-y-0.5 text-center">
     <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      S/o — {WEDDING_DETAILS.couple.groomParents}
-    </p>
-
-    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
       G/S/o — {WEDDING_DETAILS.couple.groomGrandParents}
+    </p>
+    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+      S/o — {WEDDING_DETAILS.couple.groomParents}
     </p>
   </div>
 </div>
@@ -424,13 +412,14 @@ export default function App() {
   </div>
 
   <div className="space-y-0.5 text-center">
+        <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+      G/D/o — {WEDDING_DETAILS.couple.brideGrandParents}
+    </p>
     <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
       D/o — {WEDDING_DETAILS.couple.brideParents}
     </p>
 
-    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      G/D/o — {WEDDING_DETAILS.couple.brideGrandParents}
-    </p>
+
   </div>
 </div>
             {/* Date & Venue in Ornate Card */}
