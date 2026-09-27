@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 import EnvelopeOpening from './components/EnvelopeOpening';
 import FallingPetals from './components/FallingPetals';
 import AudioPlayer from './components/AudioPlayer';
@@ -445,50 +446,75 @@ export default function App() {
         {/* SLIDE 2: SAVE THE DATE / GROOM WITH BRIDE */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-6 sm:p-8 overflow-hidden bg-cover bg-center text-center text-white select-none"
-          style={{ backgroundImage: "url('/assets/datereveal-bg.png')" }}
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-5 overflow-hidden bg-cover bg-center text-center select-none"
+          style={{ backgroundImage: "url('/assets/royal-mandap-couple-bg.jpg')" }}
         >
-          <div className="relative z-10 pt-16 space-y-3 max-w-md mx-auto">
-            {/* A-अ Couple Logo in Gold */}
-            <div className="flex justify-center">
-              <img
-                src="/assets/couple_logo_gold.png"
-                alt="A-अ Monogram"
-                className="w-14 h-14 object-contain drop-shadow-lg"
-              />
-            </div>
-
-            <p className="font-cinzel text-xs sm:text-sm tracking-[0.25em] text-[#F7D070] font-bold uppercase drop-shadow-md">
+          {/* Main Text Content precisely positioned in the blank open arch space */}
+          <div className="relative z-10 pt-[18vh] sm:pt-[20vh] space-y-1 max-w-sm mx-auto w-full px-3">
+            {/* Subtitle */}
+            <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] text-[#5A121E] font-bold uppercase drop-shadow-xs">
               GROOM WITH BRIDE
             </p>
 
-            <div className="flex items-center justify-center gap-2 sm:gap-3">
-              <img src="/assets/ChatGPT Image Sep 23, 2026, 08_32_01 PM.png" alt={WEDDING_DETAILS.couple.groom} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
-              <span className="font-allura text-3xl text-[#F7D070]">&amp;</span>
-              <img src="/assets/ChatGPT Image Sep 23, 2026, 08_40_32 PM.png" alt={WEDDING_DETAILS.couple.bride} className="h-14 sm:h-16 max-w-[10rem] object-contain" />
-            </div>
+            {/* Couple Script Names */}
+            <h2 className="font-allura text-3xl sm:text-[36px] text-[#4A0E17] font-bold leading-tight drop-shadow-xs">
+              {WEDDING_DETAILS.couple.groomFull} &amp; {WEDDING_DETAILS.couple.brideFull}
+            </h2>
 
-            {/* Tap to Reveal Date Button */}
-            <div className="pt-2">
+            {/* Tap To Reveal Date Button */}
+            <div className="pt-0.5 flex flex-col items-center">
               <button
-                onClick={() => setDateRevealed(!dateRevealed)}
-                className="px-6 py-2.5 rounded-xl border border-[#D4AF37] bg-[#1A0E13]/90 backdrop-blur-md text-[#F7D070] font-cinzel text-xs sm:text-sm tracking-widest font-bold uppercase shadow-2xl hover:scale-105 transition-transform"
+                onClick={() => {
+                  const nextState = !dateRevealed;
+                  setDateRevealed(nextState);
+                  if (nextState) {
+                    confetti({
+                      particleCount: 60,
+                      spread: 70,
+                      origin: { y: 0.35 },
+                      colors: ['#D4AF37', '#5A121E', '#F7D070', '#FFFFFF']
+                    });
+                  }
+                }}
+                className={`transition-all duration-300 transform active:scale-95 px-4 sm:px-5 py-1.5 rounded-full border border-[#D4AF37] font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold uppercase shadow-[0_4px_14px_rgba(74,14,23,0.25)] cursor-pointer ${
+                  dateRevealed
+                    ? 'bg-[#4A0E17] text-[#FFF5C0] ring-2 ring-[#D4AF37]'
+                    : 'bg-[#4A0E17] text-[#FFF5C0] hover:bg-[#631422]'
+                }`}
               >
-                {dateRevealed ? WEDDING_DETAILS.dates.display.toUpperCase() : '✦ TAP TO REVEAL DATE ✦'}
+                {dateRevealed ? '✦ 11 & 12 DECEMBER 2026 ✦' : '✦ TAP TO REVEAL DATE ✦'}
               </button>
+
+              {dateRevealed && (
+                <div className="mt-1 px-3 py-0.5 rounded-full bg-[#4A0E17]/95 border border-[#D4AF37] text-[#FFF5C0] font-cinzel text-[10px] tracking-wider shadow-md animate-pulse">
+                  📍 GLORIA INN, BHILWARA
+                </div>
+              )}
             </div>
 
-          
+            <LotusDivider color="#D4AF37" className="scale-75 origin-center my-0.5" />
+
+            {/* Save The Date Subheading */}
+            <div className="space-y-0.5 pt-0.5">
+              <div className="flex items-center justify-center gap-2">
+                <span className="w-6 sm:w-10 h-[1px] bg-[#8B6508]/50" />
+                <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.22em] text-[#5A121E] font-bold uppercase">
+                  SAVE THE DATE
+                </p>
+                <span className="w-6 sm:w-10 h-[1px] bg-[#8B6508]/50" />
+              </div>
+
+              <p className="font-playfair text-base sm:text-lg text-[#4A0E17] font-bold drop-shadow-xs">
+                Wedding Festivities Await You
+              </p>
+            </div>
           </div>
 
-          <div className="relative z-10 pb-2 space-y-1">
-            <h3 className="font-cinzel text-xs sm:text-sm tracking-[0.2em] text-[#F7D070] font-bold uppercase drop-shadow-md">
-              SAVE THE DATE
-            </h3>
-            <p className="font-playfair text-2xl sm:text-3xl text-white drop-shadow-lg font-bold pb-1">
-              Wedding Festivities Await You
-            </p>
+          {/* Spacer to keep middle clear for the seated couple artwork */}
+          <div className="flex-1 min-h-[28vh]" />
 
+          {/* Bottom Section: Swipe Up */}
+          <div className="relative z-20 pb-2">
             <RoyalSwipeUp onClick={() => scrollToSlide(2)} />
           </div>
         </section>
@@ -620,7 +646,7 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/kalash-bg.png')" }}
+          style={{ backgroundImage: "url('/assets/kalash-new-bg.jpg')" }}
         >
           {/* Confined strictly inside upper temple arch so golden Kalash & ladies are completely visible! */}
           <div className="relative z-10 pt-13 sm:pt-15 space-y-1.5 max-w-sm mx-auto px-4">
@@ -661,46 +687,48 @@ export default function App() {
         {/* SLIDE 7: MAYRA (12 December Mid-day) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/bhaatbharai-bg.png')" }}
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
+          style={{ backgroundImage: "url('/assets/mayra-new-bg.jpg')" }}
         >
-          {/* Confined to upper palace sky so royal gift baskets & sweets are completely visible! */}
-          <div className="relative z-10 pt-13 sm:pt-15 space-y-2 max-w-sm mx-auto px-4">
-            <div className="flex justify-center">
-              <img src="/assets/couple_logo.png" alt="A-अ" className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm" />
-            </div>
-
-            <LotusDivider color="#D4AF37" />
-
+          {/* Confined to the open cream arch space below the umbrellas & Ganesha */}
+          <div className="relative z-10 pt-[30vh] sm:pt-[32vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
-              <h2 className="font-playfair text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
+              <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
                 Mayra
               </h2>
             </TitleFlourish>
 
-            <p className="font-cormorant italic text-sm sm:text-base font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
+
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
               "Where traditions are cherished and blessings are shared"
             </p>
 
-            <div className="pt-1">
+            <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
-                <div className="space-y-1.5 font-cormorant text-[#5A121E] text-center py-1">
-                  <div className="flex items-center justify-center gap-2">
-                    <Calendar className="w-4.5 h-4.5 text-[#8B6508] shrink-0" />
-                    <span className="font-bold text-base sm:text-lg">Saturday, 12th December 2026</span>
+                <div className="space-y-0.5 font-cormorant text-[#5A121E] text-center py-1">
+                  <div className="flex items-center justify-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                    <span className="font-bold text-sm sm:text-base">Saturday, 12th December 2026</span>
                   </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <Clock className="w-4.5 h-4.5 text-[#8B6508] shrink-0" />
-                    <span className="font-bold text-base sm:text-lg">11:00 AM</span>
+                  <div className="flex items-center justify-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                    <span className="font-bold text-sm sm:text-base">11:00 AM</span>
                   </div>
                 </div>
               </OrnateCard>
             </div>
 
-            <LotusDivider color="#D4AF37" />
+            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
 
-          <RoyalSwipeUp onClick={() => scrollToSlide(7)} />
+          {/* Spacer to keep family tilak & easel artwork 100% visible */}
+          <div className="flex-1 min-h-[25vh]" />
+
+          {/* Bottom Swipe Up */}
+          <div className="relative z-20 pb-2">
+            <RoyalSwipeUp onClick={() => scrollToSlide(7)} />
+          </div>
         </section>
 
         {/* ======================================================== */}
@@ -708,7 +736,7 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/welcomefeast-bg.png')" }}
+          style={{ backgroundImage: "url('/assets/wedding-ceremony-new-bg.png')" }}
         >
           {/* Confined to upper garden sky so royal banquet tables & guests are completely visible! */}
           <div className="relative z-10 pt-12 sm:pt-14 space-y-1.5 max-w-sm mx-auto px-4">

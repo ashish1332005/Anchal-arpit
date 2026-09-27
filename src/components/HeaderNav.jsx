@@ -6,8 +6,8 @@ export default function HeaderNav({ lang, setLang, onOpenRsvp, dict }) {
     if (navigator.share) {
       navigator
         .share({
-          title: 'Shreyansh & Aditi Royal Wedding Invitation',
-          text: 'You are cordially invited to celebrate the wedding festivities of Shreyansh & Aditi!',
+          title: `${WEDDING_DETAILS.couple.groom} & ${WEDDING_DETAILS.couple.bride} Royal Wedding Invitation`,
+          text: `You are cordially invited to celebrate the wedding festivities of ${WEDDING_DETAILS.couple.groom} & ${WEDDING_DETAILS.couple.bride}!`,
           url: window.location.href,
         })
         .catch((err) => console.log('Share error:', err));
@@ -23,10 +23,10 @@ export default function HeaderNav({ lang, setLang, onOpenRsvp, dict }) {
         {/* Monogram / Title */}
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-gold-gradient flex items-center justify-center text-[#6A1B29] font-cinzel font-bold text-xs shadow-md">
-            S&A
+            A&A
           </div>
           <span className="font-allura text-2xl text-[#6A1B29] hidden sm:inline">
-            Shreyansh & Aditi
+            {WEDDING_DETAILS.couple.groom} & {WEDDING_DETAILS.couple.bride}
           </span>
         </div>
 
