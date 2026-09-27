@@ -735,63 +735,69 @@ export default function App() {
         {/* SLIDE 8: MILNI, BADHAI & NIKASI (12 December Afternoon) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/wedding-ceremony-new-bg.png')" }}
         >
-          {/* Confined to upper garden sky so royal banquet tables & guests are completely visible! */}
-          <div className="relative z-10 pt-12 sm:pt-14 space-y-1.5 max-w-sm mx-auto px-4">
+          {/* Confined strictly to the glowing blank center space below the top floral drapery */}
+          <div className="relative z-10 pt-[24vh] sm:pt-[26vh] space-y-1 max-w-sm mx-auto px-3">
             <div className="flex justify-center">
-              <img src="/assets/couple_logo.png" alt="A-अ" className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm" />
+              <img src="/assets/couple_logo.png" alt="A-अ" className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm" />
             </div>
 
-            <LotusDivider color="#D4AF37" />
-
             <TitleFlourish color="#5A121E">
-              <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
+              <h2 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
                 Wedding Ceremony
               </h2>
             </TitleFlourish>
 
-            <p className="font-cormorant italic text-sm sm:text-base font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
+
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
               "Welcoming our dear ones with open hearts and warm smiles"
             </p>
 
-            <p className="font-cormorant font-bold text-base sm:text-lg text-[#5A121E] pt-0.5">
+            <p className="font-cormorant font-bold text-sm sm:text-base text-[#5A121E] pt-0.5">
               Saturday, 12th December 2026
             </p>
 
-            <div className="pt-1">
+            <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-md">
-                <div className="grid grid-cols-3 items-center text-center divide-x divide-[#D4AF37]/50 font-cormorant text-[#5A121E] py-1.5">
+                <div className="grid grid-cols-3 items-center text-center divide-x divide-[#D4AF37]/50 font-cormorant text-[#5A121E] py-1">
                   <div className="flex items-center justify-center gap-1.5 px-1">
-                    <ClocheIcon className="w-4 h-4 text-[#8B6508] shrink-0" />
+                    <ClocheIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
-                      <span className="font-bold text-sm sm:text-base">Milni</span>
-                      <span className="text-xs sm:text-sm block text-[#2C1518]">4:00 PM</span>
+                      <span className="font-bold text-xs sm:text-sm">Milni</span>
+                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">4:00 PM</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-center gap-1.5 px-1">
-                    <Sparkles className="w-4 h-4 text-[#8B6508] shrink-0" />
+                    <Sparkles className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
-                      <span className="font-bold text-sm sm:text-base">Badhai</span>
-                      <span className="text-xs sm:text-sm block text-[#2C1518]">4:00 PM</span>
+                      <span className="font-bold text-xs sm:text-sm">Badhai</span>
+                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">4:00 PM</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-center gap-1.5 px-1">
-                    <Crown className="w-4 h-4 text-[#8B6508] shrink-0" />
+                    <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
-                      <span className="font-bold text-sm sm:text-base">Nikasi</span>
-                      <span className="text-xs sm:text-sm block text-[#2C1518]">6:00 PM</span>
+                      <span className="font-bold text-xs sm:text-sm">Nikasi</span>
+                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">6:00 PM</span>
                     </div>
                   </div>
                 </div>
               </OrnateCard>
             </div>
 
-            <LotusDivider color="#D4AF37" />
+            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
 
-          <RoyalSwipeUp onClick={() => scrollToSlide(8)} />
+          {/* Spacer to keep bottom mandala carpet, lamps & banana trees 100% visible */}
+          <div className="flex-1 min-h-[22vh]" />
+
+          {/* Bottom Swipe Up */}
+          <div className="relative z-20 pb-2">
+            <RoyalSwipeUp onClick={() => scrollToSlide(8)} />
+          </div>
         </section>
 
         {/* ======================================================== */}
