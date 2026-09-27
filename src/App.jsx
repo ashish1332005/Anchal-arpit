@@ -645,42 +645,51 @@ export default function App() {
         {/* SLIDE 6: MANGAL KALASH (12 December Morning) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/kalash-new-bg.jpg')" }}
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
+          style={{ backgroundImage: "url('/assets/mangal-kalash-art-bg.jpg')" }}
         >
-          {/* Confined strictly inside upper temple arch so golden Kalash & ladies are completely visible! */}
-          <div className="relative z-10 pt-13 sm:pt-15 space-y-1.5 max-w-sm mx-auto px-4">
+          {/* Confined to the open center watercolor space with high-contrast royal maroon & gold */}
+          <div className="relative z-10 pt-[16vh] sm:pt-[18vh] space-y-1.5 max-w-sm mx-auto px-4">
             {/* Auspicious Inscription */}
             <div className="flex items-center justify-center gap-2">
-              <span className="w-6 h-[1px] bg-[#8B6508]/40" />
+              <span className="w-6 h-[1px] bg-[#8B6508]/60" />
               <p className="font-cinzel text-xs sm:text-sm tracking-widest text-[#5A121E] font-bold">
                 ॥ शुभारम्भ ॥
               </p>
-              <span className="w-6 h-[1px] bg-[#8B6508]/40" />
+              <span className="w-6 h-[1px] bg-[#8B6508]/60" />
             </div>
 
             <TitleFlourish color="#5A121E">
-              <h2 className="font-playfair text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
+              <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
                 Mangal Kalash
               </h2>
             </TitleFlourish>
 
-            <LotusDivider color="#D4AF37" />
+            <LotusDivider color="#8B6508" className="scale-75 my-0.5" />
 
-            <div className="space-y-1 font-cormorant text-[#2C1518]">
-              <p className="font-bold text-lg sm:text-xl text-[#5A121E]">
-                Saturday, 12th December 2026 • 09:00 AM
-              </p>
+            <div className="pt-0.5">
+              <OrnateCard isDark={false} maxWidth="max-w-xs">
+                <div className="space-y-0.5 font-cormorant text-center py-1">
+                  <p className="font-bold text-base sm:text-lg text-[#5A121E]">
+                    Saturday, 12th December 2026
+                  </p>
+                  <p className="font-bold text-sm sm:text-base text-[#8B6508]">
+                    09:00 AM • (Breakfast : 09:00 AM)
+                  </p>
+                </div>
+              </OrnateCard>
             </div>
 
-            <LotusDivider color="#D4AF37" />
-
-            <p className="font-cormorant font-bold text-sm sm:text-base text-[#8B6508]">
-              (Breakfast : 09:00 AM)
-            </p>
+            <LotusDivider color="#8B6508" className="scale-75 my-0.5" />
           </div>
 
-          <RoyalSwipeUp onClick={() => scrollToSlide(6)} />
+          {/* Spacer to keep kalash, haldi & diya artwork 100% visible */}
+          <div className="flex-1 min-h-[30vh]" />
+
+          {/* Bottom Swipe Up */}
+          <div className="relative z-20 pb-2">
+            <RoyalSwipeUp onClick={() => scrollToSlide(6)} />
+          </div>
         </section>
 
         {/* ======================================================== */}
