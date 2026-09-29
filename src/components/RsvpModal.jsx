@@ -17,7 +17,7 @@ export default function RsvpModal({ isOpen, onClose, lang, dict }) {
 
     // Construct WhatsApp formatted string
     const whatsappText = encodeURIComponent(
-      `*ROYAL WEDDING RSVP - Anchal & Arpit*\n\n` +
+      `*ROYAL WEDDING RSVP - Arpit & Anchal*\n\n` +
       `👤 *Guest Name:* ${formData.name}\n` +
       `✅ *Attendance:* ${formData.status}\n` +
       `👥 *Number of Guests:* ${formData.guestsCount}\n` +

@@ -216,8 +216,8 @@ export default function App() {
     if (navigator.share) {
       navigator
         .share({
-          title: `${WEDDING_DETAILS.couple.bride} & ${WEDDING_DETAILS.couple.groom} Royal Wedding Invitation`,
-          text: `You are cordially invited to celebrate the auspicious wedding festivities of ${WEDDING_DETAILS.couple.bride} & ${WEDDING_DETAILS.couple.groom}!`,
+          title: `${WEDDING_DETAILS.couple.groom} & ${WEDDING_DETAILS.couple.bride} | Royal Wedding Invitation`,
+          text: `You are cordially invited to celebrate the royal wedding festivities of ${WEDDING_DETAILS.couple.groom} & ${WEDDING_DETAILS.couple.bride}!`,
           url: window.location.href,
         })
         .catch(() => {});

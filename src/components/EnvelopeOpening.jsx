@@ -285,7 +285,7 @@ export default function EnvelopeOpening({ onComplete, guestName, lang }) {
               <div className="p-2 rounded-full bg-[#FAF5EA]/60 backdrop-blur-[1px] border border-[#D4AF37]/30 shadow-inner">
                 <img 
                   src="/assets/couple_logo.png" 
-                  alt="Anchal & Arpit Monogram" 
+                  alt="Arpit & Anchal Monogram" 
                   className="w-24 sm:w-28 max-h-[130px] sm:max-h-[145px] object-contain drop-shadow-[0_4px_12px_rgba(60,30,10,0.2)]" 
                 />
               </div>
