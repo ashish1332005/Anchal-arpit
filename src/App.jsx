@@ -984,11 +984,11 @@ export default function App() {
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SPECIAL REQUEST
               </p>
-              <div className="font-cormorant font-semibold text-[12.5px] sm:text-[13.5px] text-[#2C1518] leading-tight space-y-0.5">
+              <div className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight space-y-0.5">
                 <p>Ankit – Kavita Tapariya</p>
                 <p>Mayank – Surbhi Kabra</p>
                 <p>Akanksha – Ronak Somani</p>
-                <p className="text-[12px] sm:text-[13px] text-[#5A121E] font-medium pt-0.5">Priyansh • Priyanshi • Ananya Kabra</p>
+                <p>Priyansh • Priyanshi • Ananya Kabra</p>
               </div>
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
@@ -1021,17 +1021,6 @@ export default function App() {
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
 
-            {/* SAMDHI PARIVAAR */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
-                SAMDHI PARIVAAR
-              </p>
-              <p className="font-cormorant font-semibold text-[11.5px] sm:text-[12.5px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
-                {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
-              </p>
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
-            </div>
-
             {/* MITTHI MANUHAR */}
             <div className="space-y-0.5">
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
@@ -1042,6 +1031,17 @@ export default function App() {
                   {item}
                 </p>
               ))}
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
+            </div>
+
+            {/* SAMDHI PARIVAAR */}
+            <div className="space-y-0.5">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+                SAMDHI PARIVAAR
+              </p>
+              <p className="font-cormorant font-semibold text-[11.5px] sm:text-[12.5px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
+                {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
+              </p>
               <LotusDivider color="#D4AF37" className="scale-75 my-1" />
             </div>
           </div>

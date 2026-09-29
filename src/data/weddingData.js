@@ -151,7 +151,7 @@ export const WEDDING_DETAILS = {
       phones: ["9929462333", "7727058633", "9128011391"]
     },
     withBestCompliments: {
-      members: "Babulal, Ramkishore, Ganeshram, Madhusudan, Shivratan, Suresh Ji (C.A.), Rambakshi, Amit",
+      members: "Bansi Lal, Ramkishore, Ganeshram, Madhusudan, Shivratan, Suresh Ji (C.A.), Rambakshi, Amit",
       familyTitle: "Kabra & Family"
     },
     firms: [
