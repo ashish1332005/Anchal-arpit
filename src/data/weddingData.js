@@ -8,7 +8,7 @@ export const WEDDING_DETAILS = {
     groom: "Arpit",
     groomFull: "Arpit Kabra",
     groomParents: "Rinku Kabra & Sanjay Kabra",
-    groomGrandParents: "Smt. Ratan Devi Kabra & Shree Ram Rai Ji Kabra",
+    groomGrandParents: "Smt. Ratan Devi Kabra & Shree Ram Rai Kabra",
     blessingsGrandfather: "Grandfather Kabra",
   },
 
@@ -159,7 +159,7 @@ export const WEDDING_DETAILS = {
       "Arpit Spinners",
       "Bhilwara Taxfab",
       "Akashdeep Motors",
-      "Mahadev Motors",
+      "Mahadeep Autowheels",
       "Satyam Silver"
     ],
     nanihaalPaksh: {
