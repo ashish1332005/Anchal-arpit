@@ -566,26 +566,26 @@ export default function App() {
         {/* SLIDE 4: CARNIVAL (11 December Afternoon) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/carnival-new-bg.jpg')" }}
         >
-          {/* Confined to upper sky area so colourful tent pavilion & garden below are completely visible! */}
-          <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
+          {/* Positioned in the blank open sky area below the top canopy tassels */}
+          <div className="relative z-10 pt-[27vh] sm:pt-[29vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
               <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
                 Carnival
               </h2>
             </TitleFlourish>
 
-            <LotusDivider color="#D4AF37" />
+            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
 
             <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
               "A vibrant celebration of laughter, love, music and endless memories"
             </p>
 
-            <div className="pt-1">
+            <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
-                <div className="space-y-1 font-cormorant text-[#2C1518] text-center py-1">
+                <div className="space-y-0.5 font-cormorant text-[#2C1518] text-center py-1">
                   <p className="font-bold text-sm sm:text-base text-[#5A121E]">
                     Friday, 11th December 2026 • 11:00 AM
                   </p>
@@ -596,8 +596,11 @@ export default function App() {
               </OrnateCard>
             </div>
 
-            <LotusDivider color="#D4AF37" />
+            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
+
+          {/* Spacer to keep garden lounge & parasols visible below */}
+          <div className="flex-1 min-h-[20vh]" />
 
           <RoyalSwipeUp onClick={() => scrollToSlide(4)} />
         </section>
@@ -938,116 +941,109 @@ export default function App() {
         {/* SLIDE 11: WITH LOVE & BLESSINGS (Family, Compliments, Nanihaal & Samdhi) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-center items-center px-4 py-6 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between items-center px-4 py-8 sm:py-12 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
           style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')", backgroundAttachment: 'fixed' }}
         >
-          <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-2 flex flex-col justify-center h-full max-h-[92vh] space-y-1 sm:space-y-1.5">
+          <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-2 flex-1 flex flex-col justify-between py-2 sm:py-4">
             {/* Header */}
             <div className="space-y-0.5">
-              <h2 className="font-allura text-3xl sm:text-[38px] text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
+              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
                 With Love &amp; Blessings
               </h2>
-              <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
+              <LotusDivider color="#D4AF37" className="scale-75 my-1" />
             </div>
 
             {/* WARM REGARDS */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 WARM REGARDS
               </p>
               {WEDDING_DETAILS.family.warmRegards.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-xs sm:text-[13.5px] text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight">
                   {item}
                 </p>
               ))}
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
-
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
 
             {/* SPECIAL REQUEST 1 */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SPECIAL REQUEST
               </p>
               {WEDDING_DETAILS.family.specialRequest1.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-xs sm:text-[13.5px] text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight">
                   {item}
                 </p>
               ))}
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
-
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
 
             {/* SPECIAL REQUEST 2 */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SPECIAL REQUEST
               </p>
-              <div className="font-cormorant font-semibold text-xs sm:text-[13.5px] text-[#2C1518] leading-tight space-y-0.5">
+              <div className="font-cormorant font-semibold text-[12.5px] sm:text-[13.5px] text-[#2C1518] leading-tight space-y-0.5">
                 <p>Ankit – Kavita Tapariya</p>
                 <p>Mayank – Surbhi Kabra</p>
                 <p>Akanksha – Ronak Somani</p>
-                <p className="text-[11px] sm:text-xs text-[#5A121E]">Priyansh • Priyanshi • Ananya Kabra</p>
+                <p className="text-[12px] sm:text-[13px] text-[#5A121E] font-medium pt-0.5">Priyansh • Priyanshi • Ananya Kabra</p>
               </div>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
-
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
 
             {/* WITH BEST COMPLIMENTS */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 WITH BEST COMPLIMENTS
               </p>
-              <p className="font-cormorant font-semibold text-[11px] sm:text-xs text-[#2C1518] max-w-sm mx-auto leading-snug">
+              <p className="font-cormorant font-semibold text-[11.5px] sm:text-[12.5px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
                 {WEDDING_DETAILS.family.withBestCompliments.members}
               </p>
-              <p className="font-cormorant font-bold text-xs sm:text-[13px] text-[#5A121E]">
+              <p className="font-playfair font-bold text-xs sm:text-sm text-[#5A121E] pt-0.5">
                 {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
               </p>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
-
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
 
             {/* NANIHAAL PAKSH */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 NANIHAAL PAKSH
               </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-[13px] text-[#2C1518] leading-tight">
+              <p className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight">
                 Shree Shyam Sundar Ji Mandawara
               </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-[13px] text-[#2C1518] leading-tight">
+              <p className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight">
                 Deepak Ji Mandawara (Neemach)
               </p>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
-
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
 
             {/* SAMDHI PARIVAAR */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SAMDHI PARIVAAR
               </p>
-              <p className="font-cormorant font-semibold text-[11px] sm:text-xs text-[#2C1518] max-w-sm mx-auto leading-snug">
+              <p className="font-cormorant font-semibold text-[11.5px] sm:text-[12.5px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
                 {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
               </p>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
-
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
 
             {/* MITTHI MANUHAR */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 MITTHI MANUHAR
               </p>
               {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-bold text-xs sm:text-sm text-[#5A121E] leading-tight">
+                <p key={idx} className="font-cormorant font-bold text-sm sm:text-base text-[#5A121E] leading-tight">
                   {item}
                 </p>
               ))}
+              <LotusDivider color="#D4AF37" className="scale-75 my-1" />
             </div>
-
-            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
         </section>
 
