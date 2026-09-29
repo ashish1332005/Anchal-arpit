@@ -1099,7 +1099,7 @@ export default function App() {
               </p>
               <div className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto space-y-0.5">
                 <p>SKM Finance • Arpit Spinners • Bhilwara Taxfab</p>
-                <p>Akashdeep Motors • Mahadev Motors • Satyam Silver</p>
+                <p>Akashdeep Motors • Mahadeep Autowheels • Satyam Silver</p>
               </div>
             </div>
 
