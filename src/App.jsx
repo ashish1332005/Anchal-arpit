@@ -320,7 +320,7 @@ export default function App() {
                   key={index}
                   className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs"
                 >
-                  {invocation.hi}
+                  {invocation.en}
                 </span>
               ))}
             </div>
@@ -1104,7 +1104,7 @@ export default function App() {
             </div>
 
             {/* Card Footer with BEE Creatives Logo & Contact */}
-            <div className="pt-3 border-t border-[#6A1B29]/20 flex flex-col items-center">
+            <div className="pt-2 mt-1 border-t border-[#6A1B29]/20 flex flex-col items-center">
               <a
                 href="tel:+919950501350"
                 className="inline-block transition-transform hover:scale-105"
@@ -1113,7 +1113,7 @@ export default function App() {
                 <img
                   src="/assets/bee_creatives_logo.png"
                   alt="BEE Creatives - +91 99 50 50 1350"
-                  className="h-10 sm:h-12 w-auto object-contain drop-shadow-xs"
+                  className="h-8 sm:h-9 w-auto object-contain drop-shadow-xs"
                 />
               </a>
             </div>

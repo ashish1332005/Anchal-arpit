@@ -22,9 +22,9 @@ export const WEDDING_DETAILS = {
   },
 
   invocations: [
-    { hi: "|| श्री रामचंद्राय नमः ||", en: "Shree Ramchandra Namah" },
-    { hi: "|| श्री गणेशाय नमः ||", en: "Shree Ganeshay Namah" },
-    { hi: "|| समस्त पितृ देव ||", en: "Shree Seth Mata Ri" },
+    { hi: "|| श्री रामचंद्राय नमः ||", en: "|| Shri Ramchandraya Namah ||" },
+    { hi: "|| श्री गणेशाय नमः ||", en: "|| Shri Ganeshaya Namah ||" },
+    { hi: "|| पित्र देवाय नमः ||", en: "|| Pitra Devay Namah ||" },
   ],
 
   december11Events: [
