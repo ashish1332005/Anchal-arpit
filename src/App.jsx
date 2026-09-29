@@ -700,10 +700,10 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/mayra-new-bg.jpg')" }}
+          style={{ backgroundImage: "url('/assets/mayra-bg-art.png')" }}
         >
-          {/* Confined to the open cream arch space below the umbrellas & Ganesha */}
-          <div className="relative z-10 pt-[30vh] sm:pt-[32vh] space-y-1.5 max-w-sm mx-auto px-4">
+          {/* Placed in the upper open sky area above the traditional Mayra illustration */}
+          <div className="relative z-10 pt-[5vh] sm:pt-[7vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
               <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
                 Mayra
@@ -734,8 +734,8 @@ export default function App() {
             <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
 
-          {/* Spacer to keep family tilak & easel artwork 100% visible */}
-          <div className="flex-1 min-h-[25vh]" />
+          {/* Spacer to keep traditional Mayra gifting artwork & elephant pond 100% visible */}
+          <div className="flex-1 min-h-[40vh]" />
 
           {/* Bottom Swipe Up */}
           <div className="relative z-20 pb-2">
@@ -780,7 +780,7 @@ export default function App() {
                     <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
                       <span className="font-bold text-xs sm:text-sm">Nikasi</span>
-                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">6:00 PM</span>
+                      <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">6:00 PM</span>
                     </div>
                   </div>
 
@@ -789,7 +789,7 @@ export default function App() {
                     <Flame className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
                       <span className="font-bold text-xs sm:text-sm">Toran</span>
-                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">8:30 PM</span>
+                      <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">8:30 PM</span>
                     </div>
                   </div>
 
@@ -798,7 +798,7 @@ export default function App() {
                     <PherasIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
                       <span className="font-bold text-xs sm:text-sm">Pheras</span>
-                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">10:30 PM</span>
+                      <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">10:30 PM</span>
                     </div>
                   </div>
                 </div>
@@ -985,7 +985,7 @@ export default function App() {
                 SPECIAL REQUEST
               </p>
               <div className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight space-y-0.5">
-                <p>Ankit – Kavita Tapariya</p>
+                <p>Ankit – Kavita Taparia</p>
                 <p>Mayank – Surbhi Kabra</p>
                 <p>Akanksha – Ronak Somani</p>
                 <p>Priyansh • Priyanshi • Ananya Kabra</p>
@@ -1103,23 +1103,19 @@ export default function App() {
               </div>
             </div>
 
-            {/* Card Footer with A-अ Monogram */}
+            {/* Card Footer with BEE Creatives Logo & Contact */}
             <div className="pt-3 border-t border-[#6A1B29]/20 flex flex-col items-center">
-              <div className="flex items-center gap-2">
+              <a
+                href="tel:+919950501350"
+                className="inline-block transition-transform hover:scale-105"
+                title="BEE Creatives • +91 99 50 50 1350"
+              >
                 <img
-                  src="/assets/couple_logo.png"
-                  alt="A-अ"
-                  className="w-5 h-5 object-contain"
+                  src="/assets/bee_creatives_logo.png"
+                  alt="BEE Creatives - +91 99 50 50 1350"
+                  className="h-10 sm:h-12 w-auto object-contain drop-shadow-xs"
                 />
-                <div className="flex items-center gap-1.5">
-                  <img src="/assets/image.png" alt={WEDDING_DETAILS.couple.groom} className="h-7 sm:h-8 max-w-[5.5rem] object-contain" />
-                  <span className="font-allura text-xl text-[#5A121E]">&amp;</span>
-                  <img src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png" alt={WEDDING_DETAILS.couple.bride} className="h-7 sm:h-8 max-w-[5.5rem] object-contain" />
-                </div>
-              </div>
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-widest uppercase text-[#2C1518] font-bold mt-1">
-                {WEDDING_DETAILS.dates.venueName} • {WEDDING_DETAILS.dates.display}
-              </p>
+              </a>
             </div>
           </div>
         </section>

@@ -130,11 +130,11 @@ export const WEDDING_DETAILS = {
       "Neelam Kabra – Dilip Kabra"
     ],
     specialRequest1: [
-      "Pushpa – Satish Ji Tapariya",
+      "Pushpa – Satish Ji Taparia",
       "Mansi – Yogesh Ji Mandowara"
     ],
     specialRequest2: [
-      "Ankit – Kavita Tapariya",
+      "Ankit – Kavita Taparia",
       "Mayank – Surbhi Kabra",
       "Akanksha – Ronak Somani",
       "Priyansh",
