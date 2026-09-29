@@ -314,15 +314,23 @@ export default function App() {
           {/* Confined strictly to upper open sky so resort fountain & arches below are completely UNCOVERED! */}
           <div className="relative z-10 pt-6 sm:pt-8 space-y-1 max-w-sm mx-auto px-3">
             {/* Religious Invocations */}
-            <div className="flex flex-wrap items-center justify-center gap-1.5 text-[#5A121E]">
-              {WEDDING_DETAILS.invocations.map((invocation, index) => (
-                <span
-                  key={index}
-                  className="font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold text-[#5A121E] bg-[#FAF7F2]/95 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/50 shadow-xs"
-                >
-                  {invocation.en}
+            <div className="w-full text-[#7B1124] select-none mb-1">
+              {/* Top Center: Shri Ramcharnay Namah */}
+              <div className="text-center mb-0.5 sm:mb-1">
+                <span className="font-cinzel text-[11px] sm:text-[12px] md:text-[13px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                  {WEDDING_DETAILS.invocations[0]?.en || "|| SHRI RAMCHARNAY NAMAH ||"}
                 </span>
-              ))}
+              </div>
+
+              {/* Bottom Row: Shri Ganeshay Namah (Left) & Shri Satipitray Namah (Right) */}
+              <div className="flex items-center justify-between px-0.5 sm:px-2">
+                <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                  {WEDDING_DETAILS.invocations[1]?.en || "|| SHRI GANESHAY NAMAH ||"}
+                </span>
+                <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                  {WEDDING_DETAILS.invocations[2]?.en || "|| SHRI SATIPITRAY NAMAH ||"}
+                </span>
+              </div>
             </div>
 
             {/* A-अ Couple Monogram */}
