@@ -567,10 +567,10 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/carnival-bg.png')" }}
+          style={{ backgroundImage: "url('/assets/carnival-new-bg.jpg')" }}
         >
-          {/* Confined to upper sky so floral arch, fountain & pavilions below are completely visible! */}
-          <div className="relative z-10 pt-8 sm:pt-10 space-y-1.5 max-w-sm mx-auto px-4">
+          {/* Confined to upper sky area so colourful tent pavilion & garden below are completely visible! */}
+          <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
               <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
                 Carnival
@@ -607,10 +607,10 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center text-white select-none"
-          style={{ backgroundImage: "url('/assets/sangeet-bg.png')" }}
+          style={{ backgroundImage: "url('/assets/sangeet-new-bg.jpg')" }}
         >
-          {/* Confined strictly to upper dark starry sky so dancing couple is 100% UNTOUCHED! */}
-          <div className="relative z-10 pt-8 sm:pt-10 space-y-1.5 max-w-sm mx-auto px-4">
+          {/* Confined strictly to upper starry sky so crystal pavilion & grand piano below are 100% UNTOUCHED! */}
+          <div className="relative z-10 pt-[13vh] sm:pt-[15vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#F7D070">
               <h2 className="font-playfair text-2xl sm:text-3xl text-gold-gradient font-bold drop-shadow-md tracking-wide leading-tight">
                 Sangeet &amp; Ring Ceremony
@@ -741,21 +741,21 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* SLIDE 8: NIKASI (12 December Evening) */}
+        {/* SLIDE 8: WEDDING CEREMONY (12 December Evening & Night) */}
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/wedding-ceremony-new-bg.png')" }}
+          style={{ backgroundImage: "url('/assets/wedding-ceremony-new-bg.jpg')" }}
         >
-          {/* Confined strictly to the glowing blank center space below the top floral drapery */}
-          <div className="relative z-10 pt-[24vh] sm:pt-[26vh] space-y-1.5 max-w-sm mx-auto px-3">
+          {/* Confined strictly to upper open sky area so mandap, hawan kund & pool below are 100% visible! */}
+          <div className="relative z-10 pt-[13vh] sm:pt-[15vh] space-y-1 max-w-sm mx-auto px-3">
             <div className="flex justify-center">
               <img src="/assets/couple_logo.png" alt="A-अ" className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm" />
             </div>
 
             <TitleFlourish color="#5A121E">
               <h2 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
-                Nikasi
+                Wedding Ceremony
               </h2>
             </TitleFlourish>
 
@@ -765,15 +765,38 @@ export default function App() {
               "Welcoming our dear ones with open hearts and warm smiles"
             </p>
 
-            <div className="pt-1">
-              <OrnateCard isDark={false} maxWidth="max-w-xs">
-                <div className="space-y-1 font-cormorant text-center py-1">
-                  <p className="font-bold text-base sm:text-lg text-[#5A121E]">
-                    Saturday, 12th December 2026
-                  </p>
-                  <div className="flex items-center justify-center gap-1.5 text-[#8B6508]">
-                    <Crown className="w-4 h-4 shrink-0 text-[#8B6508]" />
-                    <span className="font-bold text-base sm:text-lg">06:00 PM</span>
+            <p className="font-cormorant font-bold text-sm sm:text-base text-[#5A121E] pt-0.5">
+              Saturday, 12th December 2026
+            </p>
+
+            <div className="pt-0.5">
+              <OrnateCard isDark={false} maxWidth="max-w-md">
+                <div className="grid grid-cols-3 items-center text-center divide-x divide-[#D4AF37]/50 font-cormorant text-[#5A121E] py-1">
+                  {/* Nikasi */}
+                  <div className="flex items-center justify-center gap-1 px-1">
+                    <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                    <div className="text-left leading-tight">
+                      <span className="font-bold text-xs sm:text-sm">Nikasi</span>
+                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">6:00 PM</span>
+                    </div>
+                  </div>
+
+                  {/* Toran */}
+                  <div className="flex items-center justify-center gap-1 px-1">
+                    <Flame className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                    <div className="text-left leading-tight">
+                      <span className="font-bold text-xs sm:text-sm">Toran</span>
+                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">8:30 PM</span>
+                    </div>
+                  </div>
+
+                  {/* Pheras */}
+                  <div className="flex items-center justify-center gap-1 px-1">
+                    <PherasIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                    <div className="text-left leading-tight">
+                      <span className="font-bold text-xs sm:text-sm">Pheras</span>
+                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">10:30 PM</span>
+                    </div>
                   </div>
                 </div>
               </OrnateCard>
@@ -782,8 +805,8 @@ export default function App() {
             <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
 
-          {/* Spacer to keep bottom mandala carpet, lamps & banana trees 100% visible */}
-          <div className="flex-1 min-h-[22vh]" />
+          {/* Spacer to keep mandap, floral pillars & pool 100% visible */}
+          <div className="flex-1 min-h-[30vh]" />
 
           {/* Bottom Swipe Up */}
           <div className="relative z-20 pb-2">
@@ -792,7 +815,7 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* SLIDE 9: RECEPTION & SACRED PHERAS (12 December Night) */}
+        {/* SLIDE 9: RECEPTION & DINNER (12 December Night) */}
         {/* ======================================================== */}
         <section className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden text-center text-white select-none">
           <video
@@ -813,16 +836,11 @@ export default function App() {
 
             <LotusDivider color="#D4AF37" />
 
-            <div className="space-y-0.5">
+            <TitleFlourish color="#D4AF37">
               <h2 className="font-playfair text-2xl sm:text-3xl text-gold-gradient font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] tracking-wide leading-tight">
-                Reception &amp;
+                Reception &amp; Dinner
               </h2>
-              <TitleFlourish color="#D4AF37">
-                <h2 className="font-playfair text-2xl sm:text-3xl text-gold-gradient font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] tracking-wide leading-tight">
-                  Sacred Pheras
-                </h2>
-              </TitleFlourish>
-            </div>
+            </TitleFlourish>
 
             <LotusDivider color="#D4AF37" />
 
@@ -830,48 +848,13 @@ export default function App() {
               Saturday, 12th December 2026
             </p>
 
-            {/* Highlighted 3-Column Ornate Timings Card matching Screenshot 1 */}
             <div className="pt-1">
-              <OrnateCard isDark={true} maxWidth="max-w-md">
-                <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center text-center py-1 px-1">
-                  {/* Reception & Dinner */}
-                  <div className="flex flex-col items-center">
-                    <ClocheIcon className="w-4 h-4 text-[#F7D070] mb-0.5" />
-                    <p className="font-playfair text-[11px] sm:text-xs font-bold text-[#F7D070] leading-tight">
-                      Reception &amp; Dinner
-                    </p>
-                    <p className="font-cormorant text-[10px] sm:text-xs text-white/90 font-medium">
-                      7:00 PM
-                    </p>
-                  </div>
-
-                  {/* Bullet separator */}
-                  <div className="px-1 text-[#D4AF37] font-bold text-xs sm:text-sm">•</div>
-
-                  {/* Toran */}
-                  <div className="flex flex-col items-center">
-                    <Flame className="w-4 h-4 text-[#F7D070] mb-0.5" />
-                    <p className="font-playfair text-[11px] sm:text-xs font-bold text-[#F7D070] leading-tight">
-                      Toran
-                    </p>
-                    <p className="font-cormorant text-[10px] sm:text-xs text-white/90 font-medium">
-                      8:30 PM
-                    </p>
-                  </div>
-
-                  {/* Vertical bar separator */}
-                  <div className="h-7 w-px bg-gradient-to-b from-transparent via-[#D4AF37]/60 to-transparent mx-1" />
-
-                  {/* Pheras */}
-                  <div className="flex flex-col items-center">
-                    <PherasIcon className="w-4 h-4 text-[#F7D070] mb-0.5" />
-                    <p className="font-playfair text-[11px] sm:text-xs font-bold text-[#F7D070] leading-tight">
-                      Pheras
-                    </p>
-                    <p className="font-cormorant text-[10px] sm:text-xs text-white/90 font-medium">
-                      10:30 PM
-                    </p>
-                  </div>
+              <OrnateCard isDark={true} maxWidth="max-w-xs">
+                <div className="flex items-center justify-center gap-2 text-center py-1 font-cormorant text-white">
+                  <ClocheIcon className="w-4 h-4 text-[#F7D070] shrink-0" />
+                  <p className="font-bold text-base sm:text-lg text-[#FFF5C0]">
+                    07:00 PM Onwards
+                  </p>
                 </div>
               </OrnateCard>
             </div>
