@@ -741,21 +741,21 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* SLIDE 8: MILNI, BADHAI & NIKASI (12 December Afternoon) */}
+        {/* SLIDE 8: NIKASI (12 December Evening) */}
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/wedding-ceremony-new-bg.png')" }}
         >
           {/* Confined strictly to the glowing blank center space below the top floral drapery */}
-          <div className="relative z-10 pt-[24vh] sm:pt-[26vh] space-y-1 max-w-sm mx-auto px-3">
+          <div className="relative z-10 pt-[24vh] sm:pt-[26vh] space-y-1.5 max-w-sm mx-auto px-3">
             <div className="flex justify-center">
               <img src="/assets/couple_logo.png" alt="A-अ" className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm" />
             </div>
 
             <TitleFlourish color="#5A121E">
               <h2 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
-                Wedding Ceremony
+                Nikasi
               </h2>
             </TitleFlourish>
 
@@ -765,33 +765,15 @@ export default function App() {
               "Welcoming our dear ones with open hearts and warm smiles"
             </p>
 
-            <p className="font-cormorant font-bold text-sm sm:text-base text-[#5A121E] pt-0.5">
-              Saturday, 12th December 2026
-            </p>
-
-            <div className="pt-0.5">
-              <OrnateCard isDark={false} maxWidth="max-w-md">
-                <div className="grid grid-cols-3 items-center text-center divide-x divide-[#D4AF37]/50 font-cormorant text-[#5A121E] py-1">
-                  <div className="flex items-center justify-center gap-1.5 px-1">
-                    <ClocheIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <div className="text-left leading-tight">
-                      <span className="font-bold text-xs sm:text-sm">Milni</span>
-                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">4:00 PM</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5 px-1">
-                    <Sparkles className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <div className="text-left leading-tight">
-                      <span className="font-bold text-xs sm:text-sm">Badhai</span>
-                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">4:00 PM</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5 px-1">
-                    <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <div className="text-left leading-tight">
-                      <span className="font-bold text-xs sm:text-sm">Nikasi</span>
-                      <span className="text-[11px] sm:text-xs block text-[#2C1518]">6:00 PM</span>
-                    </div>
+            <div className="pt-1">
+              <OrnateCard isDark={false} maxWidth="max-w-xs">
+                <div className="space-y-1 font-cormorant text-center py-1">
+                  <p className="font-bold text-base sm:text-lg text-[#5A121E]">
+                    Saturday, 12th December 2026
+                  </p>
+                  <div className="flex items-center justify-center gap-1.5 text-[#8B6508]">
+                    <Crown className="w-4 h-4 shrink-0 text-[#8B6508]" />
+                    <span className="font-bold text-base sm:text-lg">06:00 PM</span>
                   </div>
                 </div>
               </OrnateCard>
@@ -917,9 +899,7 @@ export default function App() {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* Note: The authentic A-अ Monogram is now baked directly into the golden arch of directions-bg.png! */}
-
-          {/* MAP PREVIEW CARD: FITS EXACTLY INSIDE THE GOLDEN ORNATE FRAME */}
+          {/* MAP PREVIEW CARD */}
           <div
             className="absolute rounded-lg overflow-hidden cursor-pointer shadow-md group border border-[#D4AF37]/50"
             style={{
@@ -943,7 +923,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* VENUE NAME AND GET DIRECTIONS BUTTON: BELOW THE ORNATE DIVIDER */}
+          {/* VENUE NAME AND GET DIRECTIONS BUTTON */}
           <div
             className="absolute left-0 right-0 text-center pointer-events-auto px-4"
             style={{ top: '69.5%' }}
@@ -972,29 +952,28 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* SLIDE 11: WITH LOVE & BLESSINGS — PART 1 */}
+        {/* SLIDE 11: WITH LOVE & BLESSINGS (Family, Compliments, Nanihaal & Samdhi) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-center items-center p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between items-center p-3 sm:p-5 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
           style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')", backgroundAttachment: 'fixed' }}
         >
-          {/* Content matching Screenshot 1 */}
-          <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-4 sm:space-y-5 py-4">
+          <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-2 space-y-1.5 pt-5 sm:pt-6 my-auto">
             {/* Header */}
-            <div className="space-y-1">
-              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
+            <div className="space-y-0.5">
+              <h2 className="font-allura text-3xl sm:text-[38px] text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
                 With Love &amp; Blessings
               </h2>
-              <div className="w-28 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-2" />
+              <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto" />
             </div>
 
             {/* WARM REGARDS */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 WARM REGARDS
               </p>
               {WEDDING_DETAILS.family.warmRegards.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] leading-tight">
                   {item}
                 </p>
               ))}
@@ -1002,11 +981,11 @@ export default function App() {
 
             {/* SPECIAL REQUEST 1 */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 SPECIAL REQUEST
               </p>
               {WEDDING_DETAILS.family.specialRequest1.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] leading-tight">
                   {item}
                 </p>
               ))}
@@ -1014,23 +993,57 @@ export default function App() {
 
             {/* SPECIAL REQUEST 2 */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 SPECIAL REQUEST
               </p>
-              {WEDDING_DETAILS.family.specialRequest2.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
-                  {item}
-                </p>
-              ))}
+              <div className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] leading-tight space-y-0.5">
+                <p>Ankit – Kavita Tapariya</p>
+                <p>Mayank – Surbhi Kabra</p>
+                <p>Akanksha – Ronak Somani</p>
+                <p className="text-[11px] sm:text-xs text-[#5A121E]">Priyansh • Priyanshi • Ananya Kabra</p>
+              </div>
+            </div>
+
+            {/* WITH BEST COMPLIMENTS */}
+            <div className="space-y-0.5 pt-0.5">
+              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+                WITH BEST COMPLIMENTS
+              </p>
+              <p className="font-cormorant font-semibold text-[11px] sm:text-xs text-[#2C1518] max-w-sm mx-auto leading-tight">
+                {WEDDING_DETAILS.family.withBestCompliments.members}
+              </p>
+              <p className="font-cormorant font-bold text-xs text-[#5A121E]">
+                {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
+              </p>
+            </div>
+
+            {/* NANIHAAL PAKSH */}
+            <div className="space-y-0.5">
+              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+                NANIHAAL PAKSH
+              </p>
+              <p className="font-cormorant font-semibold text-xs text-[#2C1518] leading-tight">
+                {WEDDING_DETAILS.family.nanihaalPaksh.name}
+              </p>
+            </div>
+
+            {/* SAMDHI PARIVAAR */}
+            <div className="space-y-0.5">
+              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+                SAMDHI PARIVAAR
+              </p>
+              <p className="font-cormorant font-semibold text-[11px] sm:text-xs text-[#2C1518] max-w-sm mx-auto leading-tight">
+                {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
+              </p>
             </div>
 
             {/* MITHI MANUHAR */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+            <div className="space-y-0.5 pt-0.5">
+              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 MITHI MANUHAR
               </p>
               {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-sm sm:text-base text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-bold text-xs sm:text-sm text-[#5A121E] leading-tight">
                   {item}
                 </p>
               ))}
@@ -1039,16 +1052,16 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* SLIDE 12: WITH LOVE & BLESSINGS — PART 2 (Continuation) */}
+        {/* SLIDE 12: RSVP & FIRMS */}
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
           style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')", backgroundAttachment: 'fixed' }}
         >
-          {/* Content matching Screenshot 2 */}
-          <div className="relative z-10 my-auto max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-3 sm:space-y-3.5 py-4">
+          {/* Content matching Screenshot */}
+          <div className="relative z-10 my-auto max-w-sm sm:max-w-md mx-auto w-full px-4 space-y-4 py-4">
             {/* Inviting Quote */}
-            <div className="max-w-xs sm:max-w-sm mx-auto space-y-1">
+            <div className="max-w-xs sm:max-w-sm mx-auto space-y-1.5">
               <p className="font-cormorant italic text-sm sm:text-base text-[#2C1518] font-semibold leading-relaxed">
                 "{WEDDING_DETAILS.translations[lang].familyInviteQuote}"
               </p>
@@ -1058,23 +1071,23 @@ export default function App() {
             <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent mx-auto" />
 
             {/* RSVP SECTION CARD */}
-            <div className="bg-[#FAF7F2]/90 backdrop-blur-xs rounded-xl p-2.5 border border-[#D4AF37]/60 shadow-xs max-w-sm mx-auto space-y-1">
-              <p className="font-cinzel text-[10px] sm:text-xs tracking-[0.2em] uppercase text-[#5A121E] font-bold">
+            <div className="bg-[#FAF7F2]/90 backdrop-blur-xs rounded-xl p-3 border border-[#D4AF37]/60 shadow-xs max-w-sm mx-auto space-y-1.5">
+              <p className="font-cinzel text-[11px] sm:text-xs tracking-[0.2em] uppercase text-[#5A121E] font-bold">
                 RSVP
               </p>
-              <p className="font-cormorant font-bold text-sm sm:text-base text-[#2C1518]">
+              <p className="font-cormorant font-bold text-base sm:text-lg text-[#2C1518]">
                 {WEDDING_DETAILS.family.rsvp.names.join(' • ')}
               </p>
               <p className="font-cormorant text-xs sm:text-sm text-[#2C1518]">
                 {WEDDING_DETAILS.family.rsvp.address}, {WEDDING_DETAILS.family.rsvp.city}
               </p>
               {/* Phone numbers with click to call */}
-              <div className="pt-0.5 flex flex-wrap items-center justify-center gap-1.5">
+              <div className="pt-1 flex flex-wrap items-center justify-center gap-2">
                 {WEDDING_DETAILS.family.rsvp.phones.map((phone, idx) => (
                   <a
                     key={idx}
                     href={`tel:+91${phone}`}
-                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#5A121E] text-[#F7D070] font-cinzel text-[10px] sm:text-xs font-bold hover:scale-105 transition-transform"
+                    className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-cinzel text-[10px] sm:text-xs font-bold hover:scale-105 transition-transform shadow-xs"
                   >
                     <Phone className="w-2.5 h-2.5" />
                     <span>{phone}</span>
@@ -1083,51 +1096,18 @@ export default function App() {
               </div>
             </div>
 
-            {/* WITH BEST COMPLIMENTS */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
-                WITH BEST COMPLIMENTS
-              </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
-                {WEDDING_DETAILS.family.withBestCompliments.members}
-              </p>
-              <p className="font-cormorant font-bold text-xs sm:text-sm text-[#5A121E]">
-                {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
-              </p>
-            </div>
-
             {/* FIRMS */}
-            <div className="space-y-0.5">
+            <div className="space-y-1 pt-1">
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 FIRMS
               </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto">
+              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-relaxed">
                 {WEDDING_DETAILS.family.firms.join(' • ')}
               </p>
             </div>
 
-            {/* NANIHAAL PAKSH */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
-                NANIHAAL PAKSH
-              </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518]">
-                {WEDDING_DETAILS.family.nanihaalPaksh.name}
-              </p>
-            </div>
-
-            {/* SAMDHI PARIVAAR */}
-            <div className="space-y-0.5">
-              <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
-                SAMDHI PARIVAAR
-              </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-tight">
-                {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
-              </p>
-            </div>
-
             {/* Card Footer with A-अ Monogram */}
-            <div className="pt-2 border-t border-[#6A1B29]/20 flex flex-col items-center">
+            <div className="pt-3 border-t border-[#6A1B29]/20 flex flex-col items-center">
               <div className="flex items-center gap-2">
                 <img
                   src="/assets/couple_logo.png"
@@ -1140,7 +1120,7 @@ export default function App() {
                   <img src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png" alt={WEDDING_DETAILS.couple.bride} className="h-7 sm:h-8 max-w-[5.5rem] object-contain" />
                 </div>
               </div>
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-widest uppercase text-[#2C1518] font-bold mt-0.5">
+              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-widest uppercase text-[#2C1518] font-bold mt-1">
                 {WEDDING_DETAILS.dates.venueName} • {WEDDING_DETAILS.dates.display}
               </p>
             </div>

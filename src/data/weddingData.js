@@ -94,27 +94,6 @@ export const WEDDING_DETAILS = {
       timeHi: "प्रातः 11:00 बजे"
     },
     {
-      id: "milni",
-      title: "Milni",
-      titleHi: "मिलनी",
-      time: "4:00 PM",
-      timeHi: "सायं 4:00 बजे"
-    },
-    {
-      id: "badhai",
-      title: "Badhai",
-      titleHi: "बधाई",
-      time: "4:00 PM",
-      timeHi: "सायं 4:00 बजे"
-    },
-    {
-      id: "laddu_jalai",
-      title: "Laddu Jalai",
-      titleHi: "लड्डू जलाई",
-      time: "4:30 PM",
-      timeHi: "सायं 4:30 बजे"
-    },
-    {
       id: "nikasi",
       title: "Nikasi",
       titleHi: "निकासी",
@@ -172,17 +151,16 @@ export const WEDDING_DETAILS = {
       phones: ["9929462333", "7727058633", "9128011391"]
     },
     withBestCompliments: {
-      members: "Banshilal, Ramkishore, Ganeshram, Madhusudan, Shivratan, Suresh, Rambakshi, Amit",
+      members: "Babulal, Ramkishore, Ganeshram, Madhusudan, Shivratan, Suresh Ji (C.A.), Rambakshi, Amit",
       familyTitle: "Kabra & Family"
     },
     firms: [
       "SKM Finance",
-      "Ankit Spinners",
+      "Arpit Spinners",
       "Bhilwara Taxfab",
       "Akashdeep Motors",
-      "Madadeep Automobiles",
-      "Satyam Jewellers",
-      "Madadeep Automobiles"
+      "Mahadev Motors",
+      "Satyam Jewellers"
     ],
     nanihaalPaksh: {
       title: "Nanihaal Paksh",
