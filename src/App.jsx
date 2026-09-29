@@ -938,48 +938,52 @@ export default function App() {
         {/* SLIDE 11: WITH LOVE & BLESSINGS (Family, Compliments, Nanihaal & Samdhi) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between items-center p-3 sm:p-5 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-center items-center px-4 py-6 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#2C1518] select-none"
           style={{ backgroundImage: "url('/assets/rsvp-1-bg.png')", backgroundAttachment: 'fixed' }}
         >
-          <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-2 space-y-1.5 pt-5 sm:pt-6 my-auto">
+          <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-2 flex flex-col justify-center h-full max-h-[92vh] space-y-1 sm:space-y-1.5">
             {/* Header */}
             <div className="space-y-0.5">
               <h2 className="font-allura text-3xl sm:text-[38px] text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
                 With Love &amp; Blessings
               </h2>
-              <div className="w-24 h-px bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto" />
+              <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
             </div>
 
             {/* WARM REGARDS */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 WARM REGARDS
               </p>
               {WEDDING_DETAILS.family.warmRegards.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-semibold text-xs sm:text-[13.5px] text-[#2C1518] leading-tight">
                   {item}
                 </p>
               ))}
             </div>
+
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
 
             {/* SPECIAL REQUEST 1 */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SPECIAL REQUEST
               </p>
               {WEDDING_DETAILS.family.specialRequest1.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-semibold text-xs sm:text-[13.5px] text-[#2C1518] leading-tight">
                   {item}
                 </p>
               ))}
             </div>
 
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
+
             {/* SPECIAL REQUEST 2 */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SPECIAL REQUEST
               </p>
-              <div className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] leading-tight space-y-0.5">
+              <div className="font-cormorant font-semibold text-xs sm:text-[13.5px] text-[#2C1518] leading-tight space-y-0.5">
                 <p>Ankit – Kavita Tapariya</p>
                 <p>Mayank – Surbhi Kabra</p>
                 <p>Akanksha – Ronak Somani</p>
@@ -987,43 +991,54 @@ export default function App() {
               </div>
             </div>
 
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
+
             {/* WITH BEST COMPLIMENTS */}
-            <div className="space-y-0.5 pt-0.5">
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+            <div className="space-y-0.5">
+              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 WITH BEST COMPLIMENTS
               </p>
-              <p className="font-cormorant font-semibold text-[11px] sm:text-xs text-[#2C1518] max-w-sm mx-auto leading-tight">
+              <p className="font-cormorant font-semibold text-[11px] sm:text-xs text-[#2C1518] max-w-sm mx-auto leading-snug">
                 {WEDDING_DETAILS.family.withBestCompliments.members}
               </p>
-              <p className="font-cormorant font-bold text-xs text-[#5A121E]">
+              <p className="font-cormorant font-bold text-xs sm:text-[13px] text-[#5A121E]">
                 {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
               </p>
             </div>
 
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
+
             {/* NANIHAAL PAKSH */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 NANIHAAL PAKSH
               </p>
-              <p className="font-cormorant font-semibold text-xs text-[#2C1518] leading-tight">
-                {WEDDING_DETAILS.family.nanihaalPaksh.name}
+              <p className="font-cormorant font-semibold text-xs sm:text-[13px] text-[#2C1518] leading-tight">
+                Shree Shyam Sundar Ji Mandawara
+              </p>
+              <p className="font-cormorant font-semibold text-xs sm:text-[13px] text-[#2C1518] leading-tight">
+                Deepak Ji Mandawara (Neemach)
               </p>
             </div>
 
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
+
             {/* SAMDHI PARIVAAR */}
             <div className="space-y-0.5">
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
+              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SAMDHI PARIVAAR
               </p>
-              <p className="font-cormorant font-semibold text-[11px] sm:text-xs text-[#2C1518] max-w-sm mx-auto leading-tight">
+              <p className="font-cormorant font-semibold text-[11px] sm:text-xs text-[#2C1518] max-w-sm mx-auto leading-snug">
                 {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
               </p>
             </div>
 
-            {/* MITHI MANUHAR */}
-            <div className="space-y-0.5 pt-0.5">
-              <p className="font-cinzel text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
-                MITHI MANUHAR
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto my-0.5" />
+
+            {/* MITTHI MANUHAR */}
+            <div className="space-y-0.5">
+              <p className="font-cinzel text-[9.5px] sm:text-[10.5px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
+                MITTHI MANUHAR
               </p>
               {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
                 <p key={idx} className="font-cormorant font-bold text-xs sm:text-sm text-[#5A121E] leading-tight">
@@ -1031,6 +1046,8 @@ export default function App() {
                 </p>
               ))}
             </div>
+
+            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
         </section>
 
@@ -1048,7 +1065,7 @@ export default function App() {
               <p className="font-cormorant italic text-sm sm:text-base text-[#2C1518] font-semibold leading-relaxed">
                 "{WEDDING_DETAILS.translations[lang].familyInviteQuote}"
               </p>
-              <p className="font-playfair text-base sm:text-lg text-[#5A121E] font-bold">— Kabra &amp; Chechani Parivaar</p>
+              <p className="font-playfair text-base sm:text-lg text-[#5A121E] font-bold">— Kabra Parivaar</p>
             </div>
 
             <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent mx-auto" />
@@ -1079,14 +1096,15 @@ export default function App() {
               </div>
             </div>
 
-            {/* FIRMS */}
+            {/* FIRMS (3 names on line 1, 3 names on line 2 for perfect hierarchy) */}
             <div className="space-y-1 pt-1">
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-[#8B6508] font-bold">
                 FIRMS
               </p>
-              <p className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto leading-relaxed">
-                {WEDDING_DETAILS.family.firms.join(' • ')}
-              </p>
+              <div className="font-cormorant font-semibold text-xs sm:text-sm text-[#2C1518] max-w-sm mx-auto space-y-0.5">
+                <p>SKM Finance • Arpit Spinners • Bhilwara Taxfab</p>
+                <p>Akashdeep Motors • Mahadev Motors • Satyam Silver</p>
+              </div>
             </div>
 
             {/* Card Footer with A-अ Monogram */}

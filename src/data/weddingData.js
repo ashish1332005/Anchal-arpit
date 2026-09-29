@@ -160,7 +160,7 @@ export const WEDDING_DETAILS = {
       "Bhilwara Taxfab",
       "Akashdeep Motors",
       "Mahadev Motors",
-      "Satyam Jewellers"
+      "Satyam Silver"
     ],
     nanihaalPaksh: {
       title: "Nanihaal Paksh",
