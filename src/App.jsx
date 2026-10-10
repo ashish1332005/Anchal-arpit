@@ -4,6 +4,7 @@ import FallingPetals from './components/FallingPetals';
 import AudioPlayer from './components/AudioPlayer';
 import RsvpModal from './components/RsvpModal';
 import ScratchDateReveal from './components/ScratchDateReveal';
+import Countdown from './components/Countdown';
 import { WEDDING_DETAILS } from './data/weddingData';
 import {
   ChevronDown,
@@ -221,7 +222,7 @@ export default function App() {
             <a
               href={generateGoogleCalendarUrl(
                 `${WEDDING_DETAILS.couple.bride} & ${WEDDING_DETAILS.couple.groom} Royal Wedding - ${WEDDING_DETAILS.dates.venueName}`,
-                `${WEDDING_DETAILS.couple.brideFull} and ${WEDDING_DETAILS.couple.groomFull} wedding celebrations on ${WEDDING_DETAILS.dates.display} at ${WEDDING_DETAILS.dates.venueName}`,
+                `${WEDDING_DETAILS.couple.bride} and ${WEDDING_DETAILS.couple.groom} wedding celebrations on ${WEDDING_DETAILS.dates.display} at ${WEDDING_DETAILS.dates.venueName}`,
                 WEDDING_DETAILS.dates.venueName,
                 '20261211T013000Z',
                 '20261212T203000Z'
@@ -319,17 +320,17 @@ export default function App() {
 {/* GROOM SECTION (FIRST) */}
 <div className="pt-2 space-y-1.5">
   <div className="flex justify-center items-center">
-    <h1 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold leading-tight">
-      {WEDDING_DETAILS.couple.groomFull}
+    <h1 className="font-great-vibes text-4xl sm:text-5xl text-[#5A121E] font-normal leading-tight">
+      {WEDDING_DETAILS.couple.groom}
     </h1>
   </div>
 
   <div className="space-y-0.5 text-center">
     <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      G/S/o — {WEDDING_DETAILS.couple.groomGrandParents}
+      Grandson of {WEDDING_DETAILS.couple.groomGrandParents}
     </p>
     <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      S/o — {WEDDING_DETAILS.couple.groomParents}
+      Son of {WEDDING_DETAILS.couple.groomParents}
     </p>
   </div>
 </div>
@@ -352,17 +353,17 @@ export default function App() {
 {/* BRIDE SECTION (SECOND) */}
 <div className="space-y-1.5">
   <div className="flex justify-center items-center">
-    <h2 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold leading-tight">
-      {WEDDING_DETAILS.couple.brideFull}
+    <h2 className="font-great-vibes text-4xl sm:text-5xl text-[#5A121E] font-normal leading-tight">
+      {WEDDING_DETAILS.couple.bride}
     </h2>
   </div>
 
   <div className="space-y-0.5 text-center">
         <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      G/D/o — {WEDDING_DETAILS.couple.brideGrandParents}
+      Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}
     </p>
     <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      D/o — {WEDDING_DETAILS.couple.brideParents}
+      Daughter of {WEDDING_DETAILS.couple.brideParents}
     </p>
 
 
@@ -378,11 +379,11 @@ export default function App() {
         {/* ======================================================== */}
         {/* SLIDE 2: LANDSCAPE SCRATCH-TO-REVEAL DATE */}
         {/* ======================================================== */}
-        <section className="story-slide w-full h-[100dvh] snap-start relative flex flex-col items-center justify-center gap-8 px-5 py-12 overflow-hidden text-center bg-[#fffefa]">
+        <section className="story-slide w-full h-auto snap-start relative flex flex-col items-center justify-center gap-4 px-4 py-7 overflow-hidden text-center bg-[#fffefa]">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ffffff_0%,_#faf7f2_75%)]" />
           <div className="relative z-10 w-full px-2">
-            <p className="font-playfair text-xl sm:text-2xl font-semibold text-[#5A121E] mb-2">A little surprise for you</p>
-            <p className="font-cormorant text-base sm:text-lg text-[#5A121E]/80 mb-5">Scratch the card to reveal our wedding date</p>
+            <p className="font-cinzel text-base sm:text-lg font-semibold tracking-wide uppercase text-[#5A121E] mb-1">A little surprise for you</p>
+            <p className="font-cormorant text-sm sm:text-base text-[#5A121E]/80 mb-3">Scratch the card to reveal our wedding date</p>
             <ScratchDateReveal revealed={dateRevealed} onReveal={() => setDateRevealed(true)} />
             {dateRevealed && (
               <p className="font-cormorant text-sm sm:text-base text-[#5A121E] mt-4 animate-pulse">
@@ -409,35 +410,16 @@ export default function App() {
         >
           {/* Confined to upper dark area so glowing Ganesha idol at bottom is 100% visible! */}
           <div className="relative z-10 pt-5 sm:pt-7 space-y-1 max-w-sm mx-auto px-4">
-            <div className="flex items-center justify-center">
-              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-md" />
-            </div>
-            <p className="font-cinzel text-xs sm:text-sm tracking-widest text-[#5A121E] font-bold uppercase drop-shadow-md">
-              || श्री गणेशाय नमः ||
-            </p>
-
-            <TitleFlourish color="#F7D070">
-              <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] drop-shadow-sm font-bold tracking-wide leading-tight">
+            <TitleFlourish color="#8B6508">
+              <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] drop-shadow-sm font-bold tracking-wide leading-tight uppercase">
                 Vinayak Sthapna
               </h2>
             </TitleFlourish>
 
-            <LotusDivider color="#D4AF37" />
-
-            <div className="pt-1">
-              <OrnateCard isDark={true} maxWidth="max-w-xs">
-                <div className="space-y-1 font-cormorant text-center py-1">
-                  <p className="font-bold text-base sm:text-lg text-[#5A121E] drop-shadow-sm">
-                    Friday, 11 December 2026 - 7:00 AM
-                  </p>
-                  <p className="text-sm sm:text-base text-[#8B6508] font-bold drop-shadow-sm">
-                    Breakfast: 9:00 AM
-                  </p>
-                </div>
-              </OrnateCard>
+            <div className="font-cormorant text-[#5A121E] text-sm sm:text-base leading-snug">
+              <p className="font-semibold">Friday, 11 December 2026 at 7:00 AM</p>
+              <p className="text-[#8B6508]">Breakfast at 9:00 AM</p>
             </div>
-
-            <LotusDivider color="#D4AF37" />
           </div>
 
           <RoyalSwipeUp onClick={() => scrollToSlide(3)} />
@@ -453,7 +435,7 @@ export default function App() {
           {/* Positioned in the blank open sky area below the top canopy tassels */}
           <div className="relative z-10 pt-[27vh] sm:pt-[29vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
-              <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight">
+              <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight uppercase">
                 Carnival
               </h2>
             </TitleFlourish>
@@ -496,7 +478,7 @@ export default function App() {
           {/* Confined strictly to upper starry sky so crystal pavilion & grand piano below are 100% UNTOUCHED! */}
           <div className="relative z-10 pt-[13vh] sm:pt-[15vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#F7D070">
-              <h2 className="font-playfair text-2xl sm:text-3xl text-gold-gradient font-bold drop-shadow-md tracking-wide leading-tight">
+              <h2 className="font-cinzel text-2xl sm:text-3xl text-gold-gradient font-bold drop-shadow-md tracking-wide leading-tight uppercase">
                 Sangeet &amp; Ring Ceremony
               </h2>
             </TitleFlourish>
@@ -544,7 +526,7 @@ export default function App() {
             </div>
 
             <TitleFlourish color="#5A121E">
-              <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
+              <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight uppercase">
                 Mangal Kalash
               </h2>
             </TitleFlourish>
@@ -558,7 +540,7 @@ export default function App() {
                     Saturday, 12 December 2026
                   </p>
                   <p className="font-bold text-sm sm:text-base text-[#8B6508]">
-                    9:00 AM | Breakfast
+                    Mangal Kalash and breakfast: 9:00 AM
                   </p>
                 </div>
               </OrnateCard>
@@ -586,7 +568,7 @@ export default function App() {
           {/* Placed in the upper open sky area above the traditional Mayra illustration */}
           <div className="relative z-10 pt-[5vh] sm:pt-[7vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
-              <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
+              <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight uppercase">
                 Mayra
               </h2>
             </TitleFlourish>
@@ -638,7 +620,7 @@ export default function App() {
             </div>
 
             <TitleFlourish color="#5A121E">
-              <h2 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight">
+              <h2 className="font-cinzel text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight uppercase">
                 Wedding Ceremony
               </h2>
             </TitleFlourish>
@@ -660,7 +642,7 @@ export default function App() {
                   <div className="flex items-center justify-center gap-1 px-1">
                     <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
-                      <span className="font-bold text-xs sm:text-sm">Nikasi</span>
+                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-semibold">Nikasi</span>
                       <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">6:00 PM</span>
                     </div>
                   </div>
@@ -669,7 +651,7 @@ export default function App() {
                   <div className="flex items-center justify-center gap-1 px-1">
                     <Flame className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
-                      <span className="font-bold text-xs sm:text-sm">Toran</span>
+                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-semibold">Toran</span>
                       <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">8:30 PM</span>
                     </div>
                   </div>
@@ -678,7 +660,7 @@ export default function App() {
                   <div className="flex items-center justify-center gap-1 px-1">
                     <PherasIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
-                      <span className="font-bold text-xs sm:text-sm">Pheras</span>
+                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-semibold">Pheras</span>
                       <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">10:30 PM</span>
                     </div>
                   </div>
@@ -695,6 +677,22 @@ export default function App() {
           {/* Bottom Swipe Up */}
           <div className="relative z-20 pb-2">
             <RoyalSwipeUp onClick={() => scrollToSlide(8)} />
+          </div>
+        </section>
+
+        {/* ======================================================== */}
+        {/* COUNTDOWN: AFTER THE WEDDING EVENT SEQUENCE */}
+        {/* ======================================================== */}
+        <section className="story-slide w-full h-[100dvh] snap-start relative flex flex-col items-center justify-center px-5 py-10 text-center bg-[#FAF7F2]">
+          <div className="w-full max-w-lg">
+            <h2 className="font-cinzel text-xl sm:text-2xl font-semibold tracking-wider uppercase text-[#5A121E] mb-2">
+              Counting down to the wedding
+            </h2>
+            <p className="font-cormorant text-sm sm:text-base text-[#8B6508] mb-4">11 December 2026</p>
+            <Countdown targetDateIso={WEDDING_DETAILS.dates.startDateIso} />
+          </div>
+          <div className="absolute bottom-3 left-0 right-0">
+            <RoyalSwipeUp onClick={() => scrollToSlide(9)} label="VIEW VENUE" />
           </div>
         </section>
 
@@ -739,7 +737,7 @@ export default function App() {
             className="absolute left-0 right-0 text-center pointer-events-auto px-4"
             style={{ top: '69.5%' }}
           >
-            <h3 className="font-playfair font-bold text-2xl sm:text-3xl text-[#3D2518] tracking-wide drop-shadow-xs">
+            <h3 className="font-cinzel font-bold text-2xl sm:text-3xl text-[#3D2518] tracking-wide drop-shadow-xs uppercase">
               {WEDDING_DETAILS.dates.venueName}
             </h3>
 
@@ -758,7 +756,7 @@ export default function App() {
 
           {/* Bottom SWIPE UP button */}
           <div className="absolute bottom-2 left-0 right-0 text-center pointer-events-auto">
-            <RoyalSwipeUp onClick={() => scrollToSlide(9)} />
+            <RoyalSwipeUp onClick={() => scrollToSlide(10)} />
           </div>
         </section>
 
@@ -772,7 +770,7 @@ export default function App() {
           <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-2 flex-1 flex flex-col justify-between py-2 sm:py-4">
             {/* Header */}
             <div className="space-y-0.5">
-              <h2 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold tracking-wide drop-shadow-xs">
+              <h2 className="font-cinzel text-2xl sm:text-3xl text-[#5A121E] font-bold tracking-wide drop-shadow-xs uppercase">
                 With Love &amp; Blessings
               </h2>
               <LotusDivider color="#D4AF37" className="scale-75 my-1" />

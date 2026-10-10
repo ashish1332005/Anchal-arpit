@@ -58,10 +58,10 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   };
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto aspect-[16/7] rounded-xl overflow-hidden bg-white shadow-sm ring-1 ring-[#8B6508]/20">
+    <div className="relative w-[min(82vw,300px)] max-w-full mx-auto aspect-square rounded-xl overflow-hidden bg-white shadow-sm ring-1 ring-[#8B6508]/20">
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
         <p className="font-cormorant text-sm sm:text-base text-[#8B6508]">Save the date</p>
-        <p className="font-playfair text-xl sm:text-3xl font-semibold text-[#5A121E]">11 &amp; 12 December 2026</p>
+        <p className="font-great-vibes text-2xl sm:text-3xl font-semibold text-[#5A121E]">11 &amp; 12 December 2026</p>
         <p className="font-cormorant text-sm sm:text-base text-[#5A121E] mt-1">Arpit &amp; Anchal</p>
       </div>
       {!revealed && (
