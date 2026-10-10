@@ -88,7 +88,7 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   };
 
   return (
-    <div className="relative w-[min(78vw,250px)] h-[154px] max-w-full mx-auto rounded-xl overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#F5ECE0] shadow-lg ring-1 ring-[#D4AF37]/60">
+    <div className="relative w-[min(82vw,260px)] h-[160px] max-w-full mx-auto rounded-xl overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#F5ECE0] shadow-lg ring-1 ring-[#D4AF37]/60">
       {/* Revealed Inner Card Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-3 py-2 text-center select-none">
         <p className="font-cinzel text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#8B6508] font-bold">

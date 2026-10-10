@@ -176,14 +176,23 @@
 .scratch-flower-2 { --flower-x: -8px; color: #8B1E32; font-size: 17px; }
 
 
-@keyframes flower-burst {
-  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.08) rotate(0deg); }
+@keyframes scratch-confetti-burst {
+  0% { opacity: 0; transform: translate(-50%, -50%) rotate(0deg) scale(0.55); }
   12% { opacity: 1; }
   100% {
-    opacity: 1;
-    transform: translate(calc(-50% + var(--flower-x)), calc(-50% + var(--flower-y))) scale(1) rotate(var(--flower-rotation));
+    opacity: 0;
+    transform: translate(calc(-50% + var(--confetti-x)), calc(-50% + var(--confetti-y))) rotate(var(--confetti-rotation)) scale(1);
   }
 }
 
-.animate-flower-burst { animation: flower-burst 1s cubic-bezier(0.12, 0.72, 0.24, 1) both; }
+.scratch-confetti {
+  width: 6px;
+  height: 11px;
+  border-radius: 1px;
+  animation: scratch-confetti-burst 1.5s cubic-bezier(0.16, 0.72, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scratch-confetti { animation-duration: 0.01ms; }
+}
 

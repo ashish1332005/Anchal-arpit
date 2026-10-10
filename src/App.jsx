@@ -18,6 +18,11 @@ import {
   Phone
 } from 'lucide-react';
 
+const confettiRandom = (seed) => {
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
+};
+
 /* ======================================================== */
 /* ROYAL DESIGN SYSTEM HELPERS (MATCHING SCREENSHOTS)      */
 /* ======================================================== */
@@ -137,7 +142,7 @@ export default function App() {
   const [isRsvpOpen, setIsRsvpOpen] = useState(false);
   const [guestName, setGuestName] = useState('');
   const [dateRevealed, setDateRevealed] = useState(false);
-  const [showScratchFlowers, setShowScratchFlowers] = useState(false);
+  const [showScratchConfetti, setShowScratchConfetti] = useState(false);
 
   const containerRef = useRef(null);
   const dict = WEDDING_DETAILS.translations[lang];
@@ -310,35 +315,38 @@ export default function App() {
         <section className="story-slide w-full h-auto min-h-0 snap-start relative flex flex-col items-center justify-center px-4 py-5 sm:py-7 overflow-hidden text-center bg-[#F3E9D9] select-none">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#f7f0e4_58%,_#eadcc8_100%)]" />
 
-          {/* Scratch Bloom Animation */}
-          {showScratchFlowers && (
-            <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden" aria-hidden="true">
-              {Array.from({ length: 30 }, (_, index) => (
-                <img
-                  key={index}
-                  src="/assets/Isolated%20Cream%20Daisy%20Flower.png"
-                  alt=""
-                  className="absolute left-1/2 top-1/2 animate-flower-burst object-contain"
-                  style={{
-                    width: `clamp(60px, ${8 + (index % 5) * 4}vw, 120px)`,
-                    '--flower-x': `${(Math.random() * 100) - 50}vw`,
-                    '--flower-y': `${(Math.random() * 100) - 50}vh`,
-                    '--flower-rotation': `${Math.random() * 360}deg`,
-                    animationDelay: `${Math.random() * 200}ms`,
-                    animationDuration: `${600 + Math.random() * 200}ms`,
-                  }}
-                />
-              ))}
+          {/* Confetti spreads from the scratch card and stays behind all text. */}
+          {showScratchConfetti && (
+            <div className="pointer-events-none absolute inset-0 z-[5] overflow-hidden" aria-hidden="true">
+              {Array.from({ length: 48 }, (_, index) => {
+                const horizontal = (confettiRandom(index + 1) - 0.5) * 110;
+                const vertical = (confettiRandom(index + 100) - 0.42) * 95;
+                const colors = ['#D4AF37', '#7B1124', '#D9879F', '#8C9B72', '#F2C477'];
+                return (
+                  <span
+                    key={index}
+                    className="scratch-confetti absolute left-1/2 top-1/2"
+                    style={{
+                      '--confetti-x': `${horizontal}vw`,
+                      '--confetti-y': `${vertical}vh`,
+                      '--confetti-rotation': `${confettiRandom(index + 200) * 900 - 450}deg`,
+                      backgroundColor: colors[index % colors.length],
+                      animationDelay: `${confettiRandom(index + 300) * 180}ms`,
+                      animationDuration: `${1300 + confettiRandom(index + 400) * 500}ms`,
+                    }}
+                  />
+                );
+              })}
             </div>
           )}
 
           <div className="relative z-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center">
             {/* The Scratch Card: Compact square/box area only */}
-            <div className="my-1">
+            <div className="my-2 rounded-[1.4rem] border border-[#D4AF37]/45 bg-[#FFFCF5]/75 p-3 shadow-[0_10px_30px_rgba(90,18,30,0.10)] backdrop-blur-[2px]">
               <ScratchDateReveal revealed={dateRevealed} onReveal={() => {
                 setDateRevealed(true);
-                setShowScratchFlowers(true);
-                setTimeout(() => setShowScratchFlowers(false), 1200);
+                setShowScratchConfetti(true);
+                setTimeout(() => setShowScratchConfetti(false), 1900);
               }} />
             </div>
 
