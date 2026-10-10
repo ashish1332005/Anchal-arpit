@@ -265,7 +265,7 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
         >
           {/* Main Content Area - naturally fills the card frame without excessive gaps */}
-          <div className="relative z-10 w-full max-w-sm mx-auto px-2 pt-6 sm:pt-8 flex-1 flex flex-col justify-between pb-2">
+          <div className="relative z-10 w-full max-w-sm mx-auto px-2 pt-5 sm:pt-6 flex-1 flex flex-col justify-center gap-3 sm:gap-4 pb-2">
             {/* Top Invocations & Monogram */}
             <div className="space-y-1">
               {/* Religious Invocations */}
@@ -519,12 +519,12 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center text-white select-none"
-          style={{ backgroundImage: "url('/assets/sangeet-new-bg.jpg')" }}
+          style={{ backgroundImage: "url('/assets/Dreamy%20Floral%20Wedding%20Pavilion.png')" }}
         >
           {/* Confined strictly to upper starry sky so crystal pavilion & grand piano below are 100% UNTOUCHED! */}
-          <div className="relative z-10 pt-[13vh] sm:pt-[15vh] space-y-1.5 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-[8vh] sm:pt-[10vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#F7D070">
-              <h2 className="font-cinzel text-2xl sm:text-3xl text-gold-gradient font-bold drop-shadow-md tracking-wide leading-tight uppercase">
+              <h2 className="font-cinzel text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight uppercase">
                 Sangeet &amp; Ring Ceremony
               </h2>
             </TitleFlourish>
@@ -558,10 +558,10 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/mangal-kalash-art-bg.jpg')" }}
+          style={{ backgroundImage: "url('/assets/Elegant%20Indian%20Wedding%20Kalash%20Invitation%20Frame.png')" }}
         >
           {/* Confined to the open center watercolor space with high-contrast royal maroon & gold */}
-          <div className="relative z-10 pt-[16vh] sm:pt-[18vh] space-y-1.5 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-[20vh] sm:pt-[22vh] space-y-1.5 max-w-sm mx-auto px-4">
             {/* Auspicious Inscription */}
             <div className="flex items-center justify-center gap-2">
               <span className="w-6 h-[1px] bg-[#8B6508]/60" />
@@ -609,10 +609,10 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/mayra-bg-art.png')" }}
+          style={{ backgroundImage: "url('/assets/6164520a-341e-4297-8a9a-d5e5f0c9d5c8.png')" }}
         >
           {/* Placed in the upper open sky area above the traditional Mayra illustration */}
-          <div className="relative z-10 pt-[5vh] sm:pt-[7vh] space-y-1.5 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-[18vh] sm:pt-[20vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
               <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight uppercase">
                 Mayra
