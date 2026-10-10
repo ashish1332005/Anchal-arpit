@@ -385,6 +385,10 @@ export default function App() {
             <p className="font-cinzel text-base sm:text-lg font-semibold tracking-wide uppercase text-[#5A121E] mb-1">A little surprise for you</p>
             <p className="font-cormorant text-sm sm:text-base text-[#5A121E]/80 mb-3">Scratch the card to reveal our wedding date</p>
             <ScratchDateReveal revealed={dateRevealed} onReveal={() => setDateRevealed(true)} />
+            <div className="mx-auto w-full max-w-xs mt-3">
+              <p className="font-cinzel text-[10px] uppercase tracking-wider text-[#8B6508] mb-1">Countdown to the wedding</p>
+              <Countdown targetDateIso={WEDDING_DETAILS.dates.startDateIso} />
+            </div>
             {dateRevealed && (
               <p className="font-cormorant text-sm sm:text-base text-[#5A121E] mt-4 animate-pulse">
                 We look forward to celebrating with you
@@ -411,7 +415,7 @@ export default function App() {
           {/* Confined to upper dark area so glowing Ganesha idol at bottom is 100% visible! */}
           <div className="relative z-10 pt-5 sm:pt-7 space-y-1 max-w-sm mx-auto px-4">
             <TitleFlourish color="#8B6508">
-              <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] drop-shadow-sm font-bold tracking-wide leading-tight uppercase">
+              <h2 className="font-cinzel whitespace-nowrap text-xl sm:text-2xl text-[#5A121E] drop-shadow-sm font-bold tracking-wide leading-tight uppercase">
                 Vinayak Sthapna
               </h2>
             </TitleFlourish>
@@ -681,22 +685,6 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* COUNTDOWN: AFTER THE WEDDING EVENT SEQUENCE */}
-        {/* ======================================================== */}
-        <section className="story-slide w-full h-[100dvh] snap-start relative flex flex-col items-center justify-center px-5 py-10 text-center bg-[#FAF7F2]">
-          <div className="w-full max-w-lg">
-            <h2 className="font-cinzel text-xl sm:text-2xl font-semibold tracking-wider uppercase text-[#5A121E] mb-2">
-              Counting down to the wedding
-            </h2>
-            <p className="font-cormorant text-sm sm:text-base text-[#8B6508] mb-4">11 December 2026</p>
-            <Countdown targetDateIso={WEDDING_DETAILS.dates.startDateIso} />
-          </div>
-          <div className="absolute bottom-3 left-0 right-0">
-            <RoyalSwipeUp onClick={() => scrollToSlide(9)} label="VIEW VENUE" />
-          </div>
-        </section>
-
-        {/* ======================================================== */}
         {/* SLIDE 10: VENUE & LOCATION */}
         {/* ======================================================== */}
         <section
@@ -756,7 +744,7 @@ export default function App() {
 
           {/* Bottom SWIPE UP button */}
           <div className="absolute bottom-2 left-0 right-0 text-center pointer-events-auto">
-            <RoyalSwipeUp onClick={() => scrollToSlide(10)} />
+            <RoyalSwipeUp onClick={() => scrollToSlide(9)} />
           </div>
         </section>
 

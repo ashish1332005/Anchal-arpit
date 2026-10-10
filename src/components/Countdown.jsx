@@ -27,12 +27,12 @@ export default function Countdown({ targetDateIso }) {
   ];
 
   return (
-    <div className="mx-auto w-full max-w-md py-3">
+    <div className="mx-auto w-full py-1">
       <div className="grid grid-cols-4 gap-2 sm:gap-4">
         {units.map(({ label, value }) => (
           <div key={label} className="flex flex-col items-center border-r border-[#D4AF37]/40 last:border-r-0">
-            <span className="font-cinzel text-xl sm:text-3xl font-semibold text-[#5A121E]">{String(value).padStart(2, '0')}</span>
-            <span className="font-cinzel text-[9px] sm:text-[10px] uppercase tracking-wider text-[#8B6508]">{label}</span>
+            <span className="font-cinzel text-lg sm:text-xl font-semibold leading-none text-[#5A121E]">{String(value).padStart(2, '0')}</span>
+            <span className="font-cinzel text-[8px] uppercase tracking-wide text-[#8B6508]">{label}</span>
           </div>
         ))}
       </div>

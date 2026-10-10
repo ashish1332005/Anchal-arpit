@@ -154,3 +154,23 @@
     inset 0 0 100px rgba(212, 175, 55, 0.05);
 }
 
+
+@keyframes scratch-flower-drift {
+  0% { opacity: 0; transform: translate(-50%, -35%) scale(0.5) rotate(0deg); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--flower-x)), calc(-50% - 28px)) scale(1.1) rotate(35deg); }
+}
+
+.scratch-flower {
+  --flower-x: 0px;
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  color: #d95b87;
+  font-size: 20px;
+  line-height: 1;
+  animation: scratch-flower-drift 800ms ease-out forwards;
+}
+
+.scratch-flower-1 { --flower-x: 9px; color: #e6a92e; font-size: 16px; }
+.scratch-flower-2 { --flower-x: -9px; color: #b56d8d; font-size: 18px; }
