@@ -264,106 +264,110 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-5 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
         >
-          {/* Centered content block with equal gap top and bottom in the blank area */}
-          <div className="my-auto relative z-10 w-full max-w-sm mx-auto px-3 py-1 flex flex-col items-center justify-center space-y-1 sm:space-y-1.5">
-            {/* Religious Invocations */}
-            <div className="w-full text-[#7B1124] select-none mb-0.5">
-              {/* Top Center: Shri Ramcharnay Namah */}
-              <div className="text-center mb-0.5 sm:mb-1">
-                <span className="font-cinzel text-[11px] sm:text-[12px] md:text-[13px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                  {WEDDING_DETAILS.invocations[0]?.en || "|| SHRI RAMCHARNAY NAMAH ||"}
-                </span>
+          {/* Main Content Area - naturally fills the card frame without excessive gaps */}
+          <div className="relative z-10 w-full max-w-sm mx-auto px-2 pt-6 sm:pt-8 flex-1 flex flex-col justify-between pb-2">
+            {/* Top Invocations & Monogram */}
+            <div className="space-y-1">
+              {/* Religious Invocations */}
+              <div className="w-full text-[#7B1124] select-none">
+                {/* Top Center: Shri Ramcharnay Namah */}
+                <div className="text-center mb-0.5">
+                  <span className="font-cinzel text-[11px] sm:text-[12px] md:text-[13px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                    {WEDDING_DETAILS.invocations[0]?.en || "|| SHRI RAMCHARNAY NAMAH ||"}
+                  </span>
+                </div>
+
+                {/* Bottom Row: Shri Ganeshay Namah (Left) & Shri Pitra Devay Namah (Right) */}
+                <div className="flex items-center justify-between px-0.5 sm:px-2">
+                  <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                    {WEDDING_DETAILS.invocations[1]?.en || "|| SHRI GANESHAY NAMAH ||"}
+                  </span>
+                  <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                    {WEDDING_DETAILS.invocations[2]?.en || "|| SHRI PITRA DEVAY NAMAH ||"}
+                  </span>
+                </div>
               </div>
 
-              {/* Bottom Row: Shri Ganeshay Namah (Left) & Shri Pitra Devay Namah (Right) */}
-              <div className="flex items-center justify-between px-0.5 sm:px-2">
-                <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                  {WEDDING_DETAILS.invocations[1]?.en || "|| SHRI GANESHAY NAMAH ||"}
-                </span>
-                <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                  {WEDDING_DETAILS.invocations[2]?.en || "|| SHRI PITRA DEVAY NAMAH ||"}
-                </span>
-              </div>
-            </div>
-
-            {/* A-अ Couple Monogram */}
-            <div className="pt-0.5 flex justify-center">
-              <img
-                src="/assets/couple_logo.png"
-                alt="A-अ Logo"
-                className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm"
-              />
-            </div>
-
-            <div className="relative z-20 w-full max-w-[340px] mx-auto text-center px-2">
-              {/* Soft readability layer — very subtle, no hard box */}
-              <div className="absolute inset-0 -z-10 bg-[#fff8e8]/10 blur-md rounded-full" />
-
-              <p className="
-                font-cormorant
-                text-[12px] sm:text-[13px]
-                text-[#2C1518]
-                font-semibold
-                leading-[1.3]
-                mt-1
-                px-2
-                drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]
-              ">
-                The Kabra family requests the pleasure of your company at the wedding
-                celebration of Arpit and Anchal.
-              </p>
-            </div>
-
-            {/* GROOM SECTION (FIRST) */}
-            <div className="pt-1.5 space-y-0.5">
-              <div className="flex justify-center items-center">
-                <h1 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
-                  {WEDDING_DETAILS.couple.groom}
-                </h1>
+              {/* A-अ Couple Monogram */}
+              <div className="pt-0.5 flex justify-center">
+                <img
+                  src="/assets/couple_logo.png"
+                  alt="A-अ Logo"
+                  className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm"
+                />
               </div>
 
-              <div className="space-y-0.5 text-center">
-                <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-                  Grandson of {WEDDING_DETAILS.couple.groomGrandParents}
-                </p>
-                <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-                  Son of {WEDDING_DETAILS.couple.groomParents}
+              <div className="relative z-20 w-full max-w-[340px] mx-auto text-center px-1">
+                <div className="absolute inset-0 -z-10 bg-[#fff8e8]/10 blur-md rounded-full" />
+                <p className="
+                  font-cormorant
+                  text-[12.5px] sm:text-[13.5px]
+                  text-[#2C1518]
+                  font-semibold
+                  leading-snug
+                  mt-1
+                  px-2
+                  drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]
+                ">
+                  The Kabra family requests the pleasure of your company at the wedding
+                  celebration of Arpit and Anchal.
                 </p>
               </div>
             </div>
 
-            {/* WITH + LOTUS DIVIDER */}
-            <div className="py-1 sm:py-1.5">
-              <div className="flex items-center justify-center gap-3">
-                <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
-                <span className="font-playfair text-sm sm:text-base text-[#8B6508] font-semibold leading-none">
-                  with
-                </span>
-                <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
-              </div>
-            </div>
+            {/* Couple Announcement Section */}
+            <div className="space-y-1.5 sm:space-y-2 py-1">
+              {/* GROOM SECTION (FIRST) */}
+              <div className="space-y-0.5">
+                <div className="flex justify-center items-center">
+                  <h1 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
+                    {WEDDING_DETAILS.couple.groom}
+                  </h1>
+                </div>
 
-            {/* BRIDE SECTION (SECOND) */}
-            <div className="space-y-0.5">
-              <div className="flex justify-center items-center">
-                <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
-                  {WEDDING_DETAILS.couple.bride}
-                </h2>
+                <div className="space-y-0.5 text-center">
+                  <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+                    Grandson of {WEDDING_DETAILS.couple.groomGrandParents}
+                  </p>
+                  <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+                    Son of {WEDDING_DETAILS.couple.groomParents}
+                  </p>
+                </div>
               </div>
 
-              <div className="space-y-0.5 text-center">
-                <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-                  Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}
-                </p>
-                <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-                  Daughter of {WEDDING_DETAILS.couple.brideParents}
-                </p>
+              {/* WITH + LOTUS DIVIDER */}
+              <div className="py-1">
+                <div className="flex items-center justify-center gap-3">
+                  <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
+                  <span className="font-playfair text-sm sm:text-base text-[#8B6508] font-semibold leading-none">
+                    with
+                  </span>
+                  <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
+                </div>
+              </div>
+
+              {/* BRIDE SECTION (SECOND) */}
+              <div className="space-y-0.5">
+                <div className="flex justify-center items-center">
+                  <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
+                    {WEDDING_DETAILS.couple.bride}
+                  </h2>
+                </div>
+
+                <div className="space-y-0.5 text-center">
+                  <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+                    Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}
+                  </p>
+                  <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+                    Daughter of {WEDDING_DETAILS.couple.brideParents}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Bottom Royal SWIPE UP button */}
-          <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="TAP TO REVEAL DATE" />
+          <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="SWIPE UP" />
         </section>
 
         {/* ======================================================== */}
@@ -373,6 +377,17 @@ export default function App() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ffffff_0%,_#faf7f2_75%)]" />
 
           <div className="relative z-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center">
+            {/* Elegant Header above the scratch card for a beautiful royal presentation */}
+            <div className="mb-2.5 space-y-0.5">
+              <p className="font-cinzel text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-[#8B6508]">
+                A Royal Surprise
+              </p>
+              <h2 className="font-cinzel text-base sm:text-lg font-bold text-[#5A121E] uppercase tracking-wider">
+                Scratch To Reveal The Date
+              </h2>
+              <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
+            </div>
+
             {/* The Scratch Card: Compact square/box area only */}
             <div className="my-1">
               <ScratchDateReveal revealed={dateRevealed} onReveal={() => setDateRevealed(true)} />
