@@ -268,10 +268,10 @@ export default function App() {
           <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[8vh] pb-3 flex-1 flex flex-col items-center justify-start gap-6 sm:gap-7 text-[#2C1518]">
             <div className="w-full font-cinzel font-bold text-[11px] sm:text-xs leading-tight tracking-wide text-[#7B1124] text-center">
               <p>{WEDDING_DETAILS.invocations[0].en}</p>
-              <div className="mt-2 flex flex-col items-center gap-1">
-                <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-7 w-7 object-contain" />
-                <p>{WEDDING_DETAILS.invocations[1].en}</p>
-                <p className="mt-0.5">{WEDDING_DETAILS.invocations[2].en}</p>
+              <div className="mt-2 flex w-full flex-col items-center gap-1.5">
+                <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 object-contain" />
+                <p className="w-full text-center text-xs sm:text-sm">{WEDDING_DETAILS.invocations[1].en}</p>
+                <p className="mt-0.5 w-full text-center text-[10px] sm:text-xs">{WEDDING_DETAILS.invocations[2].en}</p>
               </div>
             </div>
 
