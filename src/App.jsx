@@ -191,7 +191,7 @@ export default function App() {
   return (
     <div className="relative w-full h-[100dvh] bg-[#FAF7F2] flex items-center justify-center overflow-hidden">
       {/* Subtle Falling Cherry Blossom Petals Overlay */}
-      <FallingPetals />
+      <FallingPetals active={!isUnlocked} />
 
       {/* Floating Soundtrack Control */}
       <AudioPlayer autoPlayTrigger={autoPlayAudio} lang={lang} dict={dict} />
@@ -278,13 +278,13 @@ export default function App() {
             <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-9 h-9 object-contain" />
 
             <p className="max-w-[340px] font-cormorant text-base sm:text-lg leading-snug font-medium">
-              The Kabra family requests the pleasure of your company at the wedding celebration of Arpit and Anchal.
+              The Kabra family requests the pleasure of your company at the wedding celebration.
             </p>
 
             <div className="w-full space-y-0.5">
               <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom}</h1>
-              <p className="font-cormorant text-sm sm:text-base leading-snug">Grandson of {WEDDING_DETAILS.couple.groomGrandParents}</p>
-              <p className="font-cormorant text-sm sm:text-base leading-snug">Son of {WEDDING_DETAILS.couple.groomParents}</p>
+              <p className="font-cormorant text-sm sm:text-base leading-snug">Grandson of Ratan Devi &amp; Ram Rai Kabra</p>
+              <p className="font-cormorant text-sm sm:text-base leading-snug">Son of Rinku &amp; Sanjay Kabra</p>
             </div>
 
             <div className="flex items-center justify-center gap-3 w-full">
@@ -295,8 +295,8 @@ export default function App() {
 
             <div className="w-full space-y-0.5">
               <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.bride}</h2>
-              <p className="font-cormorant text-sm sm:text-base leading-snug">Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}</p>
-              <p className="font-cormorant text-sm sm:text-base leading-snug">Daughter of {WEDDING_DETAILS.couple.brideParents}</p>
+              <p className="font-cormorant text-sm sm:text-base leading-snug">Granddaughter of Late Janki Devi &amp; Shivlal Ji Chechani</p>
+              <p className="font-cormorant text-sm sm:text-base leading-snug">Daughter of Leela Devi &amp; Dinesh Chechani</p>
             </div>
           </div>
 
@@ -345,12 +345,6 @@ export default function App() {
             {/* ONLY REVEALED AFTER SCRATCHING: Naturally expands space according to content */}
             {dateRevealed && (
               <div className="w-full mt-3 space-y-2 animate-fadeIn transition-all duration-700">
-                <div className="w-full space-y-0.5">
-                  <p className="font-cinzel text-[10px] uppercase tracking-[0.16em] text-[#8B6508] font-bold">Royal Wedding Date &amp; Venue</p>
-                  <p className="font-cormorant text-base font-bold text-[#5A121E]">{WEDDING_DETAILS.dates.display}</p>
-                  <p className="font-cormorant text-sm font-semibold text-[#2C1518]">{WEDDING_DETAILS.dates.venueName}</p>
-                </div>
-
                 {/* Countdown */}
                 <div className="mx-auto w-full max-w-xs pt-1">
                   <p className="font-cinzel text-xs uppercase tracking-[0.2em] text-[#8B6508] font-bold mb-1.5">

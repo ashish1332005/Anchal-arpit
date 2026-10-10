@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function FallingPetals() {
+export default function FallingPetals({ active = false }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -18,8 +18,8 @@ export default function FallingPetals() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Subtle, elegant petal setup (Only 12 light petals)
-    const petalCount = 12;
+    // A little denser on the envelope screen, with a mix of petals and leaves.
+    const petalCount = active ? 24 : 12;
     const petals = [];
     const colors = [
       '#FF65A3', // Cherry blossom pink
@@ -40,6 +40,7 @@ export default function FallingPetals() {
         color: colors[Math.floor(Math.random() * colors.length)],
         opacity: Math.random() * 0.3 + 0.35, // Soft subtle opacity
         swingOffset: Math.random() * Math.PI * 2,
+        isLeaf: active && i % 3 === 0,
       });
     }
 
@@ -49,13 +50,28 @@ export default function FallingPetals() {
       ctx.rotate((petal.rotation * Math.PI) / 180);
       ctx.globalAlpha = petal.opacity;
 
-      ctx.fillStyle = petal.color;
-      ctx.beginPath();
       const r = petal.size;
-      ctx.moveTo(0, -r);
-      ctx.bezierCurveTo(r * 0.8, -r * 0.8, r * 0.8, r * 0.5, 0, r);
-      ctx.bezierCurveTo(-r * 0.8, r * 0.5, -r * 0.8, -r * 0.8, 0, -r);
-      ctx.fill();
+      if (petal.isLeaf) {
+        ctx.fillStyle = ['#6F8060', '#83936B', '#52674B'][Math.floor(petal.swingOffset * 10) % 3];
+        ctx.beginPath();
+        ctx.moveTo(0, -r * 1.25);
+        ctx.quadraticCurveTo(r * 1.1, -r * 0.35, 0, r * 1.25);
+        ctx.quadraticCurveTo(-r * 0.7, r * 0.25, 0, -r * 1.25);
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255,255,255,0.65)';
+        ctx.lineWidth = 0.7;
+        ctx.beginPath();
+        ctx.moveTo(0, -r);
+        ctx.lineTo(0, r);
+        ctx.stroke();
+      } else {
+        ctx.fillStyle = petal.color;
+        ctx.beginPath();
+        ctx.moveTo(0, -r);
+        ctx.bezierCurveTo(r * 0.8, -r * 0.8, r * 0.8, r * 0.5, 0, r);
+        ctx.bezierCurveTo(-r * 0.8, r * 0.5, -r * 0.8, -r * 0.8, 0, -r);
+        ctx.fill();
+      }
 
       ctx.restore();
     };
@@ -89,12 +105,12 @@ export default function FallingPetals() {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [active]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-30 opacity-70"
+      className={`fixed inset-0 pointer-events-none ${active ? 'z-[60] opacity-75' : 'z-30 opacity-70'}`}
     />
   );
 }
