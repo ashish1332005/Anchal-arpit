@@ -644,21 +644,21 @@ export default function App() {
                   {/* Nikasi */}
                   <div className="flex flex-col items-center justify-center gap-1 px-0.5">
                     <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <span className="font-cinzel uppercase text-[8px] sm:text-[9px] tracking-wide font-semibold text-[#5A121E]">Nikasi</span>
+                    <span className="font-playfair uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Nikasi</span>
                     <EventTime value="6:00 PM" />
                   </div>
 
                   {/* Reception and dinner */}
                   <div className="flex flex-col items-center justify-center gap-1 px-0.5 leading-tight">
                     <Utensils className="w-3 h-3 text-[#8B6508] shrink-0" />
-                    <span className="whitespace-nowrap font-cinzel uppercase text-[8px] sm:text-[9px] font-semibold text-[#5A121E]">Reception &amp; Dinner</span>
+                    <span className="whitespace-nowrap font-playfair uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Reception &amp; Dinner</span>
                     <EventTime value="7:00 PM" />
                   </div>
 
                   {/* Pheras */}
                   <div className="flex flex-col items-center justify-center gap-1 px-0.5">
                     <PherasIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <span className="font-cinzel uppercase text-[8px] sm:text-[9px] tracking-wide font-semibold text-[#5A121E]">Pheras</span>
+                    <span className="font-playfair uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Pheras</span>
                     <EventTime value="10:30 PM" />
                   </div>
                 </div>
