@@ -414,7 +414,7 @@ export default function App() {
             <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
 
             <div className="font-cormorant text-[#5A121E] space-y-0.5 leading-snug">
-              <p className="font-cormorant text-base sm:text-lg font-bold leading-snug text-[#5A121E]">
+              <p className="font-playfair text-base sm:text-lg font-bold leading-snug text-[#5A121E]">
                 Friday, 11 December 2026
               </p>
               <p className="flex items-baseline justify-center text-[#7B1124]"><EventTime value="7:00 AM" /></p>
@@ -452,7 +452,7 @@ export default function App() {
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-0.5 font-cormorant text-[#2C1518] text-center py-1">
-                  <p className="font-cormorant text-base sm:text-lg font-bold leading-snug text-[#5A121E]">Friday, 11 December 2026</p>
+                  <p className="font-playfair text-base sm:text-lg font-bold leading-snug text-[#5A121E]">Friday, 11 December 2026</p>
                   <p className="flex items-baseline justify-center pt-1"><EventTime value="11:00 AM" /></p>
                   <p className="flex items-baseline justify-center gap-2 pt-1 text-[#8B6508]">
                     <span className="font-cormorant text-sm sm:text-base font-bold">Lunch:</span>
@@ -492,8 +492,8 @@ export default function App() {
             <div className="pt-1">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="font-cormorant text-center py-1">
-                  <div className="flex flex-col items-center gap-1 font-cormorant text-base sm:text-lg font-bold leading-snug text-[#5A121E] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                    <p>Friday, 11 December 2026</p>
+                  <div className="flex flex-col items-center gap-1 text-base sm:text-lg font-bold leading-snug text-[#5A121E] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                    <p className="font-playfair">Friday, 11 December 2026</p>
                     <EventTime value="7:00 PM" />
                   </div>
                 </div>
@@ -541,7 +541,7 @@ export default function App() {
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-0.5 font-cormorant text-center py-1">
-                  <p className="font-cormorant text-base sm:text-lg font-bold leading-snug text-[#5A121E]">
+                  <p className="font-playfair text-base sm:text-lg font-bold leading-snug text-[#5A121E]">
                     Saturday, 12 December 2026
                   </p>
                   <p className="flex items-baseline justify-center"><EventTime value="9:00 AM" /></p>
@@ -587,7 +587,7 @@ export default function App() {
                 <div className="space-y-0.5 font-cormorant text-[#5A121E] text-center py-1">
                   <div className="flex items-center justify-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <span className="font-cormorant text-base sm:text-lg font-bold leading-snug">Saturday, 12 December 2026</span>
+                    <span className="font-playfair text-base sm:text-lg font-bold leading-snug">Saturday, 12 December 2026</span>
                   </div>
                   <div className="flex items-center justify-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
@@ -634,7 +634,7 @@ export default function App() {
               "Welcoming our dear ones with open hearts and warm smiles"
             </p>
 
-            <p className="font-cormorant font-bold text-base sm:text-lg leading-snug text-[#5A121E] pt-0.5">
+            <p className="font-playfair font-bold text-base sm:text-lg leading-snug text-[#5A121E] pt-0.5">
               Saturday, 12 December 2026
             </p>
 
