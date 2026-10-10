@@ -265,25 +265,26 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
         >
           {/* Restored family invitation details, balanced in the parchment space */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[10vh] pb-3 flex-1 flex flex-col items-center justify-start gap-5 sm:gap-6 text-[#2C1518]">
-            <div className="w-full font-cinzel font-bold text-[10px] sm:text-[11px] leading-tight tracking-wide text-[#7B1124]">
+          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[8vh] pb-3 flex-1 flex flex-col items-center justify-start gap-6 sm:gap-7 text-[#2C1518]">
+            <div className="w-full font-cinzel font-bold text-[11px] sm:text-xs leading-tight tracking-wide text-[#7B1124] text-center">
               <p>{WEDDING_DETAILS.invocations[0].en}</p>
-              <div className="mt-1 flex justify-between gap-3">
+              <div className="mt-2 flex flex-col items-center gap-1">
+                <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-7 w-7 object-contain" />
                 <p>{WEDDING_DETAILS.invocations[1].en}</p>
-                <p>{WEDDING_DETAILS.invocations[2].en}</p>
+                <p className="mt-0.5">{WEDDING_DETAILS.invocations[2].en}</p>
               </div>
             </div>
 
             <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-9 h-9 object-contain" />
 
-            <p className="max-w-[340px] font-cormorant text-sm sm:text-base leading-snug font-medium">
+            <p className="max-w-[340px] font-cormorant text-base sm:text-lg leading-snug font-medium">
               The Kabra family requests the pleasure of your company at the wedding celebration of Arpit and Anchal.
             </p>
 
             <div className="w-full space-y-0.5">
-              <h1 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom}</h1>
-              <p className="font-cormorant text-[11px] sm:text-xs leading-snug">Grandson of {WEDDING_DETAILS.couple.groomGrandParents}</p>
-              <p className="font-cormorant text-[11px] sm:text-xs leading-snug">Son of {WEDDING_DETAILS.couple.groomParents}</p>
+              <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom}</h1>
+              <p className="font-cormorant text-sm sm:text-base leading-snug">Grandson of {WEDDING_DETAILS.couple.groomGrandParents}</p>
+              <p className="font-cormorant text-sm sm:text-base leading-snug">Son of {WEDDING_DETAILS.couple.groomParents}</p>
             </div>
 
             <div className="flex items-center justify-center gap-3 w-full">
@@ -293,9 +294,9 @@ export default function App() {
             </div>
 
             <div className="w-full space-y-0.5">
-              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.bride}</h2>
-              <p className="font-cormorant text-[11px] sm:text-xs leading-snug">Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}</p>
-              <p className="font-cormorant text-[11px] sm:text-xs leading-snug">Daughter of {WEDDING_DETAILS.couple.brideParents}</p>
+              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.bride}</h2>
+              <p className="font-cormorant text-sm sm:text-base leading-snug">Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}</p>
+              <p className="font-cormorant text-sm sm:text-base leading-snug">Daughter of {WEDDING_DETAILS.couple.brideParents}</p>
             </div>
           </div>
 
@@ -669,7 +670,7 @@ export default function App() {
         {/* SLIDE 10: VENUE & LOCATION */}
         <section
           className="story-slide w-full h-[78dvh] min-h-[540px] max-h-[700px] snap-start relative flex flex-col items-center justify-center px-3 bg-center text-center select-none overflow-hidden"
-          style={{ backgroundImage: "url('/assets/bggg.png')", backgroundSize: '100% 100%' }}
+          style={{ backgroundImage: "url('/assets/bggg.png')", backgroundSize: 'auto 100%', backgroundRepeat: 'no-repeat' }}
         >
           <div className="absolute z-10 top-[54%] -translate-y-1/2 w-[min(88%,380px)] mx-auto text-center space-y-2.5">
             {/* Compact map panel placed in the clear center of the venue artwork */}
