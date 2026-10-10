@@ -262,12 +262,12 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
+          style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
           {/* Restored family invitation details, balanced in the parchment space */}
           <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[8vh] pb-3 flex-1 flex flex-col items-center justify-start gap-6 sm:gap-7 text-[#2C1518]">
             <div className="flex w-full flex-col items-center gap-1.5 font-cinzel font-bold leading-tight tracking-wide text-[#7B1124]">
-              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 object-contain" />
+              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-12 w-12 object-contain" />
               <p className="text-center text-[10px] sm:text-xs">{WEDDING_DETAILS.invocations[1].en}</p>
               <div className="mt-1 grid w-full grid-cols-2 gap-2 text-[8px] sm:text-[10px]">
                 <p className="text-center">{WEDDING_DETAILS.invocations[0].en}</p>
@@ -282,7 +282,7 @@ export default function App() {
             </p>
 
             <div className="w-full space-y-0.5">
-              <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom}</h1>
+              <h1 className="font-allura text-6xl sm:text-7xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom}</h1>
               <p className="font-cormorant text-sm sm:text-base leading-snug">Grandson of Ratan Devi &amp; Ram Rai Kabra</p>
               <p className="font-cormorant text-sm sm:text-base leading-snug">Son of Rinku &amp; Sanjay Kabra</p>
             </div>
@@ -294,7 +294,7 @@ export default function App() {
             </div>
 
             <div className="w-full space-y-0.5">
-              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.bride}</h2>
+              <h2 className="font-allura text-6xl sm:text-7xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.bride}</h2>
               <p className="font-cormorant text-sm sm:text-base leading-snug">Granddaughter of Late Janki Devi &amp; Shivlal Ji Chechani</p>
               <p className="font-cormorant text-sm sm:text-base leading-snug">Daughter of Leela Devi &amp; Dinesh Chechani</p>
             </div>
