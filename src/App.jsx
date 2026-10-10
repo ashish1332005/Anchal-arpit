@@ -1,22 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
-import confetti from 'canvas-confetti';
 import EnvelopeOpening from './components/EnvelopeOpening';
 import FallingPetals from './components/FallingPetals';
 import AudioPlayer from './components/AudioPlayer';
 import RsvpModal from './components/RsvpModal';
+import ScratchDateReveal from './components/ScratchDateReveal';
 import { WEDDING_DETAILS } from './data/weddingData';
 import {
   ChevronDown,
   ChevronUp,
   Calendar,
   Clock,
-  Sparkles,
+  Navigation,
   Flame,
   Crown,
   Share2,
-  Globe,
-  MessageSquare,
-  Navigation,
   Phone
 } from 'lucide-react';
 
@@ -81,18 +78,6 @@ function TitleFlourish({ children, color = "#D4AF37", className = "" }) {
   );
 }
 
-// Cloche Icon for Reception / Milni Feasts
-function ClocheIcon({ className = "w-4 h-4 text-[#F7D070]" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 4V2" />
-      <path d="M4 14h16" />
-      <path d="M4 14a8 8 0 0 1 16 0" fill="currentColor" fillOpacity="0.15" />
-      <path d="M2 17h20v2H2z" fill="currentColor" fillOpacity="0.85" />
-    </svg>
-  );
-}
-
 // Pheras Sacred Fire / Mandap Icon
 function PherasIcon({ className = "w-4 h-4 text-[#F7D070]" }) {
   return (
@@ -108,49 +93,15 @@ function PherasIcon({ className = "w-4 h-4 text-[#F7D070]" }) {
 function OrnateCard({ children, isDark = false, className = "", maxWidth = "max-w-md" }) {
   return (
     <div className={`relative mx-auto w-full ${maxWidth} ${className}`}>
-      <div
-        className={`relative rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 transition-all ${
-          isDark
-            ? 'bg-black/60 text-white shadow-[0_8px_32px_rgba(0,0,0,0.7)]'
-            : 'bg-[#FFFDF9]/92 text-[#2C1518] shadow-[0_6px_24px_rgba(90,18,30,0.08)]'
-        } backdrop-blur-md`}
-      >
-        {/* SVG Ornate Royal Bracket Frame with vectorEffect for crisp lines */}
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          preserveAspectRatio="none"
-          viewBox="0 0 100 100"
-        >
-          <path
-            d="M 12 0 L 88 0 C 94 0, 100 6, 96 14 L 96 38 C 98 44, 100 47, 100 50 C 100 53, 98 56, 96 62 L 96 86 C 100 94, 94 100, 88 100 L 12 100 C 6 100, 0 94, 4 86 L 4 62 C 2 56, 0 53, 0 50 C 0 47, 2 44, 4 38 L 4 14 C 0 6, 6 0, 12 0 Z"
-            fill="none"
-            stroke="#D4AF37"
-            strokeWidth="1.2"
-            vectorEffect="non-scaling-stroke"
-            opacity="0.9"
-          />
-          <path
-            d="M 14 3 L 86 3 C 91 3, 96 8, 93 15 L 93 39 C 95 44, 97 47, 97 50 C 97 53, 95 56, 93 61 L 93 85 C 96 92, 91 97, 86 97 L 14 97 C 9 97, 4 92, 7 85 L 7 61 C 5 56, 3 53, 3 50 C 3 47, 5 44, 7 39 L 7 15 C 4 8, 9 3, 14 3 Z"
-            fill="none"
-            stroke="#D4AF37"
-            strokeWidth="0.8"
-            strokeDasharray="2.5 2"
-            vectorEffect="non-scaling-stroke"
-            opacity="0.4"
-          />
-        </svg>
-
-        {/* Inner Card Content */}
-        <div className="relative z-10">
-          {children}
-        </div>
+      <div className={`relative px-2 py-1.5 transition-all ${isDark ? 'text-white' : 'text-[#2C1518]'}`}>
+        {children}
       </div>
     </div>
   );
 }
 
 // Royal Swipe Up Pill Button with Flourish Wings and Lotus Accent
-function RoyalSwipeUp({ onClick, className = "" }) {
+function RoyalSwipeUp({ onClick, className = "", label = "SWIPE UP" }) {
   return (
     <div className={`relative z-20 pb-4 text-center flex flex-col items-center select-none pointer-events-auto ${className}`}>
       {/* Centered button flanked by flourish wings */}
@@ -162,7 +113,7 @@ function RoyalSwipeUp({ onClick, className = "" }) {
           className="group inline-flex items-center gap-1.5 px-5 sm:px-6 py-1.5 rounded-full bg-gradient-to-r from-[#4A0E18] via-[#631422] to-[#4A0E18] border border-[#D4AF37] shadow-[0_4px_16px_rgba(0,0,0,0.35)] hover:scale-105 active:scale-95 transition-all duration-300"
         >
           <span className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] font-bold text-[#F7D070] uppercase">
-            SWIPE UP
+            {label}
           </span>
           <ChevronUp className="w-3.5 h-3.5 text-[#F7D070] stroke-[2.5] animate-pulse" />
         </button>
@@ -309,7 +260,7 @@ export default function App() {
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/bg.png')" }}
+          style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
         >
           {/* Confined strictly to upper open sky so resort fountain & arches below are completely UNCOVERED! */}
           <div className="relative z-10 pt-6 sm:pt-8 space-y-1 max-w-sm mx-auto px-3">
@@ -322,13 +273,13 @@ export default function App() {
                 </span>
               </div>
 
-              {/* Bottom Row: Shri Ganeshay Namah (Left) & Shri Satipitray Namah (Right) */}
+              {/* Bottom Row: Shri Ganeshay Namah (Left) & Shri Pitra Devay Namah (Right) */}
               <div className="flex items-center justify-between px-0.5 sm:px-2">
                 <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                   {WEDDING_DETAILS.invocations[1]?.en || "|| SHRI GANESHAY NAMAH ||"}
                 </span>
                 <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                  {WEDDING_DETAILS.invocations[2]?.en || "|| SHRI SATIPITRAY NAMAH ||"}
+                  {WEDDING_DETAILS.invocations[2]?.en || "|| SHRI PITRA DEVAY NAMAH ||"}
                 </span>
               </div>
             </div>
@@ -359,8 +310,8 @@ export default function App() {
     px-2
     drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]
   ">
-    Kabra Family, requests the pleasure of your gracious presence at the
-    wedding ceremony of their beloved son
+    The Kabra family requests the pleasure of your company at the wedding
+    celebration of Arpit and Anchal.
   </p>
 
 </div>
@@ -368,16 +319,9 @@ export default function App() {
 {/* GROOM SECTION (FIRST) */}
 <div className="pt-2 space-y-1.5">
   <div className="flex justify-center items-center">
-    <img
-      src="/assets/image.png"
-      alt={WEDDING_DETAILS.couple.groomFull}
-      className="
-        h-16 sm:h-20 md:h-24
-        w-auto max-w-[90%]
-        object-contain
-        mx-auto
-      "
-    />
+    <h1 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold leading-tight">
+      {WEDDING_DETAILS.couple.groomFull}
+    </h1>
   </div>
 
   <div className="space-y-0.5 text-center">
@@ -396,7 +340,7 @@ export default function App() {
   <div className="flex items-center justify-center gap-3">
     <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
 
-    <span className="font-allura text-[27px] sm:text-[31px] text-[#8B6508] font-bold leading-none">
+    <span className="font-playfair text-sm sm:text-base text-[#8B6508] font-semibold leading-none">
       with
     </span>
 
@@ -408,16 +352,9 @@ export default function App() {
 {/* BRIDE SECTION (SECOND) */}
 <div className="space-y-1.5">
   <div className="flex justify-center items-center">
-    <img
-      src="/assets/ChatGPT%20Image%20Sep%2023%2C%202026%2C%2007_52_51%20PM.png"
-      alt={WEDDING_DETAILS.couple.brideFull}
-      className="
-        h-16 sm:h-20 md:h-24
-        w-auto max-w-[90%]
-        object-contain
-        mx-auto
-      "
-    />
+    <h2 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold leading-tight">
+      {WEDDING_DETAILS.couple.brideFull}
+    </h2>
   </div>
 
   <div className="space-y-0.5 text-center">
@@ -431,120 +368,56 @@ export default function App() {
 
   </div>
 </div>
-            {/* Date & Venue in Ornate Card */}
-            <div className="pt-1.5">
-              <OrnateCard isDark={false} maxWidth="max-w-xs sm:max-w-sm">
-                <div className="flex items-center justify-center gap-2 text-center py-0.5 text-[#5A121E] font-cinzel font-bold text-[10px] sm:text-xs tracking-wider">
-                  <Calendar className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                  <span>{WEDDING_DETAILS.dates.display.toUpperCase()}</span>
-                  <span className="text-[#D4AF37] mx-0.5">|</span>
-                  <Navigation className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                  <span>{WEDDING_DETAILS.dates.venueName.toUpperCase()}</span>
-                </div>
-              </OrnateCard>
-              <LotusDivider color="#D4AF37" className="scale-75 origin-center mt-1" />
-            </div>
+
           </div>
 
           {/* Bottom Royal SWIPE UP button */}
-          <RoyalSwipeUp onClick={() => scrollToSlide(1)} />
+          <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="TAP TO REVEAL DATE" />
         </section>
 
         {/* ======================================================== */}
-        {/* SLIDE 2: SAVE THE DATE / GROOM WITH BRIDE */}
+        {/* SLIDE 2: LANDSCAPE SCRATCH-TO-REVEAL DATE */}
         {/* ======================================================== */}
-        <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-5 overflow-hidden bg-cover bg-center text-center select-none"
-          style={{ backgroundImage: "url('/assets/royal-mandap-couple-bg.jpg')" }}
-        >
-          {/* Main Text Content precisely positioned in the blank open arch space */}
-          <div className="relative z-10 pt-[18vh] sm:pt-[20vh] space-y-1 max-w-sm mx-auto w-full px-3">
-            {/* Subtitle */}
-            <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] text-[#5A121E] font-bold uppercase drop-shadow-xs">
-              GROOM WITH BRIDE
-            </p>
-
-            {/* Couple Script Names */}
-            <h2 className="font-allura text-3xl sm:text-[36px] text-[#4A0E17] font-bold leading-tight drop-shadow-xs">
-              {WEDDING_DETAILS.couple.groomFull} &amp; {WEDDING_DETAILS.couple.brideFull}
-            </h2>
-
-            {/* Tap To Reveal Date Button */}
-            <div className="pt-0.5 flex flex-col items-center">
-              <button
-                onClick={() => {
-                  const nextState = !dateRevealed;
-                  setDateRevealed(nextState);
-                  if (nextState) {
-                    confetti({
-                      particleCount: 60,
-                      spread: 70,
-                      origin: { y: 0.35 },
-                      colors: ['#D4AF37', '#5A121E', '#F7D070', '#FFFFFF']
-                    });
-                  }
-                }}
-                className={`transition-all duration-300 transform active:scale-95 px-4 sm:px-5 py-1.5 rounded-full border border-[#D4AF37] font-cinzel text-[10px] sm:text-[11px] tracking-wider font-bold uppercase shadow-[0_4px_14px_rgba(74,14,23,0.25)] cursor-pointer ${
-                  dateRevealed
-                    ? 'bg-[#4A0E17] text-[#FFF5C0] ring-2 ring-[#D4AF37]'
-                    : 'bg-[#4A0E17] text-[#FFF5C0] hover:bg-[#631422]'
-                }`}
-              >
-                {dateRevealed ? '✦ 11 & 12 DECEMBER 2026 ✦' : '✦ TAP TO REVEAL DATE ✦'}
-              </button>
-
-              {dateRevealed && (
-                <div className="mt-1 px-3 py-0.5 rounded-full bg-[#4A0E17]/95 border border-[#D4AF37] text-[#FFF5C0] font-cinzel text-[10px] tracking-wider shadow-md animate-pulse">
-                  📍 GLORIA INN, BHILWARA
-                </div>
-              )}
-            </div>
-
-            <LotusDivider color="#D4AF37" className="scale-75 origin-center my-0.5" />
-
-            {/* Save The Date Subheading */}
-            <div className="space-y-0.5 pt-0.5">
-              <div className="flex items-center justify-center gap-2">
-                <span className="w-6 sm:w-10 h-[1px] bg-[#8B6508]/50" />
-                <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.22em] text-[#5A121E] font-bold uppercase">
-                  SAVE THE DATE
-                </p>
-                <span className="w-6 sm:w-10 h-[1px] bg-[#8B6508]/50" />
-              </div>
-
-              <p className="font-playfair text-base sm:text-lg text-[#4A0E17] font-bold drop-shadow-xs">
-                Wedding Festivities Await You
+        <section className="story-slide w-full h-[100dvh] snap-start relative flex flex-col items-center justify-center gap-8 px-5 py-12 overflow-hidden text-center bg-[#fffefa]">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ffffff_0%,_#faf7f2_75%)]" />
+          <div className="relative z-10 w-full px-2">
+            <p className="font-playfair text-xl sm:text-2xl font-semibold text-[#5A121E] mb-2">A little surprise for you</p>
+            <p className="font-cormorant text-base sm:text-lg text-[#5A121E]/80 mb-5">Scratch the card to reveal our wedding date</p>
+            <ScratchDateReveal revealed={dateRevealed} onReveal={() => setDateRevealed(true)} />
+            {dateRevealed && (
+              <p className="font-cormorant text-sm sm:text-base text-[#5A121E] mt-4 animate-pulse">
+                We look forward to celebrating with you
               </p>
-            </div>
+            )}
           </div>
-
-          {/* Spacer to keep middle clear for the seated couple artwork */}
-          <div className="flex-1 min-h-[28vh]" />
-
-          {/* Bottom Section: Swipe Up */}
-          <div className="relative z-20 pb-2">
-            <RoyalSwipeUp onClick={() => scrollToSlide(2)} />
-          </div>
+          <button
+            type="button"
+            onClick={() => scrollToSlide(2)}
+            disabled={!dateRevealed}
+            className="relative z-10 rounded-full bg-[#5A121E] px-6 py-3 font-playfair text-sm font-semibold text-[#FFF5C0] shadow-md transition disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            View wedding events <ChevronDown className="inline h-4 w-4 ml-1" />
+          </button>
         </section>
 
         {/* ======================================================== */}
         {/* SLIDE 3: VINAYAK STHAPNA (11 December Morning) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center text-white select-none"
-          style={{ backgroundImage: "url('/assets/vinayak-bg.png')" }}
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center text-[#5A121E] select-none"
+          style={{ backgroundImage: "url('/assets/74c1371d-2510-43ca-bfad-2e054f6048f7.png')", backgroundSize: '100% 100%' }}
         >
           {/* Confined to upper dark area so glowing Ganesha idol at bottom is 100% visible! */}
-          <div className="relative z-10 pt-12 sm:pt-14 space-y-1.5 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-5 sm:pt-7 space-y-1 max-w-sm mx-auto px-4">
             <div className="flex items-center justify-center">
               <img src="/assets/ganesh.png" alt="Lord Ganesha" className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-md" />
             </div>
-            <p className="font-cinzel text-xs sm:text-sm tracking-widest text-[#F7D070] font-bold uppercase drop-shadow-md">
+            <p className="font-cinzel text-xs sm:text-sm tracking-widest text-[#5A121E] font-bold uppercase drop-shadow-md">
               || श्री गणेशाय नमः ||
             </p>
 
             <TitleFlourish color="#F7D070">
-              <h2 className="font-playfair text-3xl sm:text-4xl text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] font-bold tracking-wide leading-tight">
+              <h2 className="font-playfair text-3xl sm:text-4xl text-[#5A121E] drop-shadow-sm font-bold tracking-wide leading-tight">
                 Vinayak Sthapna
               </h2>
             </TitleFlourish>
@@ -553,12 +426,12 @@ export default function App() {
 
             <div className="pt-1">
               <OrnateCard isDark={true} maxWidth="max-w-xs">
-                <div className="space-y-1 font-cormorant text-white text-center py-1">
-                  <p className="font-bold text-base sm:text-lg text-[#FFF5C0] drop-shadow-sm">
-                    Friday, 11th December 2026 • 07:00 AM
+                <div className="space-y-1 font-cormorant text-center py-1">
+                  <p className="font-bold text-base sm:text-lg text-[#5A121E] drop-shadow-sm">
+                    Friday, 11 December 2026 - 7:00 AM
                   </p>
-                  <p className="text-sm sm:text-base text-[#F7D070] font-bold drop-shadow-sm">
-                    (Breakfast : 09:00 AM)
+                  <p className="text-sm sm:text-base text-[#8B6508] font-bold drop-shadow-sm">
+                    Breakfast: 9:00 AM
                   </p>
                 </div>
               </OrnateCard>
@@ -595,10 +468,10 @@ export default function App() {
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-0.5 font-cormorant text-[#2C1518] text-center py-1">
                   <p className="font-bold text-sm sm:text-base text-[#5A121E]">
-                    Friday, 11th December 2026 • 11:00 AM
+                    Friday, 11 December 2026 - 11:00 AM
                   </p>
                   <p className="text-xs sm:text-sm text-[#8B6508] font-bold">
-                    (Lunch — Carnival : 01:00 PM)
+                    Lunch: 1:00 PM
                   </p>
                 </div>
               </OrnateCard>
@@ -634,7 +507,7 @@ export default function App() {
               <OrnateCard isDark={true} maxWidth="max-w-xs">
                 <div className="font-cormorant text-center py-1">
                   <p className="font-bold text-sm sm:text-base text-[#FFF5C0] drop-shadow-sm">
-                    Friday, 11th December 2026 • 07:00 PM
+                    Friday, 11 December 2026 - 7:00 PM
                   </p>
                 </div>
               </OrnateCard>
@@ -682,10 +555,10 @@ export default function App() {
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-0.5 font-cormorant text-center py-1">
                   <p className="font-bold text-base sm:text-lg text-[#5A121E]">
-                    Saturday, 12th December 2026
+                    Saturday, 12 December 2026
                   </p>
                   <p className="font-bold text-sm sm:text-base text-[#8B6508]">
-                    09:00 AM • (Breakfast : 09:00 AM)
+                    9:00 AM | Breakfast
                   </p>
                 </div>
               </OrnateCard>
@@ -729,7 +602,7 @@ export default function App() {
                 <div className="space-y-0.5 font-cormorant text-[#5A121E] text-center py-1">
                   <div className="flex items-center justify-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <span className="font-bold text-sm sm:text-base">Saturday, 12th December 2026</span>
+                    <span className="font-bold text-sm sm:text-base">Saturday, 12 December 2026</span>
                   </div>
                   <div className="flex items-center justify-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
@@ -777,7 +650,7 @@ export default function App() {
             </p>
 
             <p className="font-cormorant font-bold text-sm sm:text-base text-[#5A121E] pt-0.5">
-              Saturday, 12th December 2026
+              Saturday, 12 December 2026
             </p>
 
             <div className="pt-0.5">
@@ -823,62 +696,6 @@ export default function App() {
           <div className="relative z-20 pb-2">
             <RoyalSwipeUp onClick={() => scrollToSlide(8)} />
           </div>
-        </section>
-
-        {/* ======================================================== */}
-        {/* SLIDE 9: RECEPTION & DINNER (12 December Night) */}
-        {/* ======================================================== */}
-        <section className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden text-center text-white select-none">
-          <video
-            src="/assets/reception-bg.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/65 pointer-events-none" />
-
-          {/* Confined strictly to upper fireworks sky so bride & groom below are 100% UNTOUCHED! */}
-          <div className="relative z-10 pt-10 sm:pt-12 space-y-1.5 max-w-sm sm:max-w-md mx-auto px-2">
-            <div className="flex justify-center">
-              <img src="/assets/couple_logo_gold.png" alt="A-अ" className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-md" />
-            </div>
-
-            <LotusDivider color="#D4AF37" />
-
-            <TitleFlourish color="#D4AF37">
-              <h2 className="font-playfair text-2xl sm:text-3xl text-gold-gradient font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] tracking-wide leading-tight">
-                Reception &amp; Dinner
-              </h2>
-            </TitleFlourish>
-
-            <LotusDivider color="#D4AF37" />
-
-            <p className="font-cormorant italic font-bold text-sm sm:text-base text-[#FFF5C0] tracking-wide drop-shadow-md">
-              Saturday, 12th December 2026
-            </p>
-
-            <div className="pt-1">
-              <OrnateCard isDark={true} maxWidth="max-w-xs">
-                <div className="flex items-center justify-center gap-2 text-center py-1 font-cormorant text-white">
-                  <ClocheIcon className="w-4 h-4 text-[#F7D070] shrink-0" />
-                  <p className="font-bold text-base sm:text-lg text-[#FFF5C0]">
-                    07:00 PM Onwards
-                  </p>
-                </div>
-              </OrnateCard>
-            </div>
-
-            {/* Couplet */}
-            <p className="font-cormorant italic text-[11px] sm:text-xs text-[#FFF5C0] max-w-xs sm:max-w-sm mx-auto drop-shadow-md leading-relaxed pt-1">
-              "With loved ones near and promises true, we begin the journey of a lifetime, as one, not two."
-            </p>
-
-            <LotusDivider color="#D4AF37" />
-          </div>
-
-          <RoyalSwipeUp onClick={() => scrollToSlide(9)} />
         </section>
 
         {/* ======================================================== */}
@@ -941,7 +758,7 @@ export default function App() {
 
           {/* Bottom SWIPE UP button */}
           <div className="absolute bottom-2 left-0 right-0 text-center pointer-events-auto">
-            <RoyalSwipeUp onClick={() => scrollToSlide(10)} />
+            <RoyalSwipeUp onClick={() => scrollToSlide(9)} />
           </div>
         </section>
 
@@ -955,7 +772,7 @@ export default function App() {
           <div className="relative z-10 max-w-sm sm:max-w-md mx-auto w-full px-2 flex-1 flex flex-col justify-between py-2 sm:py-4">
             {/* Header */}
             <div className="space-y-0.5">
-              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-normal tracking-wide drop-shadow-xs">
+              <h2 className="font-playfair text-2xl sm:text-3xl text-[#5A121E] font-bold tracking-wide drop-shadow-xs">
                 With Love &amp; Blessings
               </h2>
               <LotusDivider color="#D4AF37" className="scale-75 my-1" />

@@ -24,7 +24,7 @@ export const WEDDING_DETAILS = {
   invocations: [
     { key: "top", hi: "|| श्री रामचरणाय नमः ||", en: "|| SHRI RAMCHARNAY NAMAH ||" },
     { key: "left", hi: "|| श्री गणेशाय नमः ||", en: "|| SHRI GANESHAY NAMAH ||" },
-    { key: "right", hi: "|| श्री सतीपितराय नमः ||", en: "|| Pitra Devay Namah ||" },
+    { key: "right", hi: "|| ???? ????????? ??? ||", en: "|| SHRI PITRA DEVAY NAMAH ||" },
   ],
 
   december11Events: [
@@ -99,13 +99,6 @@ export const WEDDING_DETAILS = {
       titleHi: "निकासी",
       time: "6:00 PM",
       timeHi: "सायं 6:00 बजे से"
-    },
-    {
-      id: "reception_dinner",
-      title: "Reception & Dinner",
-      titleHi: "रिसेप्शन एवं स्नेहभोज",
-      time: "7:00 PM",
-      timeHi: "सायं 7:00 बजे से"
     },
     {
       id: "toran",
