@@ -145,7 +145,7 @@ export const WEDDING_DETAILS = {
     },
     withBestCompliments: {
       members: "Bansi Lal, Ramkishore, Ganeshram, Madhusudan, Shivratan, Suresh Ji (C.A.), Rambakshi, Amit",
-      familyTitle: "Kabra & Family"
+      familyTitle: ""
     },
     firms: [
       "SKM Finance",

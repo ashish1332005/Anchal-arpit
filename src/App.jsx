@@ -771,8 +771,8 @@ export default function App() {
                 SPECIAL REQUEST
               </p>
               <div className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight space-y-0.5">
-                <p>Ankit – Kavita Taparia</p>
-                <p>Mayank – Surbhi Kabra</p>
+                <p>Kavita – Ankit Taparia</p>
+                <p>Surbhi – Mayank Kabra</p>
                 <p>Akanksha – Ronak Somani</p>
                 <p>Priyansh • Priyanshi • Ananya Kabra</p>
               </div>
@@ -787,9 +787,11 @@ export default function App() {
               <p className="font-cormorant font-semibold text-[11.5px] sm:text-[12.5px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
                 {WEDDING_DETAILS.family.withBestCompliments.members}
               </p>
-              <p className="font-playfair font-bold text-xs sm:text-sm text-[#5A121E] pt-0.5">
-                {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
-              </p>
+              {WEDDING_DETAILS.family.withBestCompliments.familyTitle && (
+                <p className="font-playfair font-bold text-xs sm:text-sm text-[#5A121E] pt-0.5">
+                  {WEDDING_DETAILS.family.withBestCompliments.familyTitle}
+                </p>
+              )}
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent mx-auto mt-1" />
             </div>
 
