@@ -175,3 +175,15 @@
 .scratch-flower-1 { --flower-x: 8px; color: #F7D070; font-size: 16px; }
 .scratch-flower-2 { --flower-x: -8px; color: #8B1E32; font-size: 17px; }
 
+
+@keyframes flower-burst {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.08) rotate(0deg); }
+  12% { opacity: 1; }
+  100% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--flower-x)), calc(-50% + var(--flower-y))) scale(1) rotate(var(--flower-rotation));
+  }
+}
+
+.animate-flower-burst { animation: flower-burst 1s cubic-bezier(0.12, 0.72, 0.24, 1) both; }
+

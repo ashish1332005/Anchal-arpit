@@ -12,7 +12,7 @@ import {
   Calendar,
   Clock,
   Navigation,
-  Flame,
+  Utensils,
   Crown,
   Share2,
   Phone
@@ -521,11 +521,12 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Dreamy%20Floral%20Wedding%20Pavilion.png')" }}
         >
-          {/* Confined strictly to upper starry sky so crystal pavilion & grand piano below are 100% UNTOUCHED! */}
-          <div className="relative z-10 pt-[8vh] sm:pt-[10vh] space-y-1.5 max-w-sm mx-auto px-4">
+          {/* Keep all Sangeet text within the clear central space of the pavilion artwork. */}
+          <div className="relative z-10 pt-[19vh] sm:pt-[21vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#F7D070">
               <h2 className="font-cinzel text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight uppercase">
-                Sangeet &amp; Ring Ceremony
+                <span className="block">Sangeet</span>
+                <span className="block">&amp; Ring Ceremony</span>
               </h2>
             </TitleFlourish>
 
@@ -534,17 +535,18 @@ export default function App() {
             <div className="pt-1">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="font-cormorant text-center py-1">
-                  <p className="font-bold text-sm sm:text-base text-[#5A121E] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                    Friday, 11 December 2026 - 7:00 PM
-                  </p>
+                  <div className="font-bold text-sm sm:text-base text-[#5A121E] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                    <p>Friday, 11 December 2026</p>
+                    <p>7:00 PM</p>
+                  </div>
                 </div>
               </OrnateCard>
             </div>
 
             {/* Couplet */}
             <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] pt-1 leading-snug">
-              "Let's dance, let's sing, let our hearts take flight,
-              As we celebrate this love under the stars tonight."
+              <span className="block">"Let's dance, let's sing, let our hearts take flight,</span>
+              <span className="block">As we celebrate this love under the stars tonight."</span>
             </p>
 
             <LotusDivider color="#D4AF37" />
@@ -693,12 +695,12 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Toran */}
+                  {/* Reception and dinner */}
                   <div className="flex items-center justify-center gap-1 px-1">
-                    <Flame className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                  <Utensils className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
                     <div className="text-left leading-tight">
-                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-semibold">Toran</span>
-                      <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">8:30 PM</span>
+                      <span className="font-cinzel uppercase text-[8px] sm:text-[9px] leading-tight font-semibold">Reception &amp; Dinner</span>
+                      <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">7:00 PM</span>
                     </div>
                   </div>
 
@@ -738,34 +740,26 @@ export default function App() {
             backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* MAP PREVIEW CARD */}
-          <div
-            className="absolute rounded-lg overflow-hidden cursor-pointer shadow-md group border border-[#D4AF37]/50"
-            style={{
-              top: '34.6%',
-              bottom: '35.8%',
-              left: '11.5%',
-              right: '11.5%'
-            }}
-            onClick={() => window.open(WEDDING_DETAILS.dates.googleMapsUrl, '_blank')}
+          {/* Map image inside the decorative venue frame */}
+          <a
+            href={WEDDING_DETAILS.dates.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute overflow-hidden rounded-lg border border-[#D4AF37]/60 shadow-md"
+            style={{ top: '35.5%', height: '15.5%', left: '13%', right: '13%' }}
+            aria-label={`Open ${WEDDING_DETAILS.dates.venueName} in Google Maps`}
           >
             <img
               src="/assets/gloria_map.png"
-              alt={`${WEDDING_DETAILS.dates.venueName} map location`}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              alt={`${WEDDING_DETAILS.dates.venueName} map`}
+              className="h-full w-full object-cover"
             />
-            {/* Subtle Map Interaction Hint */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-end justify-center pb-2 pointer-events-none">
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity px-2.5 py-1 rounded-full bg-[#5A121E]/90 text-[#F7D070] font-cinzel text-[9px] font-bold shadow-md">
-                ✦ Tap to Open Google Maps ✦
-              </span>
-            </div>
-          </div>
+          </a>
 
           {/* VENUE NAME AND GET DIRECTIONS BUTTON */}
           <div
             className="absolute left-0 right-0 text-center pointer-events-auto px-4"
-            style={{ top: '69.5%' }}
+            style={{ top: '52%' }}
           >
             <h3 className="font-cinzel font-bold text-2xl sm:text-3xl text-[#3D2518] tracking-wide drop-shadow-xs uppercase">
               {WEDDING_DETAILS.dates.venueName}
