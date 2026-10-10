@@ -265,8 +265,8 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
         >
           {/* Restored family invitation details, balanced in the parchment space */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-10 pb-3 flex-1 flex flex-col items-center justify-evenly text-[#2C1518]">
-            <div className="w-full font-cinzel font-bold text-[9px] sm:text-[10px] leading-tight tracking-wide text-[#7B1124]">
+          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[10vh] pb-3 flex-1 flex flex-col items-center justify-start gap-5 sm:gap-6 text-[#2C1518]">
+            <div className="w-full font-cinzel font-bold text-[10px] sm:text-[11px] leading-tight tracking-wide text-[#7B1124]">
               <p>{WEDDING_DETAILS.invocations[0].en}</p>
               <div className="mt-1 flex justify-between gap-3">
                 <p>{WEDDING_DETAILS.invocations[1].en}</p>
@@ -387,7 +387,7 @@ export default function App() {
           {/* Text positioned strictly in the open blank parchment space */}
           <div className="relative z-10 space-y-1.5 max-w-sm mx-auto px-4 pb-1">
             <TitleFlourish color="#8B6508">
-              <h2 className="font-cinzel whitespace-nowrap text-xl sm:text-2xl text-[#5A121E] drop-shadow-sm font-bold tracking-wide leading-tight uppercase">
+              <h2 className="font-allura whitespace-nowrap text-4xl sm:text-5xl text-[#5A121E] drop-shadow-sm font-bold leading-tight">
                 Vinayak Sthapna
               </h2>
             </TitleFlourish>
@@ -420,7 +420,7 @@ export default function App() {
           {/* Positioned in the blank open sky area below the top canopy tassels */}
           <div className="relative z-10 pt-[27vh] sm:pt-[29vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
-              <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight uppercase">
+              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold drop-shadow-sm leading-tight">
                 Carnival
               </h2>
             </TitleFlourish>
@@ -463,7 +463,7 @@ export default function App() {
           {/* Keep all Sangeet text within the clear central space of the pavilion artwork. */}
           <div className="relative z-10 pt-[19vh] sm:pt-[21vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#F7D070">
-              <h2 className="font-cinzel text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-sm tracking-wide leading-tight uppercase">
+              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-sm leading-tight">
                 <span className="block">Sangeet</span>
                 <span className="block">&amp; Ring Ceremony</span>
               </h2>
@@ -513,7 +513,7 @@ export default function App() {
             </div>
 
             <TitleFlourish color="#5A121E">
-              <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight uppercase">
+              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold drop-shadow-xs leading-tight">
                 Mangal Kalash
               </h2>
             </TitleFlourish>
@@ -555,7 +555,7 @@ export default function App() {
           {/* Placed in the upper open sky area above the traditional Mayra illustration */}
           <div className="relative z-10 pt-[18vh] sm:pt-[20vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
-              <h2 className="font-cinzel text-3xl sm:text-4xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight uppercase">
+              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold drop-shadow-xs leading-tight">
                 Mayra
               </h2>
             </TitleFlourish>
@@ -607,7 +607,7 @@ export default function App() {
             </div>
 
             <TitleFlourish color="#5A121E">
-              <h2 className="font-cinzel text-2xl sm:text-3xl text-[#5A121E] font-bold drop-shadow-xs tracking-wide leading-tight uppercase">
+              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-xs leading-tight">
                 Wedding Ceremony
               </h2>
             </TitleFlourish>
