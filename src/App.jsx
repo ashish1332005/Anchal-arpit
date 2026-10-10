@@ -95,6 +95,19 @@ function PherasIcon({ className = "w-4 h-4 text-[#F7D070]" }) {
   );
 }
 
+function EventTime({ value, className = "" }) {
+  const match = value.match(/^(.*?)\s*(AM|PM)$/i);
+  const hour = match?.[1] ?? value;
+  const meridiem = match?.[2];
+
+  return (
+    <span className={`inline-flex items-baseline justify-center gap-1 whitespace-nowrap text-[#2C1518] ${className}`}>
+      <span className="font-playfair text-lg sm:text-xl font-bold leading-none">{hour}</span>
+      {meridiem && <span className="font-cinzel text-[10px] sm:text-xs font-bold tracking-wide leading-none">{meridiem}</span>}
+    </span>
+  );
+}
+
 // Royal Scalloped / Bracketed Timings Card
 function OrnateCard({ children, isDark = false, className = "", maxWidth = "max-w-md" }) {
   return (
@@ -404,11 +417,10 @@ export default function App() {
               <p className="font-bold text-base sm:text-lg text-[#5A121E]">
                 Friday, 11 December 2026
               </p>
-              <p className="font-semibold text-sm sm:text-base text-[#7B1124]">
-                Auspicious Sthapna : 7:00 AM
-              </p>
-              <p className="text-[#8B6508] font-bold text-xs sm:text-sm">
-                Breakfast : 9:00 AM
+              <p className="flex items-baseline justify-center text-[#7B1124]"><EventTime value="7:00 AM" /></p>
+              <p className="flex items-baseline justify-center gap-2 text-[#8B6508]">
+                <span className="font-cormorant text-sm sm:text-base font-bold">Breakfast:</span>
+                <EventTime value="9:00 AM" />
               </p>
             </div>
           </div>
@@ -440,11 +452,11 @@ export default function App() {
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-0.5 font-cormorant text-[#2C1518] text-center py-1">
-                  <p className="font-bold text-sm sm:text-base text-[#5A121E]">
-                    Friday, 11 December 2026 - 11:00 AM
-                  </p>
-                  <p className="text-xs sm:text-sm text-[#8B6508] font-bold">
-                    Lunch: 1:00 PM
+                  <p className="font-bold text-sm sm:text-base text-[#5A121E]">Friday, 11 December 2026</p>
+                  <p className="flex items-baseline justify-center pt-1"><EventTime value="11:00 AM" /></p>
+                  <p className="flex items-baseline justify-center gap-2 pt-1 text-[#8B6508]">
+                    <span className="font-cormorant text-sm sm:text-base font-bold">Lunch:</span>
+                    <EventTime value="1:00 PM" />
                   </p>
                 </div>
               </OrnateCard>
@@ -480,9 +492,9 @@ export default function App() {
             <div className="pt-1">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="font-cormorant text-center py-1">
-                  <div className="font-bold text-sm sm:text-base text-[#5A121E] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
+                  <div className="flex flex-col items-center gap-1 font-bold text-[#5A121E] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                     <p>Friday, 11 December 2026</p>
-                    <p>7:00 PM</p>
+                    <EventTime value="7:00 PM" />
                   </div>
                 </div>
               </OrnateCard>
@@ -532,9 +544,7 @@ export default function App() {
                   <p className="font-bold text-base sm:text-lg text-[#5A121E]">
                     Saturday, 12 December 2026
                   </p>
-                  <p className="font-bold text-sm sm:text-base text-[#8B6508]">
-                    Mangal Kalash and breakfast: 9:00 AM
-                  </p>
+                  <p className="flex items-baseline justify-center"><EventTime value="9:00 AM" /></p>
                 </div>
               </OrnateCard>
             </div>
@@ -581,7 +591,7 @@ export default function App() {
                   </div>
                   <div className="flex items-center justify-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <span className="font-bold text-sm sm:text-base">11:00 AM</span>
+                    <EventTime value="11:00 AM" />
                   </div>
                 </div>
               </OrnateCard>
@@ -630,30 +640,26 @@ export default function App() {
 
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-md">
-                <div className="grid grid-cols-[1fr_1.5fr_1fr] items-center text-center divide-x divide-[#D4AF37]/50 font-cormorant text-[#5A121E] py-1">
+                <div className="grid grid-cols-[1fr_1.35fr_1fr] items-stretch text-center divide-x divide-[#D4AF37]/50 py-1">
                   {/* Nikasi */}
-                  <div className="flex items-center justify-center gap-1 px-1">
+                  <div className="flex flex-col items-center justify-center gap-1 px-0.5">
                     <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <div className="text-left leading-tight">
-                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-semibold">Nikasi</span>
-                      <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">6:00 PM</span>
-                    </div>
+                    <span className="font-cinzel uppercase text-[8px] sm:text-[9px] tracking-wide font-semibold text-[#5A121E]">Nikasi</span>
+                    <EventTime value="6:00 PM" />
                   </div>
 
                   {/* Reception and dinner */}
-                  <div className="flex flex-col items-center justify-center gap-0.5 px-0.5 leading-tight">
+                  <div className="flex flex-col items-center justify-center gap-1 px-0.5 leading-tight">
                     <Utensils className="w-3 h-3 text-[#8B6508] shrink-0" />
-                    <span className="whitespace-nowrap font-cinzel uppercase text-[8px] sm:text-[9px] font-semibold">Reception &amp; Dinner</span>
-                    <span className="text-[11px] sm:text-xs font-bold text-[#2C1518]">7:00 PM</span>
+                    <span className="whitespace-nowrap font-cinzel uppercase text-[8px] sm:text-[9px] font-semibold text-[#5A121E]">Reception &amp; Dinner</span>
+                    <EventTime value="7:00 PM" />
                   </div>
 
                   {/* Pheras */}
-                  <div className="flex items-center justify-center gap-1 px-1">
+                  <div className="flex flex-col items-center justify-center gap-1 px-0.5">
                     <PherasIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <div className="text-left leading-tight">
-                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-semibold">Pheras</span>
-                      <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">10:30 PM</span>
-                    </div>
+                    <span className="font-cinzel uppercase text-[8px] sm:text-[9px] tracking-wide font-semibold text-[#5A121E]">Pheras</span>
+                    <EventTime value="10:30 PM" />
                   </div>
                 </div>
               </OrnateCard>
