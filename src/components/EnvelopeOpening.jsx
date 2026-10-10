@@ -13,7 +13,7 @@ export default function EnvelopeOpening({ onComplete, guestName }) {
 
   useEffect(() => {
     if (!isBlooming) return undefined;
-    const timeout = window.setTimeout(() => onComplete?.(), 1050);
+    const timeout = window.setTimeout(() => onComplete?.(), 1000);
     return () => window.clearTimeout(timeout);
   }, [isBlooming, onComplete]);
 
@@ -45,22 +45,6 @@ export default function EnvelopeOpening({ onComplete, guestName }) {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      {isPlaying && !isBlooming && (
-      <header className="absolute inset-x-0 top-0 z-10 flex flex-col items-center px-4 pt-[max(4vh,20px)] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-        <img
-          src="/assets/couple_logo.png"
-          alt="Arpit and Anchal"
-          className="h-14 w-14 object-contain drop-shadow-lg sm:h-16 sm:w-16"
-        />
-        <h1 className="mt-1 font-cinzel text-lg font-bold tracking-[0.2em] sm:text-xl">ARPIT &amp; ANCHAL</h1>
-        {guestName && (
-          <p className="mt-2 font-cormorant text-sm font-semibold">
-            Cordially invited: {guestName}
-          </p>
-        )}
-      </header>
-      )}
-
       <main className="absolute inset-0 z-10 flex flex-col items-center justify-center px-5">
         {!isPlaying && !isBlooming && (
           <button
@@ -84,7 +68,7 @@ export default function EnvelopeOpening({ onComplete, guestName }) {
       </main>
 
       {isBlooming && (
-        <div className="pointer-events-none fixed inset-0 z-20 overflow-hidden bg-[#FAF7F2]" aria-hidden="true">
+        <div className="pointer-events-none fixed inset-0 z-20 overflow-hidden bg-transparent" aria-hidden="true">
           {Array.from({ length: FLOWER_COUNT }, (_, index) => (
             <img
               key={index}
@@ -96,8 +80,8 @@ export default function EnvelopeOpening({ onComplete, guestName }) {
                 '--flower-x': `${(seededRandom(index + 100) * 100) - 50}vw`,
                 '--flower-y': `${(seededRandom(index + 200) * 100) - 50}vh`,
                 '--flower-rotation': `${(seededRandom(index + 300) * 360) - 180}deg`,
-                animationDelay: `${Math.floor(seededRandom(index + 400) * 120)}ms`,
-                animationDuration: `${500 + (index % 5) * 40}ms`,
+                animationDelay: `${Math.floor(seededRandom(index + 400) * 180)}ms`,
+                animationDuration: `${700 + (index % 5) * 50}ms`,
               }}
             />
           ))}

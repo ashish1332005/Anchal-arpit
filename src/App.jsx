@@ -108,7 +108,7 @@ function RoyalSwipeUp({ onClick, className = "", label = "SWIPE UP" }) {
       {/* Centered button flanked by flourish wings */}
       <div className="inline-flex items-center gap-1.5 sm:gap-2">
         <FlourishWing color="#D4AF37" flip={false} className="w-5 sm:w-6 h-2.5 opacity-85" />
-        
+
         <button
           onClick={onClick}
           className="group inline-flex items-center gap-1.5 px-5 sm:px-6 py-1.5 rounded-full bg-gradient-to-r from-[#4A0E18] via-[#631422] to-[#4A0E18] border border-[#D4AF37] shadow-[0_4px_16px_rgba(0,0,0,0.35)] hover:scale-105 active:scale-95 transition-all duration-300"
@@ -137,6 +137,7 @@ export default function App() {
   const [isRsvpOpen, setIsRsvpOpen] = useState(false);
   const [guestName, setGuestName] = useState('');
   const [dateRevealed, setDateRevealed] = useState(false);
+  const [showScratchFlowers, setShowScratchFlowers] = useState(false);
 
   const containerRef = useRef(null);
   const dict = WEDDING_DETAILS.translations[lang];
@@ -261,54 +262,30 @@ export default function App() {
         {/* SLIDE 1: MAIN INVITATION CARD (Page 2 — Wedding Invitation) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-5 overflow-hidden bg-cover bg-center text-center select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
         >
-          {/* Main Content Area - naturally fills the card frame without excessive gaps */}
-          <div className="relative z-10 w-full max-w-sm mx-auto px-2 pt-5 sm:pt-6 flex-1 flex flex-col justify-center gap-3 sm:gap-4 pb-2">
-            {/* Top Invocations & Monogram */}
-            <div className="space-y-1">
-              {/* Religious Invocations */}
-              <div className="w-full text-[#7B1124] select-none">
-                {/* Top Center: Shri Ramcharnay Namah */}
-                <div className="text-center mb-0.5">
-                  <span className="font-cinzel text-[11px] sm:text-[12px] md:text-[13px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                    {WEDDING_DETAILS.invocations[0]?.en || "|| SHRI RAMCHARNAY NAMAH ||"}
-                  </span>
-                </div>
+          {/* Main Content Area - elegantly centered in the open blank space */}
+          <div className="relative z-10 w-full max-w-md mx-auto px-6 py-12 flex-1 flex flex-col items-center justify-center gap-6 sm:gap-8 h-full">
+            
+            {/* Elegant Header */}
+            <div className="space-y-1 w-full mt-4">
+              <h2 className="font-allura text-4xl sm:text-5xl text-[#7B1124] font-bold leading-tight drop-shadow-sm">
+                The Auspicious Wedding Day
+              </h2>
+              <LotusDivider color="#D4AF37" className="scale-75 my-1" />
+            </div>
 
-                {/* Bottom Row: Shri Ganeshay Namah (Left) & Shri Pitra Devay Namah (Right) */}
-                <div className="flex items-center justify-between px-0.5 sm:px-2">
-                  <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                    {WEDDING_DETAILS.invocations[1]?.en || "|| SHRI GANESHAY NAMAH ||"}
-                  </span>
-                  <span className="font-cinzel text-[10px] sm:text-[11px] md:text-[12px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                    {WEDDING_DETAILS.invocations[2]?.en || "|| SHRI PITRA DEVAY NAMAH ||"}
-                  </span>
-                </div>
-              </div>
+            {/* Couple Monogram & Invocation */}
+            <div className="flex flex-col items-center w-full space-y-4">
+              <img
+                src="/assets/couple_logo.png"
+                alt="A-अ Logo"
+                className="w-12 h-12 sm:w-14 sm:h-14 object-contain drop-shadow-sm"
+              />
 
-              {/* A-अ Couple Monogram */}
-              <div className="pt-0.5 flex justify-center">
-                <img
-                  src="/assets/couple_logo.png"
-                  alt="A-अ Logo"
-                  className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm"
-                />
-              </div>
-
-              <div className="relative z-20 w-full max-w-[340px] mx-auto text-center px-1">
-                <div className="absolute inset-0 -z-10 bg-[#fff8e8]/10 blur-md rounded-full" />
-                <p className="
-                  font-cormorant
-                  text-[12.5px] sm:text-[13.5px]
-                  text-[#2C1518]
-                  font-semibold
-                  leading-snug
-                  mt-1
-                  px-2
-                  drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]
-                ">
+              <div className="relative z-20 w-full max-w-[340px] text-center">
+                <p className="font-cormorant text-base sm:text-lg text-[#2C1518] font-semibold leading-snug drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]">
                   The Kabra family requests the pleasure of your company at the wedding
                   celebration of Arpit and Anchal.
                 </p>
@@ -316,115 +293,92 @@ export default function App() {
             </div>
 
             {/* Couple Announcement Section */}
-            <div className="space-y-1.5 sm:space-y-2 py-1">
-              {/* GROOM SECTION (FIRST) */}
-              <div className="space-y-0.5">
-                <div className="flex justify-center items-center">
-                  <h1 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
-                    {WEDDING_DETAILS.couple.groom}
-                  </h1>
-                </div>
-
-                <div className="space-y-0.5 text-center">
-                  <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-                    Grandson of {WEDDING_DETAILS.couple.groomGrandParents}
-                  </p>
-                  <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-                    Son of {WEDDING_DETAILS.couple.groomParents}
-                  </p>
-                </div>
+            <div className="flex flex-col items-center space-y-3 w-full">
+              {/* GROOM */}
+              <div className="space-y-1">
+                <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
+                  {WEDDING_DETAILS.couple.groom}
+                </h1>
               </div>
 
-              {/* WITH + LOTUS DIVIDER */}
-              <div className="py-1">
-                <div className="flex items-center justify-center gap-3">
-                  <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
-                  <span className="font-playfair text-sm sm:text-base text-[#8B6508] font-semibold leading-none">
-                    with
-                  </span>
-                  <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
-                </div>
+              {/* WITH */}
+              <div className="flex items-center justify-center gap-3 w-full">
+                <span className="w-12 sm:w-16 h-[1px] bg-[#8B6508]/50" />
+                <span className="font-playfair text-sm sm:text-base text-[#8B6508] font-semibold leading-none">
+                  with
+                </span>
+                <span className="w-12 sm:w-16 h-[1px] bg-[#8B6508]/50" />
               </div>
 
-              {/* BRIDE SECTION (SECOND) */}
-              <div className="space-y-0.5">
-                <div className="flex justify-center items-center">
-                  <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
-                    {WEDDING_DETAILS.couple.bride}
-                  </h2>
-                </div>
-
-                <div className="space-y-0.5 text-center">
-                  <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-                    Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}
-                  </p>
-                  <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-                    Daughter of {WEDDING_DETAILS.couple.brideParents}
-                  </p>
-                </div>
+              {/* BRIDE */}
+              <div className="space-y-1">
+                <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
+                  {WEDDING_DETAILS.couple.bride}
+                </h2>
               </div>
             </div>
           </div>
 
           {/* Bottom Royal SWIPE UP button */}
-          <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="SWIPE UP" />
-        </section>
-
-        {/* ======================================================== */}
+          <div className="relative z-20 pb-4">
+            <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="SWIPE UP" />
+          </div>
+        </sect        {/* ======================================================== */}
         {/* SLIDE 2: SCRATCH-TO-REVEAL DATE & VENUE (COMPACT SPACE) */}
         {/* ======================================================== */}
-        <section className="story-slide w-full h-auto min-h-0 snap-start relative flex flex-col items-center justify-center px-4 py-6 sm:py-8 overflow-hidden text-center bg-[#FAF7F2] select-none">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ffffff_0%,_#faf7f2_75%)]" />
+        <section className="story-slide w-full h-auto min-h-[100dvh] snap-start relative flex flex-col items-center justify-center px-4 py-8 sm:py-12 overflow-hidden text-center bg-[#F3E9D9] select-none">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#f7f0e4_58%,_#eadcc8_100%)]" />
+
+          {/* Scratch Bloom Animation */}
+          {showScratchFlowers && (
+            <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden" aria-hidden="true">
+              {Array.from({ length: 30 }, (_, index) => (
+                <img
+                  key={index}
+                  src="/assets/Isolated%20Cream%20Daisy%20Flower.png"
+                  alt=""
+                  className="absolute left-1/2 top-1/2 animate-flower-burst object-contain"
+                  style={{
+                    width: `clamp(60px, ${8 + (index % 5) * 4}vw, 120px)`,
+                    '--flower-x': `${(Math.random() * 100) - 50}vw`,
+                    '--flower-y': `${(Math.random() * 100) - 50}vh`,
+                    '--flower-rotation': `${Math.random() * 360}deg`,
+                    animationDelay: `${Math.random() * 200}ms`,
+                    animationDuration: `${600 + Math.random() * 200}ms`,
+                  }}
+                />
+              ))}
+            </div>
+          )}
 
           <div className="relative z-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center">
-            {/* Elegant Header above the scratch card for a beautiful royal presentation */}
-            <div className="mb-2.5 space-y-0.5">
-              <p className="font-cinzel text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-[#8B6508]">
-                A Royal Surprise
-              </p>
-              <h2 className="font-cinzel text-base sm:text-lg font-bold text-[#5A121E] uppercase tracking-wider">
-                Scratch To Reveal The Date
-              </h2>
-              <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
-            </div>
-
             {/* The Scratch Card: Compact square/box area only */}
-            <div className="my-1">
-              <ScratchDateReveal revealed={dateRevealed} onReveal={() => setDateRevealed(true)} />
+            <div className="my-2">
+              <ScratchDateReveal revealed={dateRevealed} onReveal={() => {
+                setDateRevealed(true);
+                setShowScratchFlowers(true);
+                setTimeout(() => setShowScratchFlowers(false), 1200);
+              }} />
             </div>
 
             {/* ONLY REVEALED AFTER SCRATCHING: Naturally expands space according to content */}
             {dateRevealed && (
-              <div className="w-full mt-3 space-y-3 animate-fadeIn transition-all duration-700">
-                {/* Date & Venue Details */}
-                <div className="space-y-1">
-                  <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
-                  <p className="font-cinzel text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-[#8B6508]">
-                    Royal Wedding Date &amp; Venue
-                  </p>
-                  <p className="font-cormorant text-lg sm:text-xl font-bold text-[#5A121E]">
-                    {WEDDING_DETAILS.dates.display}
-                  </p>
-                  <p className="font-cinzel text-xs sm:text-sm font-bold text-[#2C1518] tracking-wider uppercase">
-                    📍 {WEDDING_DETAILS.dates.venueName}
-                  </p>
-                  <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
-                </div>
+              <div className="w-full mt-5 space-y-4 animate-fadeIn transition-all duration-700">
 
                 {/* Countdown */}
-                <div className="mx-auto w-full max-w-xs pt-0.5">
-                  <p className="font-cinzel text-[10px] uppercase tracking-[0.2em] text-[#8B6508] font-bold mb-1">
+                <div className="mx-auto w-full max-w-xs pt-1">
+                  <p className="font-cinzel text-xs uppercase tracking-[0.2em] text-[#8B6508] font-bold mb-1.5">
                     Countdown to the wedding
                   </p>
                   <Countdown targetDateIso={WEDDING_DETAILS.dates.startDateIso} />
                 </div>
 
                 {/* View Events Button */}
-                <div className="pt-1.5">
+                <div className="pt-3">
                   <button
                     type="button"
                     onClick={() => scrollToSlide(2)}
-                    className="inline-flex items-center gap-1.5 px-6 py-2 rounded-full bg-gradient-to-r from-[#4A0E18] via-[#631422] to-[#4A0E18] border border-[#D4AF37] shadow-lg text-[#F7D070] font-cinzel text-xs font-bold tracking-wider uppercase hover:scale-105 active:scale-95 transition-all"
+                    className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#4A0E18] via-[#631422] to-[#4A0E18] border border-[#D4AF37] shadow-lg text-[#F7D070] font-cinzel text-xs font-bold tracking-wider uppercase hover:scale-105 active:scale-95 transition-all"
                   >
                     <span>View Wedding Events</span>
                     <ChevronDown className="h-3.5 w-3.5 text-[#F7D070]" />
@@ -434,7 +388,7 @@ export default function App() {
             )}
           </div>
         </section>
-
+        
         {/* ======================================================== */}
         {/* SLIDE 3: VINAYAK STHAPNA (11 December Morning) */}
         {/* ======================================================== */}
@@ -685,7 +639,7 @@ export default function App() {
 
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-md">
-                <div className="grid grid-cols-3 items-center text-center divide-x divide-[#D4AF37]/50 font-cormorant text-[#5A121E] py-1">
+                <div className="grid grid-cols-[1fr_1.5fr_1fr] items-center text-center divide-x divide-[#D4AF37]/50 font-cormorant text-[#5A121E] py-1">
                   {/* Nikasi */}
                   <div className="flex items-center justify-center gap-1 px-1">
                     <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
@@ -696,12 +650,10 @@ export default function App() {
                   </div>
 
                   {/* Reception and dinner */}
-                  <div className="flex items-center justify-center gap-1 px-1">
-                  <Utensils className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <div className="text-left leading-tight">
-                      <span className="font-cinzel uppercase text-[8px] sm:text-[9px] leading-tight font-semibold">Reception &amp; Dinner</span>
-                      <span className="text-[11px] sm:text-xs block font-bold text-[#2C1518]">7:00 PM</span>
-                    </div>
+                  <div className="flex flex-col items-center justify-center gap-0.5 px-0.5 leading-tight">
+                    <Utensils className="w-3 h-3 text-[#8B6508] shrink-0" />
+                    <span className="whitespace-nowrap font-cinzel uppercase text-[8px] sm:text-[9px] font-semibold">Reception &amp; Dinner</span>
+                    <span className="text-[11px] sm:text-xs font-bold text-[#2C1518]">7:00 PM</span>
                   </div>
 
                   {/* Pheras */}
@@ -732,55 +684,50 @@ export default function App() {
         {/* SLIDE 10: VENUE & LOCATION */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative overflow-hidden select-none"
-          style={{
-            backgroundImage: "url('/assets/directions-bg.png')",
-            backgroundSize: '100% 100%',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
+          className="story-slide w-full h-auto min-h-[100dvh] snap-start relative flex flex-col items-center justify-center py-16 px-4 bg-[#FAF7F2] select-none"
         >
-          {/* Map image inside the decorative venue frame */}
-          <a
-            href={WEDDING_DETAILS.dates.googleMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute overflow-hidden rounded-lg border border-[#D4AF37]/60 shadow-md"
-            style={{ top: '35.5%', height: '15.5%', left: '13%', right: '13%' }}
-            aria-label={`Open ${WEDDING_DETAILS.dates.venueName} in Google Maps`}
-          >
-            <img
-              src="/assets/gloria_map.png"
-              alt={`${WEDDING_DETAILS.dates.venueName} map`}
-              className="h-full w-full object-cover"
-            />
-          </a>
-
           {/* VENUE NAME AND GET DIRECTIONS BUTTON */}
-          <div
-            className="absolute left-0 right-0 text-center pointer-events-auto px-4"
-            style={{ top: '52%' }}
-          >
-            <h3 className="font-cinzel font-bold text-2xl sm:text-3xl text-[#3D2518] tracking-wide drop-shadow-xs uppercase">
+          <div className="w-full max-w-sm mx-auto text-center space-y-5">
+            <h3 className="font-cinzel font-bold text-3xl sm:text-4xl text-[#5A121E] tracking-wide uppercase drop-shadow-sm">
               {WEDDING_DETAILS.dates.venueName}
             </h3>
+            
+            <LotusDivider color="#D4AF37" className="scale-100 my-2" />
 
-            <div className="pt-2">
+            {/* Map image inside the decorative venue frame */}
+            <div className="relative p-2 bg-[#F3E9D9] rounded-xl border border-[#D4AF37]/50 shadow-xl overflow-hidden group hover:scale-[1.02] transition-transform">
               <a
                 href={WEDDING_DETAILS.dates.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#FBF5B7] to-[#AA771C] text-[#5A121E] font-cinzel text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg hover:scale-105 transition-transform border border-[#D4AF37]"
+                className="block relative rounded-lg border border-[#D4AF37]/30 overflow-hidden aspect-[4/3] bg-black"
+                aria-label={`Open ${WEDDING_DETAILS.dates.venueName} in Google Maps`}
               >
-                <Navigation className="w-3.5 h-3.5" />
+                <img
+                  src="/assets/gloria_map.png"
+                  alt={`${WEDDING_DETAILS.dates.venueName} map`}
+                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                />
+                <div className="absolute inset-0 bg-[#5A121E]/10 group-hover:bg-transparent transition-colors" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg text-[#5A121E]">
+                    <Navigation className="w-6 h-6" />
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div className="pt-4">
+              <a
+                href={WEDDING_DETAILS.dates.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#FBF5B7] to-[#AA771C] text-[#5A121E] font-cinzel text-sm sm:text-base font-bold uppercase tracking-widest shadow-xl hover:scale-105 transition-transform border border-[#D4AF37]"
+              >
+                <Navigation className="w-4 h-4" />
                 <span>{dict.getDirections}</span>
               </a>
             </div>
-          </div>
-
-          {/* Bottom SWIPE UP button */}
-          <div className="absolute bottom-2 left-0 right-0 text-center pointer-events-auto">
-            <RoyalSwipeUp onClick={() => scrollToSlide(9)} />
           </div>
         </section>
 
