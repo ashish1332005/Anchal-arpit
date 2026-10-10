@@ -1,6 +1,6 @@
-﻿import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-const REVEAL_THRESHOLD = 0.38;
+const REVEAL_THRESHOLD = 0.35;
 
 export default function ScratchDateReveal({ revealed, onReveal }) {
   const canvasRef = useRef(null);
@@ -20,23 +20,41 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
     canvas.height = Math.round(bounds.height * scale);
     const context = canvas.getContext('2d');
     context.scale(scale, scale);
-    context.fillStyle = '#e8e5df';
+
+    // Royal Gold Foil Gradient Background matching the theme
+    const goldGradient = context.createLinearGradient(0, 0, bounds.width, bounds.height);
+    goldGradient.addColorStop(0, '#C59B27');
+    goldGradient.addColorStop(0.2, '#FBF5B7');
+    goldGradient.addColorStop(0.4, '#D4AF37');
+    goldGradient.addColorStop(0.7, '#E5C058');
+    goldGradient.addColorStop(0.85, '#F7D070');
+    goldGradient.addColorStop(1, '#AA771C');
+    context.fillStyle = goldGradient;
     context.fillRect(0, 0, bounds.width, bounds.height);
 
-    const gradient = context.createLinearGradient(0, 0, bounds.width, bounds.height);
-    gradient.addColorStop(0, 'rgba(255,255,255,.5)');
-    gradient.addColorStop(0.5, 'rgba(194,188,178,.22)');
-    gradient.addColorStop(1, 'rgba(255,255,255,.55)');
-    context.fillStyle = gradient;
+    // Subtle metallic shimmer overlay
+    const sheen = context.createLinearGradient(0, 0, bounds.width, 0);
+    sheen.addColorStop(0, 'rgba(255,255,255,0.15)');
+    sheen.addColorStop(0.5, 'rgba(255,255,255,0.4)');
+    sheen.addColorStop(1, 'rgba(255,255,255,0.15)');
+    context.fillStyle = sheen;
     context.fillRect(0, 0, bounds.width, bounds.height);
-    context.strokeStyle = 'rgba(115,102,83,.35)';
-    context.lineWidth = 1;
+
+    // Double ornate royal borders
+    context.strokeStyle = 'rgba(90, 18, 30, 0.45)';
+    context.lineWidth = 1.5;
+    context.strokeRect(5, 5, bounds.width - 10, bounds.height - 10);
+
+    context.strokeStyle = 'rgba(255, 255, 255, 0.65)';
+    context.lineWidth = 0.8;
     context.strokeRect(8, 8, bounds.width - 16, bounds.height - 16);
-    context.fillStyle = '#766d61';
-    context.font = '600 13px sans-serif';
+
+    // Royal callout text
+    context.fillStyle = '#5A121E';
+    context.font = 'bold 11px Cinzel, serif';
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.fillText('SCRATCH HERE TO REVEAL', bounds.width / 2, bounds.height / 2);
+    context.fillText('✦ SCRATCH TO REVEAL ✦', bounds.width / 2, bounds.height / 2);
   }, [revealed]);
 
   const eraseAt = (event) => {
@@ -45,7 +63,7 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
     const bounds = canvas.getBoundingClientRect();
     const context = canvas.getContext('2d');
     const now = Date.now();
-    if (now - lastFlowerAt.current > 90) {
+    if (now - lastFlowerAt.current > 80) {
       lastFlowerAt.current = now;
       const id = flowerId.current++;
       const x = event.clientX - bounds.left;
@@ -55,7 +73,7 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
     }
     context.globalCompositeOperation = 'destination-out';
     context.beginPath();
-    context.arc((event.clientX - bounds.left), (event.clientY - bounds.top), 22, 0, Math.PI * 2);
+    context.arc((event.clientX - bounds.left), (event.clientY - bounds.top), 20, 0, Math.PI * 2);
     context.fill();
     context.globalCompositeOperation = 'source-over';
 
@@ -70,12 +88,23 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   };
 
   return (
-    <div className="relative w-[min(72vw,260px)] max-w-full mx-auto aspect-square rounded-xl overflow-hidden bg-white shadow-sm ring-1 ring-[#8B6508]/20">
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-        <p className="font-cormorant text-sm sm:text-base text-[#8B6508]">Save the date</p>
-        <p className="font-great-vibes text-2xl sm:text-3xl font-semibold text-[#5A121E]">11 &amp; 12 December 2026</p>
-        <p className="font-cormorant text-sm sm:text-base text-[#5A121E] mt-1">Arpit &amp; Anchal</p>
+    <div className="relative w-[min(74vw,230px)] h-[142px] max-w-full mx-auto rounded-xl overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#F5ECE0] shadow-lg ring-1 ring-[#D4AF37]/60">
+      {/* Revealed Inner Card Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-3 py-2 text-center select-none">
+        <p className="font-cinzel text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#8B6508] font-bold">
+          Save the date
+        </p>
+        <p className="font-cormorant text-base sm:text-lg font-bold text-[#5A121E] my-0.5 tracking-wide leading-tight">
+          11 &amp; 12 December 2026
+        </p>
+        <p className="font-allura text-2xl sm:text-3xl font-bold text-[#5A121E] leading-none drop-shadow-xs my-0.5">
+          Arpit &amp; Anchal
+        </p>
+        <p className="font-cinzel text-[9.5px] sm:text-[10.5px] font-bold text-[#8B6508] tracking-wider uppercase mt-1">
+          📍 Gloria Inn, Bhilwara
+        </p>
       </div>
+
       {flowers.map((flower, index) => (
         <span
           key={flower.id}
@@ -86,6 +115,7 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
           {index % 2 ? '\u273f' : '\u2740'}
         </span>
       ))}
+
       {!revealed && (
         <canvas
           ref={canvasRef}
@@ -107,3 +137,4 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
     </div>
   );
 }
+

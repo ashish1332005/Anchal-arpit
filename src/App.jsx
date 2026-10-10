@@ -257,16 +257,17 @@ export default function App() {
         }`}
       >
         {/* ======================================================== */}
+        {/* ======================================================== */}
         {/* SLIDE 1: MAIN INVITATION CARD (Page 2 — Wedding Invitation) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-5 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
         >
-          {/* Confined strictly to upper open sky so resort fountain & arches below are completely UNCOVERED! */}
-          <div className="relative z-10 pt-6 sm:pt-8 space-y-1 max-w-sm mx-auto px-3">
+          {/* Centered content block with equal gap top and bottom in the blank area */}
+          <div className="my-auto relative z-10 w-full max-w-sm mx-auto px-3 py-1 flex flex-col items-center justify-center space-y-1 sm:space-y-1.5">
             {/* Religious Invocations */}
-            <div className="w-full text-[#7B1124] select-none mb-1">
+            <div className="w-full text-[#7B1124] select-none mb-0.5">
               {/* Top Center: Shri Ramcharnay Namah */}
               <div className="text-center mb-0.5 sm:mb-1">
                 <span className="font-cinzel text-[11px] sm:text-[12px] md:text-[13px] tracking-wider font-bold text-[#7B1124] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
@@ -294,82 +295,71 @@ export default function App() {
               />
             </div>
 
-       <div className="relative z-20 w-[76%] max-w-[340px] mx-auto text-center">
-  
-  {/* Soft readability layer — very subtle, no hard box */}
-  <div className="absolute inset-0 -z-10 bg-[#fff8e8]/10 blur-md rounded-full" />
+            <div className="relative z-20 w-full max-w-[340px] mx-auto text-center px-2">
+              {/* Soft readability layer — very subtle, no hard box */}
+              <div className="absolute inset-0 -z-10 bg-[#fff8e8]/10 blur-md rounded-full" />
 
+              <p className="
+                font-cormorant
+                text-[12px] sm:text-[13px]
+                text-[#2C1518]
+                font-semibold
+                leading-[1.3]
+                mt-1
+                px-2
+                drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]
+              ">
+                The Kabra family requests the pleasure of your company at the wedding
+                celebration of Arpit and Anchal.
+              </p>
+            </div>
 
+            {/* GROOM SECTION (FIRST) */}
+            <div className="pt-1.5 space-y-0.5">
+              <div className="flex justify-center items-center">
+                <h1 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
+                  {WEDDING_DETAILS.couple.groom}
+                </h1>
+              </div>
 
-  <p className="
-    font-cormorant
-    text-[12px] sm:text-[13px]
-    text-[#2C1518]
-    font-semibold
-    leading-[1.3]
-    mt-2
-    px-2
-    drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]
-  ">
-    The Kabra family requests the pleasure of your company at the wedding
-    celebration of Arpit and Anchal.
-  </p>
+              <div className="space-y-0.5 text-center">
+                <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+                  Grandson of {WEDDING_DETAILS.couple.groomGrandParents}
+                </p>
+                <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+                  Son of {WEDDING_DETAILS.couple.groomParents}
+                </p>
+              </div>
+            </div>
 
-</div>
+            {/* WITH + LOTUS DIVIDER */}
+            <div className="py-1 sm:py-1.5">
+              <div className="flex items-center justify-center gap-3">
+                <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
+                <span className="font-playfair text-sm sm:text-base text-[#8B6508] font-semibold leading-none">
+                  with
+                </span>
+                <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
+              </div>
+            </div>
 
-{/* GROOM SECTION (FIRST) */}
-<div className="pt-2 space-y-1.5">
-  <div className="flex justify-center items-center">
-    <h1 className="font-great-vibes text-4xl sm:text-5xl text-[#5A121E] font-normal leading-tight">
-      {WEDDING_DETAILS.couple.groom}
-    </h1>
-  </div>
+            {/* BRIDE SECTION (SECOND) */}
+            <div className="space-y-0.5">
+              <div className="flex justify-center items-center">
+                <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
+                  {WEDDING_DETAILS.couple.bride}
+                </h2>
+              </div>
 
-  <div className="space-y-0.5 text-center">
-    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      Grandson of {WEDDING_DETAILS.couple.groomGrandParents}
-    </p>
-    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      Son of {WEDDING_DETAILS.couple.groomParents}
-    </p>
-  </div>
-</div>
-
-
-{/* WITH + LOTUS DIVIDER */}
-<div className="py-2 sm:py-2.5">
-  <div className="flex items-center justify-center gap-3">
-    <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
-
-    <span className="font-playfair text-sm sm:text-base text-[#8B6508] font-semibold leading-none">
-      with
-    </span>
-
-    <span className="w-10 sm:w-14 h-[1px] bg-[#8B6508]/50" />
-  </div>
-</div>
-
-
-{/* BRIDE SECTION (SECOND) */}
-<div className="space-y-1.5">
-  <div className="flex justify-center items-center">
-    <h2 className="font-great-vibes text-4xl sm:text-5xl text-[#5A121E] font-normal leading-tight">
-      {WEDDING_DETAILS.couple.bride}
-    </h2>
-  </div>
-
-  <div className="space-y-0.5 text-center">
-        <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}
-    </p>
-    <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
-      Daughter of {WEDDING_DETAILS.couple.brideParents}
-    </p>
-
-
-  </div>
-</div>
-
+              <div className="space-y-0.5 text-center">
+                <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+                  Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}
+                </p>
+                <p className="font-cormorant text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-[#2C1518] leading-snug tracking-wide">
+                  Daughter of {WEDDING_DETAILS.couple.brideParents}
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Bottom Royal SWIPE UP button */}
@@ -377,52 +367,89 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
-        {/* SLIDE 2: LANDSCAPE SCRATCH-TO-REVEAL DATE */}
+        {/* SLIDE 2: SCRATCH-TO-REVEAL DATE & VENUE (COMPACT SPACE) */}
         {/* ======================================================== */}
-        <section className="story-slide w-full h-auto snap-start relative flex flex-col items-center justify-center gap-4 px-4 py-7 overflow-hidden text-center bg-[#fffefa]">
+        <section className="story-slide w-full h-auto min-h-0 snap-start relative flex flex-col items-center justify-center px-4 py-6 sm:py-8 overflow-hidden text-center bg-[#FAF7F2] select-none">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#ffffff_0%,_#faf7f2_75%)]" />
-          <div className="relative z-10 w-full px-2">
-            <p className="font-cinzel text-base sm:text-lg font-semibold tracking-wide uppercase text-[#5A121E] mb-1">A little surprise for you</p>
-            <p className="font-cormorant text-sm sm:text-base text-[#5A121E]/80 mb-3">Scratch the card to reveal our wedding date</p>
-            <ScratchDateReveal revealed={dateRevealed} onReveal={() => setDateRevealed(true)} />
-            <div className="mx-auto w-full max-w-xs mt-3">
-              <p className="font-cinzel text-[10px] uppercase tracking-wider text-[#8B6508] mb-1">Countdown to the wedding</p>
-              <Countdown targetDateIso={WEDDING_DETAILS.dates.startDateIso} />
+
+          <div className="relative z-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center">
+            {/* The Scratch Card: Compact square/box area only */}
+            <div className="my-1">
+              <ScratchDateReveal revealed={dateRevealed} onReveal={() => setDateRevealed(true)} />
             </div>
+
+            {/* ONLY REVEALED AFTER SCRATCHING: Naturally expands space according to content */}
             {dateRevealed && (
-              <p className="font-cormorant text-sm sm:text-base text-[#5A121E] mt-4 animate-pulse">
-                We look forward to celebrating with you
-              </p>
+              <div className="w-full mt-3 space-y-3 animate-fadeIn transition-all duration-700">
+                {/* Date & Venue Details */}
+                <div className="space-y-1">
+                  <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
+                  <p className="font-cinzel text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-[#8B6508]">
+                    Royal Wedding Date &amp; Venue
+                  </p>
+                  <p className="font-cormorant text-lg sm:text-xl font-bold text-[#5A121E]">
+                    {WEDDING_DETAILS.dates.display}
+                  </p>
+                  <p className="font-cinzel text-xs sm:text-sm font-bold text-[#2C1518] tracking-wider uppercase">
+                    📍 {WEDDING_DETAILS.dates.venueName}
+                  </p>
+                  <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
+                </div>
+
+                {/* Countdown */}
+                <div className="mx-auto w-full max-w-xs pt-0.5">
+                  <p className="font-cinzel text-[10px] uppercase tracking-[0.2em] text-[#8B6508] font-bold mb-1">
+                    Countdown to the wedding
+                  </p>
+                  <Countdown targetDateIso={WEDDING_DETAILS.dates.startDateIso} />
+                </div>
+
+                {/* View Events Button */}
+                <div className="pt-1.5">
+                  <button
+                    type="button"
+                    onClick={() => scrollToSlide(2)}
+                    className="inline-flex items-center gap-1.5 px-6 py-2 rounded-full bg-gradient-to-r from-[#4A0E18] via-[#631422] to-[#4A0E18] border border-[#D4AF37] shadow-lg text-[#F7D070] font-cinzel text-xs font-bold tracking-wider uppercase hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <span>View Wedding Events</span>
+                    <ChevronDown className="h-3.5 w-3.5 text-[#F7D070]" />
+                  </button>
+                </div>
+              </div>
             )}
           </div>
-          <button
-            type="button"
-            onClick={() => scrollToSlide(2)}
-            disabled={!dateRevealed}
-            className="relative z-10 rounded-full bg-[#5A121E] px-6 py-3 font-playfair text-sm font-semibold text-[#FFF5C0] shadow-md transition disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            View wedding events <ChevronDown className="inline h-4 w-4 ml-1" />
-          </button>
         </section>
 
         {/* ======================================================== */}
         {/* SLIDE 3: VINAYAK STHAPNA (11 December Morning) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center text-[#5A121E] select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#5A121E] select-none"
           style={{ backgroundImage: "url('/assets/74c1371d-2510-43ca-bfad-2e054f6048f7.png')", backgroundSize: '100% 100%' }}
         >
-          {/* Confined to upper dark area so glowing Ganesha idol at bottom is 100% visible! */}
-          <div className="relative z-10 pt-5 sm:pt-7 space-y-1 max-w-sm mx-auto px-4">
+          {/* Top spacer so the sacred Ganesha artwork in the upper half remains 100% unobstructed */}
+          <div className="flex-1 min-h-[48vh] sm:min-h-[50vh]" />
+
+          {/* Text positioned strictly in the open blank parchment space */}
+          <div className="relative z-10 space-y-1.5 max-w-sm mx-auto px-4 pb-1">
             <TitleFlourish color="#8B6508">
               <h2 className="font-cinzel whitespace-nowrap text-xl sm:text-2xl text-[#5A121E] drop-shadow-sm font-bold tracking-wide leading-tight uppercase">
                 Vinayak Sthapna
               </h2>
             </TitleFlourish>
 
-            <div className="font-cormorant text-[#5A121E] text-sm sm:text-base leading-snug">
-              <p className="font-semibold">Friday, 11 December 2026 at 7:00 AM</p>
-              <p className="text-[#8B6508]">Breakfast at 9:00 AM</p>
+            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
+
+            <div className="font-cormorant text-[#5A121E] space-y-0.5 leading-snug">
+              <p className="font-bold text-base sm:text-lg text-[#5A121E]">
+                Friday, 11 December 2026
+              </p>
+              <p className="font-semibold text-sm sm:text-base text-[#7B1124]">
+                Auspicious Sthapna : 7:00 AM
+              </p>
+              <p className="text-[#8B6508] font-bold text-xs sm:text-sm">
+                Breakfast : 9:00 AM
+              </p>
             </div>
           </div>
 

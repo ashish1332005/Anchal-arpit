@@ -166,11 +166,12 @@
   position: absolute;
   z-index: 20;
   pointer-events: none;
-  color: #d95b87;
-  font-size: 20px;
+  color: #D4AF37;
+  font-size: 18px;
   line-height: 1;
   animation: scratch-flower-drift 800ms ease-out forwards;
 }
 
-.scratch-flower-1 { --flower-x: 9px; color: #e6a92e; font-size: 16px; }
-.scratch-flower-2 { --flower-x: -9px; color: #b56d8d; font-size: 18px; }
+.scratch-flower-1 { --flower-x: 8px; color: #F7D070; font-size: 16px; }
+.scratch-flower-2 { --flower-x: -8px; color: #8B1E32; font-size: 17px; }
+
