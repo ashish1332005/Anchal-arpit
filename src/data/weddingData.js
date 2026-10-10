@@ -119,8 +119,8 @@ export const WEDDING_DETAILS = {
 
   family: {
     warmRegards: [
-      "Rama Kabra – Vinod Kabra",
-      "Neelam Kabra – Dilip Kabra"
+      "Rama – Vinod Kabra",
+      "Neelam – Dilip Kabra"
     ],
     specialRequest1: [
       "Pushpa – Satish Ji Taparia",
