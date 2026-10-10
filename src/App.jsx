@@ -518,7 +518,7 @@ export default function App() {
         {/* SLIDE 5: SANGEET & RING CEREMONY (11 December Evening) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center text-white select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Dreamy%20Floral%20Wedding%20Pavilion.png')" }}
         >
           {/* Confined strictly to upper starry sky so crystal pavilion & grand piano below are 100% UNTOUCHED! */}
@@ -532,9 +532,9 @@ export default function App() {
             <LotusDivider color="#D4AF37" />
 
             <div className="pt-1">
-              <OrnateCard isDark={true} maxWidth="max-w-xs">
+              <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="font-cormorant text-center py-1">
-                  <p className="font-bold text-sm sm:text-base text-[#FFF5C0] drop-shadow-sm">
+                  <p className="font-bold text-sm sm:text-base text-[#5A121E] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                     Friday, 11 December 2026 - 7:00 PM
                   </p>
                 </div>
@@ -542,7 +542,7 @@ export default function App() {
             </div>
 
             {/* Couplet */}
-            <p className="font-cormorant italic text-xs sm:text-sm text-[#FFF9D2] max-w-xs mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] pt-1 leading-snug">
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] pt-1 leading-snug">
               "Let's dance, let's sing, let our hearts take flight,
               As we celebrate this love under the stars tonight."
             </p>
