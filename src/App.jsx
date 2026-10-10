@@ -173,7 +173,7 @@ export default function App() {
           text: `You are cordially invited to celebrate the royal wedding festivities of ${WEDDING_DETAILS.couple.groom} & ${WEDDING_DETAILS.couple.bride}!`,
           url: window.location.href,
         })
-        .catch(() => {});
+        .catch(() => { });
     } else {
       navigator.clipboard.writeText(window.location.href);
       alert('Invitation link copied to clipboard!');
@@ -251,11 +251,10 @@ export default function App() {
       {/* MAIN VERTICAL STORY DECK CONTAINER: FULL WIDTH AND FULLY RESPONSIVE */}
       <div
         ref={containerRef}
-        className={`w-full h-[100dvh] relative bg-[#FAF7F2] no-scrollbar ${
-          isUnlocked
+        className={`w-full h-[100dvh] relative bg-[#FAF7F2] no-scrollbar ${isUnlocked
             ? 'snap-y snap-mandatory overflow-y-scroll scroll-smooth'
             : 'overflow-hidden'
-        }`}
+          }`}
       >
         {/* ======================================================== */}
         {/* ======================================================== */}
@@ -265,57 +264,38 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '100% 100%' }}
         >
-          {/* Main Content Area - elegantly centered in the open blank space */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-6 py-12 flex-1 flex flex-col items-center justify-center gap-6 sm:gap-8 h-full">
-            
-            {/* Elegant Header */}
-            <div className="space-y-1 w-full mt-4">
-              <h2 className="font-allura text-4xl sm:text-5xl text-[#7B1124] font-bold leading-tight drop-shadow-sm">
-                The Auspicious Wedding Day
-              </h2>
-              <LotusDivider color="#D4AF37" className="scale-75 my-1" />
-            </div>
-
-            {/* Couple Monogram & Invocation */}
-            <div className="flex flex-col items-center w-full space-y-4">
-              <img
-                src="/assets/couple_logo.png"
-                alt="A-अ Logo"
-                className="w-12 h-12 sm:w-14 sm:h-14 object-contain drop-shadow-sm"
-              />
-
-              <div className="relative z-20 w-full max-w-[340px] text-center">
-                <p className="font-cormorant text-base sm:text-lg text-[#2C1518] font-semibold leading-snug drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)]">
-                  The Kabra family requests the pleasure of your company at the wedding
-                  celebration of Arpit and Anchal.
-                </p>
+          {/* Restored family invitation details, balanced in the parchment space */}
+          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-10 pb-3 flex-1 flex flex-col items-center justify-evenly text-[#2C1518]">
+            <div className="w-full font-cinzel font-bold text-[9px] sm:text-[10px] leading-tight tracking-wide text-[#7B1124]">
+              <p>{WEDDING_DETAILS.invocations[0].en}</p>
+              <div className="mt-1 flex justify-between gap-3">
+                <p>{WEDDING_DETAILS.invocations[1].en}</p>
+                <p>{WEDDING_DETAILS.invocations[2].en}</p>
               </div>
             </div>
 
-            {/* Couple Announcement Section */}
-            <div className="flex flex-col items-center space-y-3 w-full">
-              {/* GROOM */}
-              <div className="space-y-1">
-                <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
-                  {WEDDING_DETAILS.couple.groom}
-                </h1>
-              </div>
+            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-9 h-9 object-contain" />
 
-              {/* WITH */}
-              <div className="flex items-center justify-center gap-3 w-full">
-                <span className="w-12 sm:w-16 h-[1px] bg-[#8B6508]/50" />
-                <span className="font-playfair text-sm sm:text-base text-[#8B6508] font-semibold leading-none">
-                  with
-                </span>
-                <span className="w-12 sm:w-16 h-[1px] bg-[#8B6508]/50" />
-              </div>
+            <p className="max-w-[340px] font-cormorant text-sm sm:text-base leading-snug font-medium">
+              The Kabra family requests the pleasure of your company at the wedding celebration of Arpit and Anchal.
+            </p>
 
-              {/* BRIDE */}
-              <div className="space-y-1">
-                <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold leading-tight drop-shadow-sm">
-                  {WEDDING_DETAILS.couple.bride}
-                </h2>
-              </div>
+            <div className="w-full space-y-0.5">
+              <h1 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom}</h1>
+              <p className="font-cormorant text-[11px] sm:text-xs leading-snug">Grandson of {WEDDING_DETAILS.couple.groomGrandParents}</p>
+              <p className="font-cormorant text-[11px] sm:text-xs leading-snug">Son of {WEDDING_DETAILS.couple.groomParents}</p>
+            </div>
+
+            <div className="flex items-center justify-center gap-3 w-full">
+              <span className="w-10 h-px bg-[#8B6508]/50" />
+              <span className="font-playfair text-sm text-[#8B6508] font-semibold">with</span>
+              <span className="w-10 h-px bg-[#8B6508]/50" />
+            </div>
+
+            <div className="w-full space-y-0.5">
+              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.bride}</h2>
+              <p className="font-cormorant text-[11px] sm:text-xs leading-snug">Granddaughter of {WEDDING_DETAILS.couple.brideGrandParents}</p>
+              <p className="font-cormorant text-[11px] sm:text-xs leading-snug">Daughter of {WEDDING_DETAILS.couple.brideParents}</p>
             </div>
           </div>
 
@@ -323,10 +303,10 @@ export default function App() {
           <div className="relative z-20 pb-4">
             <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="SWIPE UP" />
           </div>
-        </sect        {/* ======================================================== */}
+        </section>        {/* ======================================================== */}
         {/* SLIDE 2: SCRATCH-TO-REVEAL DATE & VENUE (COMPACT SPACE) */}
         {/* ======================================================== */}
-        <section className="story-slide w-full h-auto min-h-[100dvh] snap-start relative flex flex-col items-center justify-center px-4 py-8 sm:py-12 overflow-hidden text-center bg-[#F3E9D9] select-none">
+        <section className="story-slide w-full h-auto min-h-0 snap-start relative flex flex-col items-center justify-center px-4 py-5 sm:py-7 overflow-hidden text-center bg-[#F3E9D9] select-none">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#f7f0e4_58%,_#eadcc8_100%)]" />
 
           {/* Scratch Bloom Animation */}
@@ -353,7 +333,7 @@ export default function App() {
 
           <div className="relative z-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center">
             {/* The Scratch Card: Compact square/box area only */}
-            <div className="my-2">
+            <div className="my-1">
               <ScratchDateReveal revealed={dateRevealed} onReveal={() => {
                 setDateRevealed(true);
                 setShowScratchFlowers(true);
@@ -363,7 +343,12 @@ export default function App() {
 
             {/* ONLY REVEALED AFTER SCRATCHING: Naturally expands space according to content */}
             {dateRevealed && (
-              <div className="w-full mt-5 space-y-4 animate-fadeIn transition-all duration-700">
+              <div className="w-full mt-3 space-y-2 animate-fadeIn transition-all duration-700">
+                <div className="w-full space-y-0.5">
+                  <p className="font-cinzel text-[10px] uppercase tracking-[0.16em] text-[#8B6508] font-bold">Royal Wedding Date &amp; Venue</p>
+                  <p className="font-cormorant text-base font-bold text-[#5A121E]">{WEDDING_DETAILS.dates.display}</p>
+                  <p className="font-cormorant text-sm font-semibold text-[#2C1518]">{WEDDING_DETAILS.dates.venueName}</p>
+                </div>
 
                 {/* Countdown */}
                 <div className="mx-auto w-full max-w-xs pt-1">
@@ -388,7 +373,7 @@ export default function App() {
             )}
           </div>
         </section>
-        
+
         {/* ======================================================== */}
         {/* SLIDE 3: VINAYAK STHAPNA (11 December Morning) */}
         {/* ======================================================== */}
@@ -682,31 +667,24 @@ export default function App() {
 
         {/* ======================================================== */}
         {/* SLIDE 10: VENUE & LOCATION */}
-        {/* ======================================================== */}
         <section
-          className="story-slide w-full h-auto min-h-[100dvh] snap-start relative flex flex-col items-center justify-center py-16 px-4 bg-[#FAF7F2] select-none"
+          className="story-slide w-full h-[78dvh] min-h-[540px] max-h-[700px] snap-start relative flex flex-col items-center justify-center px-3 bg-center text-center select-none overflow-hidden"
+          style={{ backgroundImage: "url('/assets/bggg.png')", backgroundSize: '100% 100%' }}
         >
-          {/* VENUE NAME AND GET DIRECTIONS BUTTON */}
-          <div className="w-full max-w-sm mx-auto text-center space-y-5">
-            <h3 className="font-cinzel font-bold text-3xl sm:text-4xl text-[#5A121E] tracking-wide uppercase drop-shadow-sm">
-              {WEDDING_DETAILS.dates.venueName}
-            </h3>
-            
-            <LotusDivider color="#D4AF37" className="scale-100 my-2" />
-
-            {/* Map image inside the decorative venue frame */}
-            <div className="relative p-2 bg-[#F3E9D9] rounded-xl border border-[#D4AF37]/50 shadow-xl overflow-hidden group hover:scale-[1.02] transition-transform">
+          <div className="absolute z-10 top-[54%] -translate-y-1/2 w-[min(88%,380px)] mx-auto text-center space-y-2.5">
+            {/* Compact map panel placed in the clear center of the venue artwork */}
+            <div className="relative p-2 bg-[#F3E9D9]/95 rounded-xl border border-[#D4AF37]/70 shadow-lg overflow-hidden group">
               <a
                 href={WEDDING_DETAILS.dates.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block relative rounded-lg border border-[#D4AF37]/30 overflow-hidden aspect-[4/3] bg-black"
+                className="block relative rounded-lg border border-[#D4AF37]/35 overflow-hidden h-32 sm:h-36 bg-[#f5ecdd]"
                 aria-label={`Open ${WEDDING_DETAILS.dates.venueName} in Google Maps`}
               >
                 <img
                   src="/assets/gloria_map.png"
                   alt={`${WEDDING_DETAILS.dates.venueName} map`}
-                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                  className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 bg-[#5A121E]/10 group-hover:bg-transparent transition-colors" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -717,12 +695,15 @@ export default function App() {
               </a>
             </div>
 
-            <div className="pt-4">
+            <div className="mx-auto w-fit max-w-full rounded-2xl border border-white/70 bg-[#FFFCF5]/85 px-5 py-2 shadow-md backdrop-blur-sm">
+              <h3 className="font-allura font-bold text-3xl sm:text-4xl leading-none text-[#5A121E] drop-shadow-sm">
+                {WEDDING_DETAILS.dates.venueName}
+              </h3>
               <a
                 href={WEDDING_DETAILS.dates.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#FBF5B7] to-[#AA771C] text-[#5A121E] font-cinzel text-sm sm:text-base font-bold uppercase tracking-widest shadow-xl hover:scale-105 transition-transform border border-[#D4AF37]"
+                className="mt-1 inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#FBF5B7] to-[#AA771C] text-[#5A121E] font-cinzel text-xs font-bold uppercase tracking-widest shadow-lg hover:scale-105 transition-transform border border-[#D4AF37]"
               >
                 <Navigation className="w-4 h-4" />
                 <span>{dict.getDirections}</span>
@@ -731,7 +712,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* ======================================================== */}
         {/* SLIDE 11: WITH LOVE & BLESSINGS (Family, Compliments, Nanihaal & Samdhi) */}
         {/* ======================================================== */}
         <section
