@@ -318,7 +318,7 @@ export default function App() {
           {/* Confetti spreads from the scratch card and stays behind all text. */}
           {showScratchConfetti && (
             <div className="pointer-events-none absolute inset-0 z-[5] overflow-hidden" aria-hidden="true">
-              {Array.from({ length: 48 }, (_, index) => {
+              {Array.from({ length: 96 }, (_, index) => {
                 const horizontal = (confettiRandom(index + 1) - 0.5) * 110;
                 const vertical = (confettiRandom(index + 100) - 0.42) * 95;
                 const colors = ['#D4AF37', '#7B1124', '#D9879F', '#8C9B72', '#F2C477'];
@@ -331,6 +331,9 @@ export default function App() {
                       '--confetti-y': `${vertical}vh`,
                       '--confetti-rotation': `${confettiRandom(index + 200) * 900 - 450}deg`,
                       backgroundColor: colors[index % colors.length],
+                      width: `${5 + confettiRandom(index + 500) * 4}px`,
+                      height: `${9 + confettiRandom(index + 600) * 7}px`,
+                      borderRadius: index % 4 === 0 ? '50%' : '1px',
                       animationDelay: `${confettiRandom(index + 300) * 180}ms`,
                       animationDuration: `${1300 + confettiRandom(index + 400) * 500}ms`,
                     }}

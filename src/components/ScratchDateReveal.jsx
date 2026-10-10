@@ -91,16 +91,16 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
     <div className="relative w-[min(82vw,260px)] h-[160px] max-w-full mx-auto rounded-xl overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#F5ECE0] shadow-lg ring-1 ring-[#D4AF37]/60">
       {/* Revealed Inner Card Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-3 py-2 text-center select-none">
-        <p className="font-cinzel text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#8B6508] font-bold">
+        <p className="font-cinzel text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#8B6508] font-bold">
           Save the date
         </p>
-        <p className="font-cormorant text-base sm:text-lg font-bold text-[#5A121E] my-0.5 tracking-wide leading-tight">
+        <p className="font-playfair text-lg sm:text-xl font-bold text-[#5A121E] my-1 tracking-wide leading-tight">
           11 &amp; 12 December 2026
         </p>
-        <p className="font-allura text-2xl sm:text-3xl font-bold text-[#5A121E] leading-none drop-shadow-xs my-0.5">
+        <p className="font-allura text-3xl sm:text-4xl font-bold text-[#5A121E] leading-none drop-shadow-xs my-1">
           Arpit &amp; Anchal
         </p>
-        <p className="font-cinzel text-[9.5px] sm:text-[10.5px] font-bold text-[#8B6508] tracking-wider uppercase mt-1">
+        <p className="font-cinzel text-[11px] sm:text-xs font-bold text-[#8B6508] tracking-wider uppercase mt-1">
           📍 Gloria Inn, Bhilwara
         </p>
       </div>
