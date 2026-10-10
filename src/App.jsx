@@ -266,13 +266,13 @@ export default function App() {
         >
           {/* Restored family invitation details, balanced in the parchment space */}
           <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[8vh] pb-3 flex-1 flex flex-col items-center justify-start gap-6 sm:gap-7 text-[#2C1518]">
-            <div className="w-full font-cinzel font-bold text-[11px] sm:text-xs leading-tight tracking-wide text-[#7B1124] text-center">
-              <p>{WEDDING_DETAILS.invocations[0].en}</p>
-              <div className="mt-2 flex w-full flex-col items-center gap-1.5">
+            <div className="grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-1 font-cinzel font-bold leading-tight tracking-wide text-[#7B1124]">
+              <p className="text-center text-[8px] sm:text-[10px]">{WEDDING_DETAILS.invocations[0].en}</p>
+              <div className="flex flex-col items-center gap-1 text-center">
                 <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 object-contain" />
-                <p className="w-full text-center text-xs sm:text-sm">{WEDDING_DETAILS.invocations[1].en}</p>
-                <p className="mt-0.5 w-full text-center text-[10px] sm:text-xs">{WEDDING_DETAILS.invocations[2].en}</p>
+                <p className="whitespace-nowrap text-[9px] sm:text-xs">{WEDDING_DETAILS.invocations[1].en}</p>
               </div>
+              <p className="text-center text-[8px] sm:text-[10px]">{WEDDING_DETAILS.invocations[2].en}</p>
             </div>
 
             <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-9 h-9 object-contain" />
