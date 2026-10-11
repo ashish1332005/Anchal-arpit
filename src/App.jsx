@@ -223,19 +223,9 @@ export default function App() {
         />
       )}
 
-      {/* Sticky Action Header with Authentic A-अ Logo */}
+      {/* Sticky Action Header */}
       {isUnlocked && (
         <div className="fixed top-3 left-2 right-2 sm:left-4 sm:right-4 z-40 max-w-[460px] mx-auto flex items-center justify-between pointer-events-auto px-1">
-          {/* Logo Badge */}
-          <div className="flex items-center gap-1.5 bg-[#5A121E]/95 backdrop-blur-md px-3 py-1 rounded-full border border-[#D4AF37] shadow-xl text-[#F7D070]">
-            <img
-              src="/assets/couple_logo_gold.png"
-              alt="A-अ Monogram"
-              className="h-5 w-auto object-contain drop-shadow-sm"
-            />
-            <span className="font-cinzel text-[11px] font-bold tracking-wider">A & A</span>
-          </div>
-
           <div className="flex items-center gap-1.5">
             {/* Direct Google Calendar Button */}
             <a

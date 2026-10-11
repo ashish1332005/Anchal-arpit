@@ -20,16 +20,6 @@ export default function HeaderNav({ lang, setLang, onOpenRsvp, dict }) {
   return (
     <header className="sticky top-0 z-40 w-full glass-royal border-b border-[#D4AF37]/30 royal-card-shadow px-4 py-3">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        {/* Monogram / Title */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-gold-gradient flex items-center justify-center text-[#6A1B29] font-cinzel font-bold text-xs shadow-md">
-            A&A
-          </div>
-          <span className="font-allura text-2xl text-[#6A1B29] hidden sm:inline">
-            {WEDDING_DETAILS.couple.groom} & {WEDDING_DETAILS.couple.bride}
-          </span>
-        </div>
-
         {/* Action Controls */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Language Toggle */}
