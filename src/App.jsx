@@ -14,7 +14,6 @@ import {
   Navigation,
   Utensils,
   Crown,
-  Share2,
   Phone
 } from 'lucide-react';
 
@@ -183,29 +182,6 @@ export default function App() {
     }
   };
 
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator
-        .share({
-          title: `${WEDDING_DETAILS.couple.groom} & ${WEDDING_DETAILS.couple.bride} | Royal Wedding Invitation`,
-          text: `You are cordially invited to celebrate the royal wedding festivities of ${WEDDING_DETAILS.couple.groom} & ${WEDDING_DETAILS.couple.bride}!`,
-          url: window.location.href,
-        })
-        .catch(() => { });
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      alert('Invitation link copied to clipboard!');
-    }
-  };
-
-  const generateGoogleCalendarUrl = (title, details, location, startTime, endTime) => {
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-      title
-    )}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(
-      location
-    )}&dates=${startTime}/${endTime}`;
-  };
-
   return (
     <div className="relative w-full h-[100dvh] bg-[#FAF7F2] flex items-center justify-center overflow-hidden">
       {/* Subtle Falling Cherry Blossom Petals Overlay */}
@@ -221,39 +197,6 @@ export default function App() {
           guestName={guestName}
           lang={lang}
         />
-      )}
-
-      {/* Sticky Action Header */}
-      {isUnlocked && (
-        <div className="fixed top-3 left-2 right-2 sm:left-4 sm:right-4 z-40 max-w-[460px] mx-auto flex items-center justify-between pointer-events-auto px-1">
-          <div className="flex items-center gap-1.5">
-            {/* Direct Google Calendar Button */}
-            <a
-              href={generateGoogleCalendarUrl(
-                `${WEDDING_DETAILS.couple.bride} & ${WEDDING_DETAILS.couple.groom} Royal Wedding - ${WEDDING_DETAILS.dates.venueName}`,
-                `${WEDDING_DETAILS.couple.bride} and ${WEDDING_DETAILS.couple.groom} wedding celebrations on ${WEDDING_DETAILS.dates.display} at ${WEDDING_DETAILS.dates.venueName}`,
-                WEDDING_DETAILS.dates.venueName,
-                '20261211T013000Z',
-                '20261212T203000Z'
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-1.5 rounded-full bg-[#5A121E]/90 backdrop-blur-md border border-[#D4AF37] text-[#F7D070] hover:bg-[#800020] transition-colors shadow-xl"
-              title="Add Wedding to Calendar"
-            >
-              <Calendar className="w-3.5 h-3.5" />
-            </a>
-
-            {/* Share Link */}
-            <button
-              onClick={handleShare}
-              className="p-1.5 rounded-full bg-[#5A121E]/90 backdrop-blur-md border border-[#D4AF37] text-[#F7D070] hover:bg-[#800020] transition-colors shadow-xl"
-              title="Share Card"
-            >
-              <Share2 className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        </div>
       )}
 
       {/* MAIN VERTICAL STORY DECK CONTAINER: FULL WIDTH AND FULLY RESPONSIVE */}
