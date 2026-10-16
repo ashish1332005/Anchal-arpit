@@ -9,8 +9,6 @@ import { WEDDING_DETAILS } from './data/weddingData';
 import {
   ChevronDown,
   ChevronUp,
-  Calendar,
-  Clock,
   Navigation,
   Utensils,
   Crown,
@@ -74,13 +72,7 @@ function FlourishWing({ color = "#D4AF37", flip = false, className = "" }) {
 
 // Title Flanked by Royal Flourishes
 function TitleFlourish({ children, color = "#D4AF37", className = "" }) {
-  return (
-    <div className={`inline-flex items-center justify-center gap-2 sm:gap-2.5 ${className}`}>
-      <FlourishWing color={color} flip={false} />
-      {children}
-      <FlourishWing color={color} flip={true} />
-    </div>
-  );
+  return children;
 }
 
 // Pheras Sacred Fire / Mandap Icon
@@ -101,9 +93,22 @@ function EventTime({ value, className = "" }) {
 
   return (
     <span className={`inline-flex items-baseline justify-center gap-1 whitespace-nowrap text-[#2C1518] ${className}`}>
-      <span className="font-playfair text-lg sm:text-xl font-bold leading-none">{hour}</span>
-      {meridiem && <span className="font-cinzel text-[10px] sm:text-xs font-bold tracking-wide leading-none">{meridiem}</span>}
+      <span className="font-playfair text-lg sm:text-xl font-medium leading-none">{hour}</span>
+      {meridiem && <span className="font-cinzel text-[10px] sm:text-xs font-medium tracking-wide leading-none">{meridiem}</span>}
     </span>
+  );
+}
+
+function EventDate({ weekday, day, month, year = "2026" }) {
+  return (
+    <div className="mx-auto w-full max-w-[300px] text-center text-[#263524]">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+        <div className="flex items-center gap-2"><span className="font-playfair text-[10px] sm:text-xs tracking-[0.2em]">{weekday}</span><span className="h-px flex-1 bg-[#B78B34]" /></div>
+        <span className="font-cene text-4xl sm:text-5xl font-normal leading-none text-[#7B1124]">{day}</span>
+        <div className="flex items-center gap-2"><span className="h-px flex-1 bg-[#B78B34]" /><span className="font-playfair text-[10px] sm:text-xs tracking-[0.2em]">{month}</span></div>
+      </div>
+      <p className="mt-1 font-playfair text-[10px] tracking-[0.55em]">{year}</p>
+    </div>
   );
 }
 
@@ -216,13 +221,13 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
           {/* Restored family invitation details, balanced in the parchment space */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[8vh] pb-3 flex-1 flex flex-col items-center justify-start gap-6 sm:gap-7 text-[#2C1518]">
+          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[5vh] pb-3 flex-1 flex flex-col items-center justify-start gap-4 sm:gap-5 text-[#2C1518]">
             <div className="flex w-full flex-col items-center gap-1.5 font-cinzel font-bold leading-tight tracking-wide text-[#7B1124]">
               <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-12 w-12 object-contain" />
-              <p className="text-center text-[10px] sm:text-xs">{WEDDING_DETAILS.invocations[1].en}</p>
-              <div className="mt-1 grid w-full grid-cols-2 gap-2 text-[8px] sm:text-[10px]">
-                <p className="text-center">{WEDDING_DETAILS.invocations[0].en}</p>
-                <p className="text-center">{WEDDING_DETAILS.invocations[2].en}</p>
+              <div className="flex w-full items-center justify-center gap-2 whitespace-nowrap font-cormorant font-semibold tracking-normal text-[9px] min-[380px]:text-[10px] sm:text-xs">
+                <p>{WEDDING_DETAILS.invocations[1].en}</p>
+                <p>{WEDDING_DETAILS.invocations[0].en}</p>
+                <p>{WEDDING_DETAILS.invocations[2].en}</p>
               </div>
             </div>
 
@@ -233,9 +238,9 @@ export default function App() {
             </p>
 
             <div className="w-full space-y-0.5">
-              <h1 className="font-allura text-6xl sm:text-7xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.groom}</h1>
-              <p className="font-cormorant text-sm sm:text-base leading-snug">Grandson of Ratan Devi &amp; Ram Rai Kabra</p>
-              <p className="font-cormorant text-sm sm:text-base leading-snug">Son of Rinku &amp; Sanjay Kabra</p>
+              <h1 className="font-allura text-6xl sm:text-7xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.groom}</h1>
+              <p className="font-cormorant text-sm sm:text-base font-medium leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
+              <p className="font-cormorant text-sm sm:text-base font-medium leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
             </div>
 
             <div className="flex items-center justify-center gap-3 w-full">
@@ -245,9 +250,9 @@ export default function App() {
             </div>
 
             <div className="w-full space-y-0.5">
-              <h2 className="font-allura text-6xl sm:text-7xl text-[#5A121E] font-bold leading-none">{WEDDING_DETAILS.couple.bride}</h2>
-              <p className="font-cormorant text-sm sm:text-base leading-snug">Granddaughter of Late Janki Devi &amp; Shivlal Ji Chechani</p>
-              <p className="font-cormorant text-sm sm:text-base leading-snug">Daughter of Leela Devi &amp; Dinesh Chechani</p>
+              <h2 className="font-allura text-6xl sm:text-7xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.bride}</h2>
+              <p className="font-cormorant text-sm sm:text-base font-medium leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
+              <p className="font-cormorant text-sm sm:text-base font-medium leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
             </div>
           </div>
 
@@ -290,8 +295,8 @@ export default function App() {
           )}
 
           <div className="relative z-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center">
-            {/* The Scratch Card: Compact square/box area only */}
-            <div className="my-2 rounded-[1.4rem] border border-[#D4AF37]/45 bg-[#FFFCF5]/75 p-3 shadow-[0_10px_30px_rgba(90,18,30,0.10)] backdrop-blur-[2px]">
+            {/* Scratch directly over the transparent floral heart image. */}
+            <div className="my-2">
               <ScratchDateReveal revealed={dateRevealed} onReveal={() => {
                 setDateRevealed(true);
                 setShowScratchConfetti(true);
@@ -334,25 +339,22 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/74c1371d-2510-43ca-bfad-2e054f6048f7.png')", backgroundSize: '100% 100%' }}
         >
           {/* Top spacer so the sacred Ganesha artwork in the upper half remains 100% unobstructed */}
-          <div className="flex-1 min-h-[44vh] sm:min-h-[46vh]" />
+          <div className="flex-1 min-h-[36vh] sm:min-h-[38vh]" />
 
           {/* Text positioned strictly in the open blank parchment space */}
           <div className="relative z-10 space-y-1.5 max-w-sm mx-auto px-4 pb-1">
             <TitleFlourish color="#8B6508">
-              <h2 className="font-allura whitespace-nowrap text-4xl sm:text-5xl text-[#5A121E] drop-shadow-sm font-bold leading-tight">
+              <h2 className="font-lucy-said-ok whitespace-nowrap text-4xl sm:text-5xl text-[#5A121E] leading-tight">
                 Vinayak Sthapna
               </h2>
             </TitleFlourish>
 
-            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
-
             <div className="font-cormorant text-[#5A121E] space-y-0.5 leading-snug">
-              <p className="font-playfair text-base sm:text-lg font-bold leading-snug text-[#5A121E]">
-                Friday, 11 December 2026
-              </p>
-              <p className="flex items-baseline justify-center text-[#7B1124]"><EventTime value="7:00 AM" /></p>
-              <p className="flex items-baseline justify-center gap-2 text-[#8B6508]">
-                <span className="font-cormorant text-sm sm:text-base font-bold">Breakfast:</span>
+              <EventDate weekday="FRI" day="11" month="DEC" />
+              <p className="flex items-baseline justify-center pt-2 text-[#7B1124]"><EventTime value="7:00 AM" /></p>
+              <p className="flex items-baseline justify-center gap-2 pt-1 text-[#8B6508]">
+                <span className="font-cormorant text-sm sm:text-base font-medium">Followed by Breakfast</span>
+                <span aria-hidden="true">{'·'}</span>
                 <EventTime value="9:00 AM" />
               </p>
             </div>
@@ -369,14 +371,12 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/carnival-new-bg.jpg')" }}
         >
           {/* Positioned in the blank open sky area below the top canopy tassels */}
-          <div className="relative z-10 pt-[27vh] sm:pt-[29vh] space-y-1.5 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-[25vh] sm:pt-[27vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
-              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold drop-shadow-sm leading-tight">
+              <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
                 Carnival
               </h2>
             </TitleFlourish>
-
-            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
 
             <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
               "A vibrant celebration of laughter, love, music and endless memories"
@@ -385,17 +385,17 @@ export default function App() {
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-0.5 font-cormorant text-[#2C1518] text-center py-1">
-                  <p className="font-playfair text-base sm:text-lg font-bold leading-snug text-[#5A121E]">Friday, 11 December 2026</p>
-                  <p className="flex items-baseline justify-center pt-1"><EventTime value="11:00 AM" /></p>
+                  <EventDate weekday="FRI" day="11" month="DEC" />
+                  <p className="flex items-baseline justify-center pt-2"><EventTime value="11:00 AM" /></p>
                   <p className="flex items-baseline justify-center gap-2 pt-1 text-[#8B6508]">
-                    <span className="font-cormorant text-sm sm:text-base font-bold">Lunch:</span>
+                    <span className="font-cormorant text-sm sm:text-base font-medium">Followed by Lunch</span>
+                    <span aria-hidden="true">{'·'}</span>
                     <EventTime value="1:00 PM" />
                   </p>
                 </div>
               </OrnateCard>
             </div>
 
-            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
 
           {/* Spacer to keep garden lounge & parasols visible below */}
@@ -412,21 +412,19 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Dreamy%20Floral%20Wedding%20Pavilion.png')" }}
         >
           {/* Keep all Sangeet text within the clear central space of the pavilion artwork. */}
-          <div className="relative z-10 pt-[19vh] sm:pt-[21vh] space-y-1.5 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-[17vh] sm:pt-[19vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#F7D070">
-              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-sm leading-tight">
+              <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
                 <span className="block">Sangeet</span>
                 <span className="block">&amp; Ring Ceremony</span>
               </h2>
             </TitleFlourish>
 
-            <LotusDivider color="#D4AF37" />
-
             <div className="pt-1">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="font-cormorant text-center py-1">
-                  <div className="flex flex-col items-center gap-1 text-base sm:text-lg font-bold leading-snug text-[#5A121E] drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
-                    <p className="font-playfair">Friday, 11 December 2026</p>
+                  <EventDate weekday="FRI" day="11" month="DEC" />
+                  <div className="flex flex-col items-center gap-1 pt-2 text-base sm:text-lg font-medium leading-snug text-[#5A121E]">
                     <EventTime value="7:00 PM" />
                   </div>
                 </div>
@@ -439,7 +437,6 @@ export default function App() {
               <span className="block">As we celebrate this love under the stars tonight."</span>
             </p>
 
-            <LotusDivider color="#D4AF37" />
           </div>
 
           <RoyalSwipeUp onClick={() => scrollToSlide(5)} />
@@ -453,7 +450,7 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Elegant%20Indian%20Wedding%20Kalash%20Invitation%20Frame.png')" }}
         >
           {/* Confined to the open center watercolor space with high-contrast royal maroon & gold */}
-          <div className="relative z-10 pt-[20vh] sm:pt-[22vh] space-y-1.5 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-[16vh] sm:pt-[18vh] space-y-1.5 max-w-sm mx-auto px-4">
             {/* Auspicious Inscription */}
             <div className="flex items-center justify-center gap-2">
               <span className="w-6 h-[1px] bg-[#8B6508]/60" />
@@ -464,25 +461,19 @@ export default function App() {
             </div>
 
             <TitleFlourish color="#5A121E">
-              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold drop-shadow-xs leading-tight">
+              <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
                 Mangal Kalash
               </h2>
             </TitleFlourish>
 
-            <LotusDivider color="#8B6508" className="scale-75 my-0.5" />
-
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-0.5 font-cormorant text-center py-1">
-                  <p className="font-playfair text-base sm:text-lg font-bold leading-snug text-[#5A121E]">
-                    Saturday, 12 December 2026
-                  </p>
-                  <p className="flex items-baseline justify-center"><EventTime value="9:00 AM" /></p>
+                  <EventDate weekday="SAT" day="12" month="DEC" />
+                  <p className="flex items-baseline justify-center pt-2"><EventTime value="9:00 AM" /></p>
                 </div>
               </OrnateCard>
             </div>
-
-            <LotusDivider color="#8B6508" className="scale-75 my-0.5" />
           </div>
 
           {/* Spacer to keep kalash, haldi & diya artwork 100% visible */}
@@ -502,14 +493,12 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/6164520a-341e-4297-8a9a-d5e5f0c9d5c8.png')" }}
         >
           {/* Placed in the upper open sky area above the traditional Mayra illustration */}
-          <div className="relative z-10 pt-[18vh] sm:pt-[20vh] space-y-1.5 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-[16vh] sm:pt-[18vh] space-y-1.5 max-w-sm mx-auto px-4">
             <TitleFlourish color="#5A121E">
-              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-bold drop-shadow-xs leading-tight">
+              <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
                 Mayra
               </h2>
             </TitleFlourish>
-
-            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
 
             <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
               "Where traditions are cherished and blessings are shared"
@@ -518,19 +507,12 @@ export default function App() {
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-xs">
                 <div className="space-y-0.5 font-cormorant text-[#5A121E] text-center py-1">
-                  <div className="flex items-center justify-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <span className="font-playfair text-base sm:text-lg font-bold leading-snug">Saturday, 12 December 2026</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                    <EventTime value="11:00 AM" />
-                  </div>
+                  <EventDate weekday="SAT" day="12" month="DEC" />
+                  <div className="flex items-center justify-center pt-2"><EventTime value="11:00 AM" /></div>
                 </div>
               </OrnateCard>
             </div>
 
-            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
 
           {/* Spacer to keep traditional Mayra gifting artwork & elephant pond 100% visible */}
@@ -550,26 +532,22 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/wedding-ceremony-new-bg.jpg')" }}
         >
           {/* Confined strictly to upper open sky area so mandap, hawan kund & pool below are 100% visible! */}
-          <div className="relative z-10 pt-[13vh] sm:pt-[15vh] space-y-1 max-w-sm mx-auto px-3">
+          <div className="relative z-10 pt-[11vh] sm:pt-[13vh] space-y-1 max-w-sm mx-auto px-3">
             <div className="flex justify-center">
               <img src="/assets/couple_logo.png" alt="A-अ" className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm" />
             </div>
 
             <TitleFlourish color="#5A121E">
-              <h2 className="font-allura text-4xl sm:text-5xl text-[#5A121E] font-bold drop-shadow-xs leading-tight">
+              <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
                 Wedding Ceremony
               </h2>
             </TitleFlourish>
-
-            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
 
             <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
               "Welcoming our dear ones with open hearts and warm smiles"
             </p>
 
-            <p className="font-playfair font-bold text-base sm:text-lg leading-snug text-[#5A121E] pt-0.5">
-              Saturday, 12 December 2026
-            </p>
+            <EventDate weekday="SAT" day="12" month="DEC" />
 
             <div className="pt-0.5">
               <OrnateCard isDark={false} maxWidth="max-w-md">
@@ -598,7 +576,6 @@ export default function App() {
               </OrnateCard>
             </div>
 
-            <LotusDivider color="#D4AF37" className="scale-75 my-0.5" />
           </div>
 
           {/* Spacer to keep mandap, floral pillars & pool 100% visible */}

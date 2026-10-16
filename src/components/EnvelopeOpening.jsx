@@ -19,11 +19,18 @@ export default function EnvelopeOpening({ onComplete }) {
           aria-label="Tap the green floral envelope to open the wedding invitation"
           className="group flex flex-col items-center gap-4 rounded-2xl focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#D4AF37] disabled:cursor-default"
         >
-          <img
-            src="/assets/green-envelope-pocket.png"
-            alt="Sage green floral wedding envelope with a wax seal"
-            className={`max-h-[68dvh] w-[min(78vw,440px)] object-contain drop-shadow-xl transition duration-700 ease-in-out ${isOpening ? 'scale-125 opacity-0' : 'scale-100 opacity-100 group-hover:scale-[1.03]'}`}
-          />
+          <span className="relative block max-h-[68dvh] w-[min(78vw,440px)]">
+            <img
+              src="/assets/green-envelope-pocket.png"
+              alt="Sage green floral wedding envelope with a wax seal"
+              className={`block h-full max-h-[68dvh] w-full object-contain drop-shadow-xl transition duration-700 ease-in-out ${isOpening ? 'scale-125 opacity-0' : 'scale-100 opacity-100 group-hover:scale-[1.03]'}`}
+            />
+            <img
+              src="/assets/couple_logo.png"
+              alt="Couple monogram on the envelope seal"
+              className="pointer-events-none absolute left-1/2 top-[53%] h-[12%] w-[12%] -translate-x-1/2 -translate-y-1/2 rounded-full object-cover"
+            />
+          </span>
           <span className={`rounded-full border border-[#D4AF37]/70 bg-[#FFFCF5]/85 px-6 py-2 font-cinzel text-xs font-bold tracking-[0.2em] text-[#5A121E] shadow-md transition-opacity duration-300 ${isOpening ? 'opacity-0' : 'opacity-100'}`}>
             TAP TO OPEN
           </span>

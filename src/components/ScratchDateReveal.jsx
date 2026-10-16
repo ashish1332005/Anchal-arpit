@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import floralHeart from '../assets/image.png';
 
 const REVEAL_THRESHOLD = 0.35;
 
@@ -88,20 +89,15 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   };
 
   return (
-    <div className="relative w-[min(88vw,300px)] h-[184px] max-w-full mx-auto rounded-xl overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#F5ECE0] shadow-lg ring-1 ring-[#D4AF37]/60">
+    <div className="relative aspect-[7/8] w-[min(80vw,280px)] max-w-full mx-auto">
       {/* Revealed Inner Card Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-3 py-2 text-center select-none">
-        <p className="font-cinzel text-xs sm:text-sm uppercase tracking-[0.2em] text-[#8B6508] font-bold">
+      <div className="absolute inset-0 select-none">
+        <img src={floralHeart} alt="Gold floral heart frame" className="absolute inset-x-0 bottom-0 h-[87.5%] w-full object-contain" />
+        <p className="font-lucy-said-ok absolute inset-x-0 top-0 text-center text-2xl sm:text-3xl text-[#8B6508]">
           Save the date
         </p>
-        <p className="font-playfair whitespace-nowrap text-[21px] sm:text-2xl font-bold text-[#5A121E] my-1 tracking-normal leading-tight">
+        <p className="font-cene absolute left-[66%] top-[50%] w-[57%] -translate-x-1/2 -translate-y-1/2 text-center text-lg sm:text-xl font-medium text-[#5A121E] leading-tight">
           11 &amp; 12 December 2026
-        </p>
-        <p className="font-allura text-4xl sm:text-5xl font-bold text-[#5A121E] leading-none drop-shadow-xs my-1">
-          Arpit &amp; Anchal
-        </p>
-        <p className="font-cinzel text-xs sm:text-sm font-bold text-[#8B6508] tracking-wider uppercase mt-1">
-          📍 Gloria Inn, Bhilwara
         </p>
       </div>
 

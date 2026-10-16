@@ -1,6 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Cene';
+  src: url('/fonts/Cene.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lucy Said Ok';
+  src: url('/fonts/Lucy Said Ok Personal Use.ttf') format('truetype');
+  font-display: swap;
+}
+
 @layer utilities {
+  .font-cene {
+    font-family: 'Cene', cursive;
+  }
+  .font-lucy-said-ok {
+    font-family: 'Lucy Said Ok', cursive;
+  }
   .font-allura {
     font-family: 'Allura', cursive;
   }
