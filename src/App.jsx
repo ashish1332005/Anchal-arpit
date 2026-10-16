@@ -247,7 +247,7 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
           {/* Top Invocations Section */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-1 pt-[4vh] sm:pt-[5vh] flex flex-col items-center">
+          <div className="relative z-10 w-full max-w-md mx-auto px-1 pt-[3.5vh] sm:pt-[4.5vh] flex flex-col items-center">
             <div className="flex w-full flex-col items-center gap-1 text-[#7B1124]">
               <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 sm:h-11 sm:w-11 object-contain mb-0.5" />
               {/* All three invocations — scale-down ensures they never clip on any screen */}
@@ -270,30 +270,30 @@ export default function App() {
             </div>
           </div>
 
-          {/* Main Invitation Card Content - Centered in parchment space with generous gap from invocations */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-6 flex-1 flex flex-col items-center justify-center my-auto py-2 text-[#2C1518]">
-            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-11 h-11 sm:w-12 sm:h-12 object-contain mb-3 drop-shadow-xs" />
+          {/* Main Invitation Card Content - Evenly distributed in parchment space with no awkward gaps */}
+          <div className="relative z-10 w-full max-w-md mx-auto px-5 sm:px-6 flex-1 flex flex-col items-center justify-evenly py-2 text-[#2C1518]">
+            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-13 h-13 sm:w-15 sm:h-15 object-contain drop-shadow-xs" />
 
-            <p className="max-w-[340px] font-cormorant text-base sm:text-lg leading-snug font-medium mb-2">
+            <p className="max-w-[340px] font-cormorant text-[17px] sm:text-[19px] leading-snug font-medium text-[#2C1518]">
               The Kabra family requests the pleasure of your company at the wedding celebration.
             </p>
 
             <div className="w-full space-y-0.5">
               <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.groom}</h1>
-              <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
-              <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
+              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
+              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
             </div>
 
-            <div className="flex items-center justify-center gap-3 w-full my-2">
-              <span className="w-10 h-px bg-[#8B6508]/50" />
-              <span className="font-playfair text-sm text-[#8B6508] font-semibold">with</span>
-              <span className="w-10 h-px bg-[#8B6508]/50" />
+            <div className="flex items-center justify-center gap-3 w-full my-1 sm:my-1.5">
+              <span className="w-12 h-px bg-[#8B6508]/50" />
+              <span className="font-playfair text-base text-[#8B6508] font-semibold italic">with</span>
+              <span className="w-12 h-px bg-[#8B6508]/50" />
             </div>
 
             <div className="w-full space-y-0.5">
               <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.bride}</h2>
-              <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
-              <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
+              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
+              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
             </div>
           </div>
 
@@ -396,7 +396,7 @@ export default function App() {
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#8B6508" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/85 max-w-[195px] mx-auto leading-snug">
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/85 max-w-[240px] mx-auto leading-snug">
               "Auspicious beginnings invoke Lord Ganesha's blessings for a lifetime of joy"
             </p>
           </div>
@@ -424,7 +424,7 @@ export default function App() {
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto leading-snug">
               "A vibrant celebration of laughter, love, music and endless memories"
             </p>
           </div>
@@ -451,7 +451,7 @@ export default function App() {
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] leading-snug">
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] leading-snug">
               "Let's dance, let's sing, let our hearts take flight, as we celebrate this love under the stars tonight."
             </p>
           </div>
@@ -478,7 +478,7 @@ export default function App() {
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto leading-snug">
               "As sacred waters fill the kalash, may your home fill with peace, prosperity and divine grace"
             </p>
           </div>
@@ -504,7 +504,7 @@ export default function App() {
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto leading-snug">
               "Where traditions are cherished and blessings flow from mama's heart to bride's new life"
             </p>
           </div>
@@ -554,7 +554,7 @@ export default function App() {
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
             {/* Quote after times */}
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto leading-snug">
               "Welcoming our dear ones with open hearts and warm smiles"
             </p>
           </div>

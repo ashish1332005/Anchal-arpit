@@ -135,22 +135,21 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
             Hollow center is at ~62% from left, ~33% from top.
           */}
           <div
-            className="absolute text-center"
+            className="absolute text-center flex flex-col items-center justify-center"
             style={{
               left: '62%',
-              top: '33%',
+              top: '32%',
               transform: 'translateX(-50%)',
-              width: '42%',
+              width: '46%',
             }}
           >
-            <p className="font-playfair text-[18px] sm:text-[20px] font-bold text-[#7B1124] leading-tight whitespace-nowrap">
+            <p className="font-playfair text-[22px] sm:text-[25px] font-bold text-[#7B1124] leading-none whitespace-nowrap">
               11 &amp; 12
             </p>
-            <p className="font-cinzel text-[11px] sm:text-[12px] tracking-[0.2em] font-bold text-[#7B1124] leading-tight">
+            <p className="font-cinzel text-[12px] sm:text-[13.5px] tracking-[0.22em] font-bold text-[#7B1124] leading-tight mt-1">
               DECEMBER
             </p>
-            <div className="w-full h-px bg-[#B78B34]/60 my-1" />
-            <p className="font-playfair text-[16px] sm:text-[18px] font-bold text-[#5A121E] tracking-[0.15em]">
+            <p className="font-playfair text-[19px] sm:text-[22px] font-bold text-[#5A121E] tracking-[0.18em] mt-0.5">
               2026
             </p>
           </div>
