@@ -232,17 +232,20 @@ export default function App() {
             {/* Invocations block */}
             <div className="flex w-full flex-col items-center gap-1 font-cinzel font-bold leading-tight tracking-wide text-[#7B1124] mb-4">
               <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-12 w-12 object-contain" />
-              {/* Shree Ganeshay Namah - centered on its own line */}
-              <p className="font-cormorant font-semibold text-[11px] min-[380px]:text-xs sm:text-sm tracking-[0.12em] text-center text-[#5A121E]">
+            {/* All three invocations in one horizontal row */}
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
+              <p className="font-cormorant font-semibold text-[10px] min-[380px]:text-[11px] sm:text-xs tracking-[0.1em] text-center text-[#5A121E]">
                 {WEDDING_DETAILS.invocations[1].en}
               </p>
-              {/* Shri Ramcharnay Namah - smaller font to fit one line */}
-              <p className="font-cormorant font-medium text-[9px] min-[380px]:text-[10px] sm:text-[11px] tracking-[0.08em] text-center text-[#7B1124] leading-tight">
+              <span className="text-[#B78B34] text-[10px] font-bold">·</span>
+              <p className="font-cormorant font-medium text-[10px] min-[380px]:text-[11px] sm:text-xs tracking-[0.08em] text-center text-[#7B1124]">
                 {WEDDING_DETAILS.invocations[0].en}
               </p>
-              <p className="font-cormorant font-medium text-[9px] min-[380px]:text-[10px] sm:text-[11px] tracking-[0.08em] text-center text-[#7B1124] leading-tight">
+              <span className="text-[#B78B34] text-[10px] font-bold">·</span>
+              <p className="font-cormorant font-medium text-[10px] min-[380px]:text-[11px] sm:text-xs tracking-[0.08em] text-center text-[#7B1124]">
                 {WEDDING_DETAILS.invocations[2].en}
               </p>
+            </div>
             </div>
 
             <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-9 h-9 object-contain mb-3" />
@@ -363,15 +366,15 @@ export default function App() {
             <LotusDivider color="#8B6508" className="scale-75 my-0.5" />
             <div className="space-y-1 pt-0.5">
               <EventDate weekday="FRI" day="11" month="DEC" />
-              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/80 max-w-xs mx-auto leading-snug pt-0.5">
-                "Auspicious beginnings invoke Lord Ganesha's blessings for a lifetime of joy"
-              </p>
               <p className="flex items-baseline justify-center pt-1 text-[#7B1124]"><EventTime value="7:00 AM" /></p>
               <div className="flex items-center justify-center gap-2 pt-0.5 text-[#8B6508]">
                 <span className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.12em] font-bold uppercase">Followed by Breakfast</span>
                 <span className="font-cene text-lg leading-none">·</span>
                 <EventTime value="9:00 AM" />
               </div>
+              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/80 max-w-xs mx-auto leading-snug pt-0.5">
+                "Auspicious beginnings invoke Lord Ganesha's blessings for a lifetime of joy"
+              </p>
             </div>
           </div>
 
@@ -394,15 +397,15 @@ export default function App() {
             <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
             <div className="space-y-1 pt-0.5">
               <EventDate weekday="FRI" day="11" month="DEC" />
-              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug pt-0.5">
-                "A vibrant celebration of laughter, love, music and endless memories"
-              </p>
               <p className="flex items-baseline justify-center pt-1"><EventTime value="11:00 AM" /></p>
               <div className="flex items-center justify-center gap-2 pt-0.5 text-[#8B6508]">
                 <span className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.12em] font-bold uppercase">Followed by Lunch</span>
                 <span className="font-cene text-lg leading-none">·</span>
                 <EventTime value="1:00 PM" />
               </div>
+              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug pt-0.5">
+                "A vibrant celebration of laughter, love, music and endless memories"
+              </p>
             </div>
           </div>
 
@@ -425,10 +428,10 @@ export default function App() {
             <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
             <div className="space-y-1 pt-0.5">
               <EventDate weekday="FRI" day="11" month="DEC" />
+              <p className="flex items-baseline justify-center pt-1 text-[#5A121E]"><EventTime value="7:00 PM" /></p>
               <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] leading-snug pt-0.5">
                 "Let's dance, let's sing, let our hearts take flight, as we celebrate this love under the stars tonight."
               </p>
-              <p className="flex items-baseline justify-center pt-1 text-[#5A121E]"><EventTime value="7:00 PM" /></p>
             </div>
           </div>
 
@@ -451,10 +454,10 @@ export default function App() {
             <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
             <div className="space-y-1 pt-0.5">
               <EventDate weekday="SAT" day="12" month="DEC" />
+              <p className="flex items-baseline justify-center pt-1"><EventTime value="9:00 AM" /></p>
               <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug pt-0.5">
                 "As sacred waters fill the kalash, may your home fill with peace, prosperity and divine grace"
               </p>
-              <p className="flex items-baseline justify-center pt-1"><EventTime value="9:00 AM" /></p>
             </div>
           </div>
 
@@ -476,10 +479,10 @@ export default function App() {
             <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
             <div className="space-y-1 pt-0.5">
               <EventDate weekday="SAT" day="12" month="DEC" />
+              <p className="flex items-baseline justify-center pt-1"><EventTime value="11:00 AM" /></p>
               <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug pt-0.5">
                 "Where traditions are cherished and blessings flow from mama's heart to bride's new life"
               </p>
-              <p className="flex items-baseline justify-center pt-1"><EventTime value="11:00 AM" /></p>
             </div>
           </div>
 
