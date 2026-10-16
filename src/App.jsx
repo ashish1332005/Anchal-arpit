@@ -96,8 +96,8 @@ function EventTime({ value, size = "md", className = "" }) {
 
   return (
     <span className={`inline-flex items-baseline justify-center gap-1 whitespace-nowrap text-[#7B1124] ${className}`}>
-      <span className={`font-playfair ${hourSize} font-semibold leading-none`}>{hour}</span>
-      {meridiem && <span className={`font-cinzel ${meridiemSize} font-bold tracking-wide leading-none`}>{meridiem}</span>}
+      <span className={`font-dihjau ${hourSize} font-bold leading-none`}>{hour}</span>
+      {meridiem && <span className={`font-dihjau ${meridiemSize} font-bold tracking-wider leading-none`}>{meridiem}</span>}
     </span>
   );
 }
@@ -119,16 +119,16 @@ function EventDate({ weekday, day, month, year = "2026" }) {
     <div className="mx-auto w-full max-w-[250px] text-center">
       <div className="grid grid-cols-[1fr_auto_1fr] items-end gap-3">
         <div className="flex flex-col items-center gap-1.5 pb-2">
-          <span className="font-cinzel text-[11px] sm:text-xs tracking-[0.3em] pl-[0.3em] font-bold text-[#5A121E]/85 uppercase leading-none">{weekday}</span>
+          <span className="font-dihjau text-[11px] sm:text-xs tracking-[0.25em] pl-[0.25em] font-bold text-[#5A121E]/85 uppercase leading-none">{weekday}</span>
           <span className="block h-px w-full bg-gradient-to-l from-[#B78B34] to-[#B78B34]/10" />
         </div>
-        <span className="font-playfair text-[46px] sm:text-[54px] font-semibold leading-[0.9] text-[#7B1124]">{day}</span>
+        <span className="font-dihjau text-[44px] sm:text-[52px] font-bold leading-[0.9] text-[#7B1124]">{day}</span>
         <div className="flex flex-col items-center gap-1.5 pb-2">
           <span className="font-cinzel text-[11px] sm:text-xs tracking-[0.3em] pl-[0.3em] font-bold text-[#5A121E]/85 uppercase leading-none">{month}</span>
           <span className="block h-px w-full bg-gradient-to-r from-[#B78B34] to-[#B78B34]/10" />
         </div>
       </div>
-      <p className="mt-1.5 font-cinzel text-[10px] sm:text-[11px] tracking-[0.5em] pl-[0.5em] text-[#5A121E]/80 font-bold leading-none">{year}</p>
+      <p className="mt-1.5 font-dihjau text-[11px] sm:text-[12px] tracking-[0.4em] pl-[0.4em] text-[#5A121E]/80 font-bold leading-none">{year}</p>
     </div>
   );
 }
@@ -243,64 +243,14 @@ export default function App() {
         {/* SLIDE 1: MAIN INVITATION CARD (Page 2 — Wedding Invitation) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none py-[3.5vh]"
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
-          {/* Top Invocations Section */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-1 pt-[3.5vh] sm:pt-[4.5vh] flex flex-col items-center">
-            <div className="flex w-full flex-col items-center gap-1 text-[#7B1124]">
-              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 sm:h-11 sm:w-11 object-contain mb-0.5" />
-              {/* All three invocations — scale-down ensures they never clip on any screen */}
-              <div
-                className="flex items-center justify-center gap-0.5 sm:gap-2 text-[#7B1124] whitespace-nowrap"
-                style={{ transform: 'scale(var(--inv-scale, 1))', transformOrigin: 'center' }}
-              >
-                <span className="font-cinzel text-[7.5px] min-[375px]:text-[8px] sm:text-[10px] font-semibold tracking-normal">
-                  Shri Ramcharanay Namah
-                </span>
-                <span className="text-[#B78B34] text-[7px] sm:text-[10px] shrink-0 px-0.5">•</span>
-                <span className="font-cinzel text-[7.5px] min-[375px]:text-[8.5px] sm:text-[11px] font-bold tracking-normal text-[#5A121E]">
-                  ॥ Shri Ganeshay Namah ॥
-                </span>
-                <span className="text-[#B78B34] text-[7px] sm:text-[10px] shrink-0 px-0.5">•</span>
-                <span className="font-cinzel text-[7.5px] min-[375px]:text-[8px] sm:text-[10px] font-semibold tracking-normal">
-                  Shri Pitra Devay Namah
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Main Invitation Card Content - Evenly distributed in parchment space with no awkward gaps */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-5 sm:px-6 flex-1 flex flex-col items-center justify-evenly py-2 text-[#2C1518]">
-            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-13 h-13 sm:w-15 sm:h-15 object-contain drop-shadow-xs" />
-
-            <p className="max-w-[340px] font-cormorant text-[17px] sm:text-[19px] leading-snug font-medium text-[#2C1518]">
-              The Kabra family requests the pleasure of your company at the wedding celebration.
-            </p>
-
-            <div className="w-full space-y-0.5">
-              <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.groom}</h1>
-              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
-              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
-            </div>
-
-            <div className="flex items-center justify-center gap-3 w-full my-1 sm:my-1.5">
-              <span className="w-12 h-px bg-[#8B6508]/50" />
-              <span className="font-playfair text-base text-[#8B6508] font-semibold italic">with</span>
-              <span className="w-12 h-px bg-[#8B6508]/50" />
-            </div>
-
-            <div className="w-full space-y-0.5">
-              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.bride}</h2>
-              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
-              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
-            </div>
-          </div>
-
-          {/* Bottom Royal SWIPE UP button */}
-          <div className="relative z-20 pb-4">
-            <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="SWIPE UP" />
-          </div>
+          <div className="relative z-10 w-full max-w-md mx-auto px-1 flex flex-col items-center gap-1"><img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 sm:h-12 sm:w-12 object-contain" /><div className="flex items-center justify-center gap-0.5 sm:gap-2 text-[#7B1124] whitespace-nowrap" style={{ transform: 'scale(var(--inv-scale, 1))', transformOrigin: 'center' }}><span className="font-cinzel text-[7.5px] min-[375px]:text-[8px] sm:text-[10px] font-semibold">Shri Ramcharanay Namah</span><span className="text-[#B78B34]">&#8226;</span><span className="font-cinzel text-[7.5px] sm:text-[11px] font-bold">&#2405;&#2405; Shri Ganeshay Namah &#2405;&#2405;</span><span className="text-[#B78B34]">?</span><span className="font-cinzel text-[7.5px] sm:text-[10px] font-semibold">Shri Pitra Devay Namah</span></div></div>
+          <div className="relative z-10 mx-auto flex w-full max-w-lg flex-1 items-center justify-center px-5"><div className="grid w-full grid-cols-[0.78fr_1.6fr] items-center gap-3 sm:gap-6">
+            <div className="flex flex-col items-center border-r border-[#B78B34]/45 pr-3 sm:pr-6"><img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-full max-w-[132px] object-contain sm:max-w-[170px]" /><span className="mt-3 font-cinzel text-[8px] sm:text-[10px] tracking-[0.18em] text-[#8B6508]">TWO HEARTS, ONE STORY</span></div>
+            <div className="flex min-w-0 flex-col items-center text-center text-[#2C1518]"><p className="mb-2 max-w-[250px] font-cormorant text-[15px] leading-snug sm:text-[18px]">Together with their families, invite you to celebrate their wedding</p><h1 className="font-allura text-[42px] leading-[0.9] text-[#5A121E] sm:text-[58px]">{WEDDING_DETAILS.couple.groom}</h1><p className="font-cormorant text-[11px] sm:text-[14px]">S/O Rinku &amp; Sanjay Kabra</p><span className="my-1 font-playfair text-[12px] italic text-[#8B6508] sm:my-2 sm:text-base">with</span><h2 className="font-allura text-[42px] leading-[0.9] text-[#5A121E] sm:text-[58px]">{WEDDING_DETAILS.couple.bride}</h2><p className="font-cormorant text-[11px] sm:text-[14px]">D/O Leela Devi &amp; Dinesh Chechani</p><div className="mt-3 border-t border-[#B78B34]/60 pt-2 sm:mt-4"><p className="font-cinzel text-[9px] tracking-[0.2em] text-[#8B6508] sm:text-[11px]">JOYFULLY INVITE YOU TO JOIN</p><p className="mt-1 font-cormorant text-[17px] text-[#5A121E] sm:text-[21px]">{WEDDING_DETAILS.dates.display}</p><p className="font-cormorant text-[12px] text-[#5A121E]/80 sm:text-sm">Gloria Inn &middot; Bhilwara, Rajasthan</p></div></div>
+          </div></div>
         </section>
 
         {/* ======================================================== */}
@@ -769,7 +719,7 @@ export default function App() {
                   <a
                     key={idx}
                     href={`tel:+91${phone}`}
-                    className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-cinzel text-[10px] sm:text-xs font-bold hover:scale-105 transition-transform shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-dihjau text-[11px] sm:text-xs font-bold tracking-wide hover:scale-105 transition-transform shadow-xs"
                   >
                     <Phone className="w-2.5 h-2.5" />
                     <span>{phone}</span>
