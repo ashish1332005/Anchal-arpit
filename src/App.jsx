@@ -247,20 +247,23 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
           {/* Top Invocations Section */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-2 pt-[4vh] sm:pt-[5vh] flex flex-col items-center">
+          <div className="relative z-10 w-full max-w-md mx-auto px-1 pt-[4vh] sm:pt-[5vh] flex flex-col items-center">
             <div className="flex w-full flex-col items-center gap-1 text-[#7B1124]">
               <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 sm:h-11 sm:w-11 object-contain mb-0.5" />
-              {/* All three invocations in one horizontal row - perfectly sized so it never clips */}
-              <div className="flex items-center justify-center gap-1 min-[360px]:gap-1.5 sm:gap-2.5 w-full px-1 text-[#7B1124]">
-                <span className="font-cinzel text-[8px] min-[360px]:text-[8.5px] min-[390px]:text-[9.5px] sm:text-xs font-semibold tracking-wide whitespace-nowrap">
+              {/* All three invocations — scale-down ensures they never clip on any screen */}
+              <div
+                className="flex items-center justify-center gap-0.5 sm:gap-2 text-[#7B1124] whitespace-nowrap"
+                style={{ transform: 'scale(var(--inv-scale, 1))', transformOrigin: 'center' }}
+              >
+                <span className="font-cinzel text-[7.5px] min-[375px]:text-[8px] sm:text-[10px] font-semibold tracking-normal">
                   Shri Ramcharanay Namah
                 </span>
-                <span className="text-[#B78B34] text-[8px] sm:text-[10px] shrink-0">•</span>
-                <span className="font-cinzel text-[8.5px] min-[360px]:text-[9px] min-[390px]:text-[10.5px] sm:text-xs font-bold tracking-wider text-[#5A121E] whitespace-nowrap">
-                  || Shri Ganeshay Namah ||
+                <span className="text-[#B78B34] text-[7px] sm:text-[10px] shrink-0 px-0.5">•</span>
+                <span className="font-cinzel text-[7.5px] min-[375px]:text-[8.5px] sm:text-[11px] font-bold tracking-normal text-[#5A121E]">
+                  ॥ Shri Ganeshay Namah ॥
                 </span>
-                <span className="text-[#B78B34] text-[8px] sm:text-[10px] shrink-0">•</span>
-                <span className="font-cinzel text-[8.5px] min-[360px]:text-[9px] min-[390px]:text-[9.5px] sm:text-xs font-semibold tracking-wide whitespace-nowrap">
+                <span className="text-[#B78B34] text-[7px] sm:text-[10px] shrink-0 px-0.5">•</span>
+                <span className="font-cinzel text-[7.5px] min-[375px]:text-[8px] sm:text-[10px] font-semibold tracking-normal">
                   Shri Pitra Devay Namah
                 </span>
               </div>
@@ -393,7 +396,7 @@ export default function App() {
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#8B6508" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/85 max-w-xs mx-auto leading-snug">
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/85 max-w-[195px] mx-auto leading-snug">
               "Auspicious beginnings invoke Lord Ganesha's blessings for a lifetime of joy"
             </p>
           </div>
