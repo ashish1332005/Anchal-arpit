@@ -243,11 +243,11 @@ export default function App() {
         {/* SLIDE 1: MAIN INVITATION CARD (Page 2 — Wedding Invitation) */}
         {/* ======================================================== */}
         <section
-          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none"
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none py-[3.5vh]"
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
           {/* Top Invocations Section */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-1 pt-[3.5vh] sm:pt-[4.5vh] flex flex-col items-center">
+          <div className="relative z-10 w-full max-w-md mx-auto px-1 flex flex-col items-center">
             <div className="flex w-full flex-col items-center gap-1 text-[#7B1124]">
               <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 sm:h-11 sm:w-11 object-contain mb-0.5" />
               {/* All three invocations — scale-down ensures they never clip on any screen */}
@@ -270,35 +270,43 @@ export default function App() {
             </div>
           </div>
 
-          {/* Main Invitation Card Content - Evenly distributed in parchment space with no awkward gaps */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-5 sm:px-6 flex-1 flex flex-col items-center justify-evenly py-2 text-[#2C1518]">
-            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-13 h-13 sm:w-15 sm:h-15 object-contain drop-shadow-xs" />
+          {/* Block 2: Logo + Invitation Sentence */}
+          <div className="relative z-10 w-full max-w-md mx-auto px-5 sm:px-6 flex flex-col items-center gap-1.5 text-[#2C1518]">
+            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-12 h-12 sm:w-14 sm:h-14 object-contain drop-shadow-xs" />
 
-            <p className="max-w-[340px] font-cormorant text-[17px] sm:text-[19px] leading-snug font-medium text-[#2C1518]">
-              The Kabra family requests the pleasure of your company at the wedding celebration.
+            <p className="max-w-[260px] font-cormorant text-[17px] sm:text-[19px] leading-snug font-medium text-[#2C1518]">
+              The Kabra family requests the pleasure of your company at the wedding celebration
             </p>
+          </div>
 
-            <div className="w-full space-y-0.5">
-              <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.groom}</h1>
-              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
-              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
+          {/* Block 3: Groom + with flourish PNG + Bride */}
+          <div className="relative z-10 w-full max-w-md mx-auto px-4 flex flex-col items-center">
+            {/* Groom */}
+            <div className="w-full space-y-0.5 text-center">
+              <h1 className="font-allura text-5xl sm:text-[58px] text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.groom}</h1>
+              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
+              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
             </div>
 
-            <div className="flex items-center justify-center gap-3 w-full my-1 sm:my-1.5">
-              <span className="w-12 h-px bg-[#8B6508]/50" />
-              <span className="font-playfair text-base text-[#8B6508] font-semibold italic">with</span>
-              <span className="w-12 h-px bg-[#8B6508]/50" />
+            {/* With flourish PNG */}
+            <div className="my-1 sm:my-1.5 flex justify-center">
+              <img
+                src="/assets/with_flourish.png"
+                alt="with"
+                className="w-32 sm:w-40 object-contain"
+              />
             </div>
 
-            <div className="w-full space-y-0.5">
-              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.bride}</h2>
-              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
-              <p className="font-cormorant text-[13.5px] sm:text-[15px] font-semibold text-[#2C1518] leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
+            {/* Bride */}
+            <div className="w-full space-y-0.5 text-center">
+              <h2 className="font-allura text-5xl sm:text-[58px] text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.bride}</h2>
+              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
+              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
             </div>
           </div>
 
-          {/* Bottom Royal SWIPE UP button */}
-          <div className="relative z-20 pb-4">
+          {/* Block 4: Bottom Royal SWIPE UP button */}
+          <div className="relative z-20 pb-1">
             <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="SWIPE UP" />
           </div>
         </section>
@@ -769,7 +777,7 @@ export default function App() {
                   <a
                     key={idx}
                     href={`tel:+91${phone}`}
-                    className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-cinzel text-[10px] sm:text-xs font-bold hover:scale-105 transition-transform shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-dihjau text-[11px] sm:text-xs font-bold tracking-wide hover:scale-105 transition-transform shadow-xs"
                   >
                     <Phone className="w-2.5 h-2.5" />
                     <span>{phone}</span>

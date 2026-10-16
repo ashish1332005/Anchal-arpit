@@ -49,18 +49,6 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
       ctx.drawImage(img, 0, 0, W, H);
       ctx.globalCompositeOperation = 'source-over';
 
-      // Step 3: Hint text
-      ctx.shadowColor  = 'rgba(0,0,0,0.7)';
-      ctx.shadowBlur   = 10;
-      ctx.fillStyle    = 'rgba(255,255,255,0.95)';
-      ctx.font         = 'bold 11px Cinzel, serif';
-      ctx.textAlign    = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('✦  SCRATCH TO REVEAL  ✦', W / 2, H / 2 - 10);
-      ctx.font      = '8.5px Cinzel, serif';
-      ctx.fillStyle = 'rgba(255,230,160,0.90)';
-      ctx.fillText('the wedding date', W / 2, H / 2 + 9);
-      ctx.shadowBlur = 0;
     };
   }, [revealed]);
 
@@ -100,17 +88,11 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   return (
     <div className="flex flex-col items-center gap-2 select-none">
 
-      {/* "Save the Date" — appears ABOVE the heart only after scratching */}
-      <div
-        className={`transition-all duration-700 ${
-          revealed
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-2 pointer-events-none'
-        }`}
-      >
-        <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.35em] text-[#8B6508] font-bold uppercase text-center">
-          ✦ &nbsp;Save the Date&nbsp; ✦
-        </p>
+      {/* Heading ABOVE the heart with event heading font (Lucy Said Ok) */}
+      <div className="text-center transition-all duration-500 mb-0.5">
+        <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight select-none drop-shadow-xs">
+          {revealed ? 'Save the Date' : 'Scratch to Reveal'}
+        </h2>
       </div>
 
       {/* Card area */}
@@ -143,13 +125,13 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
               width: '46%',
             }}
           >
-            <p className="font-playfair text-[22px] sm:text-[25px] font-bold text-[#7B1124] leading-none whitespace-nowrap">
+            <p className="font-dihjau text-[22px] sm:text-[25px] font-bold text-[#7B1124] leading-none whitespace-nowrap">
               11 &amp; 12
             </p>
-            <p className="font-cinzel text-[12px] sm:text-[13.5px] tracking-[0.22em] font-bold text-[#7B1124] leading-tight mt-1">
+            <p className="font-dihjau text-[12px] sm:text-[13.5px] tracking-[0.22em] font-bold text-[#7B1124] leading-tight mt-1">
               DECEMBER
             </p>
-            <p className="font-playfair text-[19px] sm:text-[22px] font-bold text-[#5A121E] tracking-[0.18em] mt-0.5">
+            <p className="font-dihjau text-[19px] sm:text-[22px] font-bold text-[#5A121E] tracking-[0.18em] mt-0.5">
               2026
             </p>
           </div>
