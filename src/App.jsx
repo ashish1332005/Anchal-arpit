@@ -282,26 +282,38 @@ export default function App() {
           {/* Block 3: Groom + with flourish PNG + Bride */}
           <div className="relative z-10 w-full max-w-md mx-auto px-4 flex flex-col items-center">
             {/* Groom */}
-            <div className="w-full space-y-0.5 text-center">
-              <h1 className="font-allura text-5xl sm:text-[58px] text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.groom}</h1>
-              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
-              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
+            <div className="w-full text-center">
+              <h1 className="font-allura text-5xl sm:text-[58px] text-[#5A121E] font-medium leading-none mb-1 sm:mb-1.5">
+                {WEDDING_DETAILS.couple.groom}
+              </h1>
+              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-tight">
+                G/S Ratan Devi &amp; Ram Rai Ji Kabra
+              </p>
+              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-tight mt-0.5">
+                S/O Rinku &amp; Sanjay Kabra
+              </p>
             </div>
 
-            {/* With flourish PNG */}
-            <div className="my-1 sm:my-1.5 flex justify-center">
+            {/* With flourish PNG — ample breathing room so it never feels congested */}
+            <div className="my-3 sm:my-4 flex justify-center py-1">
               <img
                 src="/assets/with_flourish.png"
                 alt="with"
-                className="w-32 sm:w-40 object-contain"
+                className="w-28 sm:w-34 object-contain"
               />
             </div>
 
             {/* Bride */}
-            <div className="w-full space-y-0.5 text-center">
-              <h2 className="font-allura text-5xl sm:text-[58px] text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.bride}</h2>
-              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
-              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
+            <div className="w-full text-center">
+              <h2 className="font-allura text-5xl sm:text-[58px] text-[#5A121E] font-medium leading-none mb-1 sm:mb-1.5">
+                {WEDDING_DETAILS.couple.bride}
+              </h2>
+              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-tight">
+                G/D Late Janki Devi &amp; Late Shivlal Ji Chechani
+              </p>
+              <p className="font-cormorant text-[13px] sm:text-[14.5px] font-semibold text-[#2C1518] leading-tight mt-0.5">
+                D/O Leela Devi &amp; Dinesh Chechani
+              </p>
             </div>
           </div>
 
@@ -777,7 +789,7 @@ export default function App() {
                   <a
                     key={idx}
                     href={`tel:+91${phone}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-dihjau text-[11px] sm:text-xs font-bold tracking-wide hover:scale-105 transition-transform shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-cinzel text-[10px] sm:text-[11px] font-bold tracking-wider hover:scale-105 transition-transform shadow-xs"
                   >
                     <Phone className="w-2.5 h-2.5" />
                     <span>{phone}</span>

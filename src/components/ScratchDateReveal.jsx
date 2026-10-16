@@ -125,13 +125,13 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
               width: '46%',
             }}
           >
-            <p className="font-dihjau text-[22px] sm:text-[25px] font-bold text-[#7B1124] leading-none whitespace-nowrap">
+            <p className="font-playfair text-[24px] sm:text-[27px] font-bold text-[#7B1124] leading-none whitespace-nowrap">
               11 &amp; 12
             </p>
-            <p className="font-dihjau text-[12px] sm:text-[13.5px] tracking-[0.22em] font-bold text-[#7B1124] leading-tight mt-1">
+            <p className="font-cinzel text-[12px] sm:text-[13.5px] tracking-[0.22em] font-bold text-[#7B1124] leading-tight mt-1">
               DECEMBER
             </p>
-            <p className="font-dihjau text-[19px] sm:text-[22px] font-bold text-[#5A121E] tracking-[0.18em] mt-0.5">
+            <p className="font-playfair text-[20px] sm:text-[23px] font-bold text-[#5A121E] tracking-[0.18em] mt-0.5">
               2026
             </p>
           </div>
