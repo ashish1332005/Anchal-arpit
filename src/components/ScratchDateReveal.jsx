@@ -96,9 +96,12 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
         <p className="font-lucy-said-ok absolute inset-x-0 top-0 text-center text-2xl sm:text-3xl text-[#8B6508]">
           Save the date
         </p>
-        <p className="font-cene absolute left-[66%] top-[50%] w-[57%] -translate-x-1/2 -translate-y-1/2 text-center text-lg sm:text-xl font-medium text-[#5A121E] leading-tight">
-          11 &amp; 12 December 2026
-        </p>
+        {/* Date centered inside the heart - shifted right to align with heart center */}
+        <div className="absolute top-[44%] left-[58%] -translate-x-1/2 -translate-y-1/2 text-center w-[52%]">
+          <p className="font-cinzel text-[11px] sm:text-[12px] font-bold text-[#8B6508] tracking-[0.12em] leading-tight">11 &amp; 12</p>
+          <p className="font-cene text-2xl sm:text-3xl font-medium text-[#5A121E] leading-none my-0.5">DEC</p>
+          <p className="font-cinzel text-[10px] sm:text-[11px] font-bold text-[#8B6508] tracking-[0.18em] leading-tight">2026</p>
+        </div>
       </div>
 
       {flowers.map((flower, index) => (
