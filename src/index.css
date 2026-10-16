@@ -12,42 +12,7 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Dihjau';
-  src: url('/fonts/Dihjau-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Dihjau';
-  src: url('/fonts/Dihjau-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Dihjau';
-  src: url('/fonts/Dihjau-Italic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Dihjau';
-  src: url('/fonts/Dihjau-BoldItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
 @layer utilities {
-  .font-dihjau {
-    font-family: 'Dihjau', sans-serif;
-  }
   .font-cene {
     font-family: 'Cene', cursive;
   }

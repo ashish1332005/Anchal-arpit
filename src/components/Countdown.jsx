@@ -31,8 +31,8 @@ export default function Countdown({ targetDateIso }) {
       <div className="grid grid-cols-4 gap-2 sm:gap-4">
         {units.map(({ label, value }) => (
           <div key={label} className="flex flex-col items-center border-r border-[#D4AF37]/40 last:border-r-0">
-            <span className="font-dihjau text-xl sm:text-2xl font-bold leading-none text-[#5A121E]">{String(value).padStart(2, '0')}</span>
-            <span className="font-dihjau text-[9px] uppercase tracking-wider text-[#8B6508] font-bold mt-1">{label}</span>
+            <span className="font-cinzel text-lg sm:text-xl font-semibold leading-none text-[#5A121E]">{String(value).padStart(2, '0')}</span>
+            <span className="font-cinzel text-[8px] uppercase tracking-wide text-[#8B6508]">{label}</span>
           </div>
         ))}
       </div>
