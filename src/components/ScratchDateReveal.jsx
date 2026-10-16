@@ -89,18 +89,36 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   };
 
   return (
-    <div className="relative aspect-[7/8] w-[min(80vw,280px)] max-w-full mx-auto">
+    <div className="relative aspect-[7/8] w-[min(76vw,260px)] max-w-full mx-auto">
       {/* Revealed Inner Card Content */}
       <div className="absolute inset-0 select-none">
-        <img src={floralHeart} alt="Gold floral heart frame" className="absolute inset-x-0 bottom-0 h-[87.5%] w-full object-contain" />
+        <img src={floralHeart} alt="Gold floral heart frame" className="absolute inset-x-0 bottom-0 h-[88%] w-full object-contain" />
         <p className="font-lucy-said-ok absolute inset-x-0 top-0 text-center text-2xl sm:text-3xl text-[#8B6508]">
           Save the date
         </p>
-        {/* Date centered inside the heart - shifted right to align with heart center */}
-        <div className="absolute top-[44%] left-[58%] -translate-x-1/2 -translate-y-1/2 text-center w-[52%]">
-          <p className="font-cinzel text-[11px] sm:text-[12px] font-bold text-[#8B6508] tracking-[0.12em] leading-tight">11 &amp; 12</p>
-          <p className="font-cene text-2xl sm:text-3xl font-medium text-[#5A121E] leading-none my-0.5">DEC</p>
-          <p className="font-cinzel text-[10px] sm:text-[11px] font-bold text-[#8B6508] tracking-[0.18em] leading-tight">2026</p>
+        {/* Date centered inside the heart cavity */}
+        <div className="absolute top-[57%] left-[56%] -translate-x-1/2 -translate-y-1/2 text-center w-[52%]">
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex items-center gap-1.5 text-[#B78B34] mb-1">
+              <span className="w-4 h-px bg-[#B78B34]/60" />
+              <span className="text-[9px]">✦</span>
+              <span className="w-4 h-px bg-[#B78B34]/60" />
+            </div>
+            <p className="font-playfair text-[30px] sm:text-[34px] font-bold text-[#7B1124] leading-none">
+              11 &amp; 12
+            </p>
+            <p className="font-cinzel text-xs sm:text-[13px] font-bold tracking-[0.22em] text-[#8B6508] uppercase leading-none mt-1.5">
+              DECEMBER
+            </p>
+            <p className="font-cormorant text-sm sm:text-base font-semibold tracking-[0.18em] text-[#5A121E] leading-none mt-1">
+              2026
+            </p>
+            <div className="flex items-center gap-1.5 text-[#B78B34] mt-1.5">
+              <span className="w-4 h-px bg-[#B78B34]/60" />
+              <span className="text-[9px]">✦</span>
+              <span className="w-4 h-px bg-[#B78B34]/60" />
+            </div>
+          </div>
         </div>
       </div>
 

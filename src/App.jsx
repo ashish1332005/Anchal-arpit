@@ -86,37 +86,56 @@ function PherasIcon({ className = "w-4 h-4 text-[#F7D070]" }) {
   );
 }
 
-function EventTime({ value, className = "" }) {
+// Time like "7:00 PM" — Playfair numerals with small Cinzel meridiem (matches date numerals)
+function EventTime({ value, size = "md", className = "" }) {
   const match = value.match(/^(.*?)\s*(AM|PM)$/i);
   const hour = match?.[1] ?? value;
   const meridiem = match?.[2];
+  const hourSize = size === "sm" ? "text-lg sm:text-xl" : "text-[26px] sm:text-[30px]";
+  const meridiemSize = size === "sm" ? "text-[10px] sm:text-[11px]" : "text-xs sm:text-sm";
 
   return (
-    <span className={`inline-flex items-baseline justify-center gap-0.5 whitespace-nowrap text-[#2C1518] ${className}`}>
-      <span className="font-cene text-2xl sm:text-3xl font-normal leading-none">{hour}</span>
-      {meridiem && <span className="font-cinzel text-[10px] sm:text-[11px] font-bold tracking-wider leading-none self-end mb-0.5">{meridiem}</span>}
+    <span className={`inline-flex items-baseline justify-center gap-1 whitespace-nowrap text-[#7B1124] ${className}`}>
+      <span className={`font-playfair ${hourSize} font-semibold leading-none`}>{hour}</span>
+      {meridiem && <span className={`font-cinzel ${meridiemSize} font-bold tracking-wide leading-none`}>{meridiem}</span>}
     </span>
   );
 }
 
-function EventDate({ weekday, day, month, year = "2026" }) {
+// Secondary timing row, e.g. "Breakfast • 9:00 AM"
+function EventSubTime({ label, time }) {
   return (
-    <div className="mx-auto text-center">
-      <div className="inline-flex items-center justify-center gap-0">
-        {/* Left label */}
-        <span className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.15em] font-bold text-[#8B6508] uppercase inline-block w-[30px] text-right">{weekday}</span>
-        {/* Left rule */}
-        <span className="inline-block w-[28px] h-px bg-[#B78B34] mx-1.5" />
-        {/* Day number */}
-        <span className="font-cene text-[48px] sm:text-[58px] font-normal leading-none text-[#7B1124] mx-0.5">{day}</span>
-        {/* Right rule */}
-        <span className="inline-block w-[28px] h-px bg-[#B78B34] mx-1.5" />
-        {/* Right label */}
-        <span className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.15em] font-bold text-[#8B6508] uppercase inline-block w-[30px] text-left">{month}</span>
-      </div>
-      <p className="font-cinzel text-[10px] tracking-[0.5em] text-[#8B6508] font-medium -mt-1">{year}</p>
+    <div className="flex items-baseline justify-center gap-2">
+      <span className="font-cormorant font-bold text-lg sm:text-xl leading-none text-[#8B6508]">{label}</span>
+      <span className="text-[#B78B34] text-sm leading-none">•</span>
+      <EventTime value={time} size="sm" />
     </div>
   );
+}
+
+// FRI ——— 11 ——— DEC  with year beneath (labels sit on symmetric gold rules)
+function EventDate({ weekday, day, month, year = "2026" }) {
+  return (
+    <div className="mx-auto w-full max-w-[250px] text-center">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-end gap-3">
+        <div className="flex flex-col items-center gap-1.5 pb-2">
+          <span className="font-cinzel text-[11px] sm:text-xs tracking-[0.3em] pl-[0.3em] font-bold text-[#5A121E]/85 uppercase leading-none">{weekday}</span>
+          <span className="block h-px w-full bg-gradient-to-l from-[#B78B34] to-[#B78B34]/10" />
+        </div>
+        <span className="font-playfair text-[46px] sm:text-[54px] font-semibold leading-[0.9] text-[#7B1124]">{day}</span>
+        <div className="flex flex-col items-center gap-1.5 pb-2">
+          <span className="font-cinzel text-[11px] sm:text-xs tracking-[0.3em] pl-[0.3em] font-bold text-[#5A121E]/85 uppercase leading-none">{month}</span>
+          <span className="block h-px w-full bg-gradient-to-r from-[#B78B34] to-[#B78B34]/10" />
+        </div>
+      </div>
+      <p className="mt-1.5 font-cinzel text-[10px] sm:text-[11px] tracking-[0.5em] pl-[0.5em] text-[#5A121E]/80 font-bold leading-none">{year}</p>
+    </div>
+  );
+}
+
+// Divider that follows the timings in every event (same everywhere)
+function EventRule() {
+  return <LotusDivider color="#B78B34" className="scale-90" />;
 }
 
 // Royal Scalloped / Bracketed Timings Card
@@ -228,48 +247,48 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
           {/* Restored family invitation details, balanced in the parchment space */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[4vh] pb-3 flex-1 flex flex-col items-center justify-start gap-0 sm:gap-0 text-[#2C1518]">
+          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[5vh] sm:pt-[6vh] pb-3 flex-1 flex flex-col items-center justify-start text-[#2C1518]">
             {/* Invocations block */}
-            <div className="flex w-full flex-col items-center gap-1 font-cinzel font-bold leading-tight tracking-wide text-[#7B1124] mb-4">
-              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-12 w-12 object-contain" />
-            {/* All three invocations in one horizontal row */}
-            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5">
-              <p className="font-cormorant font-semibold text-[10px] min-[380px]:text-[11px] sm:text-xs tracking-[0.1em] text-center text-[#5A121E]">
-                {WEDDING_DETAILS.invocations[1].en}
-              </p>
-              <span className="text-[#B78B34] text-[10px] font-bold">·</span>
-              <p className="font-cormorant font-medium text-[10px] min-[380px]:text-[11px] sm:text-xs tracking-[0.08em] text-center text-[#7B1124]">
-                {WEDDING_DETAILS.invocations[0].en}
-              </p>
-              <span className="text-[#B78B34] text-[10px] font-bold">·</span>
-              <p className="font-cormorant font-medium text-[10px] min-[380px]:text-[11px] sm:text-xs tracking-[0.08em] text-center text-[#7B1124]">
-                {WEDDING_DETAILS.invocations[2].en}
-              </p>
-            </div>
+            <div className="flex w-full flex-col items-center gap-1.5 font-cinzel text-[#7B1124] mb-5 sm:mb-6">
+              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-11 w-11 object-contain mb-1" />
+              {/* All three invocations in one horizontal row */}
+              <div className="flex items-center justify-center gap-1.5 min-[380px]:gap-2 w-full whitespace-nowrap text-[#7B1124]">
+                <span className="font-cinzel text-[9.5px] min-[380px]:text-[10.5px] sm:text-xs font-semibold tracking-wider">
+                  Shri Ramcharanay Namah
+                </span>
+                <span className="text-[#B78B34] text-[10px]">•</span>
+                <span className="font-cinzel text-[10px] min-[380px]:text-[11px] sm:text-[12.5px] font-bold tracking-widest text-[#5A121E]">
+                  || Shri Ganeshay Namah ||
+                </span>
+                <span className="text-[#B78B34] text-[10px]">•</span>
+                <span className="font-cinzel text-[9.5px] min-[380px]:text-[10.5px] sm:text-xs font-semibold tracking-wider">
+                  Shri Pitra Devay Namah
+                </span>
+              </div>
             </div>
 
-            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-9 h-9 object-contain mb-3" />
+            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-10 h-10 object-contain mb-3" />
 
-            <p className="max-w-[340px] font-cormorant text-base sm:text-lg leading-snug font-medium">
+            <p className="max-w-[340px] font-cormorant text-base sm:text-lg leading-snug font-medium mb-1">
               The Kabra family requests the pleasure of your company at the wedding celebration.
             </p>
 
             <div className="w-full space-y-0.5">
-              <h1 className="font-allura text-6xl sm:text-7xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.groom}</h1>
-              <p className="font-cormorant text-sm sm:text-base font-medium leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
-              <p className="font-cormorant text-sm sm:text-base font-medium leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
+              <h1 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.groom}</h1>
+              <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">G/S Ratan Devi &amp; Ram Rai Ji Kabra</p>
+              <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
             </div>
 
-            <div className="flex items-center justify-center gap-3 w-full">
+            <div className="flex items-center justify-center gap-3 w-full my-1.5">
               <span className="w-10 h-px bg-[#8B6508]/50" />
               <span className="font-playfair text-sm text-[#8B6508] font-semibold">with</span>
               <span className="w-10 h-px bg-[#8B6508]/50" />
             </div>
 
             <div className="w-full space-y-0.5">
-              <h2 className="font-allura text-6xl sm:text-7xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.bride}</h2>
-              <p className="font-cormorant text-sm sm:text-base font-medium leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
-              <p className="font-cormorant text-sm sm:text-base font-medium leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
+              <h2 className="font-allura text-5xl sm:text-6xl text-[#5A121E] font-medium leading-none">{WEDDING_DETAILS.couple.bride}</h2>
+              <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">G/D Late Janki Devi &amp; Late Shivlal Ji Chechani</p>
+              <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">D/O Leela Devi &amp; Dinesh Chechani</p>
             </div>
           </div>
 
@@ -277,10 +296,12 @@ export default function App() {
           <div className="relative z-20 pb-4">
             <RoyalSwipeUp onClick={() => scrollToSlide(1)} label="SWIPE UP" />
           </div>
-        </section>        {/* ======================================================== */}
-        {/* SLIDE 2: SCRATCH-TO-REVEAL DATE & VENUE (COMPACT SPACE) */}
+        </section>
+
         {/* ======================================================== */}
-        <section className="story-slide w-full h-auto snap-start relative flex flex-col items-center justify-center px-4 py-6 sm:py-8 overflow-hidden text-center bg-[#F3E9D9] select-none">
+        {/* SLIDE 2: SCRATCH-TO-REVEAL DATE & VENUE (FULL SCREEN) */}
+        {/* ======================================================== */}
+        <section className="story-slide w-full h-[100dvh] snap-start relative flex flex-col items-center justify-center px-4 py-6 overflow-hidden text-center bg-[#F3E9D9] select-none">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#f7f0e4_58%,_#eadcc8_100%)]" />
 
           {/* Confetti spreads from the scratch card and stays behind all text. */}
@@ -313,7 +334,7 @@ export default function App() {
 
           <div className="relative z-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center">
             {/* Scratch directly over the transparent floral heart image. */}
-            <div className="my-2">
+            <div className="my-1">
               <ScratchDateReveal revealed={dateRevealed} onReveal={() => {
                 setDateRevealed(true);
                 setShowScratchConfetti(true);
@@ -323,21 +344,21 @@ export default function App() {
 
             {/* ONLY REVEALED AFTER SCRATCHING: Naturally expands space according to content */}
             {dateRevealed && (
-              <div className="w-full mt-3 space-y-2 animate-fadeIn transition-all duration-700">
+              <div className="w-full mt-2 space-y-2 animate-fadeIn transition-all duration-700">
                 {/* Countdown */}
                 <div className="mx-auto w-full max-w-xs pt-1">
-                  <p className="font-cinzel text-xs uppercase tracking-[0.2em] text-[#8B6508] font-bold mb-1.5">
+                  <p className="font-cinzel text-xs uppercase tracking-[0.2em] text-[#8B6508] font-bold mb-1">
                     Countdown to the wedding
                   </p>
                   <Countdown targetDateIso={WEDDING_DETAILS.dates.startDateIso} />
                 </div>
 
                 {/* View Events Button */}
-                <div className="pt-3">
+                <div className="pt-2">
                   <button
                     type="button"
                     onClick={() => scrollToSlide(2)}
-                    className="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#4A0E18] via-[#631422] to-[#4A0E18] border border-[#D4AF37] shadow-lg text-[#F7D070] font-cinzel text-xs font-bold tracking-wider uppercase hover:scale-105 active:scale-95 transition-all"
+                    className="inline-flex items-center gap-1.5 px-6 py-2 rounded-full bg-gradient-to-r from-[#4A0E18] via-[#631422] to-[#4A0E18] border border-[#D4AF37] shadow-lg text-[#F7D070] font-cinzel text-xs font-bold tracking-wider uppercase hover:scale-105 active:scale-95 transition-all"
                   >
                     <span>View Wedding Events</span>
                     <ChevronDown className="h-3.5 w-3.5 text-[#F7D070]" />
@@ -355,27 +376,24 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#5A121E] select-none"
           style={{ backgroundImage: "url('/assets/74c1371d-2510-43ca-bfad-2e054f6048f7.png')", backgroundSize: '100% 100%' }}
         >
-          {/* Fixed top padding pushes content into the blank lower parchment area, below the Ganesha artwork */}
-          <div className="pt-[52vh] sm:pt-[54vh]" />
+          {/* Top spacer puts content cleanly below Lord Ganesha's pedestal */}
+          <div className="pt-[48vh] sm:pt-[50vh]" />
 
           {/* Content block in the blank lower parchment */}
-          <div className="relative z-10 space-y-2 max-w-sm mx-auto px-4">
-            <h2 className="font-lucy-said-ok whitespace-nowrap text-5xl sm:text-6xl text-[#5A121E] leading-tight">
+          <div className="relative z-10 space-y-1.5 max-w-sm mx-auto px-4">
+            <h2 className="font-lucy-said-ok whitespace-nowrap text-4xl sm:text-5xl text-[#5A121E] leading-tight">
               Vinayak Sthapna
             </h2>
-            <LotusDivider color="#8B6508" className="scale-75 my-0.5" />
+            <EventDate weekday="FRI" day="11" month="DEC" />
             <div className="space-y-1 pt-0.5">
-              <EventDate weekday="FRI" day="11" month="DEC" />
-              <p className="flex items-baseline justify-center pt-1 text-[#7B1124]"><EventTime value="7:00 AM" /></p>
-              <div className="flex items-center justify-center gap-2 pt-0.5 text-[#8B6508]">
-                <span className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.12em] font-bold uppercase">Followed by Breakfast</span>
-                <span className="font-cene text-lg leading-none">·</span>
-                <EventTime value="9:00 AM" />
-              </div>
-              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/80 max-w-xs mx-auto leading-snug pt-0.5">
-                "Auspicious beginnings invoke Lord Ganesha's blessings for a lifetime of joy"
-              </p>
+              <EventTime value="7:00 AM" />
+              <EventSubTime label="Breakfast" time="9:00 AM" />
             </div>
+            {/* Lotus divider AFTER time */}
+            <LotusDivider color="#8B6508" className="scale-75 my-1" />
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/85 max-w-xs mx-auto leading-snug">
+              "Auspicious beginnings invoke Lord Ganesha's blessings for a lifetime of joy"
+            </p>
           </div>
 
           <div className="flex-1" />
@@ -390,23 +408,20 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/carnival-new-bg.jpg')" }}
         >
           {/* Content in the blank sky area */}
-          <div className="relative z-10 pt-[22vh] sm:pt-[24vh] space-y-2 max-w-sm mx-auto px-4">
-            <h2 className="font-lucy-said-ok text-5xl sm:text-6xl text-[#5A121E] leading-tight">
+          <div className="relative z-10 pt-[20vh] sm:pt-[22vh] space-y-1.5 max-w-sm mx-auto px-4">
+            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
               Carnival
             </h2>
-            <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
+            <EventDate weekday="FRI" day="11" month="DEC" />
             <div className="space-y-1 pt-0.5">
-              <EventDate weekday="FRI" day="11" month="DEC" />
-              <p className="flex items-baseline justify-center pt-1"><EventTime value="11:00 AM" /></p>
-              <div className="flex items-center justify-center gap-2 pt-0.5 text-[#8B6508]">
-                <span className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.12em] font-bold uppercase">Followed by Lunch</span>
-                <span className="font-cene text-lg leading-none">·</span>
-                <EventTime value="1:00 PM" />
-              </div>
-              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug pt-0.5">
-                "A vibrant celebration of laughter, love, music and endless memories"
-              </p>
+              <EventTime value="11:00 AM" />
+              <EventSubTime label="Lunch" time="1:00 PM" />
             </div>
+            {/* Lotus divider AFTER time */}
+            <LotusDivider color="#5A121E" className="scale-75 my-1" />
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+              "A vibrant celebration of laughter, love, music and endless memories"
+            </p>
           </div>
 
           <div className="flex-1" />
@@ -420,19 +435,20 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-5 sm:p-7 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Dreamy%20Floral%20Wedding%20Pavilion.png')" }}
         >
-          <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-2 max-w-sm mx-auto px-4">
-            <h2 className="font-lucy-said-ok text-5xl sm:text-6xl text-[#5A121E] leading-tight">
+          <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
+            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
               <span className="block">Sangeet</span>
               <span className="block">&amp; Ring Ceremony</span>
             </h2>
-            <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
-            <div className="space-y-1 pt-0.5">
-              <EventDate weekday="FRI" day="11" month="DEC" />
-              <p className="flex items-baseline justify-center pt-1 text-[#5A121E]"><EventTime value="7:00 PM" /></p>
-              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] leading-snug pt-0.5">
-                "Let's dance, let's sing, let our hearts take flight, as we celebrate this love under the stars tonight."
-              </p>
+            <EventDate weekday="FRI" day="11" month="DEC" />
+            <div className="pt-0.5">
+              <EventTime value="7:00 PM" />
             </div>
+            {/* Lotus divider AFTER time */}
+            <LotusDivider color="#5A121E" className="scale-75 my-1" />
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] leading-snug">
+              "Let's dance, let's sing, let our hearts take flight, as we celebrate this love under the stars tonight."
+            </p>
           </div>
 
           <div className="flex-1" />
@@ -446,19 +462,20 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Elegant%20Indian%20Wedding%20Kalash%20Invitation%20Frame.png')" }}
         >
-          <div className="relative z-10 pt-[14vh] sm:pt-[16vh] space-y-2 max-w-sm mx-auto px-4">
+          <div className="relative z-10 pt-[14vh] sm:pt-[16vh] space-y-1.5 max-w-sm mx-auto px-4">
             <p className="font-cinzel text-[10px] tracking-widest text-[#8B6508] font-bold">॥ शुभारम्भ ॥</p>
-            <h2 className="font-lucy-said-ok text-5xl sm:text-6xl text-[#5A121E] leading-tight">
+            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
               Mangal Kalash
             </h2>
-            <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
-            <div className="space-y-1 pt-0.5">
-              <EventDate weekday="SAT" day="12" month="DEC" />
-              <p className="flex items-baseline justify-center pt-1"><EventTime value="9:00 AM" /></p>
-              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug pt-0.5">
-                "As sacred waters fill the kalash, may your home fill with peace, prosperity and divine grace"
-              </p>
+            <EventDate weekday="SAT" day="12" month="DEC" />
+            <div className="pt-0.5">
+              <EventTime value="9:00 AM" />
             </div>
+            {/* Lotus divider AFTER time */}
+            <LotusDivider color="#5A121E" className="scale-75 my-1" />
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+              "As sacred waters fill the kalash, may your home fill with peace, prosperity and divine grace"
+            </p>
           </div>
 
           <div className="flex-1" />
@@ -472,18 +489,19 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/6164520a-341e-4297-8a9a-d5e5f0c9d5c8.png')" }}
         >
-          <div className="relative z-10 pt-[14vh] sm:pt-[16vh] space-y-2 max-w-sm mx-auto px-4">
-            <h2 className="font-lucy-said-ok text-5xl sm:text-6xl text-[#5A121E] leading-tight">
+          <div className="relative z-10 pt-[14vh] sm:pt-[16vh] space-y-1.5 max-w-sm mx-auto px-4">
+            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
               Mayra
             </h2>
-            <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
-            <div className="space-y-1 pt-0.5">
-              <EventDate weekday="SAT" day="12" month="DEC" />
-              <p className="flex items-baseline justify-center pt-1"><EventTime value="11:00 AM" /></p>
-              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug pt-0.5">
-                "Where traditions are cherished and blessings flow from mama's heart to bride's new life"
-              </p>
+            <EventDate weekday="SAT" day="12" month="DEC" />
+            <div className="pt-0.5">
+              <EventTime value="11:00 AM" />
             </div>
+            {/* Lotus divider AFTER time */}
+            <LotusDivider color="#5A121E" className="scale-75 my-1" />
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+              "Where traditions are cherished and blessings flow from mama's heart to bride's new life"
+            </p>
           </div>
 
           <div className="flex-1" />
@@ -497,44 +515,43 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/wedding-ceremony-new-bg.jpg')" }}
         >
-          <div className="relative z-10 pt-[8vh] sm:pt-[10vh] space-y-2 max-w-sm mx-auto px-3">
+          <div className="relative z-10 pt-[8vh] sm:pt-[10vh] space-y-1.5 max-w-sm mx-auto px-3">
             {/* No logo — heading directly */}
-            <h2 className="font-lucy-said-ok text-5xl sm:text-6xl text-[#5A121E] leading-tight">
+            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
               Wedding Ceremony
             </h2>
-            <LotusDivider color="#5A121E" className="scale-75 my-0.5" />
-            <div className="space-y-1.5 pt-0.5">
-              <EventDate weekday="SAT" day="12" month="DEC" />
-              {/* Time grid — three columns */}
-              <div className="pt-1">
-                <OrnateCard isDark={false} maxWidth="max-w-xs">
-                  <div className="grid grid-cols-3 items-stretch text-center divide-x divide-[#D4AF37]/50 py-1.5">
-                    {/* Nikasi */}
-                    <div className="flex flex-col items-center justify-center gap-1 px-1">
-                      <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Nikasi</span>
-                      <EventTime value="6:00 PM" />
-                    </div>
-                    {/* Reception */}
-                    <div className="flex flex-col items-center justify-center gap-1 px-1">
-                      <Utensils className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Reception</span>
-                      <EventTime value="7:00 PM" />
-                    </div>
-                    {/* Pheras */}
-                    <div className="flex flex-col items-center justify-center gap-1 px-1">
-                      <PherasIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
-                      <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Pheras</span>
-                      <EventTime value="10:30 PM" />
-                    </div>
+            <EventDate weekday="SAT" day="12" month="DEC" />
+            {/* Time grid — three columns */}
+            <div className="pt-1">
+              <OrnateCard isDark={false} maxWidth="max-w-xs">
+                <div className="grid grid-cols-3 items-stretch text-center divide-x divide-[#D4AF37]/50 py-1.5">
+                  {/* Nikasi */}
+                  <div className="flex flex-col items-center justify-center gap-1 px-1">
+                    <Crown className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                    <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Nikasi</span>
+                    <EventTime value="6:00 PM" size="sm" />
                   </div>
-                </OrnateCard>
-              </div>
-              {/* Quote after times */}
-              <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug pt-0.5">
-                "Welcoming our dear ones with open hearts and warm smiles"
-              </p>
+                  {/* Reception */}
+                  <div className="flex flex-col items-center justify-center gap-1 px-1">
+                    <Utensils className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                    <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Reception</span>
+                    <EventTime value="7:00 PM" size="sm" />
+                  </div>
+                  {/* Pheras */}
+                  <div className="flex flex-col items-center justify-center gap-1 px-1">
+                    <PherasIcon className="w-3.5 h-3.5 text-[#8B6508] shrink-0" />
+                    <span className="font-cinzel uppercase text-[9px] sm:text-[10px] tracking-wide font-bold text-[#5A121E]">Pheras</span>
+                    <EventTime value="10:30 PM" size="sm" />
+                  </div>
+                </div>
+              </OrnateCard>
             </div>
+            {/* Lotus divider AFTER time */}
+            <LotusDivider color="#5A121E" className="scale-75 my-1" />
+            {/* Quote after times */}
+            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-xs mx-auto leading-snug">
+              "Welcoming our dear ones with open hearts and warm smiles"
+            </p>
           </div>
 
           <div className="flex-1" />
@@ -544,20 +561,21 @@ export default function App() {
         {/* ======================================================== */}
         {/* SLIDE 10: VENUE & LOCATION */}
         <section
-          className="story-slide w-full h-[78dvh] min-h-[540px] max-h-[700px] snap-start relative flex flex-col items-center justify-center px-3 bg-center text-center select-none overflow-hidden"
-          style={{ backgroundImage: "url('/assets/bggg.png')", backgroundSize: 'auto 100%', backgroundRepeat: 'no-repeat' }}
+          className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none"
+          style={{ backgroundImage: "url('/assets/bggg.png')" }}
         >
-          <div className="absolute z-10 top-[54%] -translate-y-1/2 w-[min(88%,380px)] mx-auto text-center space-y-2">
+          <div className="pt-[35vh] sm:pt-[37vh]" />
+          <div className="relative z-10 w-[min(88%,360px)] mx-auto text-center space-y-2 px-2">
             {/* Heading styled like other event slides */}
             <div className="space-y-0.5">
               <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight drop-shadow-sm">
                 Venue &amp; Location
               </h2>
-              <LotusDivider color="#8B6508" className="scale-75 my-0" />
+              <LotusDivider color="#8B6508" className="scale-75 my-0.5" />
             </div>
 
             {/* Map panel */}
-            <div className="relative p-2 bg-[#F3E9D9]/95 rounded-xl border border-[#D4AF37]/70 shadow-lg overflow-hidden group">
+            <div className="relative p-1.5 bg-[#F3E9D9]/95 rounded-xl border border-[#D4AF37]/70 shadow-lg overflow-hidden group">
               <a
                 href={WEDDING_DETAILS.dates.googleMapsUrl}
                 target="_blank"
@@ -572,14 +590,14 @@ export default function App() {
                 />
                 <div className="absolute inset-0 bg-[#5A121E]/10 group-hover:bg-transparent transition-colors" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg text-[#5A121E]">
-                    <Navigation className="w-6 h-6" />
+                  <div className="bg-white/90 backdrop-blur-sm p-2.5 rounded-full shadow-lg text-[#5A121E]">
+                    <Navigation className="w-5 h-5" />
                   </div>
                 </div>
               </a>
             </div>
 
-            <div className="mx-auto w-fit max-w-full rounded-2xl border border-white/70 bg-[#FFFCF5]/85 px-5 py-2 shadow-md backdrop-blur-sm">
+            <div className="mx-auto w-fit max-w-full rounded-2xl border border-white/70 bg-[#FFFCF5]/90 px-4 py-1.5 shadow-md backdrop-blur-sm">
               <p className="font-cormorant font-semibold text-base sm:text-lg leading-tight text-[#5A121E]">
                 {WEDDING_DETAILS.dates.venueName}
               </p>
@@ -587,15 +605,18 @@ export default function App() {
                 href={WEDDING_DETAILS.dates.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#FBF5B7] to-[#AA771C] text-[#5A121E] font-cinzel text-xs font-bold uppercase tracking-widest shadow-lg hover:scale-105 transition-transform border border-[#D4AF37]"
+                className="mt-1 inline-flex items-center gap-1.5 px-5 py-1.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#FBF5B7] to-[#AA771C] text-[#5A121E] font-cinzel text-xs font-bold uppercase tracking-widest shadow-lg hover:scale-105 transition-transform border border-[#D4AF37]"
               >
-                <Navigation className="w-4 h-4" />
+                <Navigation className="w-3.5 h-3.5" />
                 <span>{dict.getDirections}</span>
               </a>
             </div>
           </div>
+          <div className="flex-1" />
+          <RoyalSwipeUp onClick={() => scrollToSlide(9)} />
         </section>
 
+        {/* ======================================================== */}
         {/* SLIDE 11: WITH LOVE & BLESSINGS (Family, Compliments, Nanihaal & Samdhi) */}
         {/* ======================================================== */}
         <section
@@ -687,7 +708,7 @@ export default function App() {
                 MITTHI MANUHAR
               </p>
               {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-normal text-[13px] sm:text-[14px] text-[#2C1518] leading-tight">
                   {item}
                 </p>
               ))}

@@ -22,9 +22,9 @@ export const WEDDING_DETAILS = {
   },
 
   invocations: [
-    { key: "top", hi: "|| श्री रामचरणाय नमः ||", en: "|| SHRI RAMCHARNAY NAMAH ||" },
-    { key: "left", hi: "|| श्री गणेशाय नमः ||", en: "|| SHRI GANESHAY NAMAH ||" },
-    { key: "right", hi: "|| ???? ????????? ??? ||", en: "|| SHRI PITRA DEVAY NAMAH ||" },
+    { key: "top", hi: "|| श्री रामचरणाय नमः ||", en: "Shri Ramcharanay Namah" },
+    { key: "left", hi: "|| श्री गणेशाय नमः ||", en: "|| Shri Ganeshay Namah ||" },
+    { key: "right", hi: "|| श्री पितृदेवाय नमः ||", en: "Shri Pitra Devay Namah" },
   ],
 
   december11Events: [
