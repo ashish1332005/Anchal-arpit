@@ -44,9 +44,28 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'DihjauS';
+  src: url('/fonts/DihjauS-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DihjauS';
+  src: url('/fonts/DihjauS-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer utilities {
   .font-dihjau {
-    font-family: 'Dihjau', sans-serif;
+    font-family: 'Dihjau', 'DihjauS', Georgia, serif;
+  }
+  .font-dihjau-s {
+    font-family: 'DihjauS', 'Dihjau', Georgia, serif;
   }
   .font-cene {
     font-family: 'Cene', cursive;

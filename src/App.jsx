@@ -86,7 +86,7 @@ function PherasIcon({ className = "w-4 h-4 text-[#F7D070]" }) {
   );
 }
 
-// Time like "7:00 PM" — Playfair numerals with small Cinzel meridiem (matches date numerals)
+// Time like "7:00 PM" — Dihjau numerals with Dihjau meridiem (matches date numerals)
 function EventTime({ value, size = "md", className = "" }) {
   const match = value.match(/^(.*?)\s*(AM|PM)$/i);
   const hour = match?.[1] ?? value;
@@ -96,8 +96,8 @@ function EventTime({ value, size = "md", className = "" }) {
 
   return (
     <span className={`inline-flex items-baseline justify-center gap-1 whitespace-nowrap text-[#7B1124] ${className}`}>
-      <span className={`font-playfair ${hourSize} font-semibold leading-none`}>{hour}</span>
-      {meridiem && <span className={`font-cinzel ${meridiemSize} font-bold tracking-wide leading-none`}>{meridiem}</span>}
+      <span className={`font-dihjau ${hourSize} font-bold leading-none`}>{hour}</span>
+      {meridiem && <span className={`font-dihjau ${meridiemSize} font-bold tracking-wide leading-none`}>{meridiem}</span>}
     </span>
   );
 }
@@ -119,16 +119,16 @@ function EventDate({ weekday, day, month, year = "2026" }) {
     <div className="mx-auto w-full max-w-[250px] text-center">
       <div className="grid grid-cols-[1fr_auto_1fr] items-end gap-3">
         <div className="flex flex-col items-center gap-1.5 pb-2">
-          <span className="font-cinzel text-[11px] sm:text-xs tracking-[0.3em] pl-[0.3em] font-bold text-[#5A121E]/85 uppercase leading-none">{weekday}</span>
+          <span className="font-dihjau text-[11px] sm:text-xs tracking-[0.25em] pl-[0.25em] font-bold text-[#5A121E]/85 uppercase leading-none">{weekday}</span>
           <span className="block h-px w-full bg-gradient-to-l from-[#B78B34] to-[#B78B34]/10" />
         </div>
-        <span className="font-playfair text-[46px] sm:text-[54px] font-semibold leading-[0.9] text-[#7B1124]">{day}</span>
+        <span className="font-dihjau text-[48px] sm:text-[56px] font-bold leading-[0.9] text-[#7B1124]">{day}</span>
         <div className="flex flex-col items-center gap-1.5 pb-2">
-          <span className="font-cinzel text-[11px] sm:text-xs tracking-[0.3em] pl-[0.3em] font-bold text-[#5A121E]/85 uppercase leading-none">{month}</span>
+          <span className="font-dihjau text-[11px] sm:text-xs tracking-[0.25em] pl-[0.25em] font-bold text-[#5A121E]/85 uppercase leading-none">{month}</span>
           <span className="block h-px w-full bg-gradient-to-r from-[#B78B34] to-[#B78B34]/10" />
         </div>
       </div>
-      <p className="mt-1.5 font-cinzel text-[10px] sm:text-[11px] tracking-[0.5em] pl-[0.5em] text-[#5A121E]/80 font-bold leading-none">{year}</p>
+      <p className="mt-1.5 font-dihjau text-[11px] sm:text-[12px] tracking-[0.45em] pl-[0.45em] text-[#5A121E]/80 font-bold leading-none">{year}</p>
     </div>
   );
 }
@@ -789,7 +789,7 @@ export default function App() {
                   <a
                     key={idx}
                     href={`tel:+91${phone}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-cinzel text-[10px] sm:text-[11px] font-bold tracking-wider hover:scale-105 transition-transform shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#5A121E] text-[#F7D070] font-dihjau text-[11px] sm:text-xs font-bold tracking-wide hover:scale-105 transition-transform shadow-xs"
                   >
                     <Phone className="w-2.5 h-2.5" />
                     <span>{phone}</span>
