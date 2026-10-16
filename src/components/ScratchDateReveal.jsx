@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import floralHeart from '../assets/image.png';
+import coupleRoseHeart from '../assets/image copy.png';
 
 const REVEAL_THRESHOLD = 0.35;
 
@@ -89,36 +89,29 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   };
 
   return (
-    <div className="relative aspect-[7/8] w-[min(76vw,260px)] max-w-full mx-auto">
+    <div className="relative aspect-[1/1] w-[min(82vw,290px)] max-w-full mx-auto select-none rounded-2xl overflow-hidden shadow-md border border-[#D4AF37]/50 bg-gradient-to-b from-[#FFFDF8] via-[#FAF4EA] to-[#F5EAD6]">
       {/* Revealed Inner Card Content */}
-      <div className="absolute inset-0 select-none">
-        <img src={floralHeart} alt="Gold floral heart frame" className="absolute inset-x-0 bottom-0 h-[88%] w-full object-contain" />
-        <p className="font-lucy-said-ok absolute inset-x-0 top-0 text-center text-2xl sm:text-3xl text-[#8B6508]">
+      <div className="absolute inset-0 flex flex-col items-center justify-between p-2.5">
+        <p className="font-lucy-said-ok text-center text-2xl sm:text-3xl text-[#8B6508] leading-tight">
           Save the date
         </p>
-        {/* Date centered inside the heart cavity */}
-        <div className="absolute top-[57%] left-[56%] -translate-x-1/2 -translate-y-1/2 text-center w-[52%]">
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex items-center gap-1.5 text-[#B78B34] mb-1">
-              <span className="w-4 h-px bg-[#B78B34]/60" />
-              <span className="text-[9px]">✦</span>
-              <span className="w-4 h-px bg-[#B78B34]/60" />
-            </div>
-            <p className="font-playfair text-[30px] sm:text-[34px] font-bold text-[#7B1124] leading-none">
-              11 &amp; 12
-            </p>
-            <p className="font-cinzel text-xs sm:text-[13px] font-bold tracking-[0.22em] text-[#8B6508] uppercase leading-none mt-1.5">
-              DECEMBER
-            </p>
-            <p className="font-cormorant text-sm sm:text-base font-semibold tracking-[0.18em] text-[#5A121E] leading-none mt-1">
-              2026
-            </p>
-            <div className="flex items-center gap-1.5 text-[#B78B34] mt-1.5">
-              <span className="w-4 h-px bg-[#B78B34]/60" />
-              <span className="text-[9px]">✦</span>
-              <span className="w-4 h-px bg-[#B78B34]/60" />
-            </div>
-          </div>
+
+        {/* Couple with Red Rose Petal Heart */}
+        <div className="relative flex-1 w-full flex items-center justify-center overflow-hidden my-0.5">
+          <img
+            src={coupleRoseHeart}
+            alt="Wedding Couple Rose Petal Heart"
+            className="w-full h-full object-contain drop-shadow-sm"
+          />
+        </div>
+
+        {/* Royal Wedding Date Badge */}
+        <div className="flex items-center justify-center gap-2 text-center pb-0.5">
+          <span className="w-4 sm:w-6 h-px bg-[#B78B34]/70" />
+          <p className="font-playfair text-base sm:text-lg font-bold text-[#7B1124] tracking-wide whitespace-nowrap">
+            11 &amp; 12 December 2026
+          </p>
+          <span className="w-4 sm:w-6 h-px bg-[#B78B34]/70" />
         </div>
       </div>
 

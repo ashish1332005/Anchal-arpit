@@ -246,30 +246,32 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col justify-between overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
-          {/* Restored family invitation details, balanced in the parchment space */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-6 pt-[5vh] sm:pt-[6vh] pb-3 flex-1 flex flex-col items-center justify-start text-[#2C1518]">
-            {/* Invocations block */}
-            <div className="flex w-full flex-col items-center gap-1.5 font-cinzel text-[#7B1124] mb-5 sm:mb-6">
-              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-11 w-11 object-contain mb-1" />
-              {/* All three invocations in one horizontal row */}
-              <div className="flex items-center justify-center gap-1.5 min-[380px]:gap-2 w-full whitespace-nowrap text-[#7B1124]">
-                <span className="font-cinzel text-[9.5px] min-[380px]:text-[10.5px] sm:text-xs font-semibold tracking-wider">
+          {/* Top Invocations Section */}
+          <div className="relative z-10 w-full max-w-md mx-auto px-2 pt-[4vh] sm:pt-[5vh] flex flex-col items-center">
+            <div className="flex w-full flex-col items-center gap-1 text-[#7B1124]">
+              <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 sm:h-11 sm:w-11 object-contain mb-0.5" />
+              {/* All three invocations in one horizontal row - perfectly sized so it never clips */}
+              <div className="flex items-center justify-center gap-1 min-[360px]:gap-1.5 sm:gap-2.5 w-full px-1 text-[#7B1124]">
+                <span className="font-cinzel text-[8px] min-[360px]:text-[8.5px] min-[390px]:text-[9.5px] sm:text-xs font-semibold tracking-wide whitespace-nowrap">
                   Shri Ramcharanay Namah
                 </span>
-                <span className="text-[#B78B34] text-[10px]">•</span>
-                <span className="font-cinzel text-[10px] min-[380px]:text-[11px] sm:text-[12.5px] font-bold tracking-widest text-[#5A121E]">
+                <span className="text-[#B78B34] text-[8px] sm:text-[10px] shrink-0">•</span>
+                <span className="font-cinzel text-[8.5px] min-[360px]:text-[9px] min-[390px]:text-[10.5px] sm:text-xs font-bold tracking-wider text-[#5A121E] whitespace-nowrap">
                   || Shri Ganeshay Namah ||
                 </span>
-                <span className="text-[#B78B34] text-[10px]">•</span>
-                <span className="font-cinzel text-[9.5px] min-[380px]:text-[10.5px] sm:text-xs font-semibold tracking-wider">
+                <span className="text-[#B78B34] text-[8px] sm:text-[10px] shrink-0">•</span>
+                <span className="font-cinzel text-[8.5px] min-[360px]:text-[9px] min-[390px]:text-[9.5px] sm:text-xs font-semibold tracking-wide whitespace-nowrap">
                   Shri Pitra Devay Namah
                 </span>
               </div>
             </div>
+          </div>
 
-            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-10 h-10 object-contain mb-3" />
+          {/* Main Invitation Card Content - Centered in parchment space with generous gap from invocations */}
+          <div className="relative z-10 w-full max-w-md mx-auto px-6 flex-1 flex flex-col items-center justify-center my-auto py-2 text-[#2C1518]">
+            <img src="/assets/couple_logo.png" alt="Arpit and Anchal monogram" className="w-11 h-11 sm:w-12 sm:h-12 object-contain mb-3 drop-shadow-xs" />
 
-            <p className="max-w-[340px] font-cormorant text-base sm:text-lg leading-snug font-medium mb-1">
+            <p className="max-w-[340px] font-cormorant text-base sm:text-lg leading-snug font-medium mb-2">
               The Kabra family requests the pleasure of your company at the wedding celebration.
             </p>
 
@@ -279,7 +281,7 @@ export default function App() {
               <p className="font-cormorant text-xs sm:text-sm font-medium leading-snug">S/O Rinku &amp; Sanjay Kabra</p>
             </div>
 
-            <div className="flex items-center justify-center gap-3 w-full my-1.5">
+            <div className="flex items-center justify-center gap-3 w-full my-2">
               <span className="w-10 h-px bg-[#8B6508]/50" />
               <span className="font-playfair text-sm text-[#8B6508] font-semibold">with</span>
               <span className="w-10 h-px bg-[#8B6508]/50" />
