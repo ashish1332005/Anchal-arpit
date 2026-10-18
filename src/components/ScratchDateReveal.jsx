@@ -113,27 +113,36 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
 
           {/*
             Date inside heart hollow.
-            image.png: flowers occupy left ~40%, rings at bottom-right.
-            Hollow center is at ~62% from left, ~33% from top.
+            Properly centered in the unobstructed cavity of the floral heart:
+            Horizontal center: ~61.5%, Vertical center: ~46% with translate(-50%, -50%).
           */}
           <div
-            className="absolute text-center flex flex-col items-center justify-center"
+            className="absolute text-center flex flex-col items-center justify-center pointer-events-none select-none"
             style={{
-              left: '62%',
-              top: '32%',
-              transform: 'translateX(-50%)',
+              left: '61.5%',
+              top: '46%',
+              transform: 'translate(-50%, -50%)',
               width: '46%',
             }}
           >
-            <p className="font-dihjau text-[32px] sm:text-[36px] font-bold text-[#7B1124] leading-none whitespace-nowrap">
+            {/* The Date: 12 */}
+            <span className="font-cormorant text-[40px] sm:text-[46px] font-bold text-[#6A1B29] leading-none tracking-tight">
               12
-            </p>
-            <p className="font-dihjau text-[13px] sm:text-[14.5px] tracking-[0.22em] font-bold text-[#7B1124] leading-tight mt-1">
-              DECEMBER
-            </p>
-            <p className="font-dihjau text-[20px] sm:text-[23px] font-bold text-[#5A121E] tracking-[0.18em] mt-0.5">
+            </span>
+
+            {/* Month: DECEMBER with delicate gold accent lines */}
+            <div className="flex items-center justify-center gap-1.5 w-full my-0.5">
+              <span className="h-[1px] w-3.5 sm:w-5 bg-gradient-to-r from-transparent via-[#C89B3C] to-[#C89B3C]" />
+              <span className="font-cinzel text-[10.5px] sm:text-[12px] tracking-[0.24em] font-bold text-[#7B1124] uppercase">
+                DECEMBER
+              </span>
+              <span className="h-[1px] w-3.5 sm:w-5 bg-gradient-to-l from-transparent via-[#C89B3C] to-[#C89B3C]" />
+            </div>
+
+            {/* Year: 2026 */}
+            <span className="font-cinzel text-[15px] sm:text-[17px] tracking-[0.22em] font-semibold text-[#8B6508] mt-0.5">
               2026
-            </p>
+            </span>
           </div>
         </div>
 
