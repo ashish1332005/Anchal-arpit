@@ -1,14 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
+import pinkHeart      from '../assets/pink-heart.png';
 import scratchSurface from '../assets/image copy.png';
-import heartReveal    from '../assets/image.png';
 
-const REVEAL_THRESHOLD = 0.38;
-
-const BG_STOPS = [
-  { pos: 0,    color: [255, 253, 248] },
-  { pos: 0.58, color: [247, 240, 228] },
-  { pos: 1,    color: [234, 220, 200] },
-];
+const REVEAL_THRESHOLD = 0.35;
 
 export default function ScratchDateReveal({ revealed, onReveal }) {
   const canvasRef    = useRef(null);
@@ -34,21 +28,18 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
     ctx.scale(dpr, dpr);
 
     const img = new Image();
-    img.src = scratchSurface;
+    img.src = pinkHeart;
     img.onload = () => {
-      // Step 1: Fill with slide bg gradient → fully opaque, hides heart below
-      const bg = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, Math.max(W, H) * 0.85);
-      BG_STOPS.forEach(({ pos, color: [r, g, b] }) => {
-        bg.addColorStop(pos, `rgb(${r},${g},${b})`);
-      });
-      ctx.fillStyle = bg;
-      ctx.fillRect(0, 0, W, H);
-
-      // Step 2: Couple image via multiply — white disappears, red petals stay
-      ctx.globalCompositeOperation = 'multiply';
+      ctx.clearRect(0, 0, W, H);
       ctx.drawImage(img, 0, 0, W, H);
-      ctx.globalCompositeOperation = 'source-over';
-
+    };
+    img.onerror = () => {
+      const fallback = new Image();
+      fallback.src = scratchSurface;
+      fallback.onload = () => {
+        ctx.clearRect(0, 0, W, H);
+        ctx.drawImage(fallback, 0, 0, W, H);
+      };
     };
   }, [revealed]);
 
@@ -71,7 +62,7 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
 
     ctx.globalCompositeOperation = 'destination-out';
     ctx.beginPath();
-    ctx.arc(event.clientX - bounds.left, event.clientY - bounds.top, 26, 0, Math.PI * 2);
+    ctx.arc(event.clientX - bounds.left, event.clientY - bounds.top, 28, 0, Math.PI * 2);
     ctx.fill();
     ctx.globalCompositeOperation = 'source-over';
 
@@ -95,50 +86,98 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
         </h2>
       </div>
 
-      {/* Card area */}
+      {/* Card area matching exact 340/310 aspect ratio of Anchal-Arpit-Invitaion heart */}
       <div
         className="relative mx-auto flex items-center justify-center"
-        style={{ width: 'min(88vw, 300px)', aspectRatio: '1 / 1' }}
+        style={{ width: 'min(88vw, 320px)', aspectRatio: '340 / 310' }}
       >
-        {/* ── BOTTOM: gold heart PNG + date text inside hollow ── */}
-        <div className="absolute inset-0">
-          {/* Gold floral heart — transparent via multiply blend */}
-          <img
-            src={heartReveal}
-            alt="Gold floral heart"
-            className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-            style={{ mixBlendMode: 'multiply' }}
-            draggable={false}
-          />
+        {/* ── BOTTOM: Revealed Royal Gold Foil & Pearl Blush Heart (from Anchal-Arpit-Invitaion) ── */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none drop-shadow-[0_14px_28px_rgba(180,110,120,0.32)]">
+          <svg viewBox="0 0 340 310" className="w-full h-full">
+            <defs>
+              {/* 3D Luxury Gold Metallic Gradient */}
+              <linearGradient id="goldMetallicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#b8860b" />
+                <stop offset="25%" stopColor="#ffd700" />
+                <stop offset="50%" stopColor="#fff8d1" />
+                <stop offset="75%" stopColor="#d4af37" />
+                <stop offset="100%" stopColor="#8a6217" />
+              </linearGradient>
 
-          {/*
-            Date inside heart hollow.
-            Perfected centering in the open cavity of the floral heart without side lines.
-          */}
-          <div
-            className="absolute text-center flex flex-col items-center justify-center pointer-events-none select-none"
-            style={{
-              left: '52%',
-              top: '48%',
-              transform: 'translate(-50%, -50%)',
-              width: '65%',
-            }}
-          >
-            {/* The Date: 12 (Grand, prominent, and bold) */}
-            <span className="font-cormorant text-[54px] sm:text-[62px] font-bold text-[#6A1B29] leading-none tracking-tight drop-shadow-xs">
-              12
-            </span>
+              {/* Pearlescent Soft Romantic Blush Fill */}
+              <radialGradient id="pearlBlushGlow" cx="50%" cy="38%" r="62%">
+                <stop offset="0%" stopColor="#ffffff" />
+                <stop offset="40%" stopColor="#fffdfa" />
+                <stop offset="80%" stopColor="#fdefef" />
+                <stop offset="100%" stopColor="#f8dde2" />
+              </radialGradient>
+            </defs>
 
-            {/* Month: DECEMBER (lines removed as requested for clean centering) */}
-            <span className="font-cinzel text-[14px] sm:text-[16px] tracking-[0.28em] font-bold text-[#7B1124] uppercase whitespace-nowrap my-1">
-              DECEMBER
-            </span>
+            {/* Outer Gold Metallic Border Rim */}
+            <path
+              d="M 170,82 C 170,16 42,16 42,112 C 42,176 128,222 170,274 C 212,222 298,176 298,112 C 298,16 170,16 170,82 Z"
+              fill="url(#pearlBlushGlow)"
+              stroke="url(#goldMetallicGradient)"
+              strokeWidth="4.5"
+            />
 
-            {/* Year: 2026 */}
-            <span className="font-cinzel text-[20px] sm:text-[23px] tracking-[0.22em] font-bold text-[#8B6508]">
-              2026
-            </span>
-          </div>
+            {/* Inner Delicate Gold Filigree Ring (Double Rim) */}
+            <path
+              d="M 170,88 C 170,24 50,24 50,113 C 50,171 130,215 170,265 C 210,215 290,171 290,113 C 290,24 170,24 170,88 Z"
+              fill="none"
+              stroke="#c59b27"
+              strokeWidth="1.2"
+              strokeDasharray="6 3"
+              opacity="0.75"
+            />
+
+            {/* Grand Date Typography */}
+            <text x="170" y="124" textAnchor="middle" fill="#8b1e3f">
+              <tspan fontFamily="'Cinzel', 'Playfair Display', serif" fontSize="22" fontWeight="800" letterSpacing="0.5">
+                12 December, 2026
+              </tspan>
+            </text>
+
+            {/* Decorative Gold Divider */}
+            <line x1="92" y1="142" x2="148" y2="142" stroke="#c59b27" strokeWidth="1.2" opacity="0.8" />
+            <circle cx="170" cy="142" r="3" fill="#84651d" />
+            <line x1="192" y1="142" x2="248" y2="142" stroke="#c59b27" strokeWidth="1.2" opacity="0.8" />
+
+            {/* Saturday */}
+            <text
+              x="170"
+              y="166"
+              textAnchor="middle"
+              fill="#84651d"
+              fontFamily="'Marcellus', 'Cinzel', serif"
+              fontSize="13"
+              fontWeight="700"
+              letterSpacing="3.5"
+            >
+              SATURDAY
+            </text>
+
+            {/* Venue Location: Gloria Inn cleanly inside the heart */}
+            <text
+              x="170"
+              y="190"
+              textAnchor="middle"
+              fill="#2d4a2e"
+              fontFamily="'Marcellus', 'Cinzel', serif"
+              fontSize="11"
+              fontWeight="600"
+              letterSpacing="2"
+            >
+              GLORIA INN
+            </text>
+
+            {/* Bottom Tiny Heart Accent */}
+            <path
+              d="M 170 208 C 167 204 163 204 163 208 C 163 212 170 217 170 217 C 170 217 177 212 177 208 C 177 204 173 204 170 208 Z"
+              fill="#c59b27"
+              opacity="0.85"
+            />
+          </svg>
         </div>
 
         {/* Petal particles */}
