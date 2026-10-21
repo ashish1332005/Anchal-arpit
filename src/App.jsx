@@ -250,14 +250,13 @@ export default function App() {
           <div className="relative z-10 w-full max-w-md mx-auto px-2 flex flex-col items-center">
             <div className="flex w-full flex-col items-center gap-1 text-[#7B1124]">
               <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 sm:h-12 sm:w-12 object-contain mb-0.5 drop-shadow-xs" />
-              {/* All three invocations — 2-tier layout that never clips or cuts on any screen width */}
-              <div className="flex flex-col items-center justify-center gap-0.5 text-[#5A121E] px-3.5 py-1 rounded-2xl bg-white/85 backdrop-blur-xs border border-[#D4AF37]/35 shadow-xs max-w-[94%] select-none">
-                <span className="font-cinzel text-[8px] min-[375px]:text-[8.5px] sm:text-[9.5px] font-bold tracking-wider text-[#5A121E]">
-                  ॥ Shri Ganeshay Namah ॥
-                </span>
-                <div className="flex items-center justify-center gap-1.5 text-[6.8px] min-[375px]:text-[7.5px] sm:text-[8.5px] font-bold tracking-wide text-[#7B1124]">
+              {/* All three invocations on a single line with identical font, size, and weight */}
+              <div className="w-full flex items-center justify-center px-1">
+                <div className="inline-flex items-center justify-center gap-1 min-[360px]:gap-1.5 px-2.5 sm:px-3.5 py-1 rounded-full bg-white/90 backdrop-blur-xs border border-[#D4AF37]/40 shadow-xs text-[#5A121E] font-cinzel font-bold text-[6.5px] min-[360px]:text-[7.2px] min-[380px]:text-[7.8px] sm:text-[9px] tracking-tight min-[375px]:tracking-normal whitespace-nowrap select-none">
                   <span>॥ Shri Ramcharanay Namah ॥</span>
-                  <span className="text-[#B78B34] text-[7.5px]">•</span>
+                  <span className="text-[#B78B34] text-[7px] sm:text-[8px] font-normal">•</span>
+                  <span>॥ Shri Ganeshay Namah ॥</span>
+                  <span className="text-[#B78B34] text-[7px] sm:text-[8px] font-normal">•</span>
                   <span>॥ Shri Pitra Devay Namah ॥</span>
                 </div>
               </div>
