@@ -279,7 +279,7 @@ export default function App() {
 
             {/* Groom Details */}
             <div className="w-full text-center">
-              <h1 className="font-allura text-5xl min-[375px]:text-[56px] sm:text-[64px] text-[#5A121E] font-medium leading-[1.05] mb-1">
+              <h1 className="font-alex-brush text-5xl min-[375px]:text-[56px] sm:text-[64px] text-[#5A121E] font-medium leading-[1.05] mb-1">
                 {WEDDING_DETAILS.couple.groom}
               </h1>
               <p className="font-cormorant text-[14.5px] min-[375px]:text-[15.5px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight">
@@ -290,10 +290,10 @@ export default function App() {
               </p>
             </div>
 
-            {/* With text styled in elegant cursive script flanked by tapered rules */}
+            {/* With text styled in elegant cursive script matching reference invite */}
             <div className="flex items-center justify-center gap-3 py-0.5 select-none">
               <span className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent to-[#B78B34]" />
-              <span className="font-lucy-said-ok text-2xl sm:text-3xl text-[#7B1124] italic leading-none">
+              <span className="font-alex-brush text-3xl sm:text-4xl text-[#9c7a28] leading-none">
                 with
               </span>
               <span className="w-8 sm:w-12 h-px bg-gradient-to-l from-transparent to-[#B78B34]" />
@@ -301,7 +301,7 @@ export default function App() {
 
             {/* Bride Details */}
             <div className="w-full text-center">
-              <h2 className="font-allura text-5xl min-[375px]:text-[56px] sm:text-[64px] text-[#5A121E] font-medium leading-[1.05] mb-1">
+              <h2 className="font-alex-brush text-5xl min-[375px]:text-[56px] sm:text-[64px] text-[#5A121E] font-medium leading-[1.05] mb-1">
                 {WEDDING_DETAILS.couple.bride}
               </h2>
               <p className="font-cormorant text-[14.5px] min-[375px]:text-[15.5px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight">
@@ -403,7 +403,7 @@ export default function App() {
 
           {/* Content block in the clean parchment below Lord Ganesha */}
           <div className="relative z-10 space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-allura whitespace-nowrap text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
+            <h2 className="font-alex-brush whitespace-nowrap text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Vinayak Sthapna
             </h2>
             <EventDate weekday="FRI" day="11" month="DEC" />
@@ -430,7 +430,7 @@ export default function App() {
         >
           {/* Content in the blank sky area */}
           <div className="relative z-10 pt-[18vh] sm:pt-[20vh] space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
+            <h2 className="font-alex-brush text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Carnival
             </h2>
             <EventDate weekday="FRI" day="11" month="DEC" />
@@ -456,7 +456,7 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Dreamy%20Floral%20Wedding%20Pavilion.png')" }}
         >
           <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-allura text-[32px] min-[375px]:text-[36px] sm:text-[40px] text-[#5A121E] leading-[1.05] select-none">
+            <h2 className="font-alex-brush text-[32px] min-[375px]:text-[36px] sm:text-[40px] text-[#5A121E] leading-[1.05] select-none">
               <span className="block">Sangeet</span>
               <span className="block">&amp; Ring Ceremony</span>
             </h2>
@@ -484,7 +484,7 @@ export default function App() {
         >
           {/* Top image removed as requested, content balanced centered */}
           <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
+            <h2 className="font-alex-brush text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Mangal Kalash
             </h2>
             <EventDate weekday="SAT" day="12" month="DEC" />
@@ -510,7 +510,7 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/6164520a-341e-4297-8a9a-d5e5f0c9d5c8.png')" }}
         >
           <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
+            <h2 className="font-alex-brush text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Mayra
             </h2>
             <EventDate weekday="SAT" day="12" month="DEC" />
@@ -537,7 +537,7 @@ export default function App() {
         >
           <div className="relative z-10 pt-[9vh] sm:pt-[11vh] space-y-1.5 max-w-sm mx-auto px-3">
             {/* Standardized heading */}
-            <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
+            <h2 className="font-alex-brush text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Wedding Ceremony
             </h2>
             <EventDate weekday="SAT" day="12" month="DEC" />
@@ -588,7 +588,7 @@ export default function App() {
           <div className="relative z-10 w-[min(88%,360px)] mx-auto text-center space-y-2 px-2">
             {/* Heading styled like other event slides */}
             <div className="space-y-0.5">
-              <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight drop-shadow-sm select-none">
+              <h2 className="font-alex-brush text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight drop-shadow-sm select-none">
                 Venue &amp; Location
               </h2>
               <LotusDivider color="#8B6508" className="scale-75 my-0.5" />

@@ -88,9 +88,9 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   return (
     <div className="flex flex-col items-center gap-2 select-none">
 
-      {/* Heading ABOVE the heart with consistent event heading font (Allura) */}
+      {/* Heading ABOVE the heart with consistent event heading font (Alex Brush / Anchal-Arpit-Invitaion) */}
       <div className="text-center transition-all duration-500 mb-0.5">
-        <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none drop-shadow-xs">
+        <h2 className="font-alex-brush text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none drop-shadow-xs">
           {revealed ? 'Save the Date' : 'Scratch to Reveal'}
         </h2>
       </div>

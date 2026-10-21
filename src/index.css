@@ -70,14 +70,20 @@
   .font-cene {
     font-family: 'Cene', cursive;
   }
+  .font-script, .font-alex-brush {
+    font-family: 'Alex Brush', 'Pinyon Script', cursive;
+  }
   .font-lucy-said-ok {
-    font-family: 'Lucy Said Ok', cursive;
+    font-family: 'Alex Brush', 'Pinyon Script', cursive;
   }
   .font-allura {
-    font-family: 'Allura', cursive;
+    font-family: 'Alex Brush', 'Pinyon Script', 'Allura', cursive;
   }
   .font-great-vibes {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes', 'Alex Brush', cursive;
+  }
+  .font-marcellus {
+    font-family: 'Marcellus', 'Montserrat', sans-serif;
   }
   .font-cinzel {
     font-family: 'Cinzel', serif;
