@@ -2,7 +2,7 @@ export const WEDDING_DETAILS = {
   couple: {
     bride: "Anchal",
     brideFull: "Anchal Chechani",
-    brideParents: "Leela Devi Chechani & Dinesh Chechani",
+    brideParents: "Leela Devi & Dinesh Ji Chechani",
     brideGrandParents: "Late Smt. Janki Devi Chechani & Late Shree Shivlal Ji Chechani",
 
     groom: "Arpit",
@@ -15,6 +15,7 @@ export const WEDDING_DETAILS = {
   dates: {
     display: "11 & 12 December 2026",
     startDateIso: "2026-12-11T07:00:00",
+    weddingDateIso: "2026-12-12T00:00:00",
     venueName: "Gloria Inn, Bhilwara",
     venueAddress: "Gloria Inn, Bhilwara, Rajasthan",
     mapQuery: "Gloria+Inn+Bhilwara",
@@ -22,9 +23,9 @@ export const WEDDING_DETAILS = {
   },
 
   invocations: [
-    { key: "top", hi: "|| श्री रामचरणाय नमः ||", en: "Shri Ramcharanay Namah" },
+    { key: "top", hi: "|| श्री रामचरणाय नमः ||", en: "|| Shri Ramcharanay Namah ||" },
     { key: "left", hi: "|| श्री गणेशाय नमः ||", en: "|| Shri Ganeshay Namah ||" },
-    { key: "right", hi: "|| श्री पितृदेवाय नमः ||", en: "Shri Pitra Devay Namah" },
+    { key: "right", hi: "|| श्री पितृदेवाय नमः ||", en: "|| Shri Pitra Devay Namah ||" },
   ],
 
   december11Events: [
@@ -141,7 +142,7 @@ export const WEDDING_DETAILS = {
       names: ["Ram Rai Ji", "Vinod", "Sanjay", "Dilip"],
       address: "1-A-16, Old Housing Board, Shastri Nagar",
       city: "Bhilwara, Rajasthan",
-      phones: ["9929462333", "7727058633", "9128011391"]
+      phones: ["9929462333", "7727058633", "9128011391", "9950680362"]
     },
     withBestCompliments: {
       members: "Bansi Lal, Ramkishore, Ganeshram, Madhusudan, Shivratan, Suresh Ji (C.A.), Rambakshi, Amit",

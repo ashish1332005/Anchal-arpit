@@ -88,16 +88,16 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
   return (
     <div className="flex flex-col items-center gap-2 select-none">
 
-      {/* Heading ABOVE the heart with event heading font (Lucy Said Ok) */}
+      {/* Heading ABOVE the heart with consistent event heading font (Allura) */}
       <div className="text-center transition-all duration-500 mb-0.5">
-        <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight select-none drop-shadow-xs">
+        <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none drop-shadow-xs">
           {revealed ? 'Save the Date' : 'Scratch to Reveal'}
         </h2>
       </div>
 
       {/* Card area */}
       <div
-        className="relative"
+        className="relative mx-auto flex items-center justify-center"
         style={{ width: 'min(88vw, 300px)', aspectRatio: '1 / 1' }}
       >
         {/* ── BOTTOM: gold heart PNG + date text inside hollow ── */}
@@ -113,33 +113,29 @@ export default function ScratchDateReveal({ revealed, onReveal }) {
 
           {/*
             Date inside heart hollow.
-            Enlarged and perfectly balanced in the open cavity of the floral heart.
+            Perfected centering in the open cavity of the floral heart without side lines.
           */}
           <div
             className="absolute text-center flex flex-col items-center justify-center pointer-events-none select-none"
             style={{
-              left: '61.5%',
-              top: '46%',
+              left: '52%',
+              top: '48%',
               transform: 'translate(-50%, -50%)',
-              width: '52%',
+              width: '65%',
             }}
           >
             {/* The Date: 12 (Grand, prominent, and bold) */}
-            <span className="font-cormorant text-[52px] sm:text-[60px] font-bold text-[#6A1B29] leading-none tracking-tight drop-shadow-xs">
+            <span className="font-cormorant text-[54px] sm:text-[62px] font-bold text-[#6A1B29] leading-none tracking-tight drop-shadow-xs">
               12
             </span>
 
-            {/* Month: DECEMBER with elegant gold accent divider lines */}
-            <div className="flex items-center justify-center gap-2 w-full my-1">
-              <span className="h-[1.5px] w-4 sm:w-6 bg-gradient-to-r from-transparent via-[#C89B3C] to-[#C89B3C]" />
-              <span className="font-cinzel text-[13.5px] sm:text-[15.5px] tracking-[0.24em] font-bold text-[#7B1124] uppercase whitespace-nowrap">
-                DECEMBER
-              </span>
-              <span className="h-[1.5px] w-4 sm:w-6 bg-gradient-to-l from-transparent via-[#C89B3C] to-[#C89B3C]" />
-            </div>
+            {/* Month: DECEMBER (lines removed as requested for clean centering) */}
+            <span className="font-cinzel text-[14px] sm:text-[16px] tracking-[0.28em] font-bold text-[#7B1124] uppercase whitespace-nowrap my-1">
+              DECEMBER
+            </span>
 
             {/* Year: 2026 */}
-            <span className="font-cinzel text-[20px] sm:text-[23px] tracking-[0.22em] font-bold text-[#8B6508] mt-0.5">
+            <span className="font-cinzel text-[20px] sm:text-[23px] tracking-[0.22em] font-bold text-[#8B6508]">
               2026
             </span>
           </div>

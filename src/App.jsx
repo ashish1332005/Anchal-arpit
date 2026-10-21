@@ -247,25 +247,19 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Watercolor%20Botanical%20Wedding%20Border.png')", backgroundSize: '110% 100%' }}
         >
           {/* Top Invocations Section */}
-          <div className="relative z-10 w-full max-w-md mx-auto px-1 flex flex-col items-center">
+          <div className="relative z-10 w-full max-w-md mx-auto px-2 flex flex-col items-center">
             <div className="flex w-full flex-col items-center gap-1 text-[#7B1124]">
               <img src="/assets/ganesh.png" alt="Lord Ganesha" className="h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 sm:h-12 sm:w-12 object-contain mb-0.5 drop-shadow-xs" />
-              {/* All three invocations — sized safely so text never cuts on any mobile screen */}
-              <div
-                className="flex items-center justify-center gap-0.5 min-[375px]:gap-1 sm:gap-2 text-[#7B1124] whitespace-nowrap px-1 max-w-[95%]"
-                style={{ transform: 'scale(var(--inv-scale, 1))', transformOrigin: 'center' }}
-              >
-                <span className="font-cinzel text-[7px] min-[375px]:text-[7.5px] sm:text-[9.5px] font-semibold tracking-normal">
-                  Shri Ramcharanay Namah
-                </span>
-                <span className="text-[#B78B34] text-[6.5px] sm:text-[8px] shrink-0 px-0.5">•</span>
-                <span className="font-cinzel text-[7.5px] min-[375px]:text-[8px] sm:text-[10px] font-bold tracking-normal text-[#5A121E]">
+              {/* All three invocations — 2-tier layout that never clips or cuts on any screen width */}
+              <div className="flex flex-col items-center justify-center gap-0.5 text-[#5A121E] px-3.5 py-1 rounded-2xl bg-white/85 backdrop-blur-xs border border-[#D4AF37]/35 shadow-xs max-w-[94%] select-none">
+                <span className="font-cinzel text-[8px] min-[375px]:text-[8.5px] sm:text-[9.5px] font-bold tracking-wider text-[#5A121E]">
                   ॥ Shri Ganeshay Namah ॥
                 </span>
-                <span className="text-[#B78B34] text-[6.5px] sm:text-[8px] shrink-0 px-0.5">•</span>
-                <span className="font-cinzel text-[7px] min-[375px]:text-[7.5px] sm:text-[9.5px] font-semibold tracking-normal">
-                  Shri Pitra Devay Namah
-                </span>
+                <div className="flex items-center justify-center gap-1.5 text-[6.8px] min-[375px]:text-[7.5px] sm:text-[8.5px] font-bold tracking-wide text-[#7B1124]">
+                  <span>॥ Shri Ramcharanay Namah ॥</span>
+                  <span className="text-[#B78B34] text-[7.5px]">•</span>
+                  <span>॥ Shri Pitra Devay Namah ॥</span>
+                </div>
               </div>
             </div>
           </div>
@@ -279,43 +273,43 @@ export default function App() {
                 alt="Arpit and Anchal monogram"
                 className="w-14 h-14 min-[375px]:w-16 min-[375px]:h-16 sm:w-18 sm:h-18 object-contain drop-shadow-xs"
               />
-              <p className="max-w-[280px] min-[375px]:max-w-[310px] font-cormorant text-[18px] min-[375px]:text-[20px] sm:text-[22px] leading-snug font-medium text-[#2C1518]">
+              <p className="max-w-[280px] min-[375px]:max-w-[310px] font-cormorant text-[16px] min-[375px]:text-[17px] sm:text-[18px] leading-snug font-semibold text-[#2C1518]">
                 The Kabra family requests the pleasure of your company at the wedding celebration
               </p>
             </div>
 
             {/* Groom Details */}
             <div className="w-full text-center">
-              <h1 className="font-allura text-5xl min-[375px]:text-[58px] sm:text-[64px] text-[#5A121E] font-medium leading-[1.05] mb-1">
+              <h1 className="font-allura text-5xl min-[375px]:text-[56px] sm:text-[64px] text-[#5A121E] font-medium leading-[1.05] mb-1">
                 {WEDDING_DETAILS.couple.groom}
               </h1>
-              <p className="font-cormorant text-[13.5px] min-[375px]:text-[15px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight">
+              <p className="font-cormorant text-[14.5px] min-[375px]:text-[15.5px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight">
                 G/S Ratan Devi &amp; Ram Rai Ji Kabra
               </p>
-              <p className="font-cormorant text-[13.5px] min-[375px]:text-[15px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight mt-0.5">
+              <p className="font-cormorant text-[14.5px] min-[375px]:text-[15.5px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight mt-0.5">
                 S/O Rinku &amp; Sanjay Kabra
               </p>
             </div>
 
-            {/* With flourish ornament */}
-            <div className="flex justify-center py-0.5">
-              <img
-                src="/assets/with_flourish.png"
-                alt="with"
-                className="w-28 min-[375px]:w-32 sm:w-36 object-contain"
-              />
+            {/* With text styled in elegant cursive script flanked by tapered rules */}
+            <div className="flex items-center justify-center gap-3 py-0.5 select-none">
+              <span className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent to-[#B78B34]" />
+              <span className="font-lucy-said-ok text-2xl sm:text-3xl text-[#7B1124] italic leading-none">
+                with
+              </span>
+              <span className="w-8 sm:w-12 h-px bg-gradient-to-l from-transparent to-[#B78B34]" />
             </div>
 
             {/* Bride Details */}
             <div className="w-full text-center">
-              <h2 className="font-allura text-5xl min-[375px]:text-[58px] sm:text-[64px] text-[#5A121E] font-medium leading-[1.05] mb-1">
+              <h2 className="font-allura text-5xl min-[375px]:text-[56px] sm:text-[64px] text-[#5A121E] font-medium leading-[1.05] mb-1">
                 {WEDDING_DETAILS.couple.bride}
               </h2>
-              <p className="font-cormorant text-[13.5px] min-[375px]:text-[15px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight">
+              <p className="font-cormorant text-[14.5px] min-[375px]:text-[15.5px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight">
                 G/D Late Janki Devi &amp; Late Shivlal Ji Chechani
               </p>
-              <p className="font-cormorant text-[13.5px] min-[375px]:text-[15px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight mt-0.5">
-                D/O Leela Devi &amp; Dinesh Chechani
+              <p className="font-cormorant text-[14.5px] min-[375px]:text-[15.5px] sm:text-[16.5px] font-semibold text-[#2C1518] leading-tight mt-0.5">
+                D/O Leela Devi &amp; Dinesh Ji Chechani
               </p>
             </div>
           </div>
@@ -378,7 +372,7 @@ export default function App() {
                   <p className="font-cinzel text-xs uppercase tracking-[0.2em] text-[#8B6508] font-bold mb-1">
                     Countdown to the wedding
                   </p>
-                  <Countdown targetDateIso={WEDDING_DETAILS.dates.startDateIso} />
+                  <Countdown targetDateIso={WEDDING_DETAILS.dates.weddingDateIso || WEDDING_DETAILS.dates.startDateIso} />
                 </div>
 
                 {/* View Events Button */}
@@ -398,28 +392,28 @@ export default function App() {
         </section>
 
         {/* ======================================================== */}
+        {/* ======================================================== */}
         {/* SLIDE 3: VINAYAK STHAPNA (11 December Morning) */}
         {/* ======================================================== */}
         <section
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center text-[#5A121E] select-none"
           style={{ backgroundImage: "url('/assets/74c1371d-2510-43ca-bfad-2e054f6048f7.png')", backgroundSize: '100% 100%' }}
         >
-          {/* Top spacer puts content cleanly below Lord Ganesha's pedestal */}
-          <div className="pt-[48vh] sm:pt-[50vh]" />
+          {/* Top spacer positioned comfortably BELOW Lord Ganesha's pedestal */}
+          <div className="pt-[47vh] min-[375px]:pt-[48vh] sm:pt-[49vh]" />
 
-          {/* Content block in the blank lower parchment */}
+          {/* Content block in the clean parchment below Lord Ganesha */}
           <div className="relative z-10 space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-lucy-said-ok whitespace-nowrap text-4xl sm:text-5xl text-[#5A121E] leading-tight">
+            <h2 className="font-allura whitespace-nowrap text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Vinayak Sthapna
             </h2>
             <EventDate weekday="FRI" day="11" month="DEC" />
-            <div className="space-y-1 pt-0.5">
+            <div className="pt-1">
               <EventTime value="7:00 AM" />
-              <EventSubTime label="Breakfast" time="9:00 AM" />
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#8B6508" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#5A121E]/85 max-w-[240px] mx-auto leading-snug">
+            <p className="font-cormorant italic text-[13px] sm:text-[14px] font-semibold text-[#2C1518] max-w-[250px] mx-auto leading-snug drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
               "Auspicious beginnings invoke Lord Ganesha's blessings for a lifetime of joy"
             </p>
           </div>
@@ -436,18 +430,17 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/carnival-new-bg.jpg')" }}
         >
           {/* Content in the blank sky area */}
-          <div className="relative z-10 pt-[20vh] sm:pt-[22vh] space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
+          <div className="relative z-10 pt-[18vh] sm:pt-[20vh] space-y-1.5 max-w-sm mx-auto px-4">
+            <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Carnival
             </h2>
             <EventDate weekday="FRI" day="11" month="DEC" />
-            <div className="space-y-1 pt-0.5">
+            <div className="pt-1.5">
               <EventTime value="11:00 AM" />
-              <EventSubTime label="Lunch" time="1:00 PM" />
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto leading-snug">
+            <p className="font-cormorant italic text-[13px] sm:text-[14px] font-semibold text-[#2C1518] max-w-[250px] mx-auto leading-snug drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
               "A vibrant celebration of laughter, love, music and endless memories"
             </p>
           </div>
@@ -464,17 +457,17 @@ export default function App() {
           style={{ backgroundImage: "url('/assets/Dreamy%20Floral%20Wedding%20Pavilion.png')" }}
         >
           <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
+            <h2 className="font-allura text-[32px] min-[375px]:text-[36px] sm:text-[40px] text-[#5A121E] leading-[1.05] select-none">
               <span className="block">Sangeet</span>
               <span className="block">&amp; Ring Ceremony</span>
             </h2>
             <EventDate weekday="FRI" day="11" month="DEC" />
-            <div className="pt-0.5">
+            <div className="pt-1">
               <EventTime value="7:00 PM" />
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] leading-snug">
+            <p className="font-cormorant italic text-[13px] sm:text-[14px] font-semibold text-[#2C1518] max-w-[250px] mx-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)] leading-snug">
               "Let's dance, let's sing, let our hearts take flight, as we celebrate this love under the stars tonight."
             </p>
           </div>
@@ -490,18 +483,18 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/Elegant%20Indian%20Wedding%20Kalash%20Invitation%20Frame.png')" }}
         >
-          <div className="relative z-10 pt-[14vh] sm:pt-[16vh] space-y-1.5 max-w-sm mx-auto px-4">
-            <p className="font-cinzel text-[10px] tracking-widest text-[#8B6508] font-bold">॥ शुभारम्भ ॥</p>
-            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
+          {/* Top image removed as requested, content balanced centered */}
+          <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
+            <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Mangal Kalash
             </h2>
             <EventDate weekday="SAT" day="12" month="DEC" />
-            <div className="pt-0.5">
+            <div className="pt-1">
               <EventTime value="9:00 AM" />
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto leading-snug">
+            <p className="font-cormorant italic text-[13px] sm:text-[14px] font-semibold text-[#2C1518] max-w-[250px] mx-auto leading-snug drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
               "As sacred waters fill the kalash, may your home fill with peace, prosperity and divine grace"
             </p>
           </div>
@@ -517,17 +510,17 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/6164520a-341e-4297-8a9a-d5e5f0c9d5c8.png')" }}
         >
-          <div className="relative z-10 pt-[14vh] sm:pt-[16vh] space-y-1.5 max-w-sm mx-auto px-4">
-            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
+          <div className="relative z-10 pt-[15vh] sm:pt-[17vh] space-y-1.5 max-w-sm mx-auto px-4">
+            <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Mayra
             </h2>
             <EventDate weekday="SAT" day="12" month="DEC" />
-            <div className="pt-0.5">
+            <div className="pt-1">
               <EventTime value="11:00 AM" />
             </div>
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto leading-snug">
+            <p className="font-cormorant italic text-[13px] sm:text-[14px] font-semibold text-[#2C1518] max-w-[250px] mx-auto leading-snug drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
               "Where traditions are cherished and blessings flow from mama's heart to bride's new life"
             </p>
           </div>
@@ -543,9 +536,9 @@ export default function App() {
           className="story-slide w-full h-[100dvh] snap-start relative flex flex-col p-4 sm:p-6 overflow-hidden bg-cover bg-center text-center select-none"
           style={{ backgroundImage: "url('/assets/wedding-ceremony-new-bg.jpg')" }}
         >
-          <div className="relative z-10 pt-[8vh] sm:pt-[10vh] space-y-1.5 max-w-sm mx-auto px-3">
-            {/* No logo — heading directly */}
-            <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight">
+          <div className="relative z-10 pt-[9vh] sm:pt-[11vh] space-y-1.5 max-w-sm mx-auto px-3">
+            {/* Standardized heading */}
+            <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight select-none">
               Wedding Ceremony
             </h2>
             <EventDate weekday="SAT" day="12" month="DEC" />
@@ -577,7 +570,7 @@ export default function App() {
             {/* Lotus divider AFTER time */}
             <LotusDivider color="#5A121E" className="scale-75 my-1" />
             {/* Quote after times */}
-            <p className="font-cormorant italic text-xs sm:text-sm font-semibold text-[#2C1518] max-w-[240px] mx-auto leading-snug">
+            <p className="font-cormorant italic text-[13px] sm:text-[14px] font-semibold text-[#2C1518] max-w-[250px] mx-auto leading-snug drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]">
               "Welcoming our dear ones with open hearts and warm smiles"
             </p>
           </div>
@@ -596,7 +589,7 @@ export default function App() {
           <div className="relative z-10 w-[min(88%,360px)] mx-auto text-center space-y-2 px-2">
             {/* Heading styled like other event slides */}
             <div className="space-y-0.5">
-              <h2 className="font-lucy-said-ok text-4xl sm:text-5xl text-[#5A121E] leading-tight drop-shadow-sm">
+              <h2 className="font-allura text-4xl min-[375px]:text-[44px] sm:text-[48px] text-[#5A121E] leading-tight drop-shadow-sm select-none">
                 Venue &amp; Location
               </h2>
               <LotusDivider color="#8B6508" className="scale-75 my-0.5" />
@@ -705,7 +698,7 @@ export default function App() {
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 WITH BEST COMPLIMENTS
               </p>
-              <p className="font-cormorant font-semibold text-[11.5px] sm:text-[12.5px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
+              <p className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
                 {WEDDING_DETAILS.family.withBestCompliments.members}
               </p>
               {WEDDING_DETAILS.family.withBestCompliments.familyTitle && (
@@ -736,7 +729,7 @@ export default function App() {
                 MITTHI MANUHAR
               </p>
               {WEDDING_DETAILS.family.mithiManuhar.map((item, idx) => (
-                <p key={idx} className="font-cormorant font-normal text-[13px] sm:text-[14px] text-[#2C1518] leading-tight">
+                <p key={idx} className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] leading-tight">
                   {item}
                 </p>
               ))}
@@ -748,7 +741,7 @@ export default function App() {
               <p className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.25em] uppercase text-[#8B6508] font-bold">
                 SAMDHI PARIVAAR
               </p>
-              <p className="font-cormorant font-semibold text-[11.5px] sm:text-[12.5px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
+              <p className="font-cormorant font-semibold text-[13px] sm:text-[14px] text-[#2C1518] max-w-xs sm:max-w-sm mx-auto leading-snug">
                 {WEDDING_DETAILS.family.samdhiParivaar.members.join(', ')}
               </p>
               <LotusDivider color="#D4AF37" className="scale-75 my-1" />
